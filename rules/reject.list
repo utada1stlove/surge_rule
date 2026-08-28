@@ -1,6 +1,18 @@
 # ============================================================
-# [广告与跟踪]
-# 暂时留空。后续加入规则时，建议按来源拆成 ads.list、
-# telemetry.list 和 allowlist.list，并单独验证误杀情况。
+# [广告与跟踪：保守基础集]
+# 参考公开 Surge 广告规则的组织方式，先只收录高置信度的广告/测量域名。
 # 文件只写匹配条件，不要追加 REJECT。
 # ============================================================
+DOMAIN-SUFFIX,doubleclick.net
+DOMAIN-SUFFIX,googlesyndication.com
+DOMAIN-SUFFIX,googleadservices.com
+DOMAIN-SUFFIX,adservice.google.com
+DOMAIN-SUFFIX,app-measurement.com
+DOMAIN-SUFFIX,adnxs.com
+DOMAIN-SUFFIX,adsrvr.org
+DOMAIN-SUFFIX,scorecardresearch.com
+
+# [广告与跟踪：后续扩展]
+# 大型清单建议作为外部 RULE-SET 引用，不直接复制进本仓库。
+# 参考：blackmatrix7 Advertising_All_No_Resolve.list
+# 参考：ruleset.skk.moe/List/non_ip/reject.conf
