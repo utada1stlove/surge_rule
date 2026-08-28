@@ -34,7 +34,9 @@ rules/
 - 通讯与社区；
 - 社交平台。
 
-目前大多数板块仍统一交给 `Proxy` 策略组；Telegram 已拆成独立的 `telegram.list`，按 mt6000 dae 意图交给 `Boom`。`reject.list` 已有一组保守的广告/测量域名，主 Profile 另外引用一份外部广告 Rule Set。以后可以继续将其他板块拆成独立的 `.list` 文件，再交给不同策略组。
+当前主 Profile 已按 DAE 意图把主要板块映射到策略组：广告/跟踪到 `REJECT`，Telegram 到 `Boom`，Google/Gemini 到 `HomeProxy`，其他 AI 与社交到 `Singapore`，YouTube 到 `CTM`，金融到 `HongKong`，支付/加密货币/Spotify 到 `US`，开发、云盘、Twitch、Discord 和 Docker 到 `Proxy`。其中 Google 系 AI 与其他 AI 是独立板块，不会因为都属于 AI 而混用策略。
+
+大体量或维护成本高的板块优先引用成熟的公开 Surge Rule Set（当前采用 blackmatrix7 的 YouTube、Telegram、Google、Gemini、OpenAI、Anthropic、Claude、Bloomberg、ThomsonReuters、PayPal、Cryptocurrency、Twitter、Reddit、Spotify、GitHub、OneDrive、Dropbox、Twitch、Discord、Docker），本仓库的本地 `.list` 负责补充小范围规则和明确的私有分流意图。外部规则文件只写匹配条件，不写策略名称；策略绑定统一留在主 Profile，便于以后替换策略组。
 
 ## 从 dae 配置迁移
 

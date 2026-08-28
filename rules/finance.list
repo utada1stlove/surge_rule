@@ -1,7 +1,6 @@
-# [金融]
+# [金融补充]
 # 对应 dae：金融 → HongKong。
-DOMAIN-SUFFIX,bloomberg.com
+# Bloomberg 与 Reuters 使用成熟上游 Rule Set；这里保留上游未覆盖的常用金融站点。
 DOMAIN-SUFFIX,wsj.com
 DOMAIN-SUFFIX,economist.com
-DOMAIN-SUFFIX,reuters.com
 DOMAIN-SUFFIX,investing.com
