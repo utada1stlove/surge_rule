@@ -43,7 +43,7 @@ FINAL,DIRECT
 
 如果 Sub-Store 生成的策略组不叫 `Proxy`，需要把最后一个 `Proxy` 替换成实际的策略组名称。不要把节点密码或订阅 URL 写入这份公开片段。
 
-当前 `reject.list` 是保守基础集。若需要更完整的广告拦截，可在测试后取消片段中的上游规则注释，例如 [blackmatrix7 Advertising](https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All_No_Resolve.list)。大型清单可能造成误杀，应该先单独测试。
+当前配置会加载 `reject.list` 的保守基础集，并主动加载 [blackmatrix7 Advertising](https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All_No_Resolve.list) 外部清单。大型清单可能造成误杀；如果某个 App 异常，可先移除模板中的该行，保留本仓库自己的基础集。
 
 ## 一次配置后的日常流程
 

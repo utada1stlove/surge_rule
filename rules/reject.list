@@ -12,7 +12,12 @@ DOMAIN-SUFFIX,adnxs.com
 DOMAIN-SUFFIX,adsrvr.org
 DOMAIN-SUFFIX,scorecardresearch.com
 
-# [广告与跟踪：后续扩展]
-# 大型清单建议作为外部 RULE-SET 引用，不直接复制进本仓库。
-# 参考：blackmatrix7 Advertising_All_No_Resolve.list
-# 参考：ruleset.skk.moe/List/non_ip/reject.conf
+# [广告与跟踪：外部扩展]
+# 主 Profile 和 Sub-Store 注入片段会主动引用下面的上游清单，
+# 不把数万条第三方规则复制进本仓库。
+#
+# blackmatrix7：
+# https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All_No_Resolve.list
+#
+# 备用参考：
+# https://ruleset.skk.moe/List/non_ip/reject.conf
