@@ -34,7 +34,7 @@ rules/
 - 通讯与社区；
 - 社交平台。
 
-当前主 Profile 已按 DAE 意图把主要板块映射到策略组：广告/跟踪到 `REJECT`，Telegram 到 `Boom`，Google/Gemini 到 `HomeProxy`，其他 AI 与社交到 `Singapore`，YouTube 到 `CTM`，金融到 `HongKong`，支付/加密货币/Spotify 到 `US`，开发、云盘、Twitch、Discord 和 Docker 到 `Proxy`。其中 Google 系 AI 与其他 AI 是独立板块，不会因为都属于 AI 而混用策略。
+当前主 Profile 已按 DAE 意图把主要板块映射到策略组：广告/跟踪到 `REJECT`，Telegram 到 `Boom`，Google/Gemini 到 `HomeProxy`，其他 AI 与社交到 `Singapore`，YouTube 到 `CTM`，TikTok 到独立的 `TikTok` 策略组，金融到 `HongKong`，支付/加密货币/Spotify 到 `US`，开发、云盘、Twitch、Discord 和 Docker 到 `Proxy`。其中 Google 系 AI 与其他 AI 是独立板块，不会因为都属于 AI 而混用策略。
 
 NSFW/成人内容单独维护在 `rules/nsfw.list`，当前 `missav.ws` 明确分流到 `Boom`，避免被通用 `Proxy` 或 `FINAL,DIRECT` 接管。
 
