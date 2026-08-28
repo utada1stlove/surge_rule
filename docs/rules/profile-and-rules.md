@@ -34,7 +34,7 @@ rules/
 - 通讯与社区；
 - 社交平台。
 
-这些板块目前都会统一交给 `Proxy` 策略组。`reject.list` 已有一组保守的广告/测量域名，主 Profile 另外引用一份外部广告 Rule Set。以后可以将某个板块拆成独立的 `.list` 文件，再在主 Profile 中交给不同策略组。
+目前大多数板块仍统一交给 `Proxy` 策略组；Telegram 已拆成独立的 `telegram.list`，按 mt6000 dae 意图交给 `Boom`。`reject.list` 已有一组保守的广告/测量域名，主 Profile 另外引用一份外部广告 Rule Set。以后可以继续将其他板块拆成独立的 `.list` 文件，再交给不同策略组。
 
 ## 从 dae 配置迁移
 
