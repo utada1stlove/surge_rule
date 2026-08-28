@@ -6,6 +6,7 @@
 DOMAIN-SUFFIX,telegram.org
 DOMAIN-SUFFIX,telegram.me
 DOMAIN-SUFFIX,t.me
+DOMAIN-SUFFIX,tdesktop.com
 DOMAIN-SUFFIX,telegra.ph
 DOMAIN-SUFFIX,telesco.pe
 DOMAIN-SUFFIX,telegram.dog
@@ -15,3 +16,13 @@ DOMAIN-SUFFIX,graph.org
 DOMAIN-SUFFIX,tx.me
 DOMAIN-SUFFIX,comments.app
 DOMAIN-SUFFIX,ton.org
+
+# Telegram 官方资源中使用的公开地址；保留 no-resolve，避免对 IP 规则额外触发 DNS。
+IP-CIDR,149.154.167.99/32,no-resolve
+IP-CIDR,149.154.175.10/32,no-resolve
+IP-CIDR,149.154.167.40/32,no-resolve
+IP-CIDR,149.154.167.42/32,no-resolve
+IP-CIDR,149.154.175.117/32,no-resolve
+IP-CIDR,149.154.175.50/32,no-resolve
+IP-CIDR,149.154.167.50/32,no-resolve
+IP-CIDR,149.154.167.51/32,no-resolve
