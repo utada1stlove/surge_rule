@@ -41,7 +41,7 @@ rules/
 
 ## 在 Surge 中使用规则
 
-将仓库发布到 GitHub 后，可以在 Profile 中引用 Raw 文件：
+Sub-Store 负责生成和更新节点；这份仓库只负责公开规则。先在 Surge 中创建或导入主 Profile，再在 `[Rule]` 中引用 Raw 文件：
 
 ```ini
 [Rule]
@@ -55,10 +55,12 @@ FINAL,DIRECT
 
 ## 使用方式
 
-1. 复制 `profile.example.conf`，填入自己的节点信息；
-2. 按需编辑 `rules/` 下的规则文件；
-3. 先使用 Surge 的 Profile 检查或请求列表验证变更；
-4. 确认无误后提交 Git，并等待 Surge 更新远程规则。
+1. 在 Sub-Store 中生成 Surge 格式的节点订阅；
+2. 复制 `profile.example.conf`，将 `policy-path` 替换为自己的 Sub-Store Surge 输出链接；
+3. 在 Surge 中安装这份主 Profile；
+4. 按需编辑 `rules/` 下的规则文件；
+5. 在 Surge 中检查 Profile 和请求列表；
+6. 提交 Git 后，Surge 会在更新 Rule Set 时获取新的规则；节点则按 `policy-path` 的更新周期刷新。
 
 规则按 Surge 从上到下、首条匹配生效的逻辑组织；主 Profile 应保留 `FINAL` 规则。[Surge 规则文档](https://manual.nssurge.com/rules/overview.html)
 

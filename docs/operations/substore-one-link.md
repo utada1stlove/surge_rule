@@ -2,23 +2,18 @@
 
 ## 目标
 
-在 iPhone Surge 中只保存一个 Sub-Store Surge 输出链接：
+在 iPhone Surge 中由 Sub-Store 通过 `policy-path` 提供节点，由主 Profile 提供规则：
 
 ```text
-Sub-Store 节点订阅
-        +
-GitHub 公开 Rule Set
-        ↓
-Sub-Store 输出的 Surge Profile
-        ↓
-iPhone Surge 一个链接
+Sub-Store 节点订阅 → Proxy Group.policy-path
+GitHub 公开 Rule Set → Surge 主 Profile 的 [Rule]
 ```
 
 你的节点订阅 URL 是私有凭据，本仓库不读取、不保存、不提交它。
 
 ## 最简单的第一步
 
-先直接在 Surge iPhone 中添加现有的 Sub-Store Surge 输出链接，确认：
+先把现有的 Sub-Store Surge 输出链接填入主 Profile 的 `policy-path`，再在 Surge iPhone 中安装主 Profile，确认：
 
 1. Profile 可以加载；
 2. 节点出现在策略组中；
@@ -30,7 +25,16 @@ Sub-Store 官方项目支持 Surge 作为输出平台，并支持 SS、AnyTLS、
 
 ## 接入本仓库规则
 
-在 Sub-Store 中为 Surge 输出配置或自定义模板时，将 [规则注入片段](../../templates/substore/surge-rule-section.conf) 放入生成 Profile 的 `[Rule]` 区域。
+在 Surge 主 Profile 的 `[Rule]` 区域加入 [规则片段](../../templates/substore/surge-rule-section.conf)。当前片段不是 Sub-Store 的节点操作配置，也不是完整 Profile。
+
+主 Profile 的策略组写法：
+
+```ini
+[Proxy Group]
+Proxy = select, policy-path="你的 Sub-Store Surge 输出链接", update-interval=86400, DIRECT
+```
+
+官方说明中，`policy-path` 可以加载远程代理列表或包含 `[Proxy]` 的完整 Surge Profile，并会缓存和定期重新下载。[Policy Including](https://manual.nssurge.com/policy-groups/policy-including.html)
 
 片段引用三个公开地址：
 
@@ -48,18 +52,15 @@ FINAL,DIRECT
 ## 一次配置后的日常流程
 
 ```text
-修改 GitHub rules/*.list
-        ↓
-提交并推送
-        ↓
-Surge 更新 Sub-Store 输出 Profile
-        ↓
-Surge 更新远程 Rule Set
-        ↓
-检查请求列表
+修改 GitHub rules/*.list        修改节点时更新 Sub-Store
+        ↓                                  ↓
+提交并推送规则                    刷新外部代理订阅
+        └──────────────┬───────────────┘
+                       ↓
+                 检查请求列表
 ```
 
-节点更新和规则更新是两条链路，但用户在 Surge 中只需要维护一个 Sub-Store Profile 链接。
+节点更新和规则更新是两条链路。主 Profile 需要长期保留；Sub-Store 链接通过 `policy-path` 提供节点来源。
 
 ## 重要限制
 
