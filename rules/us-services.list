@@ -1,0 +1,5 @@
+# [美国服务]
+# 对应 dae：Spotify / PayPal / Fox → US。
+DOMAIN-SUFFIX,spotify.com
+DOMAIN-SUFFIX,paypal.com
+DOMAIN-SUFFIX,fox.com

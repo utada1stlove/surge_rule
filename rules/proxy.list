@@ -24,26 +24,9 @@ DOMAIN-SUFFIX,docker.com
 DOMAIN-SUFFIX,docker.io
 
 # ============================================================
-# [AI：OpenAI / Anthropic / 其他]
-# 对应 dae：category-ai-!cn、openai；未来策略：sg。
-# Google 系 AI 不放在这里，单独见下一个区块。
+# [AI]
+# AI 已拆分为独立规则集，由主 Profile 分别绑定策略组。
 # ============================================================
-DOMAIN-SUFFIX,openai.com
-DOMAIN-SUFFIX,chatgpt.com
-DOMAIN-SUFFIX,oaistatic.com
-DOMAIN-SUFFIX,anthropic.com
-DOMAIN-SUFFIX,claude.ai
-DOMAIN-SUFFIX,perplexity.ai
-
-# ============================================================
-# [AI：Google 系]
-# 对应 dae：google-gemini，以及 google 排除 google-cn/youtube 的逻辑。
-# 未来策略：tw；不要与上面的 AI 区块合并。
-# ============================================================
-DOMAIN-SUFFIX,gemini.google.com
-DOMAIN-SUFFIX,aistudio.google.com
-DOMAIN-SUFFIX,ai.google.dev
-DOMAIN-SUFFIX,generativelanguage.googleapis.com
 
 # ============================================================
 # [搜索与 Google 通用服务]
@@ -55,54 +38,28 @@ DOMAIN-SUFFIX,googleapis.com
 DOMAIN-SUFFIX,gstatic.com
 
 # ============================================================
-# [视频与流媒体]
-# 对应 dae：YouTube → ctm，Twitch → stream。
-# 当前仍统一走 Proxy。
+# [视频与流媒体：其他]
+# Twitch 暂时仍统一走 Proxy；YouTube 已拆分至独立规则集 → CTM。
 # ============================================================
-DOMAIN-SUFFIX,youtube.com
-DOMAIN-SUFFIX,youtu.be
-DOMAIN-SUFFIX,ytimg.com
-DOMAIN-SUFFIX,googlevideo.com
 DOMAIN-SUFFIX,twitch.tv
 DOMAIN-SUFFIX,twitchcdn.net
 
 # ============================================================
-# [金融服务]
-# 对应 dae：category-finance、Bloomberg、WSJ、Economist、Reuters、Investing。
-# 未来策略：hk。
+# [金融服务：其他]
+# 金融域名已拆分至独立规则集 → HongKong。
 # ============================================================
-DOMAIN-SUFFIX,bloomberg.com
-DOMAIN-SUFFIX,wsj.com
-DOMAIN-SUFFIX,economist.com
-DOMAIN-SUFFIX,reuters.com
-DOMAIN-SUFFIX,investing.com
 
 # ============================================================
 # [通讯与社区]
-# Telegram 在 dae 中使用 boom，Discord 使用 udp 组；当前统一走 Proxy。
+# Telegram 已拆分至独立规则集 → Boom；Discord 暂时走 Proxy。
 # ============================================================
-DOMAIN-SUFFIX,telegram.org
-DOMAIN-SUFFIX,t.me
 DOMAIN-SUFFIX,discord.com
 DOMAIN-SUFFIX,discordapp.com
-DOMAIN-SUFFIX,reddit.com
-DOMAIN-SUFFIX,redd.it
 
 # ============================================================
-# [社交平台与美国服务]
-# 对应 dae：Twitter/Reddit → sg，Spotify/PayPal/Fox → us。
-# 当前仍统一走 Proxy。
+# [社交平台与美国服务：其他]
+# Twitter/Reddit 与 Spotify/PayPal/Fox 已拆分至独立规则集。
 # ============================================================
-DOMAIN-SUFFIX,spotify.com
-DOMAIN-SUFFIX,paypal.com
-DOMAIN-SUFFIX,fox.com
-
-# ============================================================
-# [社交平台]
-# ============================================================
-DOMAIN-SUFFIX,x.com
-DOMAIN-SUFFIX,twitter.com
-DOMAIN-SUFFIX,twimg.com
 
 # ============================================================
 # [云盘、下载与速度测试]

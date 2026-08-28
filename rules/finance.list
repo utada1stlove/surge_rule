@@ -1,0 +1,7 @@
+# [金融]
+# 对应 dae：金融 → HongKong。
+DOMAIN-SUFFIX,bloomberg.com
+DOMAIN-SUFFIX,wsj.com
+DOMAIN-SUFFIX,economist.com
+DOMAIN-SUFFIX,reuters.com
+DOMAIN-SUFFIX,investing.com
