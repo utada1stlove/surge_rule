@@ -7,8 +7,9 @@
 1. [iPhone 入门配置](getting-started/iphone-setup.md)：安装 Profile、启动 Surge、确认流量接管；
 2. [规则与策略组](rules/profile-and-rules.md)：理解节点、策略组和规则之间的关系；
 3. [GitHub 维护流程](operations/github-maintenance.md)：把公开规则拆分、发布和更新；
-4. [安全与隐私](security.md)：确认哪些内容可以公开；
-5. [排错手册](troubleshooting.md)：从状态、请求列表、DNS 和规则命中结果定位问题。
+4. [Sub-Store 单链接方案](operations/substore-one-link.md)：把私有节点和公开规则合成一个 Surge 输出链接；
+5. [安全与隐私](security.md)：确认哪些内容可以公开；
+6. [排错手册](troubleshooting.md)：从状态、请求列表、DNS 和规则命中结果定位问题。
 
 ## 这套体系解决什么问题
 

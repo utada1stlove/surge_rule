@@ -8,6 +8,7 @@
 - [iPhone 入门配置](docs/getting-started/iphone-setup.md)
 - [规则与策略组](docs/rules/profile-and-rules.md)
 - [GitHub 维护流程](docs/operations/github-maintenance.md)
+- [Sub-Store 单链接方案](docs/operations/substore-one-link.md)
 - [安全与隐私](docs/security.md)
 - [排错手册](docs/troubleshooting.md)
 
