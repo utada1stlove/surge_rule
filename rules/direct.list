@@ -1,0 +1,40 @@
+# ============================================================
+# [局域网与本机]
+# 这部分属于基础直连，不建议交给代理。
+# 文件只写匹配条件，不要追加 DIRECT。
+# ============================================================
+
+DOMAIN-SUFFIX,local
+DOMAIN-SUFFIX,localhost
+IP-CIDR,127.0.0.0/8
+IP-CIDR,169.254.0.0/16
+IP-CIDR,10.0.0.0/8
+IP-CIDR,172.16.0.0/12
+IP-CIDR,192.168.0.0/16
+IP-CIDR,100.64.0.0/10
+
+# ============================================================
+# [中国大陆服务与 CDN]
+# 对应 dae 中的 apple-cn、google-cn、bilibili、115、tencent、
+# huya、douyu、category-games@cn 等直连意图。
+# 当前只放明确的公共域名；更大的 CN 规则集以后单独引入。
+# ============================================================
+DOMAIN-SUFFIX,bilibili.com
+DOMAIN-SUFFIX,115.com
+DOMAIN-SUFFIX,tencent.com
+DOMAIN-SUFFIX,huya.com
+DOMAIN-SUFFIX,douyu.com
+DOMAIN-SUFFIX,xmancdn.com
+DOMAIN-SUFFIX,edu.cn
+DOMAIN-SUFFIX,aliyun.com
+DOMAIN-SUFFIX,aliyuncs.com
+DOMAIN-SUFFIX,huaweicloud.com
+
+# ============================================================
+# [Steam 内容与下载]
+# 对应 dae 中的 Steam CN 内容直连规则。
+# ============================================================
+DOMAIN-SUFFIX,steamcontent.com
+DOMAIN-SUFFIX,steamserver.net
+DOMAIN-SUFFIX,cmsteampowered.com
+DOMAIN-SUFFIX,steamcdn-a.akamaihd.net

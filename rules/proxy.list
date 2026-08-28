@@ -1,0 +1,117 @@
+# 从 mt6000 上的 dae 配置迁移出的代理候选规则。
+# 当前所有区块仍统一交给主 Profile 的 Proxy 策略组。
+# 注释中的“未来策略”用于保留原 dae 的分流意图，待 Surge 中配置多个策略组后再拆分。
+# 文件只写匹配条件，不要在末尾追加 Proxy；主 Profile 会指定策略。
+
+# ============================================================
+# [开发与代码托管]
+# 未来策略：code / proxy
+# ============================================================
+DOMAIN-SUFFIX,github.com
+DOMAIN-SUFFIX,githubusercontent.com
+DOMAIN-SUFFIX,githubassets.com
+DOMAIN-SUFFIX,gitlab.com
+
+# ============================================================
+# [开发依赖与容器]
+# 未来策略：code / proxy
+# ============================================================
+DOMAIN-SUFFIX,npmjs.org
+DOMAIN-SUFFIX,npmjs.com
+DOMAIN-SUFFIX,pypi.org
+DOMAIN-SUFFIX,pythonhosted.org
+DOMAIN-SUFFIX,docker.com
+DOMAIN-SUFFIX,docker.io
+
+# ============================================================
+# [AI：OpenAI / Anthropic / 其他]
+# 对应 dae：category-ai-!cn、openai；未来策略：sg。
+# Google 系 AI 不放在这里，单独见下一个区块。
+# ============================================================
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,anthropic.com
+DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,perplexity.ai
+
+# ============================================================
+# [AI：Google 系]
+# 对应 dae：google-gemini，以及 google 排除 google-cn/youtube 的逻辑。
+# 未来策略：tw；不要与上面的 AI 区块合并。
+# ============================================================
+DOMAIN-SUFFIX,gemini.google.com
+DOMAIN-SUFFIX,aistudio.google.com
+DOMAIN-SUFFIX,ai.google.dev
+DOMAIN-SUFFIX,generativelanguage.googleapis.com
+
+# ============================================================
+# [搜索与 Google 通用服务]
+# 当前统一走 Proxy。以后如果要严格复刻 dae，应将非 CN Google
+# 服务单独分到 tw，并把 google-cn 例外放在 direct.list。
+# ============================================================
+DOMAIN-SUFFIX,google.com
+DOMAIN-SUFFIX,googleapis.com
+DOMAIN-SUFFIX,gstatic.com
+
+# ============================================================
+# [视频与流媒体]
+# 对应 dae：YouTube → ctm，Twitch → stream。
+# 当前仍统一走 Proxy。
+# ============================================================
+DOMAIN-SUFFIX,youtube.com
+DOMAIN-SUFFIX,youtu.be
+DOMAIN-SUFFIX,ytimg.com
+DOMAIN-SUFFIX,googlevideo.com
+DOMAIN-SUFFIX,twitch.tv
+DOMAIN-SUFFIX,twitchcdn.net
+
+# ============================================================
+# [金融服务]
+# 对应 dae：category-finance、Bloomberg、WSJ、Economist、Reuters、Investing。
+# 未来策略：hk。
+# ============================================================
+DOMAIN-SUFFIX,bloomberg.com
+DOMAIN-SUFFIX,wsj.com
+DOMAIN-SUFFIX,economist.com
+DOMAIN-SUFFIX,reuters.com
+DOMAIN-SUFFIX,investing.com
+
+# ============================================================
+# [通讯与社区]
+# Telegram 在 dae 中使用 boom，Discord 使用 udp 组；当前统一走 Proxy。
+# ============================================================
+DOMAIN-SUFFIX,telegram.org
+DOMAIN-SUFFIX,t.me
+DOMAIN-SUFFIX,discord.com
+DOMAIN-SUFFIX,discordapp.com
+DOMAIN-SUFFIX,reddit.com
+DOMAIN-SUFFIX,redd.it
+
+# ============================================================
+# [社交平台与美国服务]
+# 对应 dae：Twitter/Reddit → sg，Spotify/PayPal/Fox → us。
+# 当前仍统一走 Proxy。
+# ============================================================
+DOMAIN-SUFFIX,spotify.com
+DOMAIN-SUFFIX,paypal.com
+DOMAIN-SUFFIX,fox.com
+
+# ============================================================
+# [社交平台]
+# ============================================================
+DOMAIN-SUFFIX,x.com
+DOMAIN-SUFFIX,twitter.com
+DOMAIN-SUFFIX,twimg.com
+
+# ============================================================
+# [云盘、下载与速度测试]
+# 对应 dae：OneDrive/PikPak/Dropbox 等，未来可按用途拆分。
+# ============================================================
+DOMAIN-SUFFIX,onedrive.com
+DOMAIN-SUFFIX,live.com
+DOMAIN-SUFFIX,dropbox.com
+DOMAIN-SUFFIX,pikpak.com
+DOMAIN-SUFFIX,mypikpak.net
+DOMAIN-SUFFIX,speedtest.net
+DOMAIN-SUFFIX,fast.com
