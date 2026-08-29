@@ -10,6 +10,7 @@
 - [规则与策略组](docs/rules/profile-and-rules.md)
 - [GitHub 维护流程](docs/operations/github-maintenance.md)
 - [Sub-Store 单链接方案](docs/operations/substore-one-link.md)
+- [私有 DoH 备用端点](docs/operations/private-doh.md)
 - [VPS 私有 Profile 服务](docs/operations/private-profile-service.md)
 - [安全与隐私](docs/security.md)
 - [排错手册](docs/troubleshooting.md)

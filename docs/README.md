@@ -8,8 +8,9 @@
 2. [规则与策略组](rules/profile-and-rules.md)：理解节点、策略组和规则之间的关系；
 3. [GitHub 维护流程](operations/github-maintenance.md)：把公开规则拆分、发布和更新；
 4. [Sub-Store 单链接方案](operations/substore-one-link.md)：把私有节点和公开规则合成一个 Surge 输出链接；
-5. [安全与隐私](security.md)：确认哪些内容可以公开；
-6. [排错手册](troubleshooting.md)：从状态、请求列表、DNS 和规则命中结果定位问题。
+5. [私有 DoH 备用端点](operations/private-doh.md)：记录可手动启用的自建 DoH 地址与使用边界；
+6. [安全与隐私](security.md)：确认哪些内容可以公开；
+7. [排错手册](troubleshooting.md)：从状态、请求列表、DNS 和规则命中结果定位问题。
 
 ## 这套体系解决什么问题
 
