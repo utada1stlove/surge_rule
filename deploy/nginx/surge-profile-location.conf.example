@@ -1,0 +1,12 @@
+# Include this file inside the HTTPS server block for the private profile host.
+# Replace __PRIVATE_PATH__ with a cryptographically random URL path component.
+location ^~ /__PRIVATE_PATH__/ {
+    alias /var/lib/surge-profile/current/;
+    autoindex off;
+    default_type text/plain;
+    charset utf-8;
+    add_header Cache-Control "no-store" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    access_log off;
+    log_not_found off;
+}

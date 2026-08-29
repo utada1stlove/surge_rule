@@ -1,0 +1,6 @@
+{
+  "manifest_url": "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/config/private-profile-templates.json",
+  "output_root": "/var/lib/surge-profile",
+  "public_base_url": "https://eb.latexme.de/__PRIVATE_PATH__",
+  "timeout_seconds": 30
+}

@@ -4,11 +4,13 @@
 
 ## 文档入口
 
+- [三路简洁配置模板](surge-simple.example.conf)
 - [文档总览](docs/README.md)
 - [iPhone 入门配置](docs/getting-started/iphone-setup.md)
 - [规则与策略组](docs/rules/profile-and-rules.md)
 - [GitHub 维护流程](docs/operations/github-maintenance.md)
 - [Sub-Store 单链接方案](docs/operations/substore-one-link.md)
+- [VPS 私有 Profile 服务](docs/operations/private-profile-service.md)
 - [安全与隐私](docs/security.md)
 - [排错手册](docs/troubleshooting.md)
 
@@ -32,12 +34,23 @@
 ## 目录
 
 ```text
-profile.example.conf   # 主 Profile 模板，不含真实节点
+profile.example.conf       # 多策略组 Profile 模板
+surge-simple.example.conf  # DIRECT / Proxy / REJECT 简洁模板
 rules/
   direct.list           # 直连规则
   proxy.list            # 通用代理候选规则
   reject.list           # 拦截规则（保守留空）
 ```
+
+## 简洁配置
+
+如果不需要按地区或服务拆分策略组，使用 `surge-simple.example.conf`。它只有三种处理结果：
+
+- 国内及明确直连规则使用 `DIRECT`；
+- 广告及明确拦截规则使用 `REJECT`；
+- 其余流量进入唯一的 `Proxy` 策略组。
+
+`Proxy` 通过 `policy-path` 加载 Sub-Store 输出的多个节点，你可以在 Surge 中手动切换。使用前只需把模板中的示例订阅地址替换为自己的私有链接；不要把替换后的个人配置提交到公开仓库。
 
 ## 在 Surge 中使用规则
 

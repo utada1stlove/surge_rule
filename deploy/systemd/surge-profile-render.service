@@ -1,0 +1,15 @@
+[Unit]
+Description=Render private Surge profiles from public templates
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/libexec/surge-profile/render-private-profiles.py
+User=root
+Group=root
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/surge-profile
+NoNewPrivileges=true
