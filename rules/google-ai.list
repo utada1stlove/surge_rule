@@ -1,5 +1,5 @@
 # [Google 系 AI]
-# 临时映射：Google 系 AI → HomeProxy（暂代 Taiwan）。
+# Google 系 AI 由主 Profile 映射到 TaiWan；TaiWan 会识别 Hinet 等节点名。
 DOMAIN-SUFFIX,gemini.google.com
 DOMAIN-SUFFIX,aistudio.google.com
 DOMAIN-SUFFIX,ai.google.dev

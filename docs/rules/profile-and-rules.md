@@ -34,7 +34,11 @@ rules/
 - 通讯与社区；
 - 社交平台。
 
-当前主 Profile 已按 DAE 意图把主要板块映射到策略组：广告/跟踪到 `REJECT`，Telegram 到 `Boom`，Google/Gemini 到 `HomeProxy`，其他 AI 与社交到 `Singapore`，YouTube 到 `CTM`，TikTok 到独立的 `TikTok` 策略组，金融到 `HongKong`，支付/加密货币/Spotify 到 `US`，开发、云盘、Twitch、Discord 和 Docker 到 `Proxy`。其中 Google 系 AI 与其他 AI 是独立板块，不会因为都属于 AI 而混用策略。
+当前主 Profile 已按 DAE 意图把主要板块映射到策略组：广告/跟踪到 `REJECT`，Telegram 到 `Boom`，Google/Gemini 到 `TaiWan`，其他 AI 与社交到 `Singapore`，YouTube 到 `CTM`，TikTok 到独立的 `TikTok` 策略组，Bilibili 到可手动选择 `REJECT / DIRECT / HongKong / TaiWan / CTM` 的 `Bilibili` 策略组，金融到 `HongKong`，支付/加密货币/Spotify 到 `US`，开发、云盘、Twitch、Discord 和 Docker 到 `Proxy`。其中 Google 系 AI 与其他 AI 是独立板块，不会因为都属于 AI 而混用策略。
+
+地区策略组会按节点名识别常见家宽运营商：`HKBN`、`HKT`、`PCCW`、`Netvigator`、`WTT`、`i-Cable`、`SmarTone`、`HGC`、`CMHK` → `HongKong`；`Hinet`、`Chunghwa`、`Seednet`、`Fetnet`、`FarEasTone`、`Taiwan Mobile`、`TWM Broadband` → `TaiWan`；`SoftBank`、`docomo`、`NTT`、`NURO`、`IIJ`、`BIGLOBE`、`plala`、`Rakuten`、`OCN` → `Japan`；`Singtel`、`StarHub`、`MyRepublic`、`ViewQwest`、`M1` → `Singapore`；`AT&T` / `ATT`、`Verizon`、`Comcast` / `Xfinity`、`Spectrum` / `Charter`、`Cox`、`Frontier`、`CenturyLink`、`Quantum Fiber`、`Optimum`、`T-Mobile` → `United States`。`HomeProxy` 仍保留给手工命名的既有节点，但 Google/Gemini 现在使用 `TaiWan`。
+
+这些是节点分类线索，不是路由规则；无法确定地区的节点仍保留在 `Proxy` 中供手动选择。为避免跨地区误匹配，未使用过短或可能跨地区的关键词，例如 `au`、`So-net`。
 
 NSFW/成人内容单独维护在 `rules/nsfw.list`，其中包含从 DAE 展开的 Ehentai、PikPak、OneDrive、MissAV、JavDB、Jable 及显式成人站点。`hentaiverse.org` 是例外：因为 DAE 在成人规则之前已将它分到 `HongKong`，Surge 也保持该优先级。未命中的请求由当前 Profile 的 `FINAL,Proxy` 兜底，与 DAE 的 `fallback: proxy` 对齐。
 
