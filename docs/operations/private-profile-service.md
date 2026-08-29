@@ -4,6 +4,8 @@
 
 GitHub 只保存带占位符的公开模板。VPS 本地保存真实 Sub-Store 链接，并将模板渲染为只能通过随机 HTTPS 路径访问的托管 Profile。真实订阅 URL 不进入 GitHub、systemd unit 或 Nginx 配置。
 
+仓库中的 `deploy/install-private-profile-service.sh` 用于安装或更新 VPS 服务。它保留已经生成的随机路径和秘密文件，并在修改 Nginx 前保存可恢复副本。
+
 ## 更新链路
 
 ```text
