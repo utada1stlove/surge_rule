@@ -1,0 +1,4 @@
+interface:
+  display_name: Private Profile Operations
+  short_description: Safely manage the VPS-hosted private Surge Profile service
+  default_prompt: Check the private Surge Profile service health without revealing any private URLs or subscription data.

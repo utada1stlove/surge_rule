@@ -1,0 +1,4 @@
+interface:
+  display_name: Surge Profile Lint
+  short_description: Check public Surge Profile and Rule Set consistency
+  default_prompt: Validate the public Surge Profiles and Rule Sets in this repository, then explain any errors or warnings.

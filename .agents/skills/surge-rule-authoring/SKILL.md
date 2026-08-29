@@ -18,13 +18,13 @@ Use this skill when the user wants to create, review, reorganize, or migrate Sur
 ## Default workflow
 
 1. Read the repository `AGENTS.md`, current Profile, relevant Rule Sets, and migration notes before editing.
-2. Identify the requested traffic categories and the current broad policies: `DIRECT`, `Proxy`, and `REJECT`.
+2. For a request such as “route service X through Y”, follow [the service-routing change guide](references/service-routing-change.md). Establish the requested hostnames, intended policy, affected Profile variant, and test case before making a change.
 3. Preserve broad policy behavior first. Add category comments and rules before splitting policy groups.
 4. Convert DAE intent into Surge rules using the reference below. Keep the most specific rules before broad catch-alls and keep `FINAL` last in the main `[Rule]` section.
 5. Put public domain/IP rules in `rules/`. Keep personal nodes and private exceptions outside public files.
 6. Update the relevant documentation when a new category, source, or limitation is introduced.
-7. Validate formatting, trailing whitespace, secret patterns, local links, and generated-artifact leakage. If a real Surge runtime is available, validate the Profile with that runtime; otherwise state that semantic validation remains pending.
-8. Summarize changed files, policy mapping, unverified assumptions, and the next safe test.
+7. Run `surge-profile-lint` and the repository's basic validation. If a real Surge runtime is available, validate the Profile with that runtime; otherwise state that semantic validation remains pending.
+8. Summarize changed files, policy mapping, unverified assumptions, the iPhone verification action, and the smallest rollback target.
 
 ## DAE migration principles
 

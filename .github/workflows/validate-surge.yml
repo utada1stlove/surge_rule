@@ -1,0 +1,24 @@
+name: Validate Surge configuration
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Validate public Profiles and Rule Sets
+        run: python3 .agents/skills/surge-profile-lint/scripts/lint_surge_profiles.py .
+      - name: Test private Profile renderer
+        run: python3 scripts/test-private-profile-renderer.py
+      - name: Test private Profile control command
+        run: python3 scripts/test-surge-profilectl.py
+      - name: Run repository baseline checks
+        run: bash .agents/skills/basic-validation/scripts/validate_workspace.sh .

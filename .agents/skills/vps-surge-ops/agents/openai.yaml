@@ -1,0 +1,4 @@
+interface:
+  display_name: VPS Surge Operations
+  short_description: Inspect and safely operate Surge VPS services and proxy nodes
+  default_prompt: Inspect the specified VPS health and Surge-related services without exposing secrets or changing server state.

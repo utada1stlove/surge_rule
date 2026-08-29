@@ -1,0 +1,4 @@
+interface:
+  display_name: Surge Log Triage
+  short_description: Diagnose routing and proxy failures from redacted logs
+  default_prompt: Diagnose this Surge connection problem from a minimal redacted log excerpt; identify the failed layer before proposing changes.
