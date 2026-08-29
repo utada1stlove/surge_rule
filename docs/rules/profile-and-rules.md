@@ -34,7 +34,7 @@ rules/
 - 通讯与社区；
 - 社交平台。
 
-当前主 Profile 已按 DAE 意图把主要板块映射到策略组：广告/跟踪到 `REJECT`，Telegram 到 `Boom`，Google/Gemini 到 `TaiWan`，其他 AI 与社交到 `Singapore`，YouTube 到 `CTM`，TikTok 到独立的 `TikTok` 策略组，Bilibili 到可手动选择 `REJECT / DIRECT / HongKong / TaiWan / CTM` 的 `Bilibili` 策略组，金融到 `HongKong`，支付/加密货币/Spotify 到 `US`，开发、云盘、Twitch、Discord 和 Docker 到 `Proxy`。其中 Google 系 AI 与其他 AI 是独立板块，不会因为都属于 AI 而混用策略。
+当前主 Profile 已按 DAE 意图把主要板块映射到策略组：广告/跟踪到 `REJECT`，Telegram 到 `Boom`，Google/Gemini 到 `TaiWan`，其他 AI 与社交到 `Singapore`，YouTube 到 `CTM`，TikTok 到独立的 `TikTok` 策略组，Bilibili 到可手动选择 `REJECT / DIRECT / HongKong / TaiWan / CTM / HomeProxy` 的 `Bilibili` 策略组，金融到 `HongKong`，支付/加密货币/Spotify 到 `US`，开发、云盘、Twitch、Discord 和 Docker 到 `Proxy`。其中 Google 系 AI 与其他 AI 是独立板块，不会因为都属于 AI 而混用策略。
 
 地区策略组会按节点名识别常见家宽运营商：`HKBN`、`HKT`、`PCCW`、`Netvigator`、`WTT`、`i-Cable`、`SmarTone`、`HGC`、`CMHK` → `HongKong`；`Hinet`、`Chunghwa`、`Seednet`、`Fetnet`、`FarEasTone`、`Taiwan Mobile`、`TWM Broadband` → `TaiWan`；`SoftBank`、`docomo`、`NTT`、`NURO`、`IIJ`、`BIGLOBE`、`plala`、`Rakuten`、`OCN` → `Japan`；`Singtel`、`StarHub`、`MyRepublic`、`ViewQwest`、`M1` → `Singapore`；`AT&T` / `ATT`、`Verizon`、`Comcast` / `Xfinity`、`Spectrum` / `Charter`、`Cox`、`Frontier`、`CenturyLink`、`Quantum Fiber`、`Optimum`、`T-Mobile` → `United States`。`HomeProxy` 仍保留给手工命名的既有节点，但 Google/Gemini 现在使用 `TaiWan`。
 
