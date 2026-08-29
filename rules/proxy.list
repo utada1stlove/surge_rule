@@ -11,6 +11,10 @@ DOMAIN-SUFFIX,github.com
 DOMAIN-SUFFIX,githubusercontent.com
 DOMAIN-SUFFIX,githubassets.com
 DOMAIN-SUFFIX,gitlab.com
+DOMAIN-SUFFIX,aihub.top
+DOMAIN-SUFFIX,cloudfunctions.net
+
+# DAE 显式代理域名；个人域名 vpsastroqore.uk 不公开迁移。
 
 # ============================================================
 # [开发依赖与容器]
@@ -67,8 +71,6 @@ DOMAIN-SUFFIX,discordapp.com
 # ============================================================
 DOMAIN-SUFFIX,onedrive.com
 DOMAIN-SUFFIX,live.com
-DOMAIN-SUFFIX,dropbox.com
 DOMAIN-SUFFIX,pikpak.com
-DOMAIN-SUFFIX,mypikpak.net
 DOMAIN-SUFFIX,speedtest.net
 DOMAIN-SUFFIX,fast.com

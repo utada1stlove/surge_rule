@@ -1,0 +1,11 @@
+# Generated from https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat
+# geosite: missav
+# Do not edit manually; regenerate with scripts/generate-geosite.mjs.
+
+DOMAIN-SUFFIX,missav.ai
+DOMAIN-SUFFIX,missav.com
+DOMAIN-SUFFIX,missav.live
+DOMAIN-SUFFIX,missav.uno
+DOMAIN-SUFFIX,missav.vip
+DOMAIN-SUFFIX,missav.ws
+DOMAIN-SUFFIX,missav123.com

@@ -1,0 +1,11 @@
+# Generated from https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat
+# geosite: pikpak
+# Do not edit manually; regenerate with scripts/generate-geosite.mjs.
+
+DOMAIN,o4504926511693824.ingest.sentry.io
+DOMAIN-SUFFIX,mypikpak.com
+DOMAIN-SUFFIX,mypikpak.net
+DOMAIN-SUFFIX,pickpackapp.com
+DOMAIN-SUFFIX,pikpak.io
+DOMAIN-SUFFIX,pikpak.me
+DOMAIN-SUFFIX,pikpakdrive.com

@@ -1,0 +1,51 @@
+{
+  "source": {
+    "name": "Loyalsoldier/v2ray-rules-dat",
+    "url": "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
+  },
+  "exclude": [
+    "gfw",
+    "category-games@cn"
+  ],
+  "geosites": [
+    "cn",
+    "apple-cn",
+    "google-cn",
+    "bilibili",
+    "115",
+    "tencent",
+    "huya",
+    "douyu",
+    "category-ai-!cn",
+    "openai",
+    "google-gemini",
+    "google",
+    "github",
+    "youtube",
+    "twitch",
+    "telegram",
+    "discord",
+    "twitter",
+    "reddit",
+    "spotify",
+    "paypal",
+    "apple",
+    "fox",
+    "dropbox",
+    "onedrive",
+    "pikpak",
+    "ehentai",
+    "missav",
+    "javdb",
+    "jable",
+    "category-finance",
+    "bloomberg",
+    "wsj",
+    "economist",
+    "reuters",
+    "category-porn",
+    "category-ads",
+    "category-ads-all",
+    "category-speedtest"
+  ]
+}

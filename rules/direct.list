@@ -29,6 +29,10 @@ DOMAIN-SUFFIX,edu.cn
 DOMAIN-SUFFIX,aliyun.com
 DOMAIN-SUFFIX,aliyuncs.com
 DOMAIN-SUFFIX,huaweicloud.com
+DOMAIN-SUFFIX,api.deeplx.org
+DOMAIN-SUFFIX,eudic.net
+DOMAIN-SUFFIX,flyapi.tech
+DOMAIN-SUFFIX,fastly.mirror.pkgbuild.com
 
 # ============================================================
 # [Steam 内容与下载]

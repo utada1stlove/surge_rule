@@ -1,12 +1,8 @@
-# [美国服务]
-# 对应 dae：Spotify / PayPal / Fox → US。
-DOMAIN-SUFFIX,spotify.com
-DOMAIN-SUFFIX,paypal.com
-DOMAIN-SUFFIX,fox.com
-DOMAIN-SUFFIX,newapi.gs
-DOMAIN-SUFFIX,timicc.com
+# Generated from https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat
+# geosite: dropbox
+# Do not edit manually; regenerate with scripts/generate-geosite.mjs.
 
-# DAE geosite:dropbox → US。
+DOMAIN,paper-attachments.s3.amazonaws.com
 DOMAIN-SUFFIX,db.tt
 DOMAIN-SUFFIX,dropbox-dns.com
 DOMAIN-SUFFIX,dropbox.com
@@ -22,4 +18,3 @@ DOMAIN-SUFFIX,dropboxpartners.com
 DOMAIN-SUFFIX,dropboxstatic.com
 DOMAIN-SUFFIX,dropboxusercontent.com
 DOMAIN-SUFFIX,getdropbox.com
-DOMAIN,paper-attachments.s3.amazonaws.com

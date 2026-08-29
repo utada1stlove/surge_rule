@@ -1,0 +1,7 @@
+# Generated from https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat
+# geosite: jable
+# Do not edit manually; regenerate with scripts/generate-geosite.mjs.
+
+DOMAIN-SUFFIX,cdnlab.live
+DOMAIN-SUFFIX,jable.tv
+DOMAIN-SUFFIX,mushroomtrack.com

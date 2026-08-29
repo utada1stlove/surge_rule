@@ -13,7 +13,7 @@ mt6000 上的 dae 配置采用“先保护基础流量，再按业务分类”�
   → CN / GFW / fallback 兜底
 ```
 
-Surge 的公开规则仓库目前只保留三种总策略：`DIRECT`、`Proxy`、`REJECT`。原 dae 中的 `hk`、`sg`、`us`、`stream`、`ctm`、`boom`、`udp` 等组，先作为注释中的未来策略标记，不直接写入不存在的 Surge 策略组。
+Surge 的公开规则仓库使用 `DIRECT`、`Proxy`、`REJECT` 以及 Profile 中已配置的地区策略组。原 dae 中的 `mac`、`sip`、`pname`、网卡、端口、节点 IP 和设备例外不迁移到公开 Surge 文件；当前 Profile 的 `FINAL,Proxy` 对齐 dae 的 `fallback: proxy`。
 
 ## 当前迁移表
 
@@ -29,6 +29,8 @@ Surge 的公开规则仓库目前只保留三种总策略：`DIRECT`、`Proxy`�
 | Telegram | `proxy.list` → `Proxy` | `boom` |
 | Twitter / Reddit | `proxy.list` → `Proxy` | `sg` |
 | Spotify / PayPal / Fox | `proxy.list` → `Proxy` | `us` |
+| PikPak / OneDrive / Ehentai / 成人站点 | `nsfw.list` → `Boom` | 按 dae geosite 展开 |
+| Dropbox | `us-services.list` → `US` | 保持 dae 当前策略 |
 | 中国服务、Steam 内容 | `direct.list` → `DIRECT` | 保持直连 |
 | 广告与跟踪 | `reject.list` 暂留空 | 独立清单后再启用 |
 

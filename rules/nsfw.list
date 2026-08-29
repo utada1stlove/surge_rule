@@ -3,4 +3,64 @@
 # 对应 dae：NSFW / 大流量内容 → Boom。
 # 文件只写匹配条件，策略绑定在主 Profile。
 # ============================================================
+
+# DAE geosite:ehentai；hentaiverse.org 在 dae 中更早被金融规则分到 HongKong，
+# 因此不在这里重复声明，保持 DAE 的首条匹配顺序。
+DOMAIN-SUFFIX,e-hentai.org
+DOMAIN-SUFFIX,ehgt.org
+DOMAIN-SUFFIX,ehtracker.org
+DOMAIN-SUFFIX,ehwiki.org
+DOMAIN-SUFFIX,exhentai.org
+DOMAIN-SUFFIX,hath.network
+DOMAIN-SUFFIX,hentaiathome.net
+
+# DAE geosite:pikpak / geosite:onedrive → Boom。
+DOMAIN-SUFFIX,mypikpak.com
+DOMAIN-SUFFIX,mypikpak.net
+DOMAIN-SUFFIX,pickpackapp.com
+DOMAIN-SUFFIX,pikpak.io
+DOMAIN-SUFFIX,pikpak.me
+DOMAIN-SUFFIX,pikpakdrive.com
+DOMAIN-SUFFIX,1drv.com
+DOMAIN-SUFFIX,1drv.ms
+DOMAIN-SUFFIX,livefilestore.com
+DOMAIN-SUFFIX,onedrive.co
+DOMAIN-SUFFIX,onedrive.co.uk
+DOMAIN-SUFFIX,onedrive.com
+DOMAIN-SUFFIX,onedrive.eu
+DOMAIN-SUFFIX,onedrive.net
+DOMAIN-SUFFIX,onedrive.org
+DOMAIN-SUFFIX,onedrive.live.com
+DOMAIN-SUFFIX,storage.live.com
+
+# DAE 中显式列出的成人站点。
+DOMAIN-SUFFIX,missav.live
+DOMAIN-SUFFIX,hanimeone.me
+DOMAIN-SUFFIX,hanime1.com
+DOMAIN-SUFFIX,javdb.com
+DOMAIN-SUFFIX,bttss.cc
+DOMAIN-SUFFIX,timg216.top
+DOMAIN-SUFFIX,maomiav.one
+DOMAIN,www.atfsegv.com
+DOMAIN-SUFFIX,ttcdn.cc
+DOMAIN-SUFFIX,fourhoi.com
+DOMAIN-SUFFIX,alonestreaming.com
+DOMAIN-SUFFIX,recombee.com
+DOMAIN-SUFFIX,nineyu.com
+DOMAIN-SUFFIX,surrit.com
+
+# DAE geosite:missav / geosite:javdb / geosite:jable。
+DOMAIN-SUFFIX,missav.ai
+DOMAIN-SUFFIX,missav.com
+DOMAIN-SUFFIX,missav.uno
+DOMAIN-SUFFIX,missav.vip
+DOMAIN-SUFFIX,missav123.com
+DOMAIN-SUFFIX,jav.app
+DOMAIN-SUFFIX,jdbimgs.com
+DOMAIN-SUFFIX,jdbstatic.com
+DOMAIN-REGEX,^javdb[0-9]+\.com$
+DOMAIN-SUFFIX,cdnlab.live
+DOMAIN-SUFFIX,jable.tv
+DOMAIN-SUFFIX,mushroomtrack.com
+
 DOMAIN-SUFFIX,missav.ws

@@ -36,9 +36,9 @@ rules/
 
 当前主 Profile 已按 DAE 意图把主要板块映射到策略组：广告/跟踪到 `REJECT`，Telegram 到 `Boom`，Google/Gemini 到 `HomeProxy`，其他 AI 与社交到 `Singapore`，YouTube 到 `CTM`，TikTok 到独立的 `TikTok` 策略组，金融到 `HongKong`，支付/加密货币/Spotify 到 `US`，开发、云盘、Twitch、Discord 和 Docker 到 `Proxy`。其中 Google 系 AI 与其他 AI 是独立板块，不会因为都属于 AI 而混用策略。
 
-NSFW/成人内容单独维护在 `rules/nsfw.list`，当前 `missav.ws` 明确分流到 `Boom`，避免被通用 `Proxy` 或 `FINAL,DIRECT` 接管。
+NSFW/成人内容单独维护在 `rules/nsfw.list`，其中包含从 DAE 展开的 Ehentai、PikPak、OneDrive、MissAV、JavDB、Jable 及显式成人站点。`hentaiverse.org` 是例外：因为 DAE 在成人规则之前已将它分到 `HongKong`，Surge 也保持该优先级。未命中的请求由当前 Profile 的 `FINAL,Proxy` 兜底，与 DAE 的 `fallback: proxy` 对齐。
 
-大体量或维护成本高的板块优先引用成熟的公开 Surge Rule Set（当前采用 blackmatrix7 的 YouTube、Telegram、Google、Gemini、OpenAI、Anthropic、Claude、Bloomberg、ThomsonReuters、PayPal、Cryptocurrency、Twitter、Reddit、Spotify、GitHub、OneDrive、Dropbox、Twitch、Discord、Docker），本仓库的本地 `.list` 负责补充小范围规则和明确的私有分流意图。外部规则文件只写匹配条件，不写策略名称；策略绑定统一留在主 Profile，便于以后替换策略组。
+大体量或维护成本高的板块优先引用成熟的公开 Surge Rule Set（当前采用 blackmatrix7 的 YouTube、Telegram、Google、Gemini、OpenAI、Anthropic、Claude、Bloomberg、ThomsonReuters、PayPal、Cryptocurrency、Twitter、Reddit、Spotify、GitHub、OneDrive、Dropbox、Twitch、Discord、Docker 和 Fox），本仓库的本地 `.list` 负责补充小范围规则和明确的私有分流意图。`category-porn` 没有合适的 BlackMatrix/Sukka 完整替代，因此使用 Workflow 生成的独立规则文件并实际分配给 `Boom`。外部规则文件只写匹配条件，不写策略名称；策略绑定统一留在主 Profile，便于以后替换策略组。
 
 ## 从 dae 配置迁移
 
