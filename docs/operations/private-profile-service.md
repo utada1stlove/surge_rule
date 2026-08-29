@@ -56,11 +56,38 @@ surge-profilectl clear main
 ## 状态和输出 URL
 
 ```bash
-surge-profilectl status
-surge-profilectl urls
+ssh eb surge-profilectl status
+ssh eb surge-profilectl urls
 ```
 
 `status` 只显示订阅是否已配置，不显示真实地址。`urls` 显示应添加到 Surge 的私有托管 Profile URL。
+
+## 日常速查
+
+```bash
+# 立即更新 GitHub 模板
+ssh eb surge-profilectl update
+
+# 更换所有 Profile 默认使用的订阅，输入内容不会回显
+ssh -t eb surge-profilectl set-default
+
+# 为单独 Profile 设置或清除订阅覆盖
+ssh -t eb surge-profilectl set main
+ssh -t eb surge-profilectl set simple
+ssh eb surge-profilectl clear main
+ssh eb surge-profilectl clear simple
+
+# 检查 timer 和最近一次服务日志
+ssh eb systemctl list-timers surge-profile-render.timer --no-pager
+ssh eb journalctl -u surge-profile-render.service -n 20 --no-pager
+```
+
+重新安装 Surge Profile 时，先运行 `ssh eb surge-profilectl urls`。选择：
+
+- `surge-main.conf`：Boom、HomeProxy、Singapore、HongKong、CTM、US 等多策略组；
+- `surge-simple.conf`：只有 `DIRECT / Proxy / REJECT`，在一个 `Proxy` 组中切换订阅节点。
+
+私有 URL 包含随机路径，相当于访问凭据。不要放入 GitHub、公开截图或第三方文档。
 
 ## 增加 Profile
 

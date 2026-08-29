@@ -50,7 +50,31 @@ rules/
 - 广告及明确拦截规则使用 `REJECT`；
 - 其余流量进入唯一的 `Proxy` 策略组。
 
-`Proxy` 通过 `policy-path` 加载 Sub-Store 输出的多个节点，你可以在 Surge 中手动切换。使用前只需把模板中的示例订阅地址替换为自己的私有链接；不要把替换后的个人配置提交到公开仓库。
+`Proxy` 通过 `policy-path` 加载 Sub-Store 输出的多个节点，你可以在 Surge 中手动切换。公开模板包含占位符，由 VPS 私有 Profile 服务注入真实链接；不要直接把真实链接写回仓库。
+
+## VPS 日常速查
+
+当前私有 Profile 服务部署在 SSH 主机 `eb`。忘记链接或需要维护时使用：
+
+```bash
+# 查看应添加到 Surge 的两条私有 Profile URL
+ssh eb surge-profilectl urls
+
+# 查看当前 release、订阅设置和输出文件
+ssh eb surge-profilectl status
+
+# 立即读取 GitHub 最新模板并发布
+ssh eb surge-profilectl update
+
+# 隐藏输入新的默认 Sub-Store 链接，并立即验证和发布
+ssh -t eb surge-profilectl set-default
+
+# 只覆盖其中一份配置的订阅；删除覆盖后恢复使用默认订阅
+ssh -t eb surge-profilectl set simple
+ssh eb surge-profilectl clear simple
+```
+
+`surge-main.conf` 是多策略组配置；`surge-simple.conf` 只有 `DIRECT / Proxy / REJECT`。两条 URL 都含随机私有路径，不要公开、截图或提交到 GitHub。详细运行和恢复说明见 [VPS 私有 Profile 服务](docs/operations/private-profile-service.md)。
 
 ## 在 Surge 中使用规则
 
@@ -68,12 +92,11 @@ FINAL,DIRECT
 
 ## 使用方式
 
-1. 在 Sub-Store 中生成 Surge 格式的节点订阅；
-2. 复制 `profile.example.conf`，将 `policy-path` 替换为自己的 Sub-Store Surge 输出链接；
-3. 在 Surge 中安装这份主 Profile；
-4. 按需编辑 `rules/` 下的规则文件；
-5. 在 Surge 中检查 Profile 和请求列表；
-6. 提交 Git 后，Surge 会在更新 Rule Set 时获取新的规则；节点则按 `policy-path` 的更新周期刷新。
+1. 运行 `ssh eb surge-profilectl urls`；
+2. 复制需要的私有 URL，在 Surge 中选择“从 URL 下载配置”；
+3. 节点变更由 Sub-Store 提供，GitHub 模板由 VPS 每 15 分钟检查；
+4. 需要立即同步时运行 `ssh eb surge-profilectl update`；
+5. 在 Surge 请求列表中检查规则和策略命中。
 
 规则按 Surge 从上到下、首条匹配生效的逻辑组织；主 Profile 应保留 `FINAL` 规则。[Surge 规则文档](https://manual.nssurge.com/rules/overview.html)
 
