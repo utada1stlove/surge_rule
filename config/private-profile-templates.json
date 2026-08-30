@@ -10,6 +10,11 @@
       "id": "simple",
       "template_url": "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/surge-simple.example.conf",
       "output": "surge-simple.conf"
+    },
+    {
+      "id": "home-wg",
+      "template_url": "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/surge-home-wg.example.conf",
+      "output": "surge-home-wg.conf"
     }
   ]
 }
