@@ -34,11 +34,11 @@ rules/
 - 通讯与社区；
 - 社交平台。
 
-当前主 Profile 已按 DAE 意图把主要板块映射到策略组：广告/跟踪到 `REJECT`，Telegram 到 `Boom`，Google/Gemini 到 `TaiWan`，其他 AI 与社交到 `Singapore`，YouTube 到 `CTM`，TikTok 到独立的 `TikTok` 策略组，Bilibili 到可手动选择 `REJECT / DIRECT / HongKong / TaiWan / CTM / HomeProxy` 的 `Bilibili` 策略组，金融到 `HongKong`，支付/加密货币/Spotify 到 `US`，开发、云盘、Twitch、Discord 和 Docker 到 `Proxy`。其中 Google 系 AI 与其他 AI 是独立板块，不会因为都属于 AI 而混用策略。
+当前主 Profile 已按 DAE 意图把主要板块映射到策略组：广告/跟踪到 `REJECT`，Telegram 到 `Boom`，Google 与 Gemini 同时到 `TaiWan`，以保持相同的台湾出口 IP；OpenAI、Anthropic、Claude 和其他非 Gemini AI 到可手动选择 `HomeProxy / TaiWan` 的 `AI Suite`，社交到 `Singapore`，YouTube 到 `CTM`，TikTok 到独立的 `TikTok` 策略组，Bilibili 到可手动选择 `REJECT / DIRECT / HongKong / TaiWan / CTM / HomeProxy` 的 `Bilibili` 策略组，金融到 `HongKong`，支付/加密货币/Spotify 到 `US`，开发、云盘、Twitch、Discord 和 Docker 到 `Proxy`。Gemini 与其他 AI 是独立板块，不会因为都属于 AI 而混用策略。
 
 `TX` 是仅筛选节点名独立 `tx` 标签的策略组，并作为嵌套成员加入 `Boom`；无论是否存在 TX 节点，它都保留 `REJECT` 和 `DIRECT` 两个候选项。因此 Telegram、NSFW 等走 `Boom` 的流量可手动选择 TX，而不需要新增单独的流量规则。
 
-地区策略组会按节点名识别常见家宽运营商：`HKBN`、`HKT`、`PCCW`、`Netvigator`、`WTT`、`i-Cable`、`SmarTone`、`HGC`、`CMHK` → `HongKong`；`Hinet`、`Chunghwa`、`Seednet`、`Fetnet`、`FarEasTone`、`Taiwan Mobile`、`TWM Broadband` → `TaiWan`；`SoftBank`、`docomo`、`NTT`、`NURO`、`IIJ`、`BIGLOBE`、`plala`、`Rakuten`、`OCN` → `Japan`；`Singtel`、`StarHub`、`MyRepublic`、`ViewQwest`、`M1` → `Singapore`；`AT&T` / `ATT`、`Verizon`、`Comcast` / `Xfinity`、`Spectrum` / `Charter`、`Cox`、`Frontier`、`CenturyLink`、`Quantum Fiber`、`Optimum`、`T-Mobile` → `United States`。这些运营商节点也会统一加入 `HomeProxy`，便于手动选择家宽出口；Google/Gemini 仍使用 `TaiWan`。
+地区策略组会按节点名识别常见家宽运营商：`HKBN`、`HKT`、`PCCW`、`Netvigator`、`WTT`、`i-Cable`、`SmarTone`、`HGC`、`CMHK` → `HongKong`；`Hinet`、`Chunghwa`、`Seednet`、`Fetnet`、`FarEasTone`、`Taiwan Mobile`、`TWM Broadband` → `TaiWan Nodes`；`SoftBank`、`docomo`、`NTT`、`NURO`、`IIJ`、`BIGLOBE`、`plala`、`Rakuten`、`OCN` → `Japan`；`Singtel`、`StarHub`、`MyRepublic`、`ViewQwest`、`M1` → `Singapore`；`AT&T` / `ATT`、`Verizon`、`Comcast` / `Xfinity`、`Spectrum` / `Charter`、`Cox`、`Frontier`、`CenturyLink`、`Quantum Fiber`、`Optimum`、`T-Mobile` → `United States`。`TaiWan` 外层组默认选择 `TaiWan Nodes`，并提供 `Proxy` 作为手动备用；Google/Gemini 统一使用该外层组以保持出口一致。这些运营商节点也会统一加入 `HomeProxy`，便于手动选择家宽出口。
 
 这些是节点分类线索，不是路由规则；无法确定地区的节点仍保留在 `Proxy` 中供手动选择。为避免跨地区误匹配，未使用过短或可能跨地区的关键词，例如 `au`、`So-net`。
 
