@@ -1,0 +1,8 @@
+# ============================================================
+# [LINE]
+# LINE 日本服务域名；按用户出口意图走 Japan。
+# ============================================================
+
+DOMAIN-SUFFIX,line.me
+DOMAIN-SUFFIX,line-apps.com
+DOMAIN-SUFFIX,line-scdn.net
