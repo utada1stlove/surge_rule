@@ -15,3 +15,7 @@ private/
 *.local.conf
 *-credentials.json
 *-credentials.conf
+
+# Local infrastructure/subscription audits may contain private topology,
+# node names, or operational metadata. Keep them out of GitHub by default.
+reports/*subscription-vps-audit*
