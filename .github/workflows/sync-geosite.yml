@@ -20,7 +20,7 @@ jobs:
       - name: Validate generated rules
         run: |
           test -n "$(find rules/generated -maxdepth 1 -type f -name '*.list' -print -quit)"
-          ! rg -n 'category-games|geosite:gfw|(^|,) (DIRECT|Proxy|REJECT)$' rules/generated
+          ! grep -RInE 'category-games|geosite:gfw|(^|,) (DIRECT|Proxy|REJECT)$' rules/generated
           node scripts/audit-geosite-policy.mjs .
           python3 .agents/skills/surge-profile-lint/scripts/lint_surge_profiles.py .
           bash .agents/skills/basic-validation/scripts/validate_workspace.sh .
