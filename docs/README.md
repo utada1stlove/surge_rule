@@ -11,6 +11,7 @@
 5. [私有 DoH 备用端点](operations/private-doh.md)：记录可手动启用的自建 DoH 地址与使用边界；
 6. [安全与隐私](security.md)：确认哪些内容可以公开；
 7. [排错手册](troubleshooting.md)：从状态、请求列表、DNS 和规则命中结果定位问题。
+8. [Surge 外部资料知识库](knowledge-base/surge-resources.md)：归档待评估的社区资料、配置参考与图标集。
 
 ## 这套体系解决什么问题
 
