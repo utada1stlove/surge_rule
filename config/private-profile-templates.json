@@ -3,7 +3,7 @@
   "profiles": [
     {
       "id": "main",
-      "template_url": "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/surge-main.conf",
+      "template_url": "https://raw.githubusercontent.com/utada1stlove/surge_rule/a5f235d/surge-main.conf",
       "output": "surge-main.conf"
     },
     {
@@ -13,7 +13,7 @@
     },
     {
       "id": "simple",
-      "template_url": "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/surge-simple.example.conf",
+      "template_url": "https://raw.githubusercontent.com/utada1stlove/surge_rule/a5f235d/surge-simple.example.conf",
       "output": "surge-simple.conf"
     },
     {
