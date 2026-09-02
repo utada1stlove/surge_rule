@@ -18,6 +18,7 @@
 | `tencent.png` | TX 组 | [fmz200 Tencent](https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/tencent.png) |
 | `cloud.png` | Cloud 组 | [fmz200 Google Drive](https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/GoogleDrive.png) |
 | `twitch.png` | Twitch 组 | [fmz200 Twitch](https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/twitch.png) |
+| `youtube.png` | YouTube 组 | [Qure YouTube](https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png) |
 | `home.png` | HomeProxy 组 | [fmz200 Apple Home](https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Apple_Home.png) |
 
 上游资源的许可和使用条款以各自项目为准；本仓库仅将其作为 Surge UI 图标使用。
