@@ -8,7 +8,7 @@
     },
     {
       "id": "surgeion",
-      "template_url": "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/surgeion.conf?profile=surgeion-v2",
+      "template_url": "https://raw.githubusercontent.com/utada1stlove/surge_rule/78de4e5/surgeion.conf",
       "output": "surgeion.conf"
     },
     {
