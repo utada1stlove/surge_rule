@@ -13,7 +13,8 @@
 | `spotify.png` | Spotify | [Qure Spotify](https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png) |
 | `tiktok.png` | TikTok | [Qure TikTok](https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok.png) |
 | `bilibili.png` | Bilibili | [Qure bilibili](https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili.png) |
-| `finance.png` | Finance 组 | [Qure Cryptocurrency](https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Cryptocurrency.png) |
+| `finance-daily.png` | Finance 组 | [Qure Daily](https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Daily.png) |
+| `finance.png` | 加密货币备用 | [Qure Cryptocurrency](https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Cryptocurrency.png) |
 | `tencent.png` | TX 组 | [fmz200 Tencent](https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/tencent.png) |
 | `cloud.png` | Cloud 组 | [fmz200 Google Drive](https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/GoogleDrive.png) |
 | `twitch.png` | Twitch 组 | [fmz200 Twitch](https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/twitch.png) |
