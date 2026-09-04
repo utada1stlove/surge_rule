@@ -34,7 +34,7 @@ rules/
 - 通讯与社区；
 - 社交平台。
 
-当前主 Profile 已按 DAE 意图把主要板块映射到策略组：广告/跟踪到 `REJECT`，Telegram 到 `Boom`，Google 与 Gemini 同时到 `TaiWan`，以保持相同的台湾出口 IP；OpenAI、Anthropic、Claude 和其他非 Gemini AI 到可手动选择 `HomeProxy / TaiWan` 的 `AI Suite`，社交到 `Singapore`，YouTube 到 `CTM`，TikTok 到独立的 `TikTok` 策略组，Bilibili 到可手动选择 `REJECT / DIRECT / HongKong / TaiWan / CTM / HomeProxy` 的 `Bilibili` 策略组，金融到 `HongKong`，支付/加密货币/Spotify 到 `US`，开发、云盘、Twitch、Discord 和 Docker 到 `Proxy`。Gemini 与其他 AI 是独立板块，不会因为都属于 AI 而混用策略。
+当前 `surge-main.conf` 按 DAE 意图固定分配：广告/跟踪到 `REJECT`，Telegram 到 `Boom`，Google 与 Gemini 到 `TaiWan`，Meta（Facebook、Instagram、WhatsApp）到 `Singapore`，Twitter/Reddit 到 `Proxy`，金融到 `Finance`（其中 TradingView 显式归入该组），其余板块按既有固定策略映射。`surgeion.conf` 则将 Meta、Twitter、Reddit 分别暴露为带图标的 `select` 策略组，便于手动切换出口。
 
 `TX` 是仅筛选节点名独立 `tx` 标签的策略组，并作为嵌套成员加入 `Boom`；无论是否存在 TX 节点，它都保留 `REJECT` 和 `DIRECT` 两个候选项。因此 Telegram、NSFW 等走 `Boom` 的流量可手动选择 TX，而不需要新增单独的流量规则。
 
