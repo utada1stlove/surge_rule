@@ -34,7 +34,7 @@ rules/
 - 通讯与社区；
 - 社交平台。
 
-当前 `surge-main.conf` 按 DAE 意图固定分配：广告/跟踪到 `REJECT`，Telegram 到 `Boom`，Google 与 Gemini 到 `TaiWan`，Meta（Facebook、Instagram、WhatsApp）到 `Singapore`，Twitter/Reddit 到 `Proxy`，金融分类清单（包括 IBKR、uSMART、moomoo、富途、WSJ、Economist、Bloomberg、Reuters、TradingView 等）到 `Finance`，其余板块按既有固定策略映射。`surgeion.conf` 则将 Meta、Twitter、Reddit 分别暴露为带图标的 `select` 策略组，便于手动切换出口。
+当前 `surge-main.conf` 按 DAE 意图固定分配：广告/跟踪到 `REJECT`，Telegram 到 `Boom`，Google 与 Gemini 到 `TaiWan`，Meta（Facebook、Instagram、WhatsApp）到 `Singapore`，Twitter/Reddit 到 `Proxy`，金融分类清单（包括 HSBC、IBKR、uSMART、moomoo、富途、TradingView、Investing.com 等）以及专用 geosite 清单（WSJ、Economist、Bloomberg、Reuters）到 `Finance`，PayPal 到 `United States`，其余板块按既有固定策略映射。`surgeion.conf` 则将 Meta、Twitter、Reddit、PayPal 分别暴露为带图标的 `select` 策略组，便于手动切换出口。
 
 `TX` 是仅筛选节点名独立 `tx` 标签的策略组，并作为嵌套成员加入 `Boom`；无论是否存在 TX 节点，它都保留 `REJECT` 和 `DIRECT` 两个候选项。因此 Telegram、NSFW 等走 `Boom` 的流量可手动选择 TX，而不需要新增单独的流量规则。
 
