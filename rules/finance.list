@@ -4,6 +4,21 @@
 DOMAIN-SUFFIX,wsj.com
 DOMAIN-SUFFIX,economist.com
 DOMAIN-SUFFIX,investing.com
+DOMAIN-SUFFIX,ibkr.com
+DOMAIN-SUFFIX,ibkr.com.hk
+DOMAIN-SUFFIX,ibkr.com.sg
+DOMAIN-SUFFIX,ibkr.hk
+DOMAIN-SUFFIX,usmartsecurities.com
+DOMAIN-SUFFIX,usmartglobal.com
+DOMAIN-SUFFIX,usmart.com.hk
+DOMAIN-SUFFIX,moomoo.com
+DOMAIN-SUFFIX,moomoo.com.sg
+DOMAIN-SUFFIX,moomoo.com.hk
+DOMAIN-SUFFIX,futunn.com
+DOMAIN-SUFFIX,futuhk.com
+DOMAIN-SUFFIX,futusg.com
+DOMAIN-SUFFIX,futu5.com
+DOMAIN-SUFFIX,futu.com
 
 # DAE 中位于成人规则之前的显式例外：先走 HongKong，再交给后续规则。
 DOMAIN-SUFFIX,hentaiverse.org

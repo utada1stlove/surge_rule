@@ -3,12 +3,12 @@
   "profiles": [
     {
       "id": "main",
-      "template_url": "https://raw.githubusercontent.com/utada1stlove/surge_rule/713c268/surge-main.conf",
+      "template_url": "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/surge-main.conf",
       "output": "surge-main.conf"
     },
     {
       "id": "surgeion",
-      "template_url": "https://raw.githubusercontent.com/utada1stlove/surge_rule/713c268/surgeion.conf",
+      "template_url": "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/surgeion.conf",
       "output": "surgeion.conf"
     },
     {
