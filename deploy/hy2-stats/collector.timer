@@ -1,0 +1,11 @@
+[Unit]
+Description=Persist Hysteria 2 traffic counters periodically
+
+[Timer]
+OnBootSec=30s
+OnUnitActiveSec=60s
+Unit=hy2-stats-collector.service
+Persistent=true
+
+[Install]
+WantedBy=timers.target

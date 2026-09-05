@@ -1,0 +1,9 @@
+[Unit]
+Description=Persist Hysteria 2 traffic counters
+After=hysteria-server.service
+Wants=hysteria-server.service
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/hy2-stats/collector.env
+ExecStart=/usr/local/libexec/hy2-stats-collector

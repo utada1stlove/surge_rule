@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hysteria 2 流量统计</title>
+  <style>
+    :root { color-scheme: light dark; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    body { margin: 0; padding: 2rem 1rem; background: #f5f7fa; color: #17202a; }
+    main { max-width: 900px; margin: 0 auto; }
+    h1 { margin: 0 0 .35rem; font-size: 1.6rem; }
+    #status { margin: 0 0 1.25rem; color: #5c6773; font-size: .92rem; }
+    table { width: 100%; border-collapse: collapse; background: #fff; box-shadow: 0 2px 12px #17202a18; }
+    th, td { padding: .8rem .75rem; border-bottom: 1px solid #e5e9ef; text-align: right; white-space: nowrap; }
+    th { background: #edf1f5; color: #3b4652; font-size: .85rem; }
+    th:first-child, td:first-child { text-align: left; }
+    tbody tr:last-child td { border-bottom: 0; }
+    .error { color: #b42318 !important; }
+    @media (prefers-color-scheme: dark) {
+      body { background: #12161b; color: #e8edf2; }
+      table { background: #1b222a; box-shadow: 0 2px 12px #0008; }
+      th { background: #26313c; color: #c5d0db; }
+      th, td { border-color: #34414d; }
+      #status { color: #aab6c2; }
+    }
+    @media (max-width: 620px) {
+      body { padding: 1.25rem .5rem; }
+      th, td { padding: .65rem .4rem; font-size: .82rem; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Hysteria 2 流量统计</h1>
+  <p id="status">正在加载...</p>
+  <table>
+    <thead><tr><th>用户</th><th>在线设备</th><th>上传</th><th>下载</th><th>总流量</th></tr></thead>
+    <tbody id="rows"><tr><td colspan="5">正在加载...</td></tr></tbody>
+  </table>
+</main>
+<script>
+  const formatBytes = bytes => {
+    if (!Number.isFinite(bytes)) return "-";
+    const units = ["B", "KB", "MB", "GB", "TB"];
+    let value = bytes, index = 0;
+    while (value >= 1000 && index < units.length - 1) { value /= 1000; index += 1; }
+    const digits = index === 0 ? 0 : value < 10 ? 2 : value < 100 ? 1 : 0;
+    return `${value.toFixed(digits)} ${units[index]}`;
+  };
+  const load = async () => {
+    const status = document.querySelector("#status");
+    try {
+      const [onlineResponse, trafficResponse] = await Promise.all([
+        fetch("/hy2-stats-api/online", { cache: "no-store" }),
+        fetch("/hy2-stats-api/traffic-total", { cache: "no-store" })
+      ]);
+      if (!onlineResponse.ok || !trafficResponse.ok) throw new Error("API 请求失败");
+      const online = await onlineResponse.json();
+      const trafficPayload = await trafficResponse.json();
+      const traffic = trafficPayload.users || trafficPayload;
+      const users = new Set([...Object.keys(online), ...Object.keys(traffic)]);
+      const rows = [...users].sort().map(user => {
+        const stats = traffic[user] || { tx: 0, rx: 0 };
+        return `<tr><td>${user.replace(/[&<>\"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]))}</td><td>${online[user] || 0}</td><td>${formatBytes(stats.tx)}</td><td>${formatBytes(stats.rx)}</td><td>${formatBytes((stats.tx || 0) + (stats.rx || 0))}</td></tr>`;
+      });
+      document.querySelector("#rows").innerHTML = rows.length ? rows.join("") : '<tr><td colspan="5">暂无统计数据</td></tr>';
+      status.className = "";
+      status.textContent = `最近更新：${trafficPayload.updatedAt ? new Date(trafficPayload.updatedAt).toLocaleString() : new Date().toLocaleString()}`;
+    } catch (error) {
+      status.className = "error";
+      status.textContent = `加载失败：${error.message}`;
+    }
+  };
+  load();
+  setInterval(load, 30000);
+</script>
+</body>
+</html>

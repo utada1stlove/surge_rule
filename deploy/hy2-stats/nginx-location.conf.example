@@ -1,0 +1,27 @@
+location = /hy2-stats { return 301 /hy2-stats/; }
+location ^~ /hy2-stats/ {
+    alias /var/www/html/hy2-stats/;
+    index index.html;
+    add_header Cache-Control "no-store" always;
+    add_header X-Content-Type-Options "nosniff" always;
+}
+location = /hy2-stats-api/online {
+    limit_except GET { deny all; }
+    proxy_set_header Authorization "__API_SECRET__";
+    proxy_pass http://127.0.0.1:19999/online;
+    proxy_no_cache 1;
+}
+location = /hy2-stats-api/traffic {
+    limit_except GET { deny all; }
+    proxy_set_header Authorization "__API_SECRET__";
+    proxy_pass http://127.0.0.1:19999/traffic;
+    proxy_no_cache 1;
+}
+location = /hy2-stats-api/traffic-total {
+    alias /var/www/html/hy2-stats/traffic-total.json;
+    default_type application/json;
+    add_header Cache-Control "no-store" always;
+}
+location ^~ /hy2-stats-api/ {
+    return 404;
+}
