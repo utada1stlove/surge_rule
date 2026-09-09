@@ -9,6 +9,8 @@
 | `apple.png` | Apple 服务 | [Qure Apple](https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png) |
 | `global.png` | 通用/亚太组 | [Qure Global](https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png) |
 | `lock.png` | Private 组 | [Qure Lock](https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Lock.png) |
+| `telegram.png` | Telegram 组（`surge.conf`） | 本地提供，512x512；上游来源未记录 |
+| `nsfw.png` | NSFW 组（`surge.conf`） | 本地提供，512x512；上游来源未记录 |
 | `ai.png` | AI Suite | [Qure AI](https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/AI.png) |
 | `spotify.png` | Spotify | [Qure Spotify](https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png) |
 | `tiktok.png` | TikTok | [Qure TikTok](https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok.png) |

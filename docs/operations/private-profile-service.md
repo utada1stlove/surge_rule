@@ -85,6 +85,8 @@ ssh eb journalctl -u surge-profile-render.service -n 20 --no-pager
 重新安装 Surge Profile 时，先运行 `ssh eb surge-profilectl urls`。选择：
 
 - `surge-main.conf`：Boom（含 `TX`）、HomeProxy、Singapore、HongKong、TaiWan、CTM、Bilibili、US 等多策略组；
+- `surgeion.conf`：在 `surge-main.conf` 的多策略组基础上，把 Meta、Twitter、Reddit、PayPal、Cloud、Private 等板块暴露为可手动切换的 `select` 组；
+- `surge.conf`：派生自 `surgeion.conf`，额外提供不绑定 `Boom` 的 `Telegram` 与 `NSFW` 独立策略组；
 - `surge-simple.conf`：仍只产生 `DIRECT / Proxy / REJECT` 三种最终结果，但提供 `Domestic`（默认直连）、`Apple`（默认直连）和 `Others`（默认代理）三个可手动切换的策略组。
 
 私有 URL 包含随机路径，相当于访问凭据。不要放入 GitHub、公开截图或第三方文档。

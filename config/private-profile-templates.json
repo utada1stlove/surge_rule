@@ -12,6 +12,11 @@
       "output": "surgeion.conf"
     },
     {
+      "id": "surge",
+      "template_url": "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/surge.conf",
+      "output": "surge.conf"
+    },
+    {
       "id": "simple",
       "template_url": "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/surge-simple.example.conf",
       "output": "surge-simple.conf"

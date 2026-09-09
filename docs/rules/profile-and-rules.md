@@ -36,15 +36,17 @@ rules/
 
 当前 `surge-main.conf` 按 DAE 意图固定分配：广告/跟踪到 `REJECT`，Telegram 到 `Boom`，Google 与 Gemini 到 `TaiWan`，Meta（Facebook、Instagram、WhatsApp）到 `Singapore`，Twitter/Reddit 到 `Proxy`，金融分类清单（包括 HSBC、IBKR、uSMART、moomoo、富途、TradingView、Investing.com 等）以及专用 geosite 清单（WSJ、Economist、Bloomberg、Reuters）到 `Finance`，PayPal 到 `United States`，其余板块按既有固定策略映射。`surgeion.conf` 则将 Meta、Twitter、Reddit、PayPal 分别暴露为带图标的 `select` 策略组，便于手动切换出口。
 
+`surge-main.conf` 与 `surgeion.conf` 中，Telegram 走 `Boom`，成人内容走 `Boom`（`surge-main.conf`）和 `Private`（`surgeion.conf`）。`surge.conf` 是从 `surgeion.conf` 派生的独立 Profile，唯一差异是把这两类流量拆成自己的策略组：`Telegram.list` 交给 `Telegram`，`rules/nsfw.list` 与 `category-porn.list` 交给 `NSFW`。两个新组的候选项都不含 `Boom`，因此它们不再跟随 Boom/Hy2 节点池；`Telegram` 默认使用自动测速组 `Smart`，`NSFW` 默认使用 `Smart-US`（成人内容多为持续大流量，美国家宽池更稳定）。需要 TX/CFT 出口时可选 `Smart-TX-CFT`，确实要用 Boom 节点时仍可从 `Proxy` 组手动挑选。
+
 `TX` 是仅筛选节点名独立 `tx` 标签的策略组，并作为嵌套成员加入 `Boom`；无论是否存在 TX 节点，它都保留 `REJECT` 和 `DIRECT` 两个候选项。因此 Telegram、NSFW 等走 `Boom` 的流量可手动选择 TX，而不需要新增单独的流量规则。
 
 地区策略组会按节点名识别常见家宽运营商：`HKBN`、`HKT`、`PCCW`、`Netvigator`、`WTT`、`i-Cable`、`SmarTone`、`HGC`、`CMHK` → `HongKong`；`Hinet`、`Chunghwa`、`Seednet`、`Fetnet`、`FarEasTone`、`Taiwan Mobile`、`TWM Broadband` → `TaiWan Nodes`；`SoftBank`、`docomo`、`NTT`、`NURO`、`IIJ`、`BIGLOBE`、`plala`、`Rakuten`、`OCN` → `Japan`；`Singtel`、`StarHub`、`MyRepublic`、`ViewQwest`、`M1` → `Singapore`；`AT&T` / `ATT`、`Verizon`、`Comcast` / `Xfinity`、`Spectrum` / `Charter`、`Cox`、`Frontier`、`CenturyLink`、`Quantum Fiber`、`Optimum`、`T-Mobile` → `United States`。`TaiWan` 外层组默认选择 `TaiWan Nodes`，并提供 `Proxy` 作为手动备用；Google/Gemini 统一使用该外层组以保持出口一致。这些运营商节点也会统一加入 `HomeProxy`，便于手动选择家宽出口。
 
 这些是节点分类线索，不是路由规则；无法确定地区的节点仍保留在 `Proxy` 中供手动选择。为避免跨地区误匹配，未使用过短或可能跨地区的关键词，例如 `au`、`So-net`。
 
-NSFW/成人内容单独维护在 `rules/nsfw.list`，其中包含从 DAE 展开的 Ehentai、PikPak、OneDrive、MissAV、JavDB、Jable 及显式成人站点。`hentaiverse.org` 是例外：因为 DAE 在成人规则之前已将它分到 `HongKong`，Surge 也保持该优先级。未命中的请求由当前 Profile 的 `FINAL,Proxy` 兜底，与 DAE 的 `fallback: proxy` 对齐。
+NSFW/成人内容单独维护在 `rules/nsfw.list`，其中包含从 DAE 展开的 Ehentai、PikPak、OneDrive、MissAV、JavDB、Jable 及显式成人站点。`hentaiverse.org` 是例外：因为 DAE 在成人规则之前已将它分到 `HongKong`，Surge 也保持该优先级。由于 `rules/nsfw.list` 在 `[Rule]` 中先于 blackmatrix7 的 OneDrive/PikPak 规则出现，其中的 PikPak、OneDrive 域名会命中成人内容板块（`Boom` / `Private` / `NSFW`）而不是 `Cloud`。未命中的请求由当前 Profile 的 `FINAL,Proxy` 兜底，与 DAE 的 `fallback: proxy` 对齐。
 
-大体量或维护成本高的板块优先引用成熟的公开 Surge Rule Set（当前采用 blackmatrix7 的 YouTube、Telegram、Google、Gemini、OpenAI、Anthropic、Claude、Bloomberg、ThomsonReuters、PayPal、Cryptocurrency、Twitter、Reddit、Spotify、GitHub、OneDrive、Dropbox、Twitch、Discord、Docker 和 Fox），本仓库的本地 `.list` 负责补充小范围规则和明确的私有分流意图。`category-porn` 没有合适的 BlackMatrix/Sukka 完整替代，因此使用 Workflow 生成的独立规则文件并实际分配给 `Boom`。外部规则文件只写匹配条件，不写策略名称；策略绑定统一留在主 Profile，便于以后替换策略组。
+大体量或维护成本高的板块优先引用成熟的公开 Surge Rule Set（当前采用 blackmatrix7 的 YouTube、Telegram、Google、Gemini、OpenAI、Anthropic、Claude、Bloomberg、ThomsonReuters、PayPal、Cryptocurrency、Twitter、Reddit、Spotify、GitHub、OneDrive、Dropbox、Twitch、Discord、Docker 和 Fox），本仓库的本地 `.list` 负责补充小范围规则和明确的私有分流意图。`category-porn` 没有合适的 BlackMatrix/Sukka 完整替代，因此使用 Workflow 生成的独立规则文件；该规则集在 `surge-main.conf` 分配给 `Boom`、在 `surgeion.conf` 分配给 `Private`、在 `surge.conf` 分配给 `NSFW`。外部规则文件只写匹配条件，不写策略名称；策略绑定统一留在主 Profile，便于以后替换策略组。
 
 ## 从 dae 配置迁移
 
