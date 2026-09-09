@@ -19,3 +19,6 @@ private/
 # Local infrastructure/subscription audits may contain private topology,
 # node names, or operational metadata. Keep them out of GitHub by default.
 reports/*subscription-vps-audit*
+
+# MCP todo state is generated locally and should not be shared.
+.codex/mcp-todo/plans.json

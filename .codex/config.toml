@@ -1,0 +1,3 @@
+[mcp_servers.todo]
+command = "python3"
+args = ["/home/aerith/Projects/surge/.codex/mcp-todo/server.py", "/home/aerith/Projects/surge/.codex/mcp-todo/plans.json"]
