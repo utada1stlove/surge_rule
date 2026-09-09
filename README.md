@@ -37,6 +37,7 @@
 ```text
 profile.example.conf       # 多策略组 Profile 模板
 surge-simple.example.conf  # DIRECT / Proxy / REJECT 简洁模板
+archive/                   # 已停用文件与旧版本快照，不再维护、不参与校验
 rules/
   direct.list           # 直连规则
   proxy.list            # 通用代理候选规则

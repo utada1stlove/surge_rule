@@ -34,7 +34,7 @@ rules/
 - 通讯与社区；
 - 社交平台。
 
-当前 `surge-main.conf` 按 DAE 意图固定分配：广告/跟踪到 `REJECT`，Telegram 到 `Boom`，Google 与 Gemini 到 `TaiWan`，Meta（Facebook、Instagram、WhatsApp）到 `Singapore`，Twitter/Reddit 到 `Proxy`，金融分类清单（包括 HSBC、IBKR、uSMART、moomoo、富途、TradingView、Investing.com 等）以及专用 geosite 清单（WSJ、Economist、Bloomberg、Reuters）到 `Finance`，PayPal 到 `United States`，其余板块按既有固定策略映射。`surgeion.conf` 则将 Meta、Twitter、Reddit、PayPal 分别暴露为带图标的 `select` 策略组，便于手动切换出口。
+当前 `surge-main.conf` 按 DAE 意图固定分配：广告/跟踪到 `REJECT`，Telegram 到 `Boom`，Google 与 Gemini 到 `TaiWan`，Meta（Facebook、Instagram、WhatsApp）到 `Singapore`，Twitter/Reddit 到 `Proxy`，金融分类清单（包括 HSBC、IBKR、uSMART、moomoo、富途、TradingView、Investing.com 等）以及专用 geosite 清单（WSJ、Economist、Bloomberg、Reuters）到 `Finance`，PayPal 到 `United States`，其余板块按既有固定策略映射。`surgeion.conf` 则将 Meta、Twitter、Reddit、PayPal 分别暴露为带图标的 `select` 策略组，便于手动切换出口。2026-09-09 起 `surgeion.conf` 同样删除了 `rules/social-sg.list` 的前置覆盖，并把 `Twitter`、`Reddit` 默认项设为 `Singapore`、`Spotify` 默认项设为 `United States`，使默认出口与删除前一致；改动前的整份快照存档在 `archive/surgeion.conf`。
 
 `surge-main.conf` 与 `surgeion.conf` 中，Telegram 走 `Boom`，成人内容走 `Boom`（`surge-main.conf`）和 `Private`（`surgeion.conf`）。`surge.conf` 是从 `surgeion.conf` 派生的独立 Profile，差异之一是把这两类流量拆成自己的策略组：`Telegram.list` 交给 `Telegram`，`rules/nsfw.list` 与 `category-porn.list` 交给 `NSFW`。两个新组的候选项都不含 `Boom`，因此它们不再跟随 Boom/Hy2 节点池；`Telegram` 默认使用自动测速组 `Smart`，`NSFW` 默认使用 `Smart-US`（成人内容多为持续大流量，美国家宽池更稳定）。需要 TX/CFT 出口时可选 `Smart-TX-CFT`，确实要用 Boom 节点时仍可从 `Proxy` 组手动挑选。
 

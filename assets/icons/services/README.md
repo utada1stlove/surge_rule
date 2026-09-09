@@ -23,8 +23,8 @@ magick <out>.png -depth 8 -strip -define png:exclude-chunk=all <out>.png
 | `Paypal.png` | `surge.conf` `PayPal` 组 | 全彩品牌图，144x144 |
 | `Twitter.png` | `surge.conf` `Twitter` 组 | 全彩品牌图，144x144 |
 | `google.png` | `surge.conf` `Google` 组 | 由 `google-color.svg` 渲染，144x144 |
-| `paypal.png`、`twitter.png` | 未使用 | 与上面两个文件仅首字母大小写不同，是 `*-brands-solid-full.svg` 的直接渲染：单色无 `fill`、灰度透明底，深色模式下几乎不可见。GitHub Raw 地址区分大小写，引用 `icon-url` 时务必用大写首字母的版本 |
 | `house-solid-full.svg` | 未使用 | 仅保留为可编辑源文件；`HomeProxy` 组沿用 `assets/icons/policy/home.png`（同为房屋图形，全彩） |
+| `paypal.png`、`twitter.png` | 已移至 `archive/icons/` | 由 `*-brands-solid-full.svg` 直接渲染：单色无 `fill`、灰度透明底，深色模式下几乎不可见；与上面两个文件仅首字母大小写不同，GitHub Raw 地址区分大小写，留在本目录容易误引用 |
 
 其余 PNG（`reuters.png`、`whatsapp.png`、`reddit.png`、`chatgpt.png` 等）为仓库既有资源，上游来源未在仓库内记录。
 

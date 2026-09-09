@@ -5,6 +5,8 @@
 ```text
 README.md
 profile.example.conf
+archive/
+  ...
 rules/
   direct.list
   proxy.list
@@ -13,7 +15,7 @@ docs/
   ...
 ```
 
-公开仓库只保存通用规则和模板。个人 Profile 可以在本地保存，或者放在私有仓库中。
+公开仓库只保存通用规则和模板。已停用文件与改动前的版本快照放在 `archive/`：不再维护、不参与 `scripts/lint_surge_profiles.py`（该校验只扫描顶层 `*.conf`），也不得作为 `config/private-profile-templates.json` 的 `template_url`，详见 `archive/README.md`。个人 Profile 可以在本地保存，或者放在私有仓库中。
 
 ## 发布前检查
 
