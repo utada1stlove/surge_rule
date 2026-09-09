@@ -1,0 +1,24 @@
+# ============================================================
+# [云盘存储 / OneDrive + PikPak]
+# DAE 用 geosite:onedrive / geosite:pikpak 把这些域名归入 Boom，
+# 所以它们同时出现在 rules/nsfw.list 里。云盘流量单独成组时，
+# 必须在 nsfw.list 之前引用，否则会被成人板块抢先命中。
+# 文件只写匹配条件；策略绑定统一在 Profile 中完成。
+# ============================================================
+DOMAIN-SUFFIX,mypikpak.com
+DOMAIN-SUFFIX,mypikpak.net
+DOMAIN-SUFFIX,pickpackapp.com
+DOMAIN-SUFFIX,pikpak.io
+DOMAIN-SUFFIX,pikpak.me
+DOMAIN-SUFFIX,pikpakdrive.com
+DOMAIN-SUFFIX,1drv.com
+DOMAIN-SUFFIX,1drv.ms
+DOMAIN-SUFFIX,livefilestore.com
+DOMAIN-SUFFIX,onedrive.co
+DOMAIN-SUFFIX,onedrive.co.uk
+DOMAIN-SUFFIX,onedrive.com
+DOMAIN-SUFFIX,onedrive.eu
+DOMAIN-SUFFIX,onedrive.net
+DOMAIN-SUFFIX,onedrive.org
+DOMAIN-SUFFIX,onedrive.live.com
+DOMAIN-SUFFIX,storage.live.com

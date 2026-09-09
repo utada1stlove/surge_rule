@@ -30,6 +30,7 @@ Surge 的公开规则仓库使用 `DIRECT`、`Proxy`、`REJECT` 以及 Profile �
 | Twitter / Reddit | `proxy.list` → `Proxy` | `sg` |
 | Spotify / PayPal / Fox | `proxy.list` → `Proxy` | `us` |
 | PikPak / OneDrive / Ehentai / 成人站点 | `nsfw.list` → `Boom` | 按 dae geosite 展开 |
+| OneDrive / PikPak 云盘 | `cloud-storage.list` → `Cloud` | `surge.conf`、`surgeion.conf` 前置引用，把这 17 条域名从 `nsfw.list` 取回云盘组 |
 | Dropbox | `us-services.list` → `US` | 保持 dae 当前策略 |
 | 中国服务、Steam 内容 | `direct.list` → `DIRECT` | 保持直连 |
 | 广告与跟踪 | `reject.list` 暂留空 | 独立清单后再启用 |
