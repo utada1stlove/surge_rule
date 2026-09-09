@@ -1,24 +1,50 @@
 # ============================================================
-# [云盘存储 / OneDrive + PikPak]
-# DAE 用 geosite:onedrive / geosite:pikpak 把这些域名归入 Boom，
-# 所以它们同时出现在 rules/nsfw.list 里。云盘流量单独成组时，
-# 必须在 nsfw.list 之前引用，否则会被成人板块抢先命中。
+# [云盘存储 / 国外网盘补充清单]
+# geosite 已覆盖的 OneDrive / PikPak / Dropbox 直接引用
+# rules/generated/{onedrive,pikpak,dropbox}.list，本文件只补 geosite
+# 没有独立条目、或需要抢在 Google/US 规则之前落地的国外网盘。
+# 全部规则集必须排在 rules/nsfw.list、rules/google*.list 与
+# rules/us-services.list 之前，否则会被成人板块或地区组抢先命中。
 # 文件只写匹配条件；策略绑定统一在 Profile 中完成。
 # ============================================================
-DOMAIN-SUFFIX,mypikpak.com
-DOMAIN-SUFFIX,mypikpak.net
-DOMAIN-SUFFIX,pickpackapp.com
-DOMAIN-SUFFIX,pikpak.io
-DOMAIN-SUFFIX,pikpak.me
-DOMAIN-SUFFIX,pikpakdrive.com
-DOMAIN-SUFFIX,1drv.com
-DOMAIN-SUFFIX,1drv.ms
-DOMAIN-SUFFIX,livefilestore.com
-DOMAIN-SUFFIX,onedrive.co
-DOMAIN-SUFFIX,onedrive.co.uk
-DOMAIN-SUFFIX,onedrive.com
-DOMAIN-SUFFIX,onedrive.eu
-DOMAIN-SUFFIX,onedrive.net
-DOMAIN-SUFFIX,onedrive.org
-DOMAIN-SUFFIX,onedrive.live.com
-DOMAIN-SUFFIX,storage.live.com
+
+# Google Drive：只收网盘本体，googleusercontent.com 与 www.googleapis.com
+# 仍跟随 Google 规则走 TaiWan，避免把 YouTube 头像、Gmail 附件一起拖进云盘组。
+DOMAIN,drive.usercontent.google.com
+DOMAIN-SUFFIX,drive.google.com
+DOMAIN-SUFFIX,docs.google.com
+DOMAIN-SUFFIX,googledrive.com
+
+# MEGA
+DOMAIN-SUFFIX,mega.nz
+DOMAIN-SUFFIX,mega.co.nz
+DOMAIN-SUFFIX,mega.io
+
+# TeraBox / Dubox
+DOMAIN-SUFFIX,terabox.com
+DOMAIN-SUFFIX,teraboxcdn.com
+DOMAIN-SUFFIX,dubox.com
+DOMAIN-SUFFIX,duboxcdn.com
+
+# Box
+DOMAIN-SUFFIX,box.com
+
+# MediaFire
+DOMAIN-SUFFIX,mediafire.com
+
+# WeTransfer
+DOMAIN-SUFFIX,wetransfer.com
+DOMAIN-SUFFIX,wetransfer.net
+DOMAIN-SUFFIX,we.tl
+
+# pCloud
+DOMAIN-SUFFIX,pcloud.com
+DOMAIN-SUFFIX,pcloud.link
+
+# 1fichier
+DOMAIN-SUFFIX,1fichier.com
+
+# Yandex Disk（只收网盘主机，yandex.ru 其余部分由广告规则处理）
+DOMAIN,disk.yandex.com
+DOMAIN,disk.yandex.ru
+DOMAIN-SUFFIX,yandexdisk.com
