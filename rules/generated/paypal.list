@@ -1,6 +1,6 @@
 # Generated from https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat
 # geosite: paypal
-# Do not edit manually; regenerate with scripts/generate-geosite.mjs.
+# Do not edit manually; regenerate with tools/generate-geosite.mjs.
 
 DOMAIN,venmo.s3.amazonaws.com
 DOMAIN-SUFFIX,account-paypal.info

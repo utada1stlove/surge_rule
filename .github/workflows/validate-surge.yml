@@ -15,10 +15,16 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - name: Validate public Profiles and Rule Sets
-        run: python3 .agents/skills/surge-profile-lint/scripts/lint_surge_profiles.py .
+        run: python3 tools/lint_surge_profiles.py .
+      - name: Check profile version contract
+        run: python3 tools/check-profile-versions.py .
+      - name: Preflight private Profile renderer
+        run: python3 tools/check-private-profile-templates.py .
       - name: Test private Profile renderer
-        run: python3 scripts/test-private-profile-renderer.py
+        run: python3 tools/test-private-profile-renderer.py
       - name: Test private Profile control command
-        run: python3 scripts/test-surge-profilectl.py
-      - name: Run repository baseline checks
-        run: bash .agents/skills/basic-validation/scripts/validate_workspace.sh .
+        run: python3 tools/test-surge-profilectl.py
+      - name: Test version contract checker
+        run: python3 tools/test-check-profile-versions.py
+      - name: Check diff whitespace
+        run: git diff --check

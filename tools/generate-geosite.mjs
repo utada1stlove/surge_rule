@@ -127,7 +127,7 @@ for (const name of manifest.geosites) {
   const header = [
     `# Generated from ${manifest.source.url}`,
     `# geosite: ${name}`,
-    "# Do not edit manually; regenerate with scripts/generate-geosite.mjs.",
+    "# Do not edit manually; regenerate with tools/generate-geosite.mjs.",
     ""
   ];
   await writeFile(output, `${header.concat([...lines].sort()).join("\n")}\n`, "utf8");

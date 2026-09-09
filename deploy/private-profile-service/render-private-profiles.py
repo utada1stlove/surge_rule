@@ -153,15 +153,40 @@ def validate_substore(text: str) -> None:
         raise RenderError("Sub-Store source is not Surge output")
 
 
+def source_ref(entry: dict) -> str:
+    """Repository-relative path of the template, used for provenance comments."""
+    declared = entry.get("source")
+    if isinstance(declared, str) and declared:
+        if declared.startswith("/") or ".." in Path(declared).parts or not declared.endswith(".conf"):
+            raise RenderError(f"{entry.get('id')}: invalid manifest source")
+        return declared
+    # Fall back to the tail of the template URL when the manifest omits "source".
+    path = urllib.parse.urlsplit(https_url(entry.get("template_url"), "template_url")).path
+    return path.rsplit("/", 1)[-1]
+
+
+def provenance(source: str, generated_at: int) -> str:
+    stamp = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(generated_at))
+    return f"# @rendered-from: {source}\n# @rendered-at: {stamp}\n"
+
+
 def validate_profile(text: str, profile_id: str, managed_url: str) -> None:
     unresolved = sorted(set(PLACEHOLDER_RE.findall(text)))
     if unresolved:
         raise RenderError(f"{profile_id}: unresolved placeholders: {', '.join(unresolved)}")
     if text.splitlines()[0] != f"#!MANAGED-CONFIG {managed_url} interval=86400 strict=false":
         raise RenderError(f"{profile_id}: invalid managed profile header")
+    # Section headers are only the lines whose whole content is the header. Counting raw
+    # substrings would treat a "[Proxy]" mentioned inside a comment as a second section.
+    headers = [
+        line.strip()
+        for line in text.splitlines()
+        if line.strip().startswith("[") and line.strip().endswith("]")
+    ]
     for section in ("[General]", "[Proxy]", "[Proxy Group]", "[Rule]"):
-        if text.count(section) != 1:
-            raise RenderError(f"{profile_id}: expected exactly one {section} section")
+        count = headers.count(section)
+        if count != 1:
+            raise RenderError(f"{profile_id}: expected exactly one {section} section, found {count}")
     in_rules, rules = False, []
     for raw in text.splitlines():
         line = raw.strip()
@@ -182,7 +207,7 @@ def stage(config: dict, secrets: dict, manifest: dict) -> tuple[Path, list[str]]
     base = https_url(config.get("public_base_url"), "public_base_url")
     directory = Path(tempfile.mkdtemp(prefix=".staging-", dir=releases))
     directory.chmod(0o755)
-    outputs, seen_ids, seen_outputs, checked = [], set(), set(), set()
+    outputs, seen_ids, seen_outputs, checked, sources = [], set(), set(), set(), {}
     try:
         entries = manifest.get("profiles") if manifest.get("version") == 1 else None
         if not isinstance(entries, list) or not entries:
@@ -218,10 +243,17 @@ def stage(config: dict, secrets: dict, manifest: dict) -> tuple[Path, list[str]]
                 for token, key in WG_PLACEHOLDERS.items():
                     rendered = rendered.replace(token, values[key])
             validate_profile(rendered, profile_id, managed_url)
+            # Provenance lands after validation so the checks still describe the template
+            # contract, and a rejected template never ships a stamped file.
+            rendered = rendered.replace("\n", "\n" + provenance(source_ref(entry), int(time.time())), 1)
+            sources[output] = {"id": profile_id, "source": source_ref(entry)}
             target = directory / output
             target.write_text(rendered, encoding="utf-8"); target.chmod(0o644); outputs.append(output)
         metadata = directory / "release.json"
-        metadata.write_text(json.dumps({"generated_at": int(time.time()), "outputs": outputs}, indent=2) + "\n", encoding="utf-8")
+        metadata.write_text(
+            json.dumps({"generated_at": int(time.time()), "outputs": outputs, "sources": sources}, indent=2) + "\n",
+            encoding="utf-8",
+        )
         metadata.chmod(0o644)
         return directory, outputs
     except Exception:

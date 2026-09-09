@@ -1,6 +1,6 @@
 # Generated from https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat
 # geosite: twitch
-# Do not edit manually; regenerate with scripts/generate-geosite.mjs.
+# Do not edit manually; regenerate with tools/generate-geosite.mjs.
 
 DOMAIN,d1g1f25tn8m2e6.cloudfront.net
 DOMAIN,d1m7jfoe9zdc1j.cloudfront.net

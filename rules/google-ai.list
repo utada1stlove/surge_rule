@@ -1,5 +1,5 @@
 # [Google 系 AI]
-# 出口策略由各 Profile 自行绑定：surge.conf 归 Google 组，其余 Profile 归 TaiWan
+# 出口策略由各 Profile 自行绑定：profiles/surge/ 归 Google 组，其余 Profile 归 TaiWan
 # （TaiWan 会识别 Hinet 等节点名）。
 DOMAIN-SUFFIX,gemini.google.com
 DOMAIN-SUFFIX,aistudio.google.com

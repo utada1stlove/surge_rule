@@ -4,18 +4,36 @@
 
 ```text
 README.md
-profile.example.conf
+profiles/
+  surge/
+    <version>.conf
+  simple/
+    <version>.conf
+  home-wg/
+    <version>.conf
+legacy/
+  ...
 archive/
   ...
 rules/
   direct.list
   proxy.list
   reject.list
+scripts/
+modules/
+tools/
 docs/
   ...
 ```
 
-公开仓库只保存通用规则和模板。已停用文件与改动前的版本快照放在 `archive/`：不再维护、不参与 `scripts/lint_surge_profiles.py`（该校验只扫描顶层 `*.conf`），也不得作为 `config/private-profile-templates.json` 的 `template_url`，详见 `archive/README.md`。个人 Profile 可以在本地保存，或者放在私有仓库中。
+公开仓库只保存通用规则和模板。进入版本线的主配置放在 `profiles/<family>/`，文件头
+`# @version` 与文件名保持一致，规则见 [Profile 版本化](profile-versioning.md)。
+`legacy/` 保存已冻结的完整配置，只修坏链与安全问题，不再由私有服务输出；
+`archive/` 保存旧版本快照与历史文件，二者都不得作为
+`config/private-profile-templates.json` 的 `source`。校验统一用仓库自带的
+`tools/lint_surge_profiles.py`、`tools/check-profile-versions.py` 和
+`tools/check-private-profile-templates.py`。个人 Profile 可以在本地保存，或者放在
+私有仓库中。
 
 ## 发布前检查
 
@@ -64,6 +82,8 @@ RULE-SET,https://raw.githubusercontent.com/USER/REPO/main/rules/proxy.list,Proxy
 对于大多数个人用户，建议先使用远程 `RULE-SET`，不要一开始就把包含个人节点的完整 Profile 公开。
 
 托管 Profile 在设备上是只读的：Surge 不能修改托管规则，想手改要先复制一份配置，副本首行的托管声明会随之消失。详见 [托管 Profile 与手改副本](../knowledge-base/managed-profile-copy-edit.md)。
+
+版本化与设备订阅 URL 的固定方式见 [Profile 版本化](profile-versioning.md)。
 
 ## 回滚
 

@@ -24,7 +24,7 @@ Surge 不能修改托管规则。带 `#!MANAGED-CONFIG` 首行的 Profile 在设
 本仓库为公开仓库，Rule Set 与 Profile 都是绝对 Raw 地址，可以直接下载：
 
 ```bash
-curl -LO https://raw.githubusercontent.com/utada1stlove/surge_rule/main/surge.conf
+curl -LO https://raw.githubusercontent.com/utada1stlove/surge_rule/main/profiles/surge/1.0.0.conf
 ```
 
 浏览器打开 Raw 链接后，用 iPhone 的「共享 → 拷贝到文件」也可以拿到同一份文本。
@@ -47,7 +47,8 @@ curl -LO https://raw.githubusercontent.com/utada1stlove/surge_rule/main/surge.co
 
 - 规则的顺序、遮蔽、分组归属有问题：这属于源文件缺陷，副本只能止血，正确修复仍要回到仓库；
 - 副本只用于临时验证某几条规则；验证完把结论提回仓库，避免副本和仓库长期分叉；
-- 不需要副本的场景优先用 `surge-main.conf` 加本地覆盖配置。
+- 不需要副本的场景优先继续用托管 Profile；版本升级或回滚走
+  `config/private-profile-templates.json` 的 `source`，不需要本地副本。
 
 副本不影响的部分：外部 Rule Set 与图标一律是绝对 Raw 地址（本仓库全部 `RULE-SET` 引用均为 `https://`，无相对路径），下载后不会因为托管模式而解析失败。
 
@@ -56,4 +57,6 @@ curl -LO https://raw.githubusercontent.com/utada1stlove/surge_rule/main/surge.co
 - [Surge 外部资料知识库](surge-resources.md)
 - [GitHub 维护流程](../operations/github-maintenance.md)
 - [私有 Profile 渲染服务](../operations/private-profile-service.md)
-- 手改友好的样板：`profile.example.conf`（无托管声明）、`surge-simple.example.conf`、`surge-home-wg.example.conf`（本就为手填 WireGuard 参数设计）
+- 手改友好的样板：`legacy/profile.example.conf`（冻结样板，无托管声明）、
+  `profiles/simple/1.0.0.conf`、`profiles/home-wg/1.0.0.conf`（本就为手填
+  WireGuard 参数设计）

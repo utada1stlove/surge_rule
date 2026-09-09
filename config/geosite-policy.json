@@ -1,5 +1,5 @@
 {
-  "profile": "surge-main.conf",
+  "profile": "legacy/surge-main.conf",
   "excluded": ["gfw", "category-games@cn"],
   "mappings": {
     "cn": {"policy": "DIRECT", "runtime": ["https://ruleset.skk.moe/List/non_ip/domestic.conf", "https://ruleset.skk.moe/List/ip/china_ip.conf"]},

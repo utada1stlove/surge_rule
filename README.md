@@ -4,11 +4,12 @@
 
 ## 文档入口
 
-- [三路简洁配置模板](surge-simple.example.conf)
+- [三路简洁配置模板](profiles/simple/1.0.0.conf)
 - [文档总览](docs/README.md)
 - [iPhone 入门配置](docs/getting-started/iphone-setup.md)
 - [规则与策略组](docs/rules/profile-and-rules.md)
 - [GitHub 维护流程](docs/operations/github-maintenance.md)
+- [Profile 版本化](docs/operations/profile-versioning.md)
 - [Sub-Store 单链接方案](docs/operations/substore-one-link.md)
 - [私有 DoH 备用端点](docs/operations/private-doh.md)
 - [VPS 私有 Profile 服务](docs/operations/private-profile-service.md)
@@ -36,18 +37,24 @@
 ## 目录
 
 ```text
-profile.example.conf       # 多策略组 Profile 模板
-surge-simple.example.conf  # DIRECT / Proxy / REJECT 简洁模板
-archive/                   # 已停用文件与旧版本快照，不再维护、不参与校验
+profiles/
+  surge/                   # 主 Profile 家族，当前 1.0.0.conf
+  simple/                  # DIRECT / Proxy / REJECT 简洁家族，当前 1.0.0.conf
+  home-wg/                 # WireGuard 回家家族，当前 1.0.0.conf
+legacy/                    # 已冻结配置，仅供查阅，不再由私有服务输出
+archive/                   # 旧版本快照与历史文件，不再维护、不参与渲染
 rules/
   direct.list           # 直连规则
   proxy.list            # 通用代理候选规则
   reject.list           # 拦截规则（保守留空）
+scripts/                  # Surge 客户端 [Script] 资产位
+modules/                  # Surge 客户端 [Module] 资产位
+tools/                    # 仓库自身的生成、校验、部署工具
 ```
 
 ## 简洁配置
 
-如果不需要按地区或服务拆分策略组，使用 `surge-simple.example.conf`。它只有三种处理结果：
+如果不需要按地区或服务拆分策略组，使用 `profiles/simple/1.0.0.conf`。它只有三种处理结果：
 
 - 国内及明确直连规则使用 `DIRECT`；
 - 广告及明确拦截规则使用 `REJECT`；
@@ -60,7 +67,7 @@ rules/
 当前私有 Profile 服务部署在 SSH 主机 `eb`。忘记链接或需要维护时使用：
 
 ```bash
-# 查看应添加到 Surge 的两条私有 Profile URL
+# 查看应添加到 Surge 的三条私有 Profile URL
 ssh eb surge-profilectl urls
 
 # 查看当前 release、订阅设置和输出文件
@@ -73,11 +80,15 @@ ssh eb surge-profilectl update
 ssh -t eb surge-profilectl set-default
 
 # 只覆盖其中一份配置的订阅；删除覆盖后恢复使用默认订阅
+ssh -t eb surge-profilectl set surge
 ssh -t eb surge-profilectl set simple
+ssh -t eb surge-profilectl set home-wg
+ssh eb surge-profilectl clear surge
 ssh eb surge-profilectl clear simple
+ssh eb surge-profilectl clear home-wg
 ```
 
-`surge-main.conf` 是多策略组配置；`surge-simple.conf` 只有 `DIRECT / Proxy / REJECT`。两条 URL 都含随机私有路径，不要公开、截图或提交到 GitHub。详细运行和恢复说明见 [VPS 私有 Profile 服务](docs/operations/private-profile-service.md)。
+当前进入版本线的是三个家族：`profiles/surge/`（多策略组主配置）、`profiles/simple/`（只有 `DIRECT / Proxy / REJECT` 三种最终结果）和 `profiles/home-wg/`（WireGuard 回家）。三条私有 URL 都含随机路径，不要公开、截图或提交到 GitHub；`legacy/` 已冻结，不再输出。详细运行和恢复说明见 [VPS 私有 Profile 服务](docs/operations/private-profile-service.md) 与 [Profile 版本化](docs/operations/profile-versioning.md)。
 
 ## 在 Surge 中使用规则
 

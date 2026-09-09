@@ -16,9 +16,9 @@ misaka 的原生 DoH 监听在 `8443`，并由 KixDNS 的证书同步单元在 A
 
 ## 当前主 Profile 的决策
 
-`surge-main.conf`、`profile.example.conf` 和 `surge-simple.example.conf`
-故意**不**配置 `encrypted-dns-server`。日常解析继续使用各模板中现有的
-传统 `dns-server` 列表。
+`profiles/surge/1.0.0.conf`、`profiles/simple/1.0.0.conf`、
+`profiles/home-wg/1.0.0.conf` 以及冻结的 `legacy/` 配置故意**不**配置
+`encrypted-dns-server`。日常解析继续使用各模板中现有的传统 `dns-server` 列表。
 
 这是当前使用决策，不表示 DoH 端点不可用。需要加密 DNS 时，建议创建单独的
 手动 Profile 或本地覆盖，而不是直接修改日常主 Profile。

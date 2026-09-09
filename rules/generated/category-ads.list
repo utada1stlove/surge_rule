@@ -1,6 +1,6 @@
 # Generated from https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat
 # geosite: category-ads
-# Do not edit manually; regenerate with scripts/generate-geosite.mjs.
+# Do not edit manually; regenerate with tools/generate-geosite.mjs.
 
 DOMAIN,1l-hit.mail.ru
 DOMAIN,1l-hit.vkplay.ru

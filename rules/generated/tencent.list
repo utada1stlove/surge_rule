@@ -1,6 +1,6 @@
 # Generated from https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat
 # geosite: tencent
-# Do not edit manually; regenerate with scripts/generate-geosite.mjs.
+# Do not edit manually; regenerate with tools/generate-geosite.mjs.
 
 DOMAIN,wetv.qq.com
 DOMAIN-SUFFIX,17roco.com

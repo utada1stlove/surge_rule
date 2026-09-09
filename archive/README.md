@@ -3,9 +3,12 @@
 本目录存放已停用文件与改动前的版本快照，仅作追溯用。三条约定：
 
 - 不再维护，内容不随顶层 Profile 更新；
-- 不参与校验：scripts/lint_surge_profiles.py 只扫描仓库顶层的 *.conf；
-- 不得写入 config/private-profile-templates.json 的 template_url。私有 Profile
-  渲染服务只从仓库顶层的 Raw 地址取模板，指向本目录会让对应 Profile 渲染失败。
+- 不进入 config/private-profile-templates.json，`tools/check-profile-versions.py`
+  会直接拦截指向 archive/ 的 manifest 引用；
+- 不参与私有渲染，也不作为设备订阅 URL 的源文件。
+
+已冻结但仍保留完整结构供查阅的配置放在 `legacy/`，它同样不进 manifest，但会继续
+参与仓库的公开结构校验；`archive/` 只放旧快照和历史文件，见 [legacy 说明](../legacy/README.md)。
 
 ## 清单
 

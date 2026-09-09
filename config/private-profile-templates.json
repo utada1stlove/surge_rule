@@ -2,29 +2,22 @@
   "version": 1,
   "profiles": [
     {
-      "id": "main",
-      "template_url": "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/surge-main.conf",
-      "output": "surge-main.conf"
-    },
-    {
-      "id": "surgeion",
-      "template_url": "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/surgeion.conf",
-      "output": "surgeion.conf"
-    },
-    {
       "id": "surge",
-      "template_url": "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/surge.conf",
-      "output": "surge.conf"
+      "template_url": "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/profiles/surge/1.0.0.conf",
+      "output": "surge.conf",
+      "source": "profiles/surge/1.0.0.conf"
     },
     {
       "id": "simple",
-      "template_url": "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/surge-simple.example.conf",
-      "output": "surge-simple.conf"
+      "template_url": "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/profiles/simple/1.0.0.conf",
+      "output": "surge-simple.conf",
+      "source": "profiles/simple/1.0.0.conf"
     },
     {
       "id": "home-wg",
-      "template_url": "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/surge-home-wg.example.conf",
-      "output": "surge-home-wg.conf"
+      "template_url": "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/profiles/home-wg/1.0.0.conf",
+      "output": "surge-home-wg.conf",
+      "source": "profiles/home-wg/1.0.0.conf"
     }
   ]
 }

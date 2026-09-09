@@ -10,6 +10,7 @@ import os
 import subprocess
 import sys
 import tempfile
+import time
 import urllib.parse
 from pathlib import Path
 
@@ -91,7 +92,17 @@ def command_clear_profile(secrets_path: Path, profile_id: str) -> int:
     return apply_source_change(secrets_path, original, data)
 
 
-def command_status(config_path: Path, secrets_path: Path) -> int:
+def read_profile_meta(path: Path) -> dict[str, str]:
+    meta: dict[str, str] = {}
+    for raw in path.read_text(encoding="utf-8").splitlines():
+        if not raw.startswith("# @"):
+            continue
+        key, _, value = raw[2:].partition(":")
+        meta[key.strip()] = value.strip()
+    return meta
+
+
+def command_status(config_path: Path, secrets_path: Path, check: bool = False) -> int:
     config = load_json(config_path)
     secrets = load_json(secrets_path)
     print(f"default source configured: {bool(secrets.get('default_substore_url'))}")
@@ -103,12 +114,37 @@ def command_status(config_path: Path, secrets_path: Path) -> int:
         release = current.resolve()
         print(f"active release: {release.name}")
         metadata = release / "release.json"
+        problems: list[str] = []
         if metadata.exists():
             info = load_json(metadata)
-            print("outputs: " + ", ".join(info.get("outputs", [])))
+            generated = int(info.get("generated_at", 0))
+            age = int(time.time()) - generated
+            print(f"release age: {age} second(s) (generated {time.strftime('%Y-%m-%d %H:%M:%S UTC', time.gmtime(generated))})")
+            if age > 45 * 60:
+                problems.append(f"release is {age} second(s) old, expected a refresh every 15 minutes")
+            for output in info.get("outputs", []):
+                profile_path = release / output
+                if not profile_path.is_file():
+                    problems.append(f"{output}: rendered file is missing")
+                    continue
+                meta = read_profile_meta(profile_path)
+                print(
+                    f"{output}: profile={meta.get('profile', '?')} "
+                    f"version={meta.get('version', '?')} status={meta.get('status', '?')}"
+                )
+                if not meta.get("profile") or not meta.get("version"):
+                    problems.append(f"{output}: missing profile/version metadata")
+            if problems:
+                print("problems:")
+                for problem in problems:
+                    print(f"  - {problem}")
+                return 1 if check else 0
+            return 0
+        print("release.json is missing")
+        return 1 if check else 0
     else:
         print("active release: none")
-    return 0
+        return 1 if check else 0
 
 
 def command_urls(config_path: Path) -> int:
@@ -136,7 +172,8 @@ def parse_args() -> argparse.Namespace:
     clear_parser = subparsers.add_parser("clear")
     clear_parser.add_argument("profile_id")
     subparsers.add_parser("update")
-    subparsers.add_parser("status")
+    status_parser = subparsers.add_parser("status")
+    status_parser.add_argument("--check", action="store_true", help="exit non-zero when the release is stale or broken")
     subparsers.add_parser("urls")
     return parser.parse_args()
 
@@ -153,7 +190,7 @@ def main() -> int:
         if args.command == "update":
             return update()
         if args.command == "status":
-            return command_status(args.config, args.secrets)
+            return command_status(args.config, args.secrets, check=args.check)
         if args.command == "urls":
             return command_urls(args.config)
     except (OSError, ValueError, json.JSONDecodeError) as exc:
