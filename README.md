@@ -14,6 +14,7 @@
 - [VPS 私有 Profile 服务](docs/operations/private-profile-service.md)
 - [安全与隐私](docs/security.md)
 - [排错手册](docs/troubleshooting.md)
+- [托管 Profile 与手改副本](docs/knowledge-base/managed-profile-copy-edit.md)
 
 ## 公开与私有的边界
 

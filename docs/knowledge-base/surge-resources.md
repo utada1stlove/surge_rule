@@ -1,8 +1,8 @@
 # Surge 外部资料知识库
 
-记录日期：2026-09-02（Asia/Singapore）。
+记录日期：2026-09-02（Asia/Singapore）；使用结论补充于 2026-09-09。
 
-本页仅归档用户提供的公开资料链接，便于后续检索和评估。链接指向的内容会随上游更新；本仓库尚未下载、验证或合并其中任何配置、模块或图标集。使用前应检查来源、更新日期、许可、配置兼容性，以及是否包含订阅、密钥、MITM 或远程控制等敏感设置。
+本页归档用户提供的公开资料链接，便于后续检索和评估；末尾另存本仓库已验证的使用结论。链接指向的内容会随上游更新；本仓库尚未下载、验证或合并其中任何配置、模块或图标集。使用前应检查来源、更新日期、许可、配置兼容性，以及是否包含订阅、密钥、MITM 或远程控制等敏感设置。
 
 ## 模块与社区资料
 
@@ -50,6 +50,10 @@
 7. 地区国旗：[QureColor-Area.json](https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor-Area.json)
 8. 常用：[QureColor-Common.json](https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor-Common.json)
 9. 默认：[QureColor-Default.json](https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor-Default.json)
+
+## 本仓库已验证的使用结论
+
+- [托管 Profile 与手改副本](managed-profile-copy-edit.md)：Surge 不能修改托管规则；复制托管配置后首行托管声明消失，得到可自由手改的本地副本。
 
 ## 后续采用原则
 

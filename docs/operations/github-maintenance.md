@@ -63,6 +63,8 @@ RULE-SET,https://raw.githubusercontent.com/USER/REPO/main/rules/proxy.list,Proxy
 
 对于大多数个人用户，建议先使用远程 `RULE-SET`，不要一开始就把包含个人节点的完整 Profile 公开。
 
+托管 Profile 在设备上是只读的：Surge 不能修改托管规则，想手改要先复制一份配置，副本首行的托管声明会随之消失。详见 [托管 Profile 与手改副本](../knowledge-base/managed-profile-copy-edit.md)。
+
 ## 回滚
 
 如果更新规则后出现异常：
