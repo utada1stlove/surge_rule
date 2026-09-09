@@ -1,5 +1,7 @@
 # [社交：Singapore]
-# 对应 dae：Twitter / Reddit → Singapore。
+# 对应 dae：Twitter / Reddit → Singapore。出口策略由各 Profile 自行绑定。
+# surge.conf 自 2026-09-09 起不引用本清单，改用 Twitter / Reddit 策略组（默认 HomeProxy），
+# 否则本清单会抢在两条上游规则之前，使那两个组永不命中。
 DOMAIN-SUFFIX,reddit.com
 DOMAIN-SUFFIX,redd.it
 DOMAIN-SUFFIX,x.com

@@ -20,6 +20,11 @@ magick <out>.png -depth 8 -strip -define png:exclude-chunk=all <out>.png
 | `dropbox.png` | 其余 Profile（`surgeion.conf`）`Cloud` 组 | 仓库既有资源，官方蓝裸图形、透明底、144x144；未改动 |
 | `dropbox-brands-solid-full.svg` | 未使用 | Font Awesome Free 7.3.1 单色 path，无 `fill`，渲染为黑色透明底，深色模式下几乎不可见，故未采用 |
 | `line.svg` | 未使用 | 本地提供；当前 LINE 流量由 `rules/line.list` 归入 `Japan` 组，尚无独立策略组引用该图标 |
+| `Paypal.png` | `surge.conf` `PayPal` 组 | 全彩品牌图，144x144 |
+| `Twitter.png` | `surge.conf` `Twitter` 组 | 全彩品牌图，144x144 |
+| `google.png` | `surge.conf` `Google` 组 | 由 `google-color.svg` 渲染，144x144 |
+| `paypal.png`、`twitter.png` | 未使用 | 与上面两个文件仅首字母大小写不同，是 `*-brands-solid-full.svg` 的直接渲染：单色无 `fill`、灰度透明底，深色模式下几乎不可见。GitHub Raw 地址区分大小写，引用 `icon-url` 时务必用大写首字母的版本 |
+| `house-solid-full.svg` | 未使用 | 仅保留为可编辑源文件；`HomeProxy` 组沿用 `assets/icons/policy/home.png`（同为房屋图形，全彩） |
 
 其余 PNG（`reuters.png`、`whatsapp.png`、`reddit.png`、`chatgpt.png` 等）为仓库既有资源，上游来源未在仓库内记录。
 

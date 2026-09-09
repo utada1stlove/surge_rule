@@ -1,8 +1,6 @@
 # [美国服务]
-# 对应 dae：Spotify / PayPal / Fox → US。
-DOMAIN-SUFFIX,spotify.com
-DOMAIN-SUFFIX,paypal.com
-DOMAIN-SUFFIX,fox.com
+# 其余美国服务。2026-09-09 移除 Spotify / PayPal / Fox：本清单在 [Rule] 中排在
+# 各自的 Spotify.list、PayPal.list 与 Fox.list 之前，会让这些业务组永不命中。
 DOMAIN-SUFFIX,newapi.gs
 DOMAIN-SUFFIX,timicc.com
 
