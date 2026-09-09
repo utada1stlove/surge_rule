@@ -175,6 +175,46 @@ class RendererTests(unittest.TestCase):
         self.assertEqual(code, 1)
         self.assertEqual(current.resolve(), first_release)
 
+    def test_main_retries_stale_manifest(self) -> None:
+        config_path, secrets_path = self.write_config()
+        template_map = {
+            "https://raw.example/simple": TEMPLATE,
+            "https://raw.example/surge": PLAIN_TEMPLATE,
+        }
+        manifest_calls = {"count": 0}
+
+        def fetch(url: str, timeout: int, private: bool = False) -> str:
+            del timeout, private
+            url = urllib.parse.urlsplit(url)._replace(query="").geturl()
+            if "manifest.example" in url:
+                manifest_calls["count"] += 1
+                if manifest_calls["count"] == 1:
+                    return json.dumps({"version": 1, "profiles": [
+                        {"id": "old", "template_url": "https://raw.example/old", "output": "surge.conf"},
+                    ]})
+                return json.dumps({"version": 1, "profiles": [
+                    {"id": "simple", "template_url": "https://raw.example/simple", "output": "surge-simple.conf"},
+                    {"id": "surge", "template_url": "https://raw.example/surge", "output": "surge.conf"},
+                ]})
+            if "raw.example/old" in url:
+                raise renderer.DownloadError(
+                    "template download failed: HTTP Error 404: Not Found (https://raw.example/old)"
+                )
+            if "sub.example" in url:
+                return SUBSTORE
+            return template_map[url]
+
+        with mock.patch.object(renderer, "fetch", side_effect=fetch), mock.patch.object(renderer.time, "sleep") as sleep:
+            with mock.patch.object(sys, "argv", ["render", "--config", str(config_path), "--secrets", str(secrets_path)]):
+                with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+                    code = renderer.main()
+        self.assertEqual(code, 0)
+        self.assertEqual(manifest_calls["count"], 2)
+        sleep.assert_called_once()
+        current = self.output_root / "current"
+        self.assertTrue(current.is_symlink())
+        self.assertTrue((current / "surge.conf").is_file())
+
 
 if __name__ == "__main__":
     unittest.main()

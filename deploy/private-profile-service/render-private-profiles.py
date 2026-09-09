@@ -12,6 +12,7 @@ import os
 import re
 import shutil
 import ssl
+import sys
 import tempfile
 import time
 import urllib.parse
@@ -20,6 +21,8 @@ from pathlib import Path
 
 PLACEHOLDER_RE = re.compile(r"__[A-Z][A-Z0-9_]*__")
 PROFILE_ID_RE = re.compile(r"^[a-z0-9][a-z0-9_-]*$")
+MANIFEST_RETRY_ATTEMPTS = 6
+MANIFEST_RETRY_DELAY_SECONDS = 5
 WG_PLACEHOLDERS = {
     "__WG_PRIVATE_KEY__": "private_key",
     "__WG_SELF_IP__": "self_ip",
@@ -34,6 +37,10 @@ WG_PLACEHOLDERS = {
 
 class RenderError(RuntimeError):
     pass
+
+
+class DownloadError(RenderError):
+    """Network-level failure while fetching a public template or manifest."""
 
 
 def load_json(path: Path) -> dict:
@@ -65,7 +72,9 @@ def fetch(url: str, timeout: int, private: bool = False) -> str:
     except RenderError:
         raise
     except Exception as exc:
-        raise RenderError("private source could not be read" if private else f"template download failed: {exc}") from exc
+        if private:
+            raise RenderError("private source could not be read") from exc
+        raise DownloadError(f"template download failed: {exc} ({url})") from exc
 
 
 def cache_bust(url: str) -> str:
@@ -268,9 +277,25 @@ def main() -> int:
         if secrets_path.stat().st_mode & 0o077:
             raise RenderError(f"secrets file permissions must be 0600: {secrets_path}")
         secrets = load_json(secrets_path); root = Path(config.get("output_root", "/var/lib/surge-profile")); root.mkdir(parents=True, exist_ok=True)
-        manifest = json.loads(fetch(cache_bust(https_url(config.get("manifest_url"), "manifest_url")), int(config.get("timeout_seconds", 30))))
         with (root / ".render.lock").open("a+", encoding="utf-8") as lock:
-            fcntl.flock(lock.fileno(), fcntl.LOCK_EX); staged, outputs = stage(config, secrets, manifest)
+            fcntl.flock(lock.fileno(), fcntl.LOCK_EX)
+            manifest_url = https_url(config.get("manifest_url"), "manifest_url")
+            timeout = int(config.get("timeout_seconds", 30))
+            # raw.githubusercontent.com can briefly serve a stale manifest after a
+            # push; re-fetch it on failure instead of failing the whole release.
+            for attempt in range(1, MANIFEST_RETRY_ATTEMPTS + 1):
+                try:
+                    manifest = json.loads(fetch(cache_bust(manifest_url), timeout))
+                    staged, outputs = stage(config, secrets, manifest)
+                    break
+                except DownloadError as exc:
+                    if attempt == MANIFEST_RETRY_ATTEMPTS:
+                        raise
+                    print(
+                        f"render attempt {attempt}/{MANIFEST_RETRY_ATTEMPTS} failed ({exc}); retrying",
+                        file=sys.stderr,
+                    )
+                    time.sleep(MANIFEST_RETRY_DELAY_SECONDS)
             final = staged.with_name(f"release-{int(time.time())}-{os.getpid()}"); staged.rename(final)
             temporary = root / ".current-new"; temporary.unlink(missing_ok=True); temporary.symlink_to(final); os.replace(temporary, root / "current")
             old_releases = sorted((path for path in (root / "releases").glob("release-*") if path.is_dir()), key=lambda path: path.stat().st_mtime, reverse=True)
@@ -278,7 +303,7 @@ def main() -> int:
                 shutil.rmtree(old, ignore_errors=True)
         print(f"activated {len(outputs)} profiles: {', '.join(outputs)}"); return 0
     except (RenderError, OSError, ValueError, json.JSONDecodeError) as exc:
-        print(f"render failed: {exc}", file=__import__("sys").stderr); return 1
+        print(f"render failed: {exc}", file=sys.stderr); return 1
 
 
 if __name__ == "__main__":
