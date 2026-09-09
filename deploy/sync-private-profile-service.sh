@@ -17,7 +17,8 @@ cd "$repo_root"
 
 host=${1:-eb}
 staging=$(mktemp -d "${TMPDIR:-/tmp}/surge-profile-sync.XXXXXX")
-trap 'rm -rf "$staging"' EXIT
+bundle="$staging.tar.gz"
+trap 'rm -rf "$staging"; rm -f "$bundle"' EXIT
 
 cp deploy/private-profile-service/render-private-profiles.py "$staging/"
 cp tools/surge-profilectl.py "$staging/"
@@ -28,8 +29,8 @@ cp deploy/install-private-profile-service.sh "$staging/"
 
 local_renderer_sha=$(sha256sum "$staging/render-private-profiles.py" | awk '{print $1}')
 
-tar -C "$staging" -czf "$staging/bundle.tar.gz" .
-scp -q "$staging/bundle.tar.gz" "$host:/tmp/surge-profile-sync-bundle.tar.gz"
+tar -C "$staging" -czf "$bundle" .
+scp -q "$bundle" "$host:/tmp/surge-profile-sync-bundle.tar.gz"
 
 remote_report=$(ssh "$host" '
   set -eu
