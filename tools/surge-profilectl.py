@@ -97,7 +97,7 @@ def read_profile_meta(path: Path) -> dict[str, str]:
     for raw in path.read_text(encoding="utf-8").splitlines():
         if not raw.startswith("# @"):
             continue
-        key, _, value = raw[2:].partition(":")
+        key, _, value = raw[3:].partition(":")
         meta[key.strip()] = value.strip()
     return meta
 
