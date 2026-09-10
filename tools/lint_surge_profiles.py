@@ -3,7 +3,9 @@
 
 Discovers every profile under profiles/ and legacy/, checks policy references,
 rule-set links, and secrets, and verifies that the render manifest points only
-at files that actually exist and are meant to be rendered.
+at files that actually exist and are meant to be rendered. Version snapshots
+under profiles/<family>/version <major>/ are linted like any other profile but
+are never manifest sources, so they are excluded from that coverage check.
 """
 
 from __future__ import annotations
@@ -124,6 +126,20 @@ def check_manifest_coverage(root: Path, profiles: list[Path], errors: list[str])
             errors.append(f"managed profile is not referenced by the manifest: {relative}")
 
 
+def family_entry_profiles(root: Path) -> list[Path]:
+    """Managed profiles that sit directly under a family directory.
+
+    Those are the files the VPS renders; the snapshots in version subdirectories
+    are release history and must not appear in the manifest.
+    """
+    profiles_dir = root / "profiles"
+    if not profiles_dir.is_dir():
+        return []
+    return sorted(
+        path for path in profiles_dir.rglob("*.conf") if path.parent.parent == profiles_dir
+    )
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("root", nargs="?", default=".", help="repository root (default: current directory)")
@@ -132,7 +148,7 @@ def main() -> int:
     rule_sets = sorted((root / "rules").rglob("*.list")) if (root / "rules").is_dir() else []
     errors: list[str] = []
     warnings: list[str] = []
-    managed = sorted((root / "profiles").rglob("*.conf"))
+    managed = family_entry_profiles(root)
     check_manifest_coverage(root, managed, errors)
     if not rule_sets:
         errors.append("no Rule Sets found under rules/")

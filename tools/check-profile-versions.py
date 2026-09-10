@@ -2,11 +2,18 @@
 """Enforce the profile versioning contract used by this repository.
 
 Rules:
-- Every file under profiles/<family>/ must be named <semver>.conf and carry
-  matching # @profile / # @version / # @status metadata.
-- Exactly one active version per family; it must be the highest version and it
+- Every # @profile / # @version / # @status header must be present and coherent;
+  @profile has to equal the family directory name.
+- Each family has exactly one entry file directly under profiles/<family>/, and
+  it is the file the VPS renders. It is named after the manifest output (for
+  example profiles/surge/surge.conf) so the rendered path never changes, which
+  means its filename does not have to equal @version. A file whose stem already
+  looks like a version (1.0.0.conf) must still match @version.
+- Released snapshots live in profiles/<family>/version <major>/<semver>.conf.
+  They must be named after @version and must be @status: superseded.
+- Exactly one active file per family; it must be the highest version and it
   must be the version referenced by config/private-profile-templates.json.
-- Families keep at most three versions; older releases must be archived.
+- Families keep at most three distinct versions; older releases must be archived.
 - Files under legacy/ must be frozen and must NOT be referenced by the manifest.
 - Files under archive/ must not be referenced by the manifest.
 """
@@ -28,6 +35,15 @@ MAX_VERSIONS_PER_FAMILY = 3
 
 def version_key(value: str) -> tuple[int, ...]:
     return tuple(int(part) for part in value.split("."))
+
+
+def split_family_files(family: Path) -> tuple[list[Path], list[Path]]:
+    """Return (entry files, snapshots) for one family directory."""
+    entries: list[Path] = []
+    snapshots: list[Path] = []
+    for path in sorted(family.rglob("*.conf")):
+        (entries if path.parent == family else snapshots).append(path)
+    return entries, snapshots
 
 
 def parse_metadata(path: Path) -> dict[str, str]:
@@ -53,42 +69,48 @@ def check_profiles(root: Path, manifest: dict, errors: list[str]) -> None:
         errors.append("profiles/: no family directories found")
         return
     for family in families:
-        files = sorted(family.glob("*.conf"))
-        if not files:
+        entries, snapshots = split_family_files(family)
+        if not entries:
             errors.append(f"{family}: no .conf files")
             continue
-        if len(files) > MAX_VERSIONS_PER_FAMILY:
-            errors.append(
-                f"{family}: {len(files)} versions kept (max {MAX_VERSIONS_PER_FAMILY}); archive older releases"
-            )
         active: list[Path] = []
-        versions: dict[Path, tuple[int, ...]] = {}
-        for path in files:
+        declared: dict[Path, str] = {}
+        for path in entries + snapshots:
+            is_snapshot = path.parent != family
             meta = parse_metadata(path)
-            declared = meta.get("version", "")
-            if not SEMVER.fullmatch(declared):
-                errors.append(f"{path}: @version must be semver, got {declared!r}")
-            if path.stem != declared:
-                errors.append(f"{path}: filename version {path.stem!r} != @version {declared!r}")
+            version = meta.get("version", "")
+            if not SEMVER.fullmatch(version):
+                errors.append(f"{path}: @version must be semver, got {version!r}")
+            # The entry file keeps a stable path, so only its name is free-form
+            # when it does not look like a version; snapshots always must match.
+            if (is_snapshot or SEMVER.fullmatch(path.stem)) and path.stem != version:
+                errors.append(f"{path}: filename version {path.stem!r} != @version {version!r}")
             if meta.get("profile") != family.name:
                 errors.append(f"{path}: @profile {meta.get('profile')!r} != family {family.name!r}")
             status = meta.get("status", "")
             if status not in ACTIVE_STATUSES:
                 errors.append(f"{path}: @status must be active/superseded, got {status!r}")
             if status == "active":
+                if is_snapshot:
+                    errors.append(f"{path}: snapshot versions must be @status: superseded")
+                    continue
                 active.append(path)
-            if SEMVER.fullmatch(declared):
-                versions[path] = version_key(declared)
+            declared[path] = version
             relative = path.relative_to(root).as_posix()
             if relative in sources and status != "active":
                 errors.append(f"{path}: manifest references a non-active version")
+        distinct = {version for version in declared.values() if SEMVER.fullmatch(version)}
+        if len(distinct) > MAX_VERSIONS_PER_FAMILY:
+            errors.append(
+                f"{family}: {len(distinct)} versions kept (max {MAX_VERSIONS_PER_FAMILY}); archive older releases"
+            )
         if len(active) != 1:
             errors.append(f"{family}: expected exactly one active version, found {len(active)}")
             return
-        if versions:
+        if distinct:
             top = active[0]
-            highest = max(versions, key=versions.get)
-            if top != highest:
+            highest = max(version_key(value) for value in distinct)
+            if version_key(declared[top]) != highest:
                 errors.append(f"{family}: active version is not the highest version")
             relative = top.relative_to(root).as_posix()
             if relative not in sources:

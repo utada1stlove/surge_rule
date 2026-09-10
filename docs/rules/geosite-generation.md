@@ -5,11 +5,11 @@
 
 当前生成文件主要用于审计、备用和未来切换。运行时继续优先使用 Sukka、BlackMatrix
 等外部规则；但由于没有可直接替代的完整成人规则，`category-porn.list` 是例外，已在
-active `profiles/surge/1.0.0.conf` 中实际引用并分配给 `NSFW`（冻结的
+active `profiles/surge/surge.conf` 中实际引用并分配给 `NSFW`（冻结的
 `legacy/surge-main.conf` 分配给 `Boom`）。
 
 Apple 的普通服务使用 Sukka 的 `apple_services.conf`，active
-`profiles/surge/1.0.0.conf` 分配给 `Foreign-Apple`；中国大陆专用 Apple 域名使用
+`profiles/surge/surge.conf` 分配给 `Foreign-Apple`；中国大陆专用 Apple 域名使用
 `apple_cn.conf` 并优先分配给 `DIRECT`。
 
 `config/geosite-policy.json` 的 `profile` 指向冻结的 `legacy/surge-main.conf`，作为

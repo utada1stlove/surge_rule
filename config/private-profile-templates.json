@@ -3,9 +3,9 @@
   "profiles": [
     {
       "id": "surge",
-      "template_url": "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/profiles/surge/1.0.0.conf",
+      "template_url": "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/profiles/surge/surge.conf",
       "output": "surge.conf",
-      "source": "profiles/surge/1.0.0.conf"
+      "source": "profiles/surge/surge.conf"
     },
     {
       "id": "simple",

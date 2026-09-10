@@ -38,10 +38,11 @@
 
 ```text
 profiles/
-  surge/                   # 主 Profile 家族，当前 1.0.0.conf
+  surge/                   # 主 Profile 家族，渲染入口 surge.conf，历史快照在 version 1/
   simple/                  # DIRECT / Proxy / REJECT 简洁家族，当前 1.0.0.conf
   home-wg/                 # WireGuard 回家家族，当前 1.0.0.conf
 legacy/                    # 已冻结配置，仅供查阅，不再由私有服务输出
+  icons/                   # 已冻结图标素材，不再被任何 Profile 引用
 archive/                   # 旧版本快照与历史文件，不再维护、不参与渲染
 rules/
   direct.list           # 直连规则

@@ -50,6 +50,21 @@ class VersionGateTests(unittest.TestCase):
         path.write_text(profile_body(family, version, status), encoding="utf-8")
         return path
 
+    def write_entry(self, family: str, name: str, version: str, status: str = "active") -> Path:
+        """Write the file the VPS renders; its name is stable, not a version."""
+        family_dir = self.root / "profiles" / family
+        family_dir.mkdir(exist_ok=True)
+        path = family_dir / f"{name}.conf"
+        path.write_text(profile_body(family, version, status), encoding="utf-8")
+        return path
+
+    def write_snapshot(self, family: str, version: str, status: str = "superseded") -> Path:
+        snapshot_dir = self.root / "profiles" / family / "version 1"
+        snapshot_dir.mkdir(parents=True, exist_ok=True)
+        path = snapshot_dir / f"{version}.conf"
+        path.write_text(profile_body(family, version, status), encoding="utf-8")
+        return path
+
     def write_manifest(self, sources: list[str]) -> None:
         entries = []
         for index, source in enumerate(sources):
@@ -117,6 +132,47 @@ class VersionGateTests(unittest.TestCase):
         errors = self.collect()
         self.assertTrue(any("must be @status: frozen" in e for e in errors))
         self.assertTrue(any("legacy file must not be referenced" in e for e in errors))
+
+    def test_stable_entry_with_version_snapshots_is_clean(self) -> None:
+        self.write_snapshot("surge", "1.0.0")
+        self.write_snapshot("surge", "1.0.1")
+        self.write_snapshot("surge", "1.0.2")
+        self.write_entry("surge", "surge", "1.0.2")
+        self.write_manifest(["profiles/surge/surge.conf"])
+        self.assertEqual(self.collect(), [])
+
+    def test_snapshot_may_not_be_active(self) -> None:
+        self.write_snapshot("surge", "1.0.0")
+        self.write_snapshot("surge", "1.0.1", "active")
+        self.write_entry("surge", "surge", "1.0.1")
+        self.write_manifest(["profiles/surge/surge.conf"])
+        errors = self.collect()
+        self.assertTrue(any("snapshot versions must be @status: superseded" in e for e in errors))
+
+    def test_snapshot_filename_must_match_version(self) -> None:
+        self.write_snapshot("surge", "1.0.0")
+        snapshot = self.write_snapshot("surge", "1.0.1")
+        snapshot.write_text(profile_body("surge", "1.0.2", "superseded"), encoding="utf-8")
+        self.write_entry("surge", "surge", "1.0.2")
+        self.write_manifest(["profiles/surge/surge.conf"])
+        errors = self.collect()
+        self.assertTrue(any("filename version '1.0.1' != @version '1.0.2'" in e for e in errors))
+
+    def test_snapshots_count_towards_the_version_cap(self) -> None:
+        for version in ("1.0.0", "1.0.1", "1.0.2"):
+            self.write_snapshot("surge", version)
+        self.write_entry("surge", "surge", "1.0.3")
+        self.write_manifest(["profiles/surge/surge.conf"])
+        errors = self.collect()
+        self.assertTrue(any("4 versions kept (max 3)" in e for e in errors))
+
+    def test_manifest_must_point_at_the_entry_file(self) -> None:
+        self.write_snapshot("surge", "1.0.0")
+        self.write_entry("surge", "surge", "1.0.1")
+        self.write_manifest(["profiles/surge/version 1/1.0.0.conf"])
+        errors = self.collect()
+        self.assertTrue(any("manifest source" in e for e in errors))
+        self.assertTrue(any("active version is not referenced by the manifest" in e for e in errors))
 
     def test_archive_must_not_be_referenced(self) -> None:
         self.write_profile("surge", "1.0.0")

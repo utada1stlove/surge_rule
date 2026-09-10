@@ -1,7 +1,8 @@
 # Profile 版本化
 
-版本化的目标是：想法随时间演进，但配置、订阅 URL 和回滚路径保持稳定。真源是
-`profiles/<family>/<version>.conf` 的文件名与首部 `# @version:`，两者必须相等。
+版本化的目标是：想法随时间演进，但配置、订阅 URL 和回滚路径保持稳定。真源是渲染入口
+文件首部 `# @version:`；入口文件的路径由 manifest 的 `output` 决定，发布新版本时不变，
+所以设备端和 VPS 都不需要跟着版本号改路径。
 
 ## 三条主线
 
@@ -16,41 +17,58 @@
 
 ## 版本规则
 
-文件名使用语义化版本 `<major>.<minor>.<patch>.conf`，文件头必须写：
+每个家族只有一个渲染入口，直接放在家族目录下，文件名与 manifest `output` 一致
+（`profiles/surge/surge.conf`）。版本快照放在
+`profiles/<family>/version <major>/<semver>.conf`。两类文件头都必须写：
 
 ```ini
 # @profile: <family>
 # @version: <major>.<minor>.<patch>
-# @status: active
+# @status: active（入口）或 superseded（快照）
 # @changed: YYYY-MM-DD
 # @changelog: profiles/<family>/CHANGELOG.md
 ```
 
-- patch（`v1.0.0` → `v1.0.1`）：原地修改同一个文件，更新 `@changed` 与 changelog；
-- minor（`v1.0.x` → `v1.2.0`）：在同一家族目录新建 `<x.y.0>.conf`，旧文件标记
-  `# @status: superseded`，manifest 切到新文件；
-- major（`v1.x.y` → `v2.0.0`）：新建 `profiles/<family>-v2/` 目录，旧家族整体进入
-  历史线，manifest 切到新目录；
-- 每个家族最多保留 3 个版本；更旧的移入 `archive/`，不得被 manifest 引用。
+约束（由 `tools/check-profile-versions.py` 校验）：
 
-旧版本保留在 `profiles/` 内时仍可用于快速回滚。回滚只改
-`config/private-profile-templates.json` 中该家族的 `source` 一行，设备订阅 URL
-（manifest `output`）不变。
+- 入口文件是唯一的 `# @status: active`，且 `@version` 是本家族最高版本；入口文件名不
+  要求等于 `@version`，但如果它本身长得像版本号（`1.0.0.conf`），两者必须相等；
+- 快照文件名必须等于自己的 `@version`，`@status` 必须是 `superseded`，且不得被
+  manifest 引用；
+- manifest 的 `source` 必须指向入口文件；
+- 每个家族最多保留 3 个不同版本号（入口文件与快照去重后计数）；更旧的移入 `archive/`。
+
+发布一次改动：
+
+1. 改 `profiles/<family>/<output>`，升 `@version` 与 `@changed`；
+2. 把它复制成 `profiles/<family>/version <major>/<new-version>.conf`，并把快照的
+   `@status` 改成 `superseded`（快照与入口文件只允许这一行不同）；
+3. 在 `profiles/<family>/CHANGELOG.md` 补一条；
+4. 跑一遍下面的校验脚本。
+
+patch（`1.0.0` → `1.0.1`）和 minor（`1.0.x` → `1.2.0`）走同一条流程，只是新版本号不同；
+major（`1.x.y` → `2.0.0`）新建 `profiles/<family>-v2/` 家族目录，旧家族整体进入历史线，
+manifest 的 `id` / `source` 切到新目录。
+
+回滚不再改 manifest：把目标快照复制回入口文件、`@status` 写回 `active`、`@changed`
+更新为当天即可，设备订阅 URL（manifest `output`）和 `source` 都不变。
 
 ## Manifest 字段
 
 `config/private-profile-templates.json` 的每条记录：
 
 - `source`：仓库内相对路径，版本校验和渲染 provenance 都以此为准；
-- `template_url`：GitHub Raw 地址，VPS 渲染器从这里取模板；
+- `template_url`：GitHub Raw 地址，VPS 渲染器从这里取模板，必须与 `source` 指向同一个文件；
 - `output`：私有服务输出文件名，也是设备订阅 URL 的最后一段，升级/回滚时保持稳定。
 
 VPS 渲染成功后在输出文件首部注入：
 
 ```ini
-# @rendered-from: profiles/<family>/<version>.conf
+# @rendered-from: profiles/<family>/<output>
 # @rendered-at: YYYY-MM-DDTHH:MM:SSZ
 ```
+
+`@rendered-from` 取的就是 manifest 的 `source`（也就是入口文件），因此回滚快照时这一行不会变。
 
 `release.json` 同时记录 `sources`，`surge-profilectl status --check` 会按它核对
 每份输出的 profile/version 元数据。
@@ -66,6 +84,9 @@ python3 tools/lint_surge_profiles.py .
 python3 tools/test-check-profile-versions.py
 python3 tools/test-private-profile-renderer.py
 ```
+
+`tools/lint_surge_profiles.py` 会连同一并 lint 家族子目录里的快照，但只有入口文件参与
+manifest 覆盖检查。
 
 ## 设备端生效
 

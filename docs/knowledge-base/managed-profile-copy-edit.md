@@ -24,7 +24,7 @@ Surge 不能修改托管规则。带 `#!MANAGED-CONFIG` 首行的 Profile 在设
 本仓库为公开仓库，Rule Set 与 Profile 都是绝对 Raw 地址，可以直接下载：
 
 ```bash
-curl -LO https://raw.githubusercontent.com/utada1stlove/surge_rule/main/profiles/surge/1.0.0.conf
+curl -LO https://raw.githubusercontent.com/utada1stlove/surge_rule/main/profiles/surge/surge.conf
 ```
 
 浏览器打开 Raw 链接后，用 iPhone 的「共享 → 拷贝到文件」也可以拿到同一份文本。

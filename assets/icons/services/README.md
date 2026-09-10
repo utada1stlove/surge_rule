@@ -15,16 +15,17 @@ magick <out>.png -depth 8 -strip -define png:exclude-chunk=all <out>.png
 
 | 文件 | 用途 | 来源 |
 | --- | --- | --- |
-| `youtube.svg` / `youtube.png` | `profiles/surge/1.0.0.conf` YouTube 组 | 本地提供（红色圆角方块 + 白色播放键的应用图标样式）；PNG 由该 SVG 渲染 |
-| `dropbox.svg` / `dropbox.tile.png` | `profiles/surge/1.0.0.conf` `Cloud Box` 组 | 本地提供（圆角方块 tile + 白色 Dropbox 开盒图形）。原 SVG 底色为 `#4D8DC9`，已改为品牌蓝 `#0061FF`；PNG 由修改后的 SVG 渲染 |
+| `youtube.svg` / `youtube.png` | `profiles/surge/surge.conf` 的 YouTube 组 | 本地提供（红色圆角方块 + 白色播放键的应用图标样式）；PNG 由该 SVG 渲染 |
+| `dropbox.svg` / `dropbox.tile.png` | `profiles/surge/surge.conf` 的 `Cloud Box` 组 | 本地提供（圆角方块 tile + 白色 Dropbox 开盒图形）。原 SVG 底色为 `#4D8DC9`，已改为品牌蓝 `#0061FF`；PNG 由修改后的 SVG 渲染 |
 | `dropbox.png` | 其余 Profile（`legacy/surgeion.conf`）`Cloud` 组 | 仓库既有资源，官方蓝裸图形、透明底、144x144；未改动 |
 | `dropbox-brands-solid-full.svg` | 未使用 | Font Awesome Free 7.3.1 单色 path，无 `fill`，渲染为黑色透明底，深色模式下几乎不可见，故未采用 |
 | `line.svg` | 未使用 | 本地提供；当前 LINE 流量由 `rules/line.list` 归入 `Japan` 组，尚无独立策略组引用该图标 |
-| `Paypal.png` | `profiles/surge/1.0.0.conf` `PayPal` 组 | 全彩品牌图，144x144 |
-| `Twitter.png` | `profiles/surge/1.0.0.conf` `Twitter` 组 | 全彩品牌图，144x144 |
-| `google.png` | `profiles/surge/1.0.0.conf` `Google` 组 | 由 `google-color.svg` 渲染，144x144 |
-| `house-solid-full.svg` | 未使用 | 仅保留为可编辑源文件；`HomeProxy` 组沿用 `assets/icons/policy/home.png`（同为房屋图形，全彩） |
+| `Paypal.png` | `profiles/surge/surge.conf` 的 `PayPal` 组 | 全彩品牌图，144x144 |
+| `Twitter.png` | `profiles/surge/surge.conf` 的 `Twitter` 组 | 全彩品牌图，144x144 |
+| `google.png` | `profiles/surge/surge.conf` 的 `Google` 组 | 由 `google-color.svg` 渲染，144x144 |
+| `house-solid-full.svg` | 未使用 | 仅保留为可编辑源文件；`HomeProxy` 组自 `profiles/surge` 1.0.2 起改用 `assets/icons/policy/home-wifi.png`（同为房屋图形，全彩），更早的 Profile 沿用 `policy/home.png` |
 | `paypal.png`、`twitter.png` | 已移至 `archive/icons/` | 由 `*-brands-solid-full.svg` 直接渲染：单色无 `fill`、灰度透明底，深色模式下几乎不可见；与上面两个文件仅首字母大小写不同，GitHub Raw 地址区分大小写，留在本目录容易误引用 |
+| `cloudflare-color.svg` | 已移至 `legacy/icons/` | 与 `../policy/cloudflare-color.svg` 逐字节相同的副本（md5 `3b870ed0310474894c05bf80b985c998`）；`profiles/surge/surge.conf` 的 `Boom` 组自 1.0.2 起引用 `../policy/cloudflare-color.png`，可编辑源文件保留 `../policy/` 一份即可 |
 
 其余 PNG（`reuters.png`、`whatsapp.png`、`reddit.png`、`chatgpt.png` 等）为仓库既有资源，上游来源未在仓库内记录。
 

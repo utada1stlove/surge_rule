@@ -6,13 +6,16 @@
 README.md
 profiles/
   surge/
-    <version>.conf
+    surge.conf              # 渲染入口，路径稳定
+    version 1/
+      <version>.conf        # 已发布快照
   simple/
     <version>.conf
   home-wg/
     <version>.conf
 legacy/
   ...
+  icons/
 archive/
   ...
 rules/
@@ -26,9 +29,12 @@ docs/
   ...
 ```
 
-公开仓库只保存通用规则和模板。进入版本线的主配置放在 `profiles/<family>/`，文件头
-`# @version` 与文件名保持一致，规则见 [Profile 版本化](profile-versioning.md)。
-`legacy/` 保存已冻结的完整配置，只修坏链与安全问题，不再由私有服务输出；
+公开仓库只保存通用规则和模板。进入版本线的主配置放在 `profiles/<family>/`，渲染入口
+以 manifest `output` 命名（`profiles/surge/surge.conf`），版本号写在文件头
+`# @version`；`version <major>/<version>.conf` 里的快照仍要求文件名与 `@version` 一致。
+完整规则见 [Profile 版本化](profile-versioning.md)。
+`legacy/` 保存已冻结的完整配置和不再引用的图标素材（`legacy/icons/`），只修坏链与安全问题，
+不再由私有服务输出；
 `archive/` 保存旧版本快照与历史文件，二者都不得作为
 `config/private-profile-templates.json` 的 `source`。校验统一用仓库自带的
 `tools/lint_surge_profiles.py`、`tools/check-profile-versions.py` 和
