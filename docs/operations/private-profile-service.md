@@ -115,10 +115,11 @@ ssh eb journalctl -u surge-profile-render.service -n 20 --no-pager
 ## 版本化与回滚
 
 三条主线分别维护在 `profiles/surge/`、`profiles/simple/`、`profiles/home-wg/`。
-文件头 `# @version` 必须与文件名一致；patch 原地修改，minor 同目录新建版本，
-major 新建 `<family>-v2/` 目录。设备订阅 URL 由 manifest `output` 固定，升级或
-回滚只改 `config/private-profile-templates.json` 的 `source` 一行。完整契约见
-[Profile 版本化](profile-versioning.md)。
+每个家族只有一个渲染入口（文件名与 manifest `output` 一致，路径不随版本变化），历史版本
+快照放在 `version <major>/` 里。设备订阅 URL 由 manifest `output` 固定，`source` 和
+`template_url` 始终指向那个入口文件，所以升级和回滚都不用再改 manifest：改的是入口文件的
+正文与 `# @version:`。回滚只往前走，恢复旧内容时发布成一个新版本号，快照不会翻回 `active`。
+完整契约见 [Profile 版本化](profile-versioning.md)。
 
 仓库到 VPS 的同步：
 

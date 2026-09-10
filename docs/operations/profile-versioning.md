@@ -18,8 +18,10 @@
 ## 版本规则
 
 每个家族只有一个渲染入口，直接放在家族目录下，文件名与 manifest `output` 一致
-（`profiles/surge/surge.conf`）。版本快照放在
-`profiles/<family>/version <major>/<semver>.conf`。两类文件头都必须写：
+（`profiles/surge/surge.conf`、`profiles/simple/surge-simple.conf`、
+`profiles/home-wg/surge-home-wg.conf`），因此改版本号不会改渲染路径。版本快照放在
+`profiles/<family>/version <major>/<semver>.conf`，三个家族都已按这个布局摆放。
+两类文件头都必须写：
 
 ```ini
 # @profile: <family>
@@ -35,7 +37,15 @@
   要求等于 `@version`，但如果它本身长得像版本号（`1.0.0.conf`），两者必须相等；
 - 快照文件名必须等于自己的 `@version`，`@status` 必须是 `superseded`，且不得被
   manifest 引用；
+- 入口文件当前版本号必须有一份自己的快照，且这份快照与入口文件**只允许 `@status`
+  一行不同**；其余快照记录各自历史内容，不参与比对；
 - manifest 的 `source` 必须指向入口文件；
+- `template_url` 的路径部分必须落到同一个 `source` 文件上：VPS 拉的是
+  `template_url`，校验和 provenance 读的是 `source`，两者一旦分叉，设备会静默停在旧
+  版本而校验全绿；
+- 家族目录里只允许 `.conf` 与 `CHANGELOG.md`，子目录必须是 `version <major>`，且快照的
+  major 必须与所在目录一致。这条是为了让任何误放的文件（比如一份没有 `.conf` 后缀的
+  副本）无处藏身；
 - 每个家族最多保留 3 个不同版本号（入口文件与快照去重后计数）；更旧的移入 `archive/`。
 
 发布一次改动：
@@ -50,8 +60,16 @@ patch（`1.0.0` → `1.0.1`）和 minor（`1.0.x` → `1.2.0`）走同一条流�
 major（`1.x.y` → `2.0.0`）新建 `profiles/<family>-v2/` 家族目录，旧家族整体进入历史线，
 manifest 的 `id` / `source` 切到新目录。
 
-回滚不再改 manifest：把目标快照复制回入口文件、`@status` 写回 `active`、`@changed`
-更新为当天即可，设备订阅 URL（manifest `output`）和 `source` 都不变。
+回滚只往前走（forward-only）：快照永远保持 `superseded`，不会被翻回 `active`，因为
+校验要求 active 是本家族最高版本，而 `version <major>/` 里那份旧快照仍然计在版本集合内，
+把 1.0.1 翻回 active 只会得到 `active version is not the highest version`。正确做法是把
+目标快照的正文复制进 `profiles/<family>/<output>`，`@version` 写一个**新的**号
+（例如回到 1.0.1 的内容就发布成 1.0.3），`@changed` 更新为当天，再按上面的发布流程补一份
+`version <major>/<new-version>.conf` 快照和一条 changelog。设备订阅 URL（manifest
+`output`）与 `source` 全程不变，VPS 下一次渲染即生效。
+
+代价是回滚也占一个版本号：家族已经占满 3 个版本号时，先按「更旧的移入 `archive/`」腾位置。
+surge 家族当前已有 1.0.0 / 1.0.1 / 1.0.2 三个版本，下一次回滚必须先归档 1.0.0。
 
 ## Manifest 字段
 
@@ -68,7 +86,9 @@ VPS 渲染成功后在输出文件首部注入：
 # @rendered-at: YYYY-MM-DDTHH:MM:SSZ
 ```
 
-`@rendered-from` 取的就是 manifest 的 `source`（也就是入口文件），因此回滚快照时这一行不会变。
+`@rendered-from` 取的就是 manifest 的 `source`（也就是入口文件），因此升级和回滚时这一行
+都不会变；`tools/check-profile-versions.py` 会校验 `template_url` 与 `source` 指向同一个文件，
+保证这一行说的就是 VPS 真正拉取的那份内容。
 
 `release.json` 同时记录 `sources`，`surge-profilectl status --check` 会按它核对
 每份输出的 profile/version 元数据。

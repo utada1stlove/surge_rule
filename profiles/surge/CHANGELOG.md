@@ -4,6 +4,21 @@
 快照在 `profiles/surge/version 1/<version>.conf`。设备订阅 URL 由 manifest 的 `output`
 决定，升级和回滚都不需要改设备端 URL。
 
+## 校验加固 (2026-09-10，不升版本)
+
+- 回滚语义定为「只往前走」：旧快照永远保持 `superseded`，想恢复旧内容就是把它复制进入口文件、
+  再发布成一个新版本号。此前写的「把快照翻回 `active`」与「active 必须是本家族最高版本」这条
+  规则互相矛盾，照做只会得到 `active version is not the highest version`。代价是回滚也占一个
+  版本号：本家族已占着 1.0.0 / 1.0.1 / 1.0.2，下次回滚前得先把 1.0.0 移入 `archive/`。
+- `tools/check-profile-versions.py` 补三类校验（三个家族同一套规则）：
+  入口文件的当前版本必须有对应快照，且该快照与入口文件除 `@status` 一行外必须逐行相同
+  （1.0.2 就踩过坑：快照留的是旧内容，两个校验脚本都照样绿）；manifest 的 `template_url`
+  路径必须与 `source` 落到同一个文件、`source` 必须存在、`output` 不得重复；家族目录里除
+  `.conf` 与 `CHANGELOG.md` 外不留其他文件，子目录必须叫 `version <major>` 且快照 major 与
+  所在目录一致。
+- `tools/test-check-profile-versions.py` 用例从 12 个增加到 22 个；当前仓库跑
+  `python3 tools/check-profile-versions.py .` 为 0 error。
+
 ## 1.0.2 (2026-09-10)
 
 - 图标改回 PNG 交付：`Smart` 由 `policy/speed-slow-svgrepo-com.svg` → `policy/speed.png`，
@@ -11,7 +26,7 @@
   SVG」不确定性随之取消，`.svg` 退回可编辑源文件；`Proxy` 组沿用 1.0.1 的 `policy/Surge.png`。
 - 换图：`Domestic` 由 Qure `policy/domestic.png` → `policy/china.png`，`HomeProxy` 由
   `policy/home.png` → `policy/home-wifi.png`（深蓝房形底 + 白色 Wi-Fi，明暗模式都读得清）。
-  `profiles/simple/1.0.0.conf`、`legacy/`、`archive/` 仍用 `domestic.png` 与 `home.png`。
+  `profiles/simple/surge-simple.conf`、`legacy/`、`archive/` 仍用 `domestic.png` 与 `home.png`。
 - 新增素材统一压到 144x144：`speed.png` 从 2500x2500 / 172KB 降到 8.9KB，`china.png` 3.0KB、
   `cloudflare-color.png` 3.0KB、`home-wifi.png` 4.9KB。`icon-url` 每次刷新都要重新下载，尺寸直接
   变成设备流量；144 是推荐尺寸而非硬限制，见 `assets/icons/policy/README.md`。
@@ -27,7 +42,8 @@
 - 快照状态：`version 1/` 下 1.0.0 / 1.0.1 / 1.0.2 三份 `@status` 改为 `superseded`，渲染入口
   `surge.conf` 是本家族唯一的 `active`。快照与入口文件只差这一行。
 - 只动图标：策略组成员与候选顺序、`policy-regex-filter`、`[Rule]` 段与 1.0.1 相同，回滚只需把
-  `version 1/1.0.1.conf` 复制回 `surge.conf` 并把 `@status` 写回 `active`。
+  `version 1/1.0.1.conf` 的正文复制回 `surge.conf`，并按发布流程发布成新的版本号（1.0.3）；
+  快照不会翻回 `active`，见 `docs/operations/profile-versioning.md`。
 - 未发布过：1.0.2 期间 manifest 一直指向已移走的 `profiles/surge/1.0.0.conf`，VPS 没有成功渲染过
   任何一份 1.0.1 之后的输出，所以图标尺寸与 `HomeProxy` 改动直接并入 1.0.2，不另起 1.0.3。
 - 已知问题：`china.png` 是纯 `#000000` 中国地图剪影、透明底，在 Surge 深色列表里几乎不可见，
