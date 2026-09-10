@@ -58,5 +58,5 @@ curl -LO https://raw.githubusercontent.com/utada1stlove/surge_rule/main/profiles
 - [GitHub 维护流程](../operations/github-maintenance.md)
 - [私有 Profile 渲染服务](../operations/private-profile-service.md)
 - 手改友好的样板：`legacy/profile.example.conf`（冻结样板，无托管声明）、
-  `profiles/simple/1.0.0.conf`、`profiles/home-wg/1.0.0.conf`（本就为手填
+  `profiles/simple/surge-simple.conf`、`profiles/home-wg/surge-home-wg.conf`（本就为手填
   WireGuard 参数设计）

@@ -4,7 +4,7 @@
 
 ## 文档入口
 
-- [三路简洁配置模板](profiles/simple/1.0.0.conf)
+- [三路简洁配置模板](profiles/simple/surge-simple.conf)
 - [文档总览](docs/README.md)
 - [iPhone 入门配置](docs/getting-started/iphone-setup.md)
 - [规则与策略组](docs/rules/profile-and-rules.md)
@@ -39,8 +39,8 @@
 ```text
 profiles/
   surge/                   # 主 Profile 家族，渲染入口 surge.conf，历史快照在 version 1/
-  simple/                  # DIRECT / Proxy / REJECT 简洁家族，当前 1.0.0.conf
-  home-wg/                 # WireGuard 回家家族，当前 1.0.0.conf
+  simple/                  # DIRECT / Proxy / REJECT 简洁家族，渲染入口 surge-simple.conf，快照在 version 1/
+  home-wg/                 # WireGuard 回家家族，渲染入口 surge-home-wg.conf，快照在 version 1/
 legacy/                    # 已冻结配置，仅供查阅，不再由私有服务输出
   icons/                   # 已冻结图标素材，不再被任何 Profile 引用
 archive/                   # 旧版本快照与历史文件，不再维护、不参与渲染
@@ -55,7 +55,7 @@ tools/                    # 仓库自身的生成、校验、部署工具
 
 ## 简洁配置
 
-如果不需要按地区或服务拆分策略组，使用 `profiles/simple/1.0.0.conf`。它只有三种处理结果：
+如果不需要按地区或服务拆分策略组，使用 `profiles/simple/surge-simple.conf`。它只有三种处理结果：
 
 - 国内及明确直连规则使用 `DIRECT`；
 - 广告及明确拦截规则使用 `REJECT`；

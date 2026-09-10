@@ -14,7 +14,7 @@
 | 文件 | 用途 | 上游来源 |
 | --- | --- | --- |
 | `proxy.png` | 代理入口与 Boom | [Qure Proxy](https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png) |
-| `domestic.png` | 国内服务（`profiles/simple/1.0.0.conf`、`legacy/`、`archive/`；`profiles/surge` 1.0.2 起改用 `china.png`） | [Qure Domestic](https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Domestic.png) |
+| `domestic.png` | 国内服务（`profiles/simple/surge-simple.conf`、`legacy/`、`archive/`；`profiles/surge` 1.0.2 起改用 `china.png`） | [Qure Domestic](https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Domestic.png) |
 | `apple.png` | Apple 服务 | [Qure Apple](https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png) |
 | `global.png` | 通用/亚太组 | [Qure Global](https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png) |
 | `lock.png` | Private 组 | [Qure Lock](https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Lock.png) |

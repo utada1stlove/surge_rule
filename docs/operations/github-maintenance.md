@@ -10,9 +10,13 @@ profiles/
     version 1/
       <version>.conf        # 已发布快照
   simple/
-    <version>.conf
+    surge-simple.conf       # 渲染入口，路径稳定
+    version 1/
+      <version>.conf        # 已发布快照
   home-wg/
-    <version>.conf
+    surge-home-wg.conf      # 渲染入口，路径稳定
+    version 1/
+      <version>.conf        # 已发布快照
 legacy/
   ...
   icons/

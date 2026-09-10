@@ -34,15 +34,17 @@ rules/
 - 通讯与社区；
 - 社交平台。
 
-当前进入版本线的是三个家族：`profiles/surge/surge.conf`（多策略组主配置，渲染入口，
-当前 1.0.2，历史快照在 `profiles/surge/version 1/`）、
-`profiles/simple/1.0.0.conf`（简洁）和 `profiles/home-wg/1.0.0.conf`（WireGuard
-回家）。`legacy/surge-main.conf`、`legacy/surgeion.conf` 与
+当前进入版本线的是三个家族，渲染入口路径都稳定，历史快照在各自的 `version 1/` 目录下：
+`profiles/surge/surge.conf`（多策略组主配置，当前 1.0.2）、
+`profiles/simple/surge-simple.conf`（简洁，当前 1.0.0）和
+`profiles/home-wg/surge-home-wg.conf`（WireGuard 回家，当前 1.0.0）。
+`legacy/surge-main.conf`、`legacy/surgeion.conf` 与
 `legacy/profile.example.conf` 已冻结，不再由私有服务输出；下面关于 legacy 的描述
 只作历史参照。
 
-下文出现的 `profiles/surge/1.0.0.conf` 指该家族 1.0.0 版的内容，文件现在在
-`profiles/surge/version 1/1.0.0.conf`，日常渲染入口是 `profiles/surge/surge.conf`。
+下文出现的 `profiles/surge/1.0.0.conf`、`profiles/simple/1.0.0.conf` 之类旧写法，指该家族
+对应版本的内容，文件现在在 `profiles/<family>/version 1/<version>.conf`，日常渲染入口是家族
+目录下的稳定文件名。
 1.0.1 与 1.0.2 只换图标，没有改动策略绑定，因此下面记录的映射对这三个版本同样成立。
 
 冻结的 `legacy/surge-main.conf` 曾按 DAE 意图固定分配：广告/跟踪到 `REJECT`，Telegram 到 `Boom`，Google 与 Gemini 到 `TaiWan`，Meta（Facebook、Instagram、WhatsApp）到 `Singapore`，Twitter/Reddit 到 `Proxy`，金融分类清单（包括 HSBC、IBKR、uSMART、moomoo、富途、TradingView、Investing.com 等）以及专用 geosite 清单（WSJ、Economist、Bloomberg、Reuters）到 `Finance`，PayPal 到 `United States`，其余板块按既有固定策略映射。`legacy/surgeion.conf` 则将 Meta、Twitter、Reddit、PayPal 分别暴露为带图标的 `select` 策略组，便于手动切换出口。2026-09-09 起 `legacy/surgeion.conf` 同样删除了 `rules/social-sg.list` 的前置覆盖，并把 `Twitter`、`Reddit` 默认项设为 `Singapore`、`Spotify` 默认项设为 `United States`，使默认出口与删除前一致；改动前的整份快照存档在 `archive/surgeion.conf`。
