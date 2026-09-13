@@ -15,6 +15,7 @@
 9. [Hysteria 2 运维文档](hy2/README.md)：记录两台 VPS 的 hy2 用户、统计、ACL、安全和排错方法。
 10. [托管 Profile 与手改副本](knowledge-base/managed-profile-copy-edit.md)：为什么托管配置不能直接改，复制成手改副本的流程与检查项。
 11. [Profile 版本化](operations/profile-versioning.md)：三条主线的版本规则、manifest 契约与回滚方式。
+12. [Surge Smart 节点命名与权重对照](operations/surge-smart-node-naming.md)：改节点名时查看三类 Smart 组如何命中权重。
 
 ## 这套体系解决什么问题
 

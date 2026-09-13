@@ -4,6 +4,35 @@
 快照在 `profiles/surge/version 1/<version>.conf`。设备订阅 URL 由 manifest 的 `output`
 决定，升级和回滚都不需要改设备端 URL。
 
+## 1.1.4 (2026-09-14)
+
+- 节点名分隔符扩展支持 `[` 和 `]`，允许 `CTM [vol] [ss]`、`LacusClyne [TX] [ss]` 这类标签式命名。
+- `Smart`、`Smart-TX-CFT`、`Smart-US` 以及按名称筛选的地区组统一使用新的边界字符集。
+- 归档 `1.1.1` 快照到 `archive/profiles/surge/version 1/`，为 `1.1.4` 腾出版本位。
+
+## 1.1.3 (2026-09-14)
+
+- `Smart` 的 VOL/HS 权重分支增加 `vol` 名称匹配，后续可用英文节点名识别这类节点；不再建议
+  为了权重把 `HS` 强行写进节点名。
+- 暂缓 Sub-Store 自动补协议标签方案，当前只保留 Surge Profile 内的 `policy-priority` 权重。
+- 归档 `1.0.2` 快照到 `archive/profiles/surge/version 1/`，为 `1.1.3` 腾出版本位。
+
+## 1.1.2 (2026-09-14)
+
+- 修正 `Smart` 对 `TX-Misaka-Singapore` 的误判：旧版本会同时命中 HS（0.75）和 TX（0.85），
+  可能把它按 HS 处理；新版本在 HS 分支前统一排除 TX / Boom / AWS / CFT / HY2 / CTM-SS。
+- 归档 `1.0.1` 快照到 `archive/profiles/surge/version 1/`，为 `1.1.2` 腾出版本位。
+
+## 1.1.1 (2026-09-14)
+
+- 策略组 `Boom` 重命名为 `UnlimitedTurbo`，并同步更新所有业务组与 AppleTV 规则引用。
+- `UnlimitedTurbo` 的 `policy-regex-filter` 扩展为 `(?i)(boom|hy2|aws|cft)`，兼容旧 `boom`
+  节点名以及 AWS/CFT 节点。
+- 三个 Smart 组改为 Surge 原生 `smart` 并加入 `policy-priority`：`Smart` 按 HS > TX >
+  美国 Snell > AWS/CFT > HY2；`Smart-TX-CFT` 按 TX > AWS/CFT > 日本 HY2；`Smart-US`
+  按 EB Snell > EB HY2 > 其他美国节点 > CN2 HY2 > 其他 HY2。
+- 归档 `1.0.0` 快照到 `archive/profiles/surge/version 1/`，为 `1.1.1` 腾出版本位。
+
 ## 校验加固 (2026-09-10，不升版本)
 
 - 回滚语义定为「只往前走」：旧快照永远保持 `superseded`，想恢复旧内容就是把它复制进入口文件、
