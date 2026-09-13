@@ -1,13 +1,13 @@
 # Surge Smart 节点命名与权重对照
 
-当前版本：`1.1.4`。
+当前版本：`1.1.5`。
 
 这份文档只记录“节点显示名”和 `policy-priority` 权重之间的对应关系。当前不做 Sub-Store 自动补协议标签，所以 Surge 只能根据节点名字里的关键词判断权重。
 
 真实规则在 [profiles/surge/surge.conf](../../profiles/surge/surge.conf) 的 `[Proxy Group]` 段里，重点是这三行：
 
 - `Smart`
-- `Smart-TX-CFT`
+- `Smart-Unlimited`（1.1.5 前叫 `Smart-TX-CFT`）
 - `Smart-US`
 
 ## 通用命名规则
@@ -34,7 +34,7 @@
 注意：`VOL/HS` 分支会排除 `TX`、`BOOM`、`AWS`、`CFT`、`HY2`、`CTM-SS`。  
 所以 `TX-Misaka-Singapore` 会走 TX `0.85`，不会走 HS/VOL `0.75`。
 
-## Smart-TX-CFT：流量不贵优先
+## Smart-Unlimited：流量不贵优先
 
 | 档位 | 权重 | 命中关键词 | 说明 |
 |---|---:|---|---|

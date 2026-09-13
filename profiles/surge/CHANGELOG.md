@@ -4,6 +4,13 @@
 快照在 `profiles/surge/version 1/<version>.conf`。设备订阅 URL 由 manifest 的 `output`
 决定，升级和回滚都不需要改设备端 URL。
 
+## 1.1.5 (2026-09-14)
+
+- 策略组 `Smart-TX-CFT` 重命名为 `Smart-Unlimited`，与底层大流量池 `UnlimitedTurbo` 对齐；
+  成员筛选与三档权重（TX `0.8` > AWS/CFT `1.1` > 日本 HY2 `1.4`）不变，所有引用该组的业务组
+  同步改名。Surge 端会把它当成一个新组，旧的组内手动选择会被重置。
+- 归档 `1.1.2` 快照到 `archive/profiles/surge/version 1/`，为 `1.1.5` 腾出版本位。
+
 ## 1.1.4 (2026-09-14)
 
 - 节点名分隔符扩展支持 `[` 和 `]`，允许 `CTM [vol] [ss]`、`LacusClyne [TX] [ss]` 这类标签式命名。
