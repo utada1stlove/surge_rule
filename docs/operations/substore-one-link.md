@@ -5,7 +5,7 @@
 在 iPhone Surge 中由 Sub-Store 通过 `policy-path` 提供节点，由主 Profile 提供规则：
 
 ```text
-Sub-Store 节点订阅 → Proxy Group.policy-path
+Sub-Store 节点订阅 → All Nodes.policy-path → Smart / 地区策略组
 GitHub 公开 Rule Set → Surge 主 Profile 的 [Rule]
 ```
 
@@ -31,10 +31,13 @@ Sub-Store 官方项目支持 Surge 作为输出平台，并支持 SS、AnyTLS、
 
 ```ini
 [Proxy Group]
-Proxy = select, policy-path="你的 Sub-Store Surge 输出链接", update-interval=86400, DIRECT
+All Nodes = select, policy-path="你的 Sub-Store Surge 输出链接", update-interval=86400, DIRECT
+Proxy = select, Smart, Smart-Unlimited, Smart-US, HomeProxy, TX, UnlimitedTurbo, HongKong, CTM, TaiWan Nodes, Singapore, Japan, United States, DIRECT
 ```
 
-官方说明中，`policy-path` 可以加载远程代理列表或包含 `[Proxy]` 的完整 Surge Profile，并会缓存和定期重新下载。[Policy Including](https://manual.nssurge.com/policy-groups/policy-including.html)
+`All Nodes` 是内部节点来源，`Smart` 与地区组通过 `include-other-group=All Nodes` 筛选节点；
+`Proxy` 只聚合策略组，方便最终规则或人工切换使用。官方说明中，`policy-path` 可以加载
+远程代理列表或包含 `[Proxy]` 的完整 Surge Profile，并会缓存和定期重新下载。[Policy Including](https://manual.nssurge.com/policy-groups/policy-including.html)
 
 片段引用三个公开地址：
 

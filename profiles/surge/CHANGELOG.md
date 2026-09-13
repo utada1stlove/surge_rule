@@ -4,6 +4,16 @@
 快照在 `profiles/surge/version 1/<version>.conf`。设备订阅 URL 由 manifest 的 `output`
 决定，升级和回滚都不需要改设备端 URL。
 
+## 1.2.1 (2026-09-14)
+
+- 新增 `All Nodes` 作为 Sub-Store 节点订阅入口；三个 `Smart`、TX、UnlimitedTurbo、HomeProxy
+  及按地区筛选的策略组统一改为从该组取节点。
+- `Proxy` 改为策略组聚合页，包含三个 `Smart`、HomeProxy、TX、UnlimitedTurbo，以及
+  HongKong、CTM、TaiWan Nodes、Singapore、Japan、United States 等地区组，不再直接展开
+  具体节点。
+- `TaiWan Nodes` 作为台湾地区内层组加入 `Proxy`，避免外层 `TaiWan` 与 `Proxy` 互相引用。
+- 归档 `1.1.8` 快照，为 `1.2.1` 腾出版本位。
+
 ## 1.1.10 (2026-09-14)
 
 - 将 `Smart` 的 VOL/HS 基准权重从 `0.75` 下调到 `0.65`，让流量较贵的 VOL 节点更明显地优先于 TX。

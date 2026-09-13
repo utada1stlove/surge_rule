@@ -36,7 +36,7 @@ curl -LO https://raw.githubusercontent.com/utada1stlove/surge_rule/main/profiles
 | 位置 | 是否要改 | 说明 |
 | --- | --- | --- |
 | 首行 `#!MANAGED-CONFIG` | 不用管 | 复制副本会去掉这一行；从 Raw 下载的模板里它只是占位符，不是可用托管地址 |
-| `Proxy = select, policy-path="__SUBSTORE_URL__"` | 必须改 | 换成自己的 Sub-Store Surge 输出地址，或在 `[Proxy]` 段写死节点；否则没有可用出口，兜底规则只剩直连 |
+| `All Nodes = select, policy-path="__SUBSTORE_URL__"` | 必须改 | 换成自己的 Sub-Store Surge 输出地址，或在 `[Proxy]` 段写死节点；否则没有可用出口，兜底规则只剩直连 |
 | `[Proxy]` 段 | 可选 | 手改场景更倾向直接写节点，不依赖订阅 |
 | `[Rule]` 与各 Rule Set URL | 不用改 | 全部是绝对 URL，指向 GitHub，导入后继续自动更新 |
 | `icon-url` | 不用改 | 同样是绝对 URL |
