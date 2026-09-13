@@ -4,6 +4,14 @@
 快照在 `profiles/surge/version 1/<version>.conf`。设备订阅 URL 由 manifest 的 `output`
 决定，升级和回滚都不需要改设备端 URL。
 
+## 1.1.8 (2026-09-14)
+
+- 为 `Smart` 和 `Smart-Unlimited` 增加区域倍率：`CTM` 乘以 `2.1`、`HK` 乘以 `1.8`、
+  `SG` 乘以 `0.5`。
+- Surge 的 `policy-priority` 只使用首条匹配规则，因此区域倍率已与 TX、VOL、AWS/CFT、
+  HY2 等基础权重预先组合，不会覆盖或漏乘。
+- 归档 `1.1.5` 快照到 `archive/profiles/surge/version 1/`，为 `1.1.8` 腾出版本位。
+
 ## 1.1.7 (2026-09-14)
 
 - 继续修复 Surge 对三个 Smart 组 `policy-priority` 报无效的问题：移除正则中的负向前瞻等复杂构造，
