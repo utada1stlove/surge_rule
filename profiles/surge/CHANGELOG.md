@@ -4,6 +4,14 @@
 快照在 `profiles/surge/version 1/<version>.conf`。设备订阅 URL 由 manifest 的 `output`
 决定，升级和回滚都不需要改设备端 URL。
 
+## 1.1.6 (2026-09-14)
+
+- 修复三个 Smart 组被 Surge 报 `policy-priority` 无效的问题：该字段按 `regex:factor`
+  解析，正则内不能再出现 `:`；移除 `(?i)` 和 `(?:...)`，改用显式大小写字符类保持原有匹配效果。
+- `tools/lint_surge_profiles.py` 增加活动入口文件的 `policy-priority` 结构校验，避免以后再次写入
+  含冒号的正则构造。
+- 归档 `1.1.3` 快照到 `archive/profiles/surge/version 1/`，为 `1.1.6` 腾出版本位。
+
 ## 1.1.5 (2026-09-14)
 
 - 策略组 `Smart-TX-CFT` 重命名为 `Smart-Unlimited`，与底层大流量池 `UnlimitedTurbo` 对齐；

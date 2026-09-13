@@ -22,6 +22,7 @@ FIRST_PARTY_RAW_PREFIX = "https://raw.githubusercontent.com/utada1stlove/surge_r
 SECRET_ASSIGNMENT = re.compile(r"(?i)\b(?:password|token|secret|psk|private[_-]?key|uuid)\s*=\s*(?!__)[^\s#]+")
 PRIVATE_IP = re.compile(r"(?<![\d.])(?:10\.|192\.168\.|172\.(?:1[6-9]|2\d|3[01])\.)(?:\d{1,3}\.){1,2}\d{1,3}(?![\d.])")
 MANAGED_HEADER = "#!MANAGED-CONFIG"
+POLICY_PRIORITY = re.compile(r'(?:^|,)\s*policy-priority="([^"]*)"')
 
 
 def effective_lines(path: Path):
@@ -58,6 +59,25 @@ def scan_public_text(path: Path, warnings: list[str], *, check_private_ip: bool)
             warnings.append(f"{path}:{number}: private-network address in public configuration")
 
 
+def lint_smart_priority(path: Path, number: int, line: str, errors: list[str]) -> None:
+    match = POLICY_PRIORITY.search(line)
+    if not match:
+        return
+    for index, pair in enumerate(match.group(1).split(";"), 1):
+        if pair.count(":") != 1:
+            errors.append(
+                f"{path}:{number}: policy-priority pair {index} must be regex:factor without ':' in the regex"
+            )
+            continue
+        expression, factor = pair.rsplit(":", 1)
+        try:
+            positive = float(factor) > 0
+        except ValueError:
+            positive = False
+        if not expression or not positive:
+            errors.append(f"{path}:{number}: policy-priority pair {index} has an empty regex or non-positive factor")
+
+
 def lint_profile(path: Path, root: Path, errors: list[str], warnings: list[str]) -> None:
     sections = profile_sections(path)
     if "Rule" not in sections:
@@ -70,6 +90,10 @@ def lint_profile(path: Path, root: Path, errors: list[str], warnings: list[str])
             errors.append(f"{path}:{number}: malformed proxy group")
             continue
         groups.add(line.split("=", 1)[0].strip())
+        # Historical snapshots may preserve parser bugs; keep the release gate on
+        # the active entry files only so future edits cannot reintroduce them.
+        if path.parent.parent == root / "profiles":
+            lint_smart_priority(path, number, line, errors)
 
     rules = sections["Rule"]
     final_positions = [index for index, (_, line) in enumerate(rules) if line.split(",", 1)[0].upper() == "FINAL"]

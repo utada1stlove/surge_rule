@@ -1,6 +1,6 @@
 # Surge Smart 节点命名与权重对照
 
-当前版本：`1.1.5`。
+当前版本：`1.1.6`。
 
 这份文档只记录“节点显示名”和 `policy-priority` 权重之间的对应关系。当前不做 Sub-Store 自动补协议标签，所以 Surge 只能根据节点名字里的关键词判断权重。
 
@@ -14,7 +14,9 @@
 
 1. 关键词尽量独立出现，前后使用 `-`、`_`、空格、`=`、`[` 或 `]`。  
    例如 `TX-Singtel`、`LacusClyne [TX] [ss]` 稳，`TXSingtel` 可能不稳。
-2. 大小写不敏感。`tx`、`TX`、`Tx` 都可以。
+2. 匹配兼容大小写。`tx`、`TX`、`Tx` 都可以；实现使用显式大小写字符类，不在
+   `policy-priority` 里写 `(?i)`，因为该字段中的 `:` 会被 Surge 当成 `regex:factor`
+   的分隔符。
 3. `HY2` 节点名字里必须带 `HY2`，否则 `Smart` 和 `Smart-US` 无法把它当成 HY2。
 4. 美国组里 `EB`、`CN2` 必须写在名字里，否则无法区分联通/移动优先和电信优先。
 5. `boom`、`aws`、`cft` 是 AWS/CFT/大流量低权重分支，不要让主力 HS/VOL 节点误带这些词。
@@ -111,3 +113,6 @@ LAX [cn2] [hy2]
 2. 去 Sub-Store 改节点显示名；
 3. 如果新名字无法命中权重，再回来改 `profiles/surge/surge.conf` 里的 `policy-priority`；
 4. 改 Profile 需要升版本并生成快照，见 [Profile 版本化](profile-versioning.md)。
+
+`policy-priority` 的正则本身不能包含 `:`，也不要使用 `(?i)`、`(?:...)` 这类含冒号的
+构造；当前配置已用显式字符类处理大小写。
