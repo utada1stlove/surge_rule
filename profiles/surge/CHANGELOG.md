@@ -4,6 +4,12 @@
 快照在 `profiles/surge/version 1/<version>.conf`。设备订阅 URL 由 manifest 的 `output`
 决定，升级和回滚都不需要改设备端 URL。
 
+## 1.1.10 (2026-09-14)
+
+- 将 `Smart` 的 VOL/HS 基准权重从 `0.75` 下调到 `0.65`，让流量较贵的 VOL 节点更明显地优先于 TX。
+- CTM/HK 的 VOL 权重更新为 `1.625`，SG 的 VOL 权重更新为 `0.325`；TX 和 `Smart-Unlimited` 不变。
+- 归档 `1.1.7` 快照到 `archive/profiles/surge/version 1/`，为 `1.1.10` 腾出版本位。
+
 ## 1.1.9 (2026-09-14)
 
 - 将 `Smart` 和 `Smart-Unlimited` 的 CTM、HK 区域倍率统一提高到 `2.5`；SG 保持 `0.5`。

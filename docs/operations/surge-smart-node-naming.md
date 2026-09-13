@@ -1,6 +1,6 @@
 # Surge Smart 节点命名与权重对照
 
-当前版本：`1.1.9`。
+当前版本：`1.1.10`。
 
 这份文档只记录“节点显示名”和 `policy-priority` 权重之间的对应关系。当前不做 Sub-Store 自动补协议标签，所以 Surge 只能根据节点名字里的关键词判断权重。
 
@@ -24,16 +24,18 @@
 
 ## Smart：全体节点竞技场
 
+在 Surge Smart 中，数值越小越优先。表格已按优先级排列：
+
 | 档位 | 权重 | 命中关键词 | 说明 |
 |---|---:|---|---|
-| TX | `0.85` | `TX`、`CTM-SS` | 基础权重最高，优先于 VOL/HS |
-| VOL/HS 主力 | `0.75` | `VOL`、`CTM`、`HK`、`JP`、`HKBN`、`SINGTEL`、`SINGAPORE`、`MISAKA`、`AKARI` | 适合流量贵的 HS/VOL 服务器 |
-| HY2 | `1.35` | `HY2` | 排在美国普通节点和 AWS/CFT 前 |
-| AWS/CFT/Boom | `1.25` | `BOOM`、`AWS`、`CFT` | 降低权重，适合备用或特定业务 |
+| VOL/HS 主力 | `0.65` | `VOL`、`CTM`、`HK`、`JP`、`HKBN`、`SINGTEL`、`SINGAPORE`、`MISAKA`、`AKARI` | 适合流量贵的 HS/VOL 服务器，优先于 TX |
+| TX | `0.85` | `TX`、`CTM-SS` | TX 第二优先 |
 | 美国普通/Snell | `0.95` | `US`、`USA`、`LAX`、`LOS ANGELES`、`美国`、`AT&T`、`VERIZON`、`COMCAST`、`XFINITY` 等，且不带 `HY2` | 美国 Snell 或普通美国节点备用 |
+| AWS/CFT/Boom | `1.25` | `BOOM`、`AWS`、`CFT` | 适合备用或特定业务 |
+| HY2 | `1.35` | `HY2` | 排在最后 |
 
 注意：`VOL/HS` 分支会排除 `TX`、`BOOM`、`AWS`、`CFT`、`HY2`、`CTM-SS`。  
-所以 `TX-Misaka-Singapore` 会走 TX `0.85`，不会走 HS/VOL `0.75`。
+所以 `TX-Misaka-Singapore` 会走 TX `0.85`，不会走 HS/VOL `0.65`。
 
 ## 区域倍率
 
@@ -51,10 +53,10 @@ Surge 的 `policy-priority` 是首条匹配生效，所以配置里已经写好�
 | 节点名 | 基础权重 | 最终权重 |
 |---|---:|---:|
 | `CTM [TX] [ss]` | `0.85` | `2.125` |
-| `CTM [vol] [ss]` | `0.75` | `1.875` |
-| `HK [vol] [snell]` | `0.75` | `1.875` |
+| `CTM [vol] [ss]` | `0.65` | `1.625` |
+| `HK [vol] [snell]` | `0.65` | `1.625` |
 | `Singapore [aws] [cft]` | `1.25` | `0.625` |
-| `Singapore [vol] [ss]` | `0.75` | `0.375` |
+| `Singapore [vol] [ss]` | `0.65` | `0.325` |
 
 在 `Smart-Unlimited` 里，`CTM [TX]` 为 `0.8 x 2.5 = 2.0`，
 `Singapore [aws] [cft]` 为 `1.1 x 0.5 = 0.55`，`TX-Singtel` 为 `0.8 x 0.5 = 0.4`。
