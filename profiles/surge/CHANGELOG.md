@@ -4,6 +4,13 @@
 快照在 `profiles/surge/version 1/<version>.conf`。设备订阅 URL 由 manifest 的 `output`
 决定，升级和回滚都不需要改设备端 URL。
 
+## 1.1.9 (2026-09-14)
+
+- 将 `Smart` 和 `Smart-Unlimited` 的 CTM、HK 区域倍率统一提高到 `2.5`；SG 保持 `0.5`。
+- CTM/HK 的 `Smart` 权重更新为 TX `2.125`、VOL `1.875`、HY2 `3.375`、AWS/CFT `3.125`。
+- CTM/HK 的 `Smart-Unlimited` 权重更新为 TX `2.0`、AWS/CFT `2.75`。
+- 归档 `1.1.6` 快照到 `archive/profiles/surge/version 1/`，为 `1.1.9` 腾出版本位。
+
 ## 1.1.8 (2026-09-14)
 
 - 为 `Smart` 和 `Smart-Unlimited` 增加区域倍率：`CTM` 乘以 `2.1`、`HK` 乘以 `1.8`、

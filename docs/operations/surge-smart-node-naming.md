@@ -1,6 +1,6 @@
 # Surge Smart 节点命名与权重对照
 
-当前版本：`1.1.8`。
+当前版本：`1.1.9`。
 
 这份文档只记录“节点显示名”和 `policy-priority` 权重之间的对应关系。当前不做 Sub-Store 自动补协议标签，所以 Surge 只能根据节点名字里的关键词判断权重。
 
@@ -42,21 +42,21 @@ Surge 的 `policy-priority` 是首条匹配生效，所以配置里已经写好�
 
 | 区域 | 倍率 | 命中关键词 |
 |---|---:|---|
-| CTM | `x2.1` | `CTM` |
-| HK | `x1.8` | `HK`、`HKBN`、`HongKong`、`Hong Kong` |
+| CTM | `x2.5` | `CTM` |
+| HK | `x2.5` | `HK`、`HKBN`、`HongKong`、`Hong Kong` |
 | SG | `x0.5` | `SG`、`Singapore`、`Singtel` |
 
 常用组合示例：
 
 | 节点名 | 基础权重 | 最终权重 |
 |---|---:|---:|
-| `CTM [TX] [ss]` | `0.85` | `1.785` |
-| `CTM [vol] [ss]` | `0.75` | `1.575` |
-| `HK [vol] [snell]` | `0.75` | `1.35` |
+| `CTM [TX] [ss]` | `0.85` | `2.125` |
+| `CTM [vol] [ss]` | `0.75` | `1.875` |
+| `HK [vol] [snell]` | `0.75` | `1.875` |
 | `Singapore [aws] [cft]` | `1.25` | `0.625` |
 | `Singapore [vol] [ss]` | `0.75` | `0.375` |
 
-在 `Smart-Unlimited` 里，`CTM [TX]` 为 `0.8 x 2.1 = 1.68`，
+在 `Smart-Unlimited` 里，`CTM [TX]` 为 `0.8 x 2.5 = 2.0`，
 `Singapore [aws] [cft]` 为 `1.1 x 0.5 = 0.55`，`TX-Singtel` 为 `0.8 x 0.5 = 0.4`。
 
 ## Smart-Unlimited：流量不贵优先
