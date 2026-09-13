@@ -70,6 +70,10 @@ def lint_smart_priority(path: Path, number: int, line: str, errors: list[str]) -
             )
             continue
         expression, factor = pair.rsplit(":", 1)
+        if "(?" in expression:
+            errors.append(
+                f"{path}:{number}: policy-priority pair {index} uses an unsupported advanced regex construct"
+            )
         try:
             positive = float(factor) > 0
         except ValueError:

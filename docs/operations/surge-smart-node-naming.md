@@ -1,6 +1,6 @@
 # Surge Smart 节点命名与权重对照
 
-当前版本：`1.1.6`。
+当前版本：`1.1.7`。
 
 这份文档只记录“节点显示名”和 `policy-priority` 权重之间的对应关系。当前不做 Sub-Store 自动补协议标签，所以 Surge 只能根据节点名字里的关键词判断权重。
 
@@ -15,13 +15,12 @@
 1. 关键词尽量独立出现，前后使用 `-`、`_`、空格、`=`、`[` 或 `]`。  
    例如 `TX-Singtel`、`LacusClyne [TX] [ss]` 稳，`TXSingtel` 可能不稳。
 2. 匹配兼容大小写。`tx`、`TX`、`Tx` 都可以；实现使用显式大小写字符类，不在
-   `policy-priority` 里写 `(?i)`，因为该字段中的 `:` 会被 Surge 当成 `regex:factor`
-   的分隔符。
+   `policy-priority` 里写 `(?i)`、负向前瞻等复杂构造，否则 Surge 可能把整条策略组判为无效。
 3. `HY2` 节点名字里必须带 `HY2`，否则 `Smart` 和 `Smart-US` 无法把它当成 HY2。
 4. 美国组里 `EB`、`CN2` 必须写在名字里，否则无法区分联通/移动优先和电信优先。
-5. `boom`、`aws`、`cft` 是 AWS/CFT/大流量低权重分支，不要让主力 HS/VOL 节点误带这些词。
-6. `CTM-SS` 是特殊 TX 节点，会走 TX 权重，不走 HS/VOL 权重。
-7. 标签式命名可以使用方括号，例如 `CTM [vol] [ss]`、`HKBN [vol] [snell]`、`LacusClyne [TX] [ss]`。
+5. `aws`、`cft` 是 AWS/CFT 大流量低权重分支，不要让主力 HS/VOL 节点误带这些词。
+6. `[TX]` 标签会优先于 `[vol]`，因此 `CTM [TX] [ss]` 会走 TX 权重。
+7. 标签式命名使用方括号，例如 `CTM [vol] [ss]`、`HKBN [vol] [snell]`、`LacusClyne [TX] [ss]`。
 
 ## Smart：全体节点竞技场
 
@@ -114,5 +113,5 @@ LAX [cn2] [hy2]
 3. 如果新名字无法命中权重，再回来改 `profiles/surge/surge.conf` 里的 `policy-priority`；
 4. 改 Profile 需要升版本并生成快照，见 [Profile 版本化](profile-versioning.md)。
 
-`policy-priority` 的正则本身不能包含 `:`，也不要使用 `(?i)`、`(?:...)` 这类含冒号的
-构造；当前配置已用显式字符类处理大小写。
+`policy-priority` 的正则本身不能包含 `:`，也不要使用 `(?i)`、负向前瞻或非捕获组等复杂构造；
+当前配置只使用普通字符类和 `|`，并用显式字符类处理大小写。

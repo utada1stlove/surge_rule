@@ -4,6 +4,15 @@
 快照在 `profiles/surge/version 1/<version>.conf`。设备订阅 URL 由 manifest 的 `output`
 决定，升级和回滚都不需要改设备端 URL。
 
+## 1.1.7 (2026-09-14)
+
+- 继续修复 Surge 对三个 Smart 组 `policy-priority` 报无效的问题：移除正则中的负向前瞻等复杂构造，
+  改为只按当前节点标签中的 `TX`、`VOL`、`HY2`、`AWS`、`CFT`、`LAX`、`EB`、`CN2`
+  使用普通字符类匹配。
+- `Smart-Unlimited` 与 `Smart-US` 的 `policy-regex-filter` 同步收敛为简单正则，避免继续使用
+  Surge 不接受的复杂组合表达式。
+- 归档 `1.1.4` 快照到 `archive/profiles/surge/version 1/`，为 `1.1.7` 腾出版本位。
+
 ## 1.1.6 (2026-09-14)
 
 - 修复三个 Smart 组被 Surge 报 `policy-priority` 无效的问题：该字段按 `regex:factor`
