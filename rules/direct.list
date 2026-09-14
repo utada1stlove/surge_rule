@@ -42,3 +42,12 @@ DOMAIN-SUFFIX,steamcontent.com
 DOMAIN-SUFFIX,steamserver.net
 DOMAIN-SUFFIX,cmsteampowered.com
 DOMAIN-SUFFIX,steamcdn-a.akamaihd.net
+
+# ============================================================
+# [NSFW 板块的直连例外]
+# 2026-09-14：tbxgdc.cn 主站走直连，它的 CloudFront 资源走 NSFW 代理组
+# （见 rules/nsfw.list）。simple / home-wg 引用本清单，这里会真的直连；
+# 主 Profile 不引用本清单，此条只是意图声明，哪天要让它在主 Profile 也
+# 生效，就在 [Rule] 里补一条 DOMAIN-SUFFIX,tbxgdc.cn,DIRECT。
+# ============================================================
+DOMAIN-SUFFIX,tbxgdc.cn

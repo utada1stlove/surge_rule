@@ -64,3 +64,8 @@ DOMAIN-SUFFIX,jable.tv
 DOMAIN-SUFFIX,mushroomtrack.com
 
 DOMAIN-SUFFIX,missav.ws
+
+# 2026-09-14 手动补充：成人站点的 CloudFront 分发，走 NSFW 代理组。
+# 只写精确主机，不用 DOMAIN-SUFFIX，避免牵连 cloudfront.net 下其他分发。
+DOMAIN,d10soes7978umx.cloudfront.net
+DOMAIN,d1sn57bew5rukg.cloudfront.net
