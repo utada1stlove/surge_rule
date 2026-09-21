@@ -18,7 +18,7 @@ Rules:
   forward-only: a restored snapshot becomes the body of a new version, it is
   never flipped back to @status: active.
 - Families keep at most three distinct versions; older releases must be archived.
-- A family directory holds nothing but .conf files and CHANGELOG.md, and its
+- A family directory holds .conf files, README.md, and CHANGELOG.md, and its
   only subdirectories are version snapshot directories.
 - Manifest sources must exist, must point at the entry file, and template_url
   (the path the VPS actually fetches) must resolve to the same file.
@@ -42,7 +42,7 @@ STATUS_RE = re.compile(r"^#\s+@status:")
 SNAPSHOT_DIR_RE = re.compile(r"^version (\d+)$")
 ACTIVE_STATUSES = {"active", "superseded"}
 MAX_VERSIONS_PER_FAMILY = 3
-ALLOWED_FAMILY_FILES = {"CHANGELOG.md"}
+ALLOWED_FAMILY_FILES = {"CHANGELOG.md", "README.md"}
 
 
 def version_key(value: str) -> tuple[int, ...]:

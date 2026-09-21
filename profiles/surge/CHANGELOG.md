@@ -4,6 +4,10 @@
 快照在 `profiles/surge/version 1/<version>.conf`。设备订阅 URL 由 manifest 的 `output`
 决定，升级和回滚都不需要改设备端 URL。
 
+## 1.2.2 (2026-09-21)
+
+- AI Suite 与 TikTok 增加 `Proxy` 候选，使这两个出口可以进入完整的节点组聚合层。
+
 ## 1.2.1 (2026-09-14)
 
 - 新增 `All Nodes` 作为 Sub-Store 节点订阅入口；三个 `Smart`、TX、UnlimitedTurbo、HomeProxy

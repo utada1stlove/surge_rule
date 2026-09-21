@@ -4,6 +4,11 @@
 快照在 `profiles/simple/version 1/<version>.conf`。设备订阅 URL 由 manifest 的 `output`
 （`surge-simple.conf`）决定，升级和回滚都不需要改设备端 URL。
 
+## 1.0.1 (2026-09-21)
+
+- 将 `Smart` 从 `url-test` 改为 `smart`，按节点类型和区域组合标签进行优先级排列。
+- 补齐固定标签顺序下的国家基准、国家与特殊标签组合及特殊标签兜底乘法；未命中规则的节点使用 `1.0`。
+
 ## 布局调整 (2026-09-10，不升版本)
 
 - 入口文件由 `profiles/simple/1.0.0.conf` 改名为 `profiles/simple/surge-simple.conf`，与 manifest
