@@ -4,6 +4,11 @@
 快照在 `profiles/surge/version 1/<version>.conf`。设备订阅 URL 由 manifest 的 `output`
 决定，升级和回滚都不需要改设备端 URL。
 
+## 1.2.3 (2026-09-21)
+
+- 所有业务出口直接补齐 `Smart`、`Smart-Unlimited`、`Smart-US`、`HomeProxy`、`TX`、
+  `UnlimitedTurbo` 及各地区节点组，避免只能通过 `Proxy` 间接进入节点组。
+
 ## 1.2.2 (2026-09-21)
 
 - AI Suite 与 TikTok 增加 `Proxy` 候选，使这两个出口可以进入完整的节点组聚合层。
