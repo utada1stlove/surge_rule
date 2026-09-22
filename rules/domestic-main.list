@@ -1,0 +1,18 @@
+# 主 Profile 专用的国内服务直连规则；不由 home-wg 引用。
+DOMAIN-SUFFIX,taobao.com
+DOMAIN-SUFFIX,taobaocdn.com
+DOMAIN-SUFFIX,tmall.com
+DOMAIN-SUFFIX,alipay.com
+DOMAIN-SUFFIX,jd.com
+DOMAIN-SUFFIX,jdcdn.com
+DOMAIN-SUFFIX,meituan.com
+DOMAIN-SUFFIX,dianping.com
+DOMAIN-SUFFIX,douyin.com
+DOMAIN-SUFFIX,iesdouyin.com
+DOMAIN-SUFFIX,xiaohongshu.com
+DOMAIN-SUFFIX,pinduoduo.com
+DOMAIN-SUFFIX,baidu.com
+DOMAIN-SUFFIX,weixin.com
+DOMAIN-SUFFIX,qq.com
+DOMAIN-SUFFIX,xiaomi.com
+DOMAIN-SUFFIX,huawei.com

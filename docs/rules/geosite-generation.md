@@ -3,7 +3,8 @@
 本仓库保留一份由 Loyalsoldier 上游生成的 Surge Rule Set 副本。生成清单见
 `config/geosite-manifest.json`，每个 geosite 单独输出到 `rules/generated/`，不合并不同集合。
 
-当前生成文件主要用于审计、备用和未来切换。运行时继续优先使用 Sukka、BlackMatrix
+当前生成文件主要用于审计、备用和未来切换；`cn.list` 是例外，已在 active
+`profiles/surge/surge.conf` 中作为主 Profile 的中国域名直连规则实际引用。运行时继续优先使用 Sukka、BlackMatrix
 等外部规则；但由于没有可直接替代的完整成人规则，`category-porn.list` 是例外，已在
 active `profiles/surge/surge.conf` 中实际引用并分配给 `NSFW`（冻结的
 `legacy/surge-main.conf` 分配给 `Boom`）。
