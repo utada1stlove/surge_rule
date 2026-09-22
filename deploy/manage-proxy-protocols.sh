@@ -145,32 +145,14 @@ snell_version_dir() {
 }
 
 ensure_snell_config() {
-    local port="${1:-${SNELL_PORT:-32005}}"
-    local psk="${SNELL_PSK:-}"
-
-    if [[ -f "$SNELL_CONFIG" ]]; then
-        chmod 0600 "$SNELL_CONFIG"
-        return 0
-    fi
-
-    [[ "$port" =~ ^[0-9]+$ ]] || die "invalid Snell port: $port"
-    (( port >= 1 && port <= 65535 )) || die "Snell port out of range: $port"
-
-    if [[ -z "$psk" ]]; then
-        psk="$(random_hex 16)"
-    fi
-
-    umask 077
-    cat > "$SNELL_CONFIG" <<SNELL_CONFIG_TEXT
-[snell-server]
-listen = [::]:${port}
-ipv6 = true
-psk = ${psk}
-SNELL_CONFIG_TEXT
-    chmod 0600 "$SNELL_CONFIG"
-    log "created /etc/snell-server.conf"
+ if [[ ! -f "$SNELL_CONFIG" ]]; then
+ die "missing /etc/snell-server.conf; create it manually or use snell-userctl for multi-user instances"
+ fi
+ if [[ ! -s "$SNELL_CONFIG" ]]; then
+ die "empty /etc/snell-server.conf"
+ fi
+ chmod 0600 "$SNELL_CONFIG"
 }
-
 install_snell() {
     local major="$1" port="${2:-${SNELL_PORT:-32005}}"
     local url version expected version_dir temporary download binary
@@ -501,8 +483,8 @@ usage() {
     cat <<'USAGE_TEXT'
 Usage:
   manage-proxy-protocols.sh status [--show-secrets]
-  manage-proxy-protocols.sh install snell-v5 [--port 32005] [--host HOST]
-  manage-proxy-protocols.sh install snell-v6 [--port 32005] [--host HOST]
+  manage-proxy-protocols.sh install snell-v5 [--host HOST]
+  manage-proxy-protocols.sh install snell-v6 [--host HOST]
   manage-proxy-protocols.sh install anytls  [--port 50014] [--host HOST]
   manage-proxy-protocols.sh switch snell-v5|snell-v6
   manage-proxy-protocols.sh uninstall snell-v5|snell-v6 [--purge]
@@ -510,8 +492,8 @@ Usage:
   manage-proxy-protocols.sh menu
 
 Environment:
-  SNELL_PORT       New Snell port, default 32005
-  SNELL_PSK        New Snell PSK, generated when absent
+  SNELL_PORT       Reserved for external config templates
+  SNELL_PSK        Reserved for external config templates
   ANYTLS_PORT      New AnyTLS port, default 50014
   ANYTLS_PASSWORD  New AnyTLS password, generated when absent
   PUBLIC_HOST      Host shown in generated Surge node lines
