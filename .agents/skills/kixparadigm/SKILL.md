@@ -1,0 +1,286 @@
+---
+name: kixparadigm
+description: "kixParadigm — AI 自编排最小范式。按任务规模、风险、副作用与验证缺口，自主选择直接执行、工具、独立观察或多代理协作；用需求三检、证据结算和机械安全边界补足盲点，不预设固定角色序列或自动升级流程。适用于代码实现、修复、审查、重构、架构讨论、规划与验证。"
+---
+
+# kixParadigm — AI 自编排范式
+
+> **分层**：Copilot 安装下，核心认知由 `~/.copilot/instructions/kixparadigm-core.instructions.md` 常驻；DSH 常驻认知由 preset 的活跃 persona 提供。本文件是按需机制参考，不自行承诺流程升级。
+> 不是流程引擎，不是规则手册。是 AI 为自己设计的最小工具箱 + 安全网 + 盲点提醒。
+> 核心信念：模型的推理能力是主力，工具只补足已知盲点。**限制越少，发挥越好**。
+
+## 三通道原则（并发多视角交叉验证）
+
+执行/观察/汇总三阶段推进，**并发与递归发散发生在观察通道内部**——多个独立 agent 同时看，盲点不重合。
+
+| 通道 | AI 执行 | 并发性 |
+|---|---|---|
+| **执行（手）** | 主 agent 操作 + 产出 claim | 主线程单写者 |
+| **观察（眼）** | 异质观察集群独立验证；review lead 可按局部缺口递归派 probe | 自由并发/递归 |
+| **汇总（嘴）** | 聚合 finding、裁决反例与证据新鲜度 | 主线程或 review lead |
+
+**核心**：对重要 claim，按信息缺口自主展开**异质观察集群**；review epoch/结算机制不新增人数、深度、fan-out、token 或验证面限制。汇总先拆成**机制事实 / 适用契约与设计意图 / 影响与结论**；有效反例按可达性、契约和证据裁决，不能被多个 APPROVE 投票冲掉。APPROVE 不是新增证据，也不触发补票式追加观察；失败或零输出 child 按零证据记账。**异质性是一切；同质"一致"是虚假置信**。同一 agent 多步验证盲点系统性，多个独立 agent 盲点随机交叉覆盖。
+
+**阶段边界**：会改变实现方向的 design observer 是编码前依赖，结算前不编辑目标 artifact；final review 绑定冻结 revision，编辑即使旧 review/gate 失效。需要机械冻结时在分派 prompt 声明：
+
+```text
+review_stage: design|final|verification
+review_policy: read-only
+artifact_root: /absolute/repository/path
+artifact_revision: <optional commit SHA or diff hash>
+```
+
+整个递归观察树继承同一 review epoch；协调线程可以做不相关工作，观察者可以继续递归取证和写 artifact 外的临时 reproducer。只有新有效反例、新风险维度或 artifact 变化才重开；当前 revision 无 blocking finding、相关 terminal gates 绿、既定观察树无新增反例即停止。
+
+**结算权与证据源分离**：主线程/review lead 消费原始 finding 并复核严重度；evidence child 只回传证据，不递归结算自己的报告。当前 DSH 的 `kix-settle` 仅对根 settlement authority 做高置信提交提醒，源码/测试编辑后的实现验证提醒仍覆盖 child；未来若 child 获得终局裁决权，再用显式角色协议扩展，不提前预埋。
+
+> 观察为何必须独立 agent：主 agent 是产物创造者，自我验证会被创造视角污染——二相性要求发散（创造）与收敛（验证）互不泄漏，独立 agent 正是收敛视角的物理隔离。
+
+> 独立验证不需详细模板——"读代码验证 claim 对不对"这类最小指令就能引导发现大部分盲点，因为发现盲点的关键是读代码本身，不是按 checklist 打勾。
+
+## 子 agent 调用指南（三通道实操）
+
+**视角差异来自 prompt，不来自 agent 身份** → **不做专用 agent**。需要机械保障时挂 hook（见下），不做角色化 agent。
+
+**跨厂商模型可叠加为正交杠杆**（最高置信 claim 用；平台/库语义、语言分派、类型转换等模型间差异大的领域优先上）：
+
+- 候选（2026-08-05 实测可用）：**`GLM-5.2 (CodingPlan) (gcmp.zhipu)`**（备选 `GLM-5.2 (gcmp.dashscope)`）/ **`DeepSeek-V4-Flash (gcmp.deepseek)`**（备选 `DeepSeek-V4-Flash (gcmp.dashscope)`）；按主 agent 厂商**取反**——主跑 DeepSeek 用 GLM-5.2，主跑智谱系用 V4 Flash，两者都非主厂商时选便宜的
+- 判据：优先取与主模型**解分布差异**最大者（跨厂商 > 同厂商不同代际 > 自验证）
+- 权衡：观察者要**够强但不同**——太弱放行主模型错误（LLM-judge 高估效应），太强则错误相关滑向同质；观察者的"验证通过"结论始终受其能力天花板限制
+- 权衡边界：基线够强时协作收益消失（来源与实证见 AUDIT.md §2）
+- 调用：`runSubagent` 的 `model` 参数直接填上述**确切字符串**（含括号与空格，已实测生效）。模型列表会变——model 参数报错时，以报错信息返回的 `Available models` 列表为准重新选择
+
+### 调用
+
+- **省略 `agentName`** → 用当前 agent
+- **并发**：同一 message 内放 2-3 个 `runSubagent` 同时跑
+- **prompt ≤ 5K tokens**：超过则先写入文件让子 agent 自己读
+
+### 三通道 prompt 最小模板
+
+```
+1. claim — 被验证的断言
+2. 视角 — 聚焦维度（正确性 / 写副作用 / 语言语义 / ...）
+3. 要读的文件 — 路径 + 行号（涉及行为的断言需读被调用方实现，证据=函数体而非调用链）
+4. 返回 — 结论 + 证据(文件:行号) + 推理
+```
+
+### 可选 hook（机械保障，不强制）
+
+如需确定性约束（如"验证时不改代码"），挂载独立 `.ps1`：
+
+| hook | 作用 |
+|---|---|
+| [`blast-radius-check.ps1`](../kixpower/hooks/blast-radius-check.ps1) | 拦截提交预算、主分支提交、force push、破坏性 SQL 与远程主分支写入 |
+| [`block-source-edit.ps1`](../kixpower/hooks/block-source-edit.ps1) | 禁止编辑业务源码 |
+
+见 kixpower agent 配置（`.copilot/agents/kixpower-*.md` 的 `hooks:` 字段）。hook 只补足机械失误，推理仍是主力。
+
+## AI 盲点图谱（验证时查哪个方向）
+
+> **方向不是清单**——列方向是为了补足已知盲区，不是打勾表。有疑虑就调独立 agent；范围不确定用 `vscode_askQuestions` 请用户拍板。这是补足不是强制。
+
+**深度与阅读**
+- 深度不足：看调用链不读函数体
+- 推断未标注：把推测当结论输出
+
+**读写混淆**
+- 读写混淆：验读安全漏写副作用
+- 辩护倾向：为自己的 claim 找理由而非找反例
+
+**语言与架构**
+- 语言语义：凭"能复用"忽略分派差异（Go 嵌入静态 / Rust dyn 动态）
+- 架构方向：改动是一致还是分裂
+- 本质偶然混淆：把偶然复杂度当本质复杂度
+
+**自信与外部**
+- 自信偏差：声称已验证无证据
+- 外部视野：审外部沿用内部标准
+- 可观测性盲区：看不到运行态行为
+
+**默认姿态**
+- 过度工程：该不该存在
+- 范式盲从盲逆
+- 默认姿态偏差：低风险场景过度防御
+
+## 输出格式（大脑换了，皮肤不变）
+
+kixParadigm 革新了**怎么思考**（自由推理 + 并发验证），但**怎么呈现**沿用 kixpower 成熟约定——格式是沟通效率，不是思维限制：
+
+- **review body**：结论前置三段——上半 1-2 句真人简述 + **结论行**（`✅ APPROVE` / `🔴 CHANGES REQUESTED` + 计数，放折叠区外，永不隐藏）+ 下半去重索引/补充 `<details>`
+- **语言统一**：全文只用一种语言（与仓库历史 review 一致），禁止中英混搭
+- **通过时精简**：0 blocking/major 时下半只留 finding 一句话清单（严重级别 + 主题 + `文件:行号` + 一句话影响），验证摘要一行；**0 条 finding 则省略折叠区**
+- **需修改时去重**：blocking/major 的行内评论是唯一详实正文；review body 只列严重级别、主题、`文件:行号` 和“详见行内评论”。仅无行内锚点/minor/PR 级 finding 可在 body 详述一次
+- **严重级别**：🔴 blocking / 🟡 major / 🔵 minor / ✅ nit
+- **证据引用**：`文件:行号` 或 文档 URL + 关键句
+- **只报 bug 不给方案**：review 每条只写「位置 + 触发条件 + 影响 + 证据」，**不给解决方案/正确写法**（用户会把 review 当执行指令喂模型，方案错则干歪）；安全敏感项（bwrap 等）只报事实，不替作者做产品权衡（易用性 vs 隔离强度）。细节见 kixpower-review.prompt.md §评论格式规范
+- **review summary**（`--save`）：frontmatter + 结论行 + 详析（同三段结构）
+- **决策 gate**：发布/合并/破坏性操作前用 `vscode_askQuestions` 确认（见「人类确认点」）
+
+详见 [`kixpower-review.prompt.md`](../../../AppData/Roaming/Code/User/prompts/kixpower-review.prompt.md)（位于 VS Code 用户 prompts 目录，即 `VSCODE_USER_PROMPTS_FOLDER`）§评论格式规范 / §发布纪律 / §证据门禁 / §反方辩护测试 / §review-of-review。
+
+## VS Code 机制对齐（2026-08-16 审计修正）
+
+> 本范式运行在 VS Code Copilot 上，机制对齐决定设计是否真实生效。以下机制事实经 2026-08-16 审计（对照本机 copilot-agent 运行时会话日志 + [GitHub 官方 hooks-reference](https://docs.github.com/en/copilot/reference/hooks-reference) + awesome-copilot 参考实现）修正，详见 [`kix-vscode-mechanism-audit.md`](../../kix-vscode-mechanism-audit.md)。
+
+### Hook 载荷双格式（生死项 — 2026-08-16 修正）
+
+- hook 输入**有两种格式，由配置的事件名大小写决定**：camelCase 事件名（`preToolUse`）→ 字段 camelCase（`toolName`/`toolArgs`）；PascalCase 事件名（`PreToolUse`）→ 字段 snake_case（`tool_name`/`tool_input`）
+- **本机 copilot-agent 运行时（1.0.70+）实测**：preToolUse 载荷是 `toolCalls:[{id,name,args}]` **数组**（args 为 JSON 字符串）；postToolUse 是 `toolName`/`toolArgs`（toolArgs 为 JSON 字符串）。**按 `tool_name`/`tool_input` 写的 ps1 hook 在此载荷下恒空 → 静默放行（实测 `git push --force origin main` exit 0 通过）**
+- PascalCase `PreToolUse` 下 `tool_name` 报 **Claude 工具名**（`Bash`/`Read`/`Write`/`Edit`/`Grep`/`Glob`/`WebFetch`/`WebSearch`/`AskUserQuestion`/`TodoWrite`/`Agent`）
+- **修 hook 必须用 cmd 重定向喂官方 schema（或真实载荷）实测 deny/allow 双向**；ps1 兼容三形态解析见 audit §5 P0
+
+### 工具名表（2026-08-16 修正 — 旧扩展名已失效）
+
+- 官方工具名：`ask_user` / `bash` / `create` / `edit` / `glob` / `grep` / `powershell` / `task` / `view` / `web_fetch`（+ `web_search`、`update_todo`、`read_powershell` 实测出现）
+- **旧扩展名 `run_in_terminal` / `create_and_run_task` / `replace_string_in_file` / `apply_patch` / `insert_edit_into_file` / `edit_notebook_file` / `create_file` / `create_directory` / `delete_file` / `vscode_renameSymbol` 在 copilot-agent 1.0.70+ 已不存在** —— 按旧名写分类的门禁全部匹配不上
+- GitHub MCP 工具在真实运行时命名为 **`GitHub-*`**（如 `GitHub-create_or_update_file`、`GitHub-add_issue_comment`、`GitHub-push_files`），不是 `mcp_github_*`（ps1）也不是 `mcp__github__*`（DSH 自命名）
+- 脚本内工具分类必须**同时认运行时名 + Claude 名 + 旧名**
+
+### Agent hooks 需显式启用
+
+- agent frontmatter 的 `hooks:` 字段需 `chat.useCustomAgentHooks: true` 才运行；settings.json 已加
+- 用户环境 autoApprove 全开 → hooks 与 `ask_user` 是仅剩两道闸；**CLI 侧另有 `permissionRequest` 事件可在权限服务前程序化 allow/deny 短路（kix 未接，audit §5 P1）**
+
+### Hook 事件表（2026-08-16 修正 — 官方 camelCase 名）
+
+- 官方 14 事件：`sessionStart`/`sessionEnd`/`userPromptSubmitted`/`userPromptTransformed`/`preToolUse`/`postToolUse`/`postToolUseFailure`/`errorOccurred`/`agentStop`/`subagentStart`/`subagentStop`/`preCompact`/`permissionRequest`（CLI only）/`notification`（CLI only）
+- kix 旧文档的 Claude 风格名（`SessionStart`/`UserPromptSubmit`/`PreToolUse`/`Stop`…）已过时；**交接/校验类门禁应挂 `subagentStop` + `matcher(agentName)`**，而非在 PreToolUse 里解析 runSubagent 参数
+
+### 退出码（2026-08-16 修正 — preToolUse 语境下与旧认知相反）
+
+- `0` 成功（stdout 解析为输出 JSON）；`2` 默认警告，**但 preToolUse/permissionRequest 下 2 = deny（即使 stdout 报 allow 也拒）**；其他非零默认 fail-open，**但 preToolUse fail-closed（非零即 deny "hook errored"）**；**超时一律 fail-open**
+- **ps1 崩溃路径绝不能 exit 0**（静默放行）；异常 catch → 输出 deny + `exit 2`
+
+### Skill 渐进式披露（三级）
+
+- Discovery 只读 name+description 做相关性匹配 → **description 是自动加载唯一开关**
+- 资源加载：skill 目录内文件**只有被 Markdown 相对路径链接引用**才自动读取 → 引用外部文件用相对链接，不用纯文本路径
+- 常驻规则（每会话都要）应放 custom instructions，skill 定位是按需
+
+### Agent 机制
+
+- agent body 每次被选/被调都进上下文 = **常驻成本** → body 长度是负债，定期瘦身
+- 官方支持 multi-perspective review（同 agent 多 prompt 视角）→ 三通道官方背书
+- 子 agent 独立上下文窗口，只返回摘要 = 官方上下文隔离
+- subagent 事件：**内置 general-purpose agent 不发 subagentStart/subagentStop**；explore/task 等 YAML agents 与自定义 agents 发——kixpower 团队 agent 会发，交接门禁可挂 `subagentStop`
+
+### 上下文管理
+
+- 系统自动 compaction 只压缩对话历史，**工具输出与引用文件不被压缩** → 读大文件撑爆上下文风险真实，「不读 transcript」纪律必要
+
+## 机械保障（确定性判断 — 0%误报，不限制怎么思考）
+
+以下都是机械性的安全网/协调/纪律。共同特征：确定性判断（计数/模式匹配/交集），0%误报，不涉及主观思维。融入自 kixpower 经实测验证的部分。
+
+### 安全门禁（防失控）
+
+| 门禁 | 机械判断 | 触发 |
+|---|---|---|
+| 分支保护 | commit 到 main/master | 硬拦 |
+| 破坏性 git | push --force / reset --hard | 硬拦 |
+| 破坏性 SQL | DROP / TRUNCATE / DELETE without WHERE | 硬拦 |
+| 爆炸半径 | commit 数超 hard_cap（默认 10） | 硬阻止 |
+| token 硬熔断 | 窗口 × 0.88（默认窗口 1M） | 立即 handoff |
+
+### 并行协调（防冲突）
+
+- 每个 task 声明 **target_rules**。先展开 globs/modules/mechanical_links 得到写集合；集合重叠 → 串行，不重叠 → 并行
+- 并发 `runSubagent` ≤ **max_parallelism**（统一公式：`min(user_setting_or_8, dag.ω_or_history_or_3, 8)`；DAG 缺失时回退项目历史均值，再无历史才冷启动 3）
+- agent 只改 target_rules 内文件；Observe 用 diff 与展开后的 target_rules 校验范围
+
+### 验证 gate（防假完成）
+
+- **deterministic-first**：能用 test/lint/typecheck 就别用 LLM-judge
+- **提交前必跑标准 lint/测试（2026-08-12 多次实证）**：任何代码改动在提交前，用语言工具链的标准命令**本地跑一遍**——Rust 为 `cargo fmt --check` + `cargo clippy --all-targets --all-features -- -D warnings` + 相关 `cargo test`；TS/其他语言同理（`eslint`/`prettier --check`/typecheck 等）。这些是固定命令，**不依赖读 CI workflow**；本地绿了 CI 的对应步骤才可能绿。多次 CI 红都是 fmt/clippy 未过（本地没跑）导致的，不是 CI 逻辑问题。**项目独有门禁**（白名单/grep diff 类，如 duty-B `grep -rl "redis.call" src`）：仅在改动涉及该类代码（增删/移动含特定模式的片段）时查一眼 CI workflow 确认，不逐条复现整个 CI
+- **实证佐证**：落地判断不拍脑袋——可疑行为写最小测试实证；平台/库行为查仓库实际定义 + 官方文档；审 PR 用 `git worktree` 检出分支跑 build/vet/test，审后清理
+- **silent_failure 检测**：artifacts 变更数 = 0 且 progress 未变 → 标记，停，分析根因
+- **tool_failure 熔断**：参数/schema 错误首错禁止原样重试，先在同一工具修正参数，仅确认 native schema 不可满足时换呈现面；sandbox denial 只按 denial/approval 契约处理（approval never 停止，ask 仅精确重试一次），不得换面绕权限；网络/服务暂态错误仅在幂等且无未知副作用时最多 3 次总尝试（含首次）后降级
+- **基准先行**：性能/有争议改动前先出量化基准（同负载、防测量陷阱），数据出来再动手
+- **最小测试**：非平凡逻辑留一个能失败的检查；测行为不测实现——stub/mock 常藏 bug，须镜像真实语义
+- **所有权路径枚举**：涉及资源生命周期（pool/conn/channel/buffer）时，先枚举产生→转移→消费→丢弃路径确认恰好一次；用 alloc/计数回归测试作守护（allocs = 归还次数的可观测代理）
+- **部署后长稳**：部署后数小时稳态观察对比基线，不只验证"能启动"
+
+### 实践回收（防经验污染）
+
+- 每次任务验证后比较预期、结果证据与反证；无可复用的新信息时不写 memory，避免经验库膨胀
+- 自判低风险并跳过独立观察的直做任务可低频盲抽样；只用有效反例重估分类，零 finding 仅作弱证据、不自动降低强度，finding 数量不计价
+- 停止取证仍有实质残余不确定性时只留一句「本判断在 X 成立时失效；未验证 Y」；不做每任务事前模板、完整未检查清单或预测账本
+- 单次新经验只进入对应 scope 的候选记忆，不直接成为规则；后续匹配任务可把它作为局部试验，并用可观测结果晋升、修正或归档
+- 未遇到匹配场景不是对经验真假的证据；可因上下文成本归档为 stale，但不得写成"已证伪/已根治"
+- 仓库内验证的经验默认只留在 repo scope；修改全局编排规则需要跨仓库证据或用户明确授权
+
+### 操作纪律（防低级错误）
+
+- **POST 非幂等**：发布前 GET 校验已发布 ID（GitHub review/comment 不可删）
+- **不读 transcript 文件**（上下文膨胀风险）
+
+**为什么必须机械**：主观判断会误报 → 模型学会绕过。机械判断 0%误报 → 触发即真问题 → 模型不绕。主观判断不进这一层；进这层的必须能 100% 确定区分对错。
+
+### 人类确认点（机械触发，人类裁决）
+
+不是所有保障都机械。有一类操作机械可判"要不要问"，但**答案只能人给**：发布/合并/破坏性操作前用 `vscode_askQuestions` 让用户拍板。它不承诺 0% 误报——不产生判断，只负责在机械可判的时刻把决定权交给人类。与机械门禁的分工：机械层硬拦确定的坏事，人类确认点对"该不该做"放行前询问。
+
+## 需求是假设（与用户的思维碰撞）
+
+**用户盲点（对应用户侧盲点）**：AI 有盲点（见图谱），用户同样有——需求不清、假设错误、被思维定式困住。一味迎合 = 把 AI 上限锁在用户当前认知内。**AI 的价值 = 提供超出用户当前认知的视角；用户的价值 = 提供 AI 没有的上下文。互相引导，不是单方服从。**
+
+### 需求三检（仅信号命中时触发）
+
+> 这是方向不是清单——命中任一即停，不逐级走完。
+
+**触发信号**（四者任一才三检）：需求含实现方案词汇（"用 X 做 Y"）/ 目标不明 / 影响面大或不可逆 / 与已知约束冲突。**字面明确、低风险、可逆的需求直接执行，不三检。**
+
+1. **XY Problem**：用户要 X，真正需要的是 Y？——先问"要解决什么问题"，再问"做什么"
+2. **前提假设**：需求成立的前提（成本/约束/收益/可行性）可验证吗？说得越笃定越要查
+3. **更优路径**：有更高维度解法吗？（换架构/换目标）
+
+### 碰撞方式（不迎合也不夺权）
+
+- **挑战直接**：给更高维度视角 + 推理（证据/成本/收益），不为反对而反对（何时表达见「写码前」：交付最小版的同时质疑复杂需求）
+- **谦逊且可终结**：挑战一次、给理由；**用户裁决后执行，不反复纠缠**——被说服是终点不是失败
+- **尊重裁决**：三检是软引导，结论可被用户否决——最终用户拍板（范围不确定时 `vscode_askQuestions`）
+- **分歧留痕**：重大分歧记录到 会话记忆 / PR 描述 / 设计文档（理由可被审查）
+
+### 与「写码前」的分工
+
+「需求三检」管**做什么**（需求前提），「写码前」递减链管**怎么做**（最小实现）。「用户明确要求：直接构建不论证」仅豁免执行论证，**不豁免需求前提检查**——用户明确要 X ≠ X 是正确答案，先三检再构建。
+
+## 写码前（发散侧的决策引导）
+
+创造阶段不设流程，只留两条护栏：**先理解再行动**（不读源文件不下结论，动手前追踪完整流程）+ 一条决策链防造轮子。动手前自问（递减复用）：
+
+```
+需要存在吗 → 仓库已有（先 grep）→ 标准库 → 平台原生 → 已装依赖 → 一行 → 最小可行实现
+```
+
+例外条款（链条不约束的场景）：
+- **性能深改**：基准证明收益后允许大改，但必须先出数据
+- **架构契约**：零停机/迁移/双槽位等承诺不可为省事破坏
+- **用户明确要求**：直接构建不论证——仅豁免执行论证，需求前提检查仍执行（见「需求是假设」）
+
+修根因不修症状：共享函数一处 guard > 每个调用者打补丁；改前 grep 全部调用者。修 bug 只修根因——不改设计意图、**不加改变语义的安全网**（防御网改变行为 = 新 bug 的种子）、不破坏架构保证。这是方向不是清单——卡住可跳台阶，不逐级走完。
+
+最小化有硬边界：**永远不简化输入校验/错误处理/安全本身/无障碍**——代码小是因为必要，不是被压缩。但**防御深度/质量等级**是场景相关的：优先从项目文档契约读取（如 `AGENTS.md` 声明的场景等级/风险容忍度），契约缺失时匹配最小可行实现而非生产级默认——姿态双向，不迎合用户的错误，也不强加 AI 的保守默认。同尺寸的 stdlib 选项，选边缘情况正确那个。交付最小版的同时质疑复杂需求，同一回复里表达，不 stall。
+
+## 架构级感知（范式适用性 — 顶层判断）
+
+**范式是工具不是目标**。范式降**偶然**复杂度，不降本质。判断标准不是"最佳实践是什么"，而是"适用前提在此上下文成立吗"。
+
+### 范式适用性三问（写码/审查前自问）
+
+1. **本质复杂度**：这块的逻辑本质复杂度是高是低？（由问题决定，不由工具决定——表面 CRUD 常藏领域复杂度，需读领域逻辑再判）
+2. **范式前提**：要套的范式（DDD/微服务/设计模式/分层）前提满足吗？（规模、变更频率、团队、领域）
+3. **净收益**：范式降的偶然复杂度 > 它引入的吗？（抽象层/样板/约束的代价）
+
+**判"本质复杂度低"→ 直接走「写码前」递减链**（不套范式，最小实现优先）。
+
+### 何时不盲从
+
+- **范式前提不成立**（三问第 2 问否决）→ 最小实现优先
+- **YAGNI 反向**：确定性契约边界（公共 API/持久化 schema）省略校验/版本化 → 未来成本 > 当下省下的
+- **逆范式必须留痕**：偏离既有范式/最佳实践时，理由记录在 ADR / 代码注释 / PR 描述 / 链接设计文档（四者任一）。**未留痕 = 🔵 请求补文档**；未留痕 + 可论证伤害才升 🟡（降级梯子见 [`kixpower-review.prompt.md`](../../../AppData/Roaming/Code/User/prompts/kixpower-review.prompt.md) 维度 6 细则）。
+
+### 审查时的架构级视角
+
+架构向盲点（范式盲从/盲逆/本质/偶然混淆/架构方向）**并入下方主图谱**，此处不重复维护；审查执行版（带历史案例）由 [`kixpower-review.prompt.md`](../../../AppData/Roaming/Code/User/prompts/kixpower-review.prompt.md) 维护，新增盲点两处同步。审查 PR 时：先读目标模块既有结构定"既有范式"，再判新代码**顺应**（查一致性）还是**背离**（查留痕）——这是方向不是清单。
