@@ -5,10 +5,11 @@ IFS=$'\n\t'
 readonly SCRIPT_VERSION="1.0.0"
 readonly BACKUP_ROOT="/var/backups/proxy-protocols"
 
-readonly SNELL_CONFIG="/etc/snell-server.conf"
-readonly SNELL_LINK="/usr/local/bin/snell-server"
 readonly SNELL_ROOT="/usr/local/libexec/snell"
-readonly SNELL_UNIT="/etc/systemd/system/snell-server.service"
+readonly SNELL_USER_CONFIG_DIR="/etc/snell-users"
+readonly SYSTEMD_DIR="/etc/systemd/system"
+readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+readonly SNELL_USERCTL="${SCRIPT_DIR}/snell-userctl.sh"
 
 readonly ANYTLS_USER="anytls"
 readonly ANYTLS_BIN="/usr/local/bin/anytls-server"
@@ -31,17 +32,74 @@ readonly ANYTLS_SERVER_SHA256="c1a3a52cf3246a51b2cbf427283cde2482fe99b6868588a57
 
 LOG_PREFIX="proxy-protocol"
 
+if [[ -t 1 && -z "${NO_COLOR:-}" ]]; then
+    COLOR_RESET=$'\033[0m'
+    COLOR_BOLD=$'\033[1m'
+    COLOR_GREEN=$'\033[32m'
+    COLOR_YELLOW=$'\033[33m'
+    COLOR_RED=$'\033[31m'
+    COLOR_CYAN=$'\033[36m'
+else
+    COLOR_RESET=""
+    COLOR_BOLD=""
+    COLOR_GREEN=""
+    COLOR_YELLOW=""
+    COLOR_RED=""
+    COLOR_CYAN=""
+fi
+
 log() {
-    printf '[%s] %s\n' "$LOG_PREFIX" "$*"
+    printf '%s[%s]%s %s\n' "$COLOR_GREEN" "$LOG_PREFIX" "$COLOR_RESET" "$*"
 }
 
 warn() {
-    printf '[%s] WARN: %s\n' "$LOG_PREFIX" "$*" >&2
+    printf '%s[%s] WARN:%s %s\n' "$COLOR_YELLOW" "$LOG_PREFIX" "$COLOR_RESET" "$*" >&2
 }
 
 die() {
-    printf '[%s] ERROR: %s\n' "$LOG_PREFIX" "$*" >&2
+    printf '%s[%s] ERROR:%s %s\n' "$COLOR_RED" "$LOG_PREFIX" "$COLOR_RESET" "$*" >&2
     exit 1
+}
+
+refresh_screen() {
+    [[ -t 1 ]] || return 0
+    if command -v clear >/dev/null 2>&1; then
+        clear
+    else
+        printf '\033[2J\033[H'
+    fi
+}
+
+pause_menu() {
+    [[ -t 0 ]] || return 0
+    printf '\n'
+    read -r -p "Press Enter to return to the menu..." _
+}
+
+run_menu_action() {
+    local status=0
+    ("$@") || status=$?
+    if (( status != 0 )); then
+        warn "operation failed"
+    fi
+    pause_menu
+}
+
+prompt_value() {
+    local prompt="$1" default_value="${2:-}" value
+    if [[ -n "$default_value" ]]; then
+        read -r -p "${prompt} [${default_value}]: " value
+        printf '%s\n' "${value:-$default_value}"
+    else
+        read -r -p "${prompt}: " value
+        printf '%s\n' "$value"
+    fi
+}
+
+confirm_action() {
+    local prompt="$1" answer
+    read -r -p "${prompt} [y/N]: " answer
+    [[ "$answer" == "y" || "$answer" == "Y" || "$answer" == "yes" || "$answer" == "YES" ]]
 }
 
 need_root() {
@@ -115,16 +173,20 @@ atomic_install() {
     mv -f "$temporary" "$destination"
 }
 
-write_snell_unit() {
-    cat > "$SNELL_UNIT" <<'UNIT_SNELL'
+write_snell_template() {
+    local major="$1" version_dir unit
+    version_dir="$(snell_version_dir "$major")"
+    unit="${SYSTEMD_DIR}/snell-v${major}@.service"
+    install -d -m 0755 "$SYSTEMD_DIR"
+    cat > "$unit" <<UNIT_SNELL
 [Unit]
-Description=Snell Server
+Description=Snell v${major} user %i
 After=network-online.target
 Wants=network-online.target
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/snell-server -c /etc/snell-server.conf
+ExecStart=${version_dir}/snell-server -c ${SNELL_USER_CONFIG_DIR}/%i.conf
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65536
@@ -133,7 +195,7 @@ NoNewPrivileges=true
 [Install]
 WantedBy=multi-user.target
 UNIT_SNELL
-    chmod 0644 "$SNELL_UNIT"
+    chmod 0644 "$unit"
 }
 
 snell_version_dir() {
@@ -144,17 +206,8 @@ snell_version_dir() {
     esac
 }
 
-ensure_snell_config() {
- if [[ ! -f "$SNELL_CONFIG" ]]; then
- die "missing /etc/snell-server.conf; create it manually or use snell-userctl for multi-user instances"
- fi
- if [[ ! -s "$SNELL_CONFIG" ]]; then
- die "empty /etc/snell-server.conf"
- fi
- chmod 0600 "$SNELL_CONFIG"
-}
 install_snell() {
-    local major="$1" port="${2:-${SNELL_PORT:-32005}}"
+    local major="$1"
     local url version expected version_dir temporary download binary
     local backup=""
 
@@ -196,81 +249,80 @@ install_snell() {
         die "Snell binary checksum mismatch"
     fi
 
-    if [[ -e "$SNELL_LINK" || -e "$SNELL_CONFIG" || -e "$SNELL_UNIT" || -e "$SNELL_ROOT" ]]; then
-        backup="$(backup_paths "snell-before-v${major}" "$SNELL_LINK" "$SNELL_CONFIG" "$SNELL_UNIT" "$SNELL_ROOT" | head -n 1 || true)"
+    if [[ -e "$version_dir" || -e "${SYSTEMD_DIR}/snell-v${major}@.service" ]]; then
+        backup="$(backup_paths "snell-before-v${major}" "$version_dir" "${SYSTEMD_DIR}/snell-v${major}@.service" | head -n 1)"
         [[ -n "$backup" ]] && log "backup: $backup"
     fi
 
-    ensure_snell_config "$port"
     atomic_install "$binary" "${version_dir}/snell-server" 0755
-    ln -sfn "${version_dir}/snell-server" "${SNELL_LINK}.new"
-    mv -Tf "${SNELL_LINK}.new" "$SNELL_LINK"
-    write_snell_unit
+    write_snell_template "$major"
     systemctl daemon-reload
-    systemctl enable --now snell-server.service
-    systemctl restart snell-server.service
 
-    log "installed Snell ${version}"
+    log "installed Snell ${version} binary and snell-v${major}@.service template"
+    log "no default config or service instance was created"
+    log "next: use snell-userctl.sh add NAME --port PORT --version ${major}"
     snell_status
-    snell_node_line "$major" --show-secrets
     rm -rf "$temporary"
 }
 
-snell_current_major() {
- local target digest
- if [[ -L "$SNELL_LINK" ]]; then
- target="$(readlink -f "$SNELL_LINK")"
- case "$target" in
- */v5/*) printf "5\n"; return 0 ;;
- */v6/*) printf "6\n"; return 0 ;;
- esac
- fi
- if [[ ! -x "$SNELL_LINK" ]]; then
- return 1
- fi
- digest="$(sha256sum "$SNELL_LINK")"
- digest="${digest%% *}"
- case "$digest" in
- "$SNELL_V5_BIN_SHA256") printf "5\n" ;;
- "$SNELL_V6_BIN_SHA256") printf "6\n" ;;
- *) printf "unknown\n" ;;
- esac
-}
-snell_status() {
-    local major="unknown"
-    local version_output=""
-    major="$(snell_current_major 2>/dev/null || true)"
-    if [[ -x "$SNELL_LINK" ]]; then
-        version_output="$("$SNELL_LINK" -v 2>&1 | head -n 1 || true)"
+snell_binary_state() {
+    local major="$1" binary expected actual
+    binary="$(snell_version_dir "$major")/snell-server"
+    case "$major" in
+        5) expected="$SNELL_V5_BIN_SHA256" ;;
+        6) expected="$SNELL_V6_BIN_SHA256" ;;
+    esac
+    if [[ ! -x "$binary" ]]; then
+        printf 'not-installed\n'
+        return 0
     fi
-    printf 'Snell service: %s\n' "$(systemctl is-active snell-server.service 2>/dev/null || true)"
-    printf 'Snell major: %s\n' "$major"
-    printf 'Snell binary: %s\n' "${version_output:-not-installed}"
-    printf 'Snell config: %s\n' "$([[ -f "$SNELL_CONFIG" ]] && printf present || printf missing)"
+    actual="$(sha256sum "$binary" | awk '{print $1}')"
+    if [[ "$actual" == "$expected" ]]; then
+        printf 'installed\n'
+    else
+        printf 'checksum-mismatch\n'
+    fi
+}
+
+snell_status() {
+    local user_count=0 active_count=0
+    if [[ -d "$SNELL_USER_CONFIG_DIR" && -r "$SNELL_USER_CONFIG_DIR" && -x "$SNELL_USER_CONFIG_DIR" ]]; then
+        user_count="$(find "$SNELL_USER_CONFIG_DIR" -maxdepth 1 -type f -name '*.conf' 2>/dev/null | wc -l || true)"
+    fi
+    active_count="$(systemctl list-units 'snell-v[56]@*.service' --state=active --no-legend --no-pager 2>/dev/null | wc -l)"
+    printf '%sSnell v5 binary:%s %s\n' "$COLOR_CYAN" "$COLOR_RESET" "$(snell_binary_state 5)"
+    printf '%sSnell v6 binary:%s %s\n' "$COLOR_CYAN" "$COLOR_RESET" "$(snell_binary_state 6)"
+    printf '%sSnell users:%s %s configured, %s active\n' "$COLOR_CYAN" "$COLOR_RESET" "$user_count" "$active_count"
 }
 
 uninstall_snell() {
-    local major="$1" purge_config="${2:-false}" current version_dir backup
+    local major="$1" purge_config="${2:-false}" version_dir backup unit config
 
     need_root
     require_systemd
+    [[ "$purge_config" == "false" ]] || die "Snell user configs are owned by snell-userctl.sh; remove users there"
     version_dir="$(snell_version_dir "$major")"
-    current="$(snell_current_major 2>/dev/null || true)"
-    backup="$(backup_paths "snell-uninstall-v${major}" "$SNELL_LINK" "$SNELL_CONFIG" "$SNELL_UNIT" "$version_dir" | head -n 1 || true)"
+    unit="${SYSTEMD_DIR}/snell-v${major}@.service"
+
+    if systemctl list-units "snell-v${major}@*.service" --all --no-legend --no-pager 2>/dev/null | grep -q .; then
+        die "Snell v${major} still has systemd instances; remove or switch them with snell-userctl.sh"
+    fi
+    if [[ -d "$SNELL_USER_CONFIG_DIR" ]]; then
+        for config in "$SNELL_USER_CONFIG_DIR"/*.conf; do
+            [[ -e "$config" ]] || continue
+            if grep -q "^# managed-version = ${major}$" "$config"; then
+                die "Snell v${major} is still assigned to user config: $config"
+            fi
+        done
+    fi
+
+    backup="$(backup_paths "snell-uninstall-v${major}" "$unit" "$version_dir" | head -n 1)"
     [[ -n "$backup" ]] && log "backup: $backup"
-
-    if [[ "$current" == "$major" ]]; then
-        systemctl disable --now snell-server.service >/dev/null 2>&1 || true
-        rm -f "$SNELL_LINK" "$SNELL_UNIT"
-    fi
-
+    rm -f "$unit"
     rm -rf "$version_dir"
-    if [[ "$purge_config" == "true" ]]; then
-        rm -f "$SNELL_CONFIG"
-    fi
 
     systemctl daemon-reload
-    log "uninstalled Snell v${major}"
+    log "uninstalled unused Snell v${major} binary and template"
 }
 
 write_anytls_unit() {
@@ -414,17 +466,6 @@ default_host() {
     hostname -f 2>/dev/null || hostname
 }
 
-snell_node_line() {
-    local major="$1" show_secrets="${2:-}" host port psk display_psk
-    host="$(default_host)"
-    port="$(sed -n 's/^[[:space:]]*listen[[:space:]]*=[[:space:]]*.*:\([0-9][0-9]*\).*/\1/p' "$SNELL_CONFIG" | head -n 1)"
-    psk="$(sed -n 's/^[[:space:]]*psk[[:space:]]*=[[:space:]]*//p' "$SNELL_CONFIG" | head -n 1)"
-    [[ -n "$port" ]] || port="${SNELL_PORT:-32005}"
-    display_psk="<redacted>"
-    [[ "$show_secrets" == "--show-secrets" ]] && display_psk="$psk"
-    printf 'Surge node: %s = snell, %s, %s, psk=%s, version=%s\n' "Snell-v${major}" "$host" "$port" "$display_psk" "$major"
-}
-
 anytls_node_line() {
     local port="${1:-50014}" show_secrets="${2:-}" host password display_password
     host="$(default_host)"
@@ -443,8 +484,8 @@ status_all() {
     snell_status
     anytls_status "${ANYTLS_PORT:-50014}"
     if [[ "$show_secrets" == "--show-secrets" ]]; then
-        [[ -f "$SNELL_CONFIG" ]] && snell_node_line "$(snell_current_major 2>/dev/null || true)" --show-secrets
         [[ -f "$ANYTLS_ENV" ]] && anytls_node_line "${ANYTLS_PORT:-50014}" --show-secrets
+        [[ -d "$SNELL_USER_CONFIG_DIR" ]] && warn "use snell-userctl.sh show NAME --show-secrets for Snell users"
     fi
 }
 
@@ -483,17 +524,14 @@ usage() {
     cat <<'USAGE_TEXT'
 Usage:
   manage-proxy-protocols.sh status [--show-secrets]
-  manage-proxy-protocols.sh install snell-v5 [--host HOST]
-  manage-proxy-protocols.sh install snell-v6 [--host HOST]
+  manage-proxy-protocols.sh install snell-v5
+  manage-proxy-protocols.sh install snell-v6
   manage-proxy-protocols.sh install anytls  [--port 50014] [--host HOST]
-  manage-proxy-protocols.sh switch snell-v5|snell-v6
-  manage-proxy-protocols.sh uninstall snell-v5|snell-v6 [--purge]
+  manage-proxy-protocols.sh uninstall snell-v5|snell-v6
   manage-proxy-protocols.sh uninstall anytls [--purge]
   manage-proxy-protocols.sh menu
 
 Environment:
-  SNELL_PORT       Reserved for external config templates
-  SNELL_PSK        Reserved for external config templates
   ANYTLS_PORT      New AnyTLS port, default 50014
   ANYTLS_PASSWORD  New AnyTLS password, generated when absent
   PUBLIC_HOST      Host shown in generated Surge node lines
@@ -501,35 +539,68 @@ Environment:
 Notes:
   - Only Snell v5, Snell v6, and native AnyTLS are managed.
   - sing-box, Nginx, and other proxy services are not modified.
-  - Uninstall keeps configuration unless --purge is used.
+  - Snell installation only deploys the versioned binary and systemd template.
+  - Snell users, configs, ports, PSKs, and version switches are managed by snell-userctl.sh.
+  - Snell uninstall refuses to remove a version still assigned to a user.
+  - AnyTLS uninstall keeps configuration unless --purge is used.
   - Native AnyTLS uses a dynamic self-signed certificate, so Surge nodes need skip-cert-verify=true.
 USAGE_TEXT
 }
 
 menu() {
-    local choice
+    local choice port purge
     while true; do
+        refresh_screen
+        [[ -t 0 ]] || return 0
+        printf '%s%sProxy Protocol Manager%s\n\n' "$COLOR_BOLD" "$COLOR_CYAN" "$COLOR_RESET"
         cat <<'MENU_TEXT'
 1) status
-2) install Snell v5
-3) install Snell v6
-4) install native AnyTLS
-5) uninstall Snell v5
-6) uninstall Snell v6
-7) uninstall native AnyTLS
-8) exit
+2) install Snell v5 binary
+3) install Snell v6 binary
+4) manage Snell users
+5) install native AnyTLS
+6) uninstall unused Snell v5 binary
+7) uninstall unused Snell v6 binary
+8) uninstall native AnyTLS
+9) exit
 MENU_TEXT
         read -r -p "choice: " choice
+        [[ -n "$choice" ]] || return 0
         case "$choice" in
-            1) status_all ;;
-            2) install_snell 5 ;;
-            3) install_snell 6 ;;
-            4) install_anytls ;;
-            5) uninstall_snell 5 ;;
-            6) uninstall_snell 6 ;;
-            7) uninstall_anytls ;;
-            8) return 0 ;;
-            *) warn "invalid choice" ;;
+            1) run_menu_action status_all ;;
+            2) run_menu_action install_snell 5 ;;
+            3) run_menu_action install_snell 6 ;;
+            4)
+                if [[ -f "$SNELL_USERCTL" ]]; then
+                    bash "$SNELL_USERCTL"
+                else
+                    warn "missing companion script: $SNELL_USERCTL"
+                    pause_menu
+                fi
+                ;;
+            5)
+                port="$(prompt_value "AnyTLS port" "${ANYTLS_PORT:-50014}")"
+                run_menu_action install_anytls "$port"
+                ;;
+            6)
+                if confirm_action "Uninstall the unused Snell v5 binary?"; then
+                    run_menu_action uninstall_snell 5
+                fi
+                ;;
+            7)
+                if confirm_action "Uninstall the unused Snell v6 binary?"; then
+                    run_menu_action uninstall_snell 6
+                fi
+                ;;
+            8)
+                purge="false"
+                confirm_action "Also delete the AnyTLS password and system user?" && purge="true"
+                if confirm_action "Uninstall native AnyTLS?"; then
+                    run_menu_action uninstall_anytls "$purge"
+                fi
+                ;;
+            9) return 0 ;;
+            *) warn "invalid choice"; pause_menu ;;
         esac
     done
 }
@@ -549,22 +620,13 @@ main() {
             [[ "$#" -gt 0 ]] && shift
             parse_common_options "$@"
             case "$protocol" in
-                snell-v5) install_snell 5 "$ARG_PORT" ;;
-                snell-v6) install_snell 6 "$ARG_PORT" ;;
+                snell-v5) install_snell 5 ;;
+                snell-v6) install_snell 6 ;;
                 anytls) install_anytls "${ARG_PORT:-${ANYTLS_PORT:-50014}}" ;;
                 *) die "install supports snell-v5, snell-v6, anytls" ;;
             esac
             ;;
-        switch)
-            protocol="${1:-}"
-            [[ "$#" -gt 0 ]] && shift
-            parse_common_options "$@"
-            case "$protocol" in
-                snell-v5) install_snell 5 "$ARG_PORT" ;;
-                snell-v6) install_snell 6 "$ARG_PORT" ;;
-                *) die "switch supports snell-v5 or snell-v6" ;;
-            esac
-            ;;
+        switch) die "switch individual Snell users with snell-userctl.sh switch NAME --version 5|6" ;;
         uninstall)
             protocol="${1:-}"
             [[ "$#" -gt 0 ]] && shift

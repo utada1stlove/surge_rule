@@ -16,17 +16,74 @@ readonly SNELL_V6_VERSION="6.0.0-rc2"
 readonly SNELL_V6_URL="https://dl.nssurge.com/snell/snell-server-v6.0.0rc2-linux-amd64.zip"
 readonly SNELL_V6_SHA256="27d8bead8dd7a33f2207b58c7bb6b4c274f67f537b621dcbee7112ffd22e23e6"
 
+if [[ -t 1 && -z "${NO_COLOR:-}" ]]; then
+    COLOR_RESET=$'\033[0m'
+    COLOR_BOLD=$'\033[1m'
+    COLOR_GREEN=$'\033[32m'
+    COLOR_YELLOW=$'\033[33m'
+    COLOR_RED=$'\033[31m'
+    COLOR_CYAN=$'\033[36m'
+else
+    COLOR_RESET=""
+    COLOR_BOLD=""
+    COLOR_GREEN=""
+    COLOR_YELLOW=""
+    COLOR_RED=""
+    COLOR_CYAN=""
+fi
+
 log() {
-    printf '[snell-userctl] %s\n' "$*"
+    printf '%s[snell-userctl]%s %s\n' "$COLOR_GREEN" "$COLOR_RESET" "$*"
 }
 
 warn() {
-    printf '[snell-userctl] WARN: %s\n' "$*" >&2
+    printf '%s[snell-userctl] WARN:%s %s\n' "$COLOR_YELLOW" "$COLOR_RESET" "$*" >&2
 }
 
 die() {
-    printf '[snell-userctl] ERROR: %s\n' "$*" >&2
+    printf '%s[snell-userctl] ERROR:%s %s\n' "$COLOR_RED" "$COLOR_RESET" "$*" >&2
     exit 1
+}
+
+refresh_screen() {
+    [[ -t 1 ]] || return 0
+    if command -v clear >/dev/null 2>&1; then
+        clear
+    else
+        printf '\033[2J\033[H'
+    fi
+}
+
+pause_menu() {
+    [[ -t 0 ]] || return 0
+    printf '\n'
+    read -r -p "Press Enter to return to the menu..." _
+}
+
+run_menu_action() {
+    local status=0
+    ("$@") || status=$?
+    if (( status != 0 )); then
+        warn "operation failed"
+    fi
+    pause_menu
+}
+
+prompt_value() {
+    local prompt="$1" default_value="${2:-}" value
+    if [[ -n "$default_value" ]]; then
+        read -r -p "${prompt} [${default_value}]: " value
+        printf '%s\n' "${value:-$default_value}"
+    else
+        read -r -p "${prompt}: " value
+        printf '%s\n' "$value"
+    fi
+}
+
+confirm_action() {
+    local prompt="$1" answer
+    read -r -p "${prompt} [y/N]: " answer
+    [[ "$answer" == "y" || "$answer" == "Y" || "$answer" == "yes" || "$answer" == "YES" ]]
 }
 
 need_root() {
@@ -348,8 +405,74 @@ Notes:
 USAGE_TEXT
 }
 
+menu_add_user() {
+    local user port version psk_choice psk="" host
+    user="$(prompt_value "User name")"
+    [[ -n "$user" ]] || { warn "user name cannot be empty"; return 1; }
+    port="$(prompt_value "Port")"
+    [[ -n "$port" ]] || { warn "port cannot be empty"; return 1; }
+    version="$(prompt_value "Snell version (5 or 6)" "5")"
+    host="$(prompt_value "Public host shown in the Surge node (leave blank for hostname)")"
+    read -r -p "Custom PSK (leave blank to generate one): " psk_choice
+    psk="$psk_choice"
+    [[ -n "$host" ]] && PUBLIC_HOST="$host"
+    add_user "$user" "$port" "$version" "$psk"
+}
+
+menu_show_user() {
+    local user
+    user="$(prompt_value "User name")"
+    [[ -n "$user" ]] || { warn "user name cannot be empty"; return 1; }
+    show_user "$user" --show-secrets
+}
+
+menu_remove_user() {
+    local user
+    user="$(prompt_value "User name")"
+    [[ -n "$user" ]] || { warn "user name cannot be empty"; return 1; }
+    confirm_action "Remove user ${user}?" || return 0
+    remove_user "$user"
+}
+
+menu_switch_user() {
+    local user version
+    user="$(prompt_value "User name")"
+    [[ -n "$user" ]] || { warn "user name cannot be empty"; return 1; }
+    version="$(prompt_value "Switch to Snell version (5 or 6)")"
+    [[ -n "$version" ]] || { warn "version cannot be empty"; return 1; }
+    switch_user "$user" "$version"
+}
+
+menu() {
+    local choice
+    while true; do
+        refresh_screen
+        [[ -t 0 ]] || return 0
+        printf '%s%sSnell User Manager%s\n\n' "$COLOR_BOLD" "$COLOR_CYAN" "$COLOR_RESET"
+        cat <<'MENU_TEXT'
+1) list users
+2) add user
+3) show user and Surge node
+4) switch user version
+5) remove user
+6) return
+MENU_TEXT
+        read -r -p "choice: " choice
+        [[ -n "$choice" ]] || return 0
+        case "$choice" in
+            1) run_menu_action list_users ;;
+            2) run_menu_action menu_add_user ;;
+            3) run_menu_action menu_show_user ;;
+            4) run_menu_action menu_switch_user ;;
+            5) run_menu_action menu_remove_user ;;
+            6) return 0 ;;
+            *) warn "invalid choice"; pause_menu ;;
+        esac
+    done
+}
+
 main() {
-    local command="${1:-}"
+    local command="${1:-menu}"
     [[ "$#" -gt 0 ]] && shift
     local user="" port="" version="5" psk="" host="" show_secrets="" arg
 
@@ -393,7 +516,8 @@ main() {
             [[ -n "$user" ]] || die "switch needs NAME"
             switch_user "$user" "$version"
             ;;
-        -h|--help|help|"") usage ;;
+        menu) menu ;;
+        -h|--help|help) usage ;;
         *) die "unknown command: $command" ;;
     esac
 }
