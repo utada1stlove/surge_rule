@@ -4,6 +4,10 @@
 快照在 `profiles/surge/version 1/<version>.conf`。设备订阅 URL 由 manifest 的 `output`
 决定，升级和回滚都不需要改设备端 URL。
 
+## 1.3.3 (2026-09-24)
+
+- Kagi 策略组改用与本地 `search.svg` 配套的 144×144 PNG 图标，兼容 Surge 的 `icon-url` 图标加载。
+
 ## 1.3.2 (2026-09-24)
 
 - 新增 Kagi 与 Orion Browser 域名规则及独立 `Kagi` 策略组，使用本地搜索图标。

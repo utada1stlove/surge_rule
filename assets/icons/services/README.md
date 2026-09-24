@@ -16,6 +16,7 @@ magick <out>.png -depth 8 -strip -define png:exclude-chunk=all <out>.png
 | 文件 | 用途 | 来源 |
 | --- | --- | --- |
 | `youtube.svg` / `youtube.png` | `profiles/surge/surge.conf` 的 YouTube 组 | 本地提供（红色圆角方块 + 白色播放键的应用图标样式）；PNG 由该 SVG 渲染 |
+| `search.svg` / `search.png` | `profiles/surge/surge.conf` 的 Kagi 组 | 本地提供（Kagi 黄底搜索图标）；SVG 为可编辑源，PNG 供 Surge 调用 |
 | `dropbox.svg` / `dropbox.tile.png` | `profiles/surge/surge.conf` 的 `Cloud Box` 组 | 本地提供（圆角方块 tile + 白色 Dropbox 开盒图形）。原 SVG 底色为 `#4D8DC9`，已改为品牌蓝 `#0061FF`；PNG 由修改后的 SVG 渲染 |
 | `dropbox.png` | 其余 Profile（`legacy/surgeion.conf`）`Cloud` 组 | 仓库既有资源，官方蓝裸图形、透明底、144x144；未改动 |
 | `dropbox-brands-solid-full.svg` | 未使用 | Font Awesome Free 7.3.1 单色 path，无 `fill`，渲染为黑色透明底，深色模式下几乎不可见，故未采用 |
