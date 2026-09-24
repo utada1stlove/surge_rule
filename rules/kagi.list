@@ -1,0 +1,8 @@
+# kagi搜索引擎的域名规则
+
+DOMAIN-SUFFIX,kagi.com,Your_Policy
+DOMAIN-SUFFIX,kagi.co,Your_Policy
+DOMAIN-SUFFIX,kagistatic.com,Your_Policy
+DOMAIN-SUFFIX,kagiapi.com,Your_Policy
+DOMAIN-SUFFIX,kagidev.com,Your_Policy
+DOMAIN-SUFFIX,orionbrowser.com,Your_Policy
