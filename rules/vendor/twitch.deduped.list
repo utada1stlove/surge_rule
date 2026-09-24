@@ -1,0 +1,22 @@
+# Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Twitch/Twitch.list
+# name: twitch
+# fetched-at: 2026-09-24T18:01:36.621Z
+# Do not edit manually; regenerate with tools/sync-external.mjs.
+# deduped-at: 2026-09-24T18:42:56.771Z
+# deduped-against: diy+generated (313832 rules)
+
+DOMAIN-KEYWORD,ttvnw
+DOMAIN-SUFFIX,twitch-ext.rootonline.de
+IP-CIDR,103.53.48.0/23,no-resolve
+IP-CIDR,185.42.204.0/22,no-resolve
+IP-CIDR,192.108.239.0/24,no-resolve
+IP-CIDR,192.16.64.0/21,no-resolve
+IP-CIDR,199.9.248.0/21,no-resolve
+IP-CIDR,23.160.0.0/24,no-resolve
+IP-CIDR,45.113.128.0/22,no-resolve
+IP-CIDR,52.223.192.0/20,no-resolve
+IP-CIDR,52.223.208.0/21,no-resolve
+IP-CIDR,52.223.224.0/19,no-resolve
+IP-CIDR,99.181.64.0/18,no-resolve
+IP-CIDR6,2402:2a80::/32,no-resolve
+PROCESS-NAME,tv.twitch.android.app

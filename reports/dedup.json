@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T18:17:12.543Z",
+  "generated_at": "2026-09-24T18:42:56.782Z",
   "priority": [
     "diy (rules/*.list)",
     "generated (rules/generated/*.list)",
@@ -11,7 +11,99 @@
     "vendor": 2077,
     "shadowed_generated": 147,
     "shadowed_vendor": 1259,
-    "total_shadowed": 1406
+    "total_shadowed": 1406,
+    "deduped_vendor": {
+      "anthropic.list": {
+        "before": 3,
+        "after": 0,
+        "removed": 3
+      },
+      "claude.list": {
+        "before": 3,
+        "after": 1,
+        "removed": 2
+      },
+      "discord.list": {
+        "before": 29,
+        "after": 3,
+        "removed": 26
+      },
+      "facebook.list": {
+        "before": 570,
+        "after": 566,
+        "removed": 4
+      },
+      "fox.list": {
+        "before": 257,
+        "after": 17,
+        "removed": 240
+      },
+      "gemini.list": {
+        "before": 13,
+        "after": 5,
+        "removed": 8
+      },
+      "github.list": {
+        "before": 31,
+        "after": 6,
+        "removed": 25
+      },
+      "google.list": {
+        "before": 703,
+        "after": 88,
+        "removed": 615
+      },
+      "instagram.list": {
+        "before": 4,
+        "after": 4,
+        "removed": 0
+      },
+      "openai.list": {
+        "before": 35,
+        "after": 19,
+        "removed": 16
+      },
+      "paypal.list": {
+        "before": 248,
+        "after": 4,
+        "removed": 244
+      },
+      "reddit.list": {
+        "before": 8,
+        "after": 3,
+        "removed": 5
+      },
+      "spotify.list": {
+        "before": 31,
+        "after": 11,
+        "removed": 20
+      },
+      "telegram.list": {
+        "before": 46,
+        "after": 28,
+        "removed": 18
+      },
+      "tiktok.list": {
+        "before": 33,
+        "after": 28,
+        "removed": 5
+      },
+      "twitch.list": {
+        "before": 22,
+        "after": 15,
+        "removed": 7
+      },
+      "twitter.list": {
+        "before": 33,
+        "after": 9,
+        "removed": 24
+      },
+      "whatsapp.list": {
+        "before": 17,
+        "after": 17,
+        "removed": 0
+      }
+    }
   },
   "shadowed_generated": [
     {
@@ -3252,5 +3344,5 @@
       "file": "rules/vendor/google.list"
     }
   ],
-  "note": "Truncated to 200/500 entries; full counts in counts field. Shadowed means lower-priority file contains a rule already present in higher-priority layer; it will never match due to first-match semantics."
+  "note": "Shadowed means lower-priority file contains a rule already present in higher-priority layer; deduped vendor files are written as *.deduped.list"
 }

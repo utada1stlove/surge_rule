@@ -1,0 +1,24 @@
+# Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Fox/Fox.list
+# name: fox
+# fetched-at: 2026-09-24T18:01:38.975Z
+# Do not edit manually; regenerate with tools/sync-external.mjs.
+# deduped-at: 2026-09-24T18:42:56.764Z
+# deduped-against: diy+generated (313832 rules)
+
+DOMAIN-SUFFIX,cdn-fox-networks-group-green.akamaized.net
+DOMAIN-SUFFIX,d3cv4a9a9wh0bt.cloudfront.net
+DOMAIN-SUFFIX,dashasiafox.akamaized.net
+DOMAIN-SUFFIX,foxbroadcasting.zendesk.com
+DOMAIN-SUFFIX,foxnewsplayer-a.akamaihd.net
+DOMAIN-SUFFIX,foxnow.com
+DOMAIN-SUFFIX,foxplay.com
+DOMAIN-SUFFIX,foxsports01-i.akamaihd.net
+DOMAIN-SUFFIX,foxsports02-i.akamaihd.net
+DOMAIN-SUFFIX,foxsports03-i.akamaihd.net
+DOMAIN-SUFFIX,fxnetwork.com
+DOMAIN-SUFFIX,fxnetworks.com
+DOMAIN-SUFFIX,now.com
+DOMAIN-SUFFIX,staticasiafox.akamaized.net
+DOMAIN-SUFFIX,theplatform.com
+DOMAIN-SUFFIX,uplynk.com
+USER-AGENT,FOX%20NOW*

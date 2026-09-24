@@ -43,22 +43,47 @@ const diy = await loadDir(diyDir, "rules");
 const generated = await loadDir(generatedDir, "rules/generated");
 const vendor = await loadDir(vendorDir, "rules/vendor");
 
-// Priority: diy > generated > vendor
+// Priority: diy > generated > vendor  (diy+geosite 为权威)
 const higherThanGenerated = diy;
 const higherThanVendor = new Map([...diy, ...generated]);
 
 const genOverlaps = shadowReport(higherThanGenerated, generated);
 const vendorOverlaps = shadowReport(higherThanVendor, vendor);
 
-// Also report internal duplicates already flagged by lint, plus cross
+// 产出去重后的 vendor：远端去重掉已在 diy/generated 存在的条目
+const shadowedSet = new Set(vendorOverlaps.map((o) => o.rule));
+let dedupedCounts = {};
+try {
+  const files = (await readdir(vendorDir)).filter((f) => f.endsWith(".list") && !f.endsWith(".deduped.list"));
+  for (const file of files) {
+    const text = await readFile(join(vendorDir, file), "utf8");
+    const header = [];
+    const body = [];
+    for (const raw of text.split(/\r?\n/)) {
+      if (raw.startsWith("# Vendored") || raw.startsWith("# name:") || raw.startsWith("# fetched-at") || raw.startsWith("# Do not edit")) header.push(raw);
+      else if (raw.trim() && !raw.trim().startsWith("#")) body.push(raw);
+    }
+    const deduped = body.filter((line) => !shadowedSet.has(line.trim()));
+    dedupedCounts[file] = { before: body.length, after: deduped.length, removed: body.length - deduped.length };
+    const out = [
+      ...header,
+      `# deduped-at: ${new Date().toISOString()}`,
+      `# deduped-against: diy+generated (${higherThanVendor.size} rules)`,
+      "",
+      ...deduped.sort(),
+    ].join("\n") + "\n";
+    await writeFile(join(vendorDir, file.replace(/\.list$/, ".deduped.list")), out, "utf8");
+  }
+} catch {}
+
 const total = genOverlaps.length + vendorOverlaps.length;
 const report = {
   generated_at: new Date().toISOString(),
   priority: ["diy (rules/*.list)", "generated (rules/generated/*.list)", "vendor (rules/vendor/*.list)"],
-  counts: { diy: diy.size, generated: generated.size, vendor: vendor.size, shadowed_generated: genOverlaps.length, shadowed_vendor: vendorOverlaps.length, total_shadowed: total },
+  counts: { diy: diy.size, generated: generated.size, vendor: vendor.size, shadowed_generated: genOverlaps.length, shadowed_vendor: vendorOverlaps.length, total_shadowed: total, deduped_vendor: dedupedCounts },
   shadowed_generated: genOverlaps.slice(0, 200),
   shadowed_vendor: vendorOverlaps.slice(0, 500),
-  note: "Truncated to 200/500 entries; full counts in counts field. Shadowed means lower-priority file contains a rule already present in higher-priority layer; it will never match due to first-match semantics.",
+  note: "Shadowed means lower-priority file contains a rule already present in higher-priority layer; deduped vendor files are written as *.deduped.list",
 };
 
 await mkdir(join(root, "reports"), { recursive: true });
