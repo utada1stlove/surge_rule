@@ -4,6 +4,11 @@
 快照在 `profiles/surge/version 1/<version>.conf`。设备订阅 URL 由 manifest 的 `output`
 决定，升级和回滚都不需要改设备端 URL。
 
+## 1.3.5 (2026-09-25)
+
+- 将 18 个 `blackmatrix7` 远端 Rule Set 平行切换至本仓库 `rules/vendor/*.list` 本地快照（`facebook/instagram/whatsapp/spotify/github/telegram/twitch/discord/twitter/reddit/google/gemini/openai/anthropic/claude/paypal/fox/tiktok`），由 `sync-external` 每日同步，去重后在 `Meta/AI/Spotify` 等组中保持原有策略绑定与顺序。
+- 保留 `Pixiv`（`rules/generated/pixiv.list`）与未迁移的远端兜底，完成本地三库平行版本。
+
 ## 1.3.4 (2026-09-25)
 
 - 新增独立 `Pixiv` 策略组，默认选择 `Smart`，并保留各地区节点组供手动切换。
