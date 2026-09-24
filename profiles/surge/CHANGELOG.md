@@ -4,6 +4,10 @@
 快照在 `profiles/surge/version 1/<version>.conf`。设备订阅 URL 由 manifest 的 `output`
 决定，升级和回滚都不需要改设备端 URL。
 
+## 1.3.7 (2026-09-25)
+
+- `Pixiv` 组图标由 `policy/global.png` 改为 `services/pixiv.png`（用户提供的 `pixiv.png` 已入库 `assets/icons/services/pixiv.png`）
+
 ## 1.3.6 (2026-09-25)
 
 - 回退 `surge` 主线至远端 `blackmatrix7` 引用（与 `1.3.4` 一致），`surge-loc` 作为本地 `vendor` 平行版本独立发布，见 `profiles/surge-loc/CHANGELOG.md`。

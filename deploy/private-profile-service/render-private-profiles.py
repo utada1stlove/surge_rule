@@ -164,7 +164,7 @@ def validate_substore(text: str) -> None:
 
 
 def merge_private_mitm(text: str, profile_id: str) -> str:
-    if profile_id != "surge":
+    if profile_id not in ("surge", "surge-loc"):
         return text
     if "[MITM]" in text:
         raise RenderError("surge: public template must not contain a [MITM] section")
