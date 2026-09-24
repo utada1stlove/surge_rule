@@ -1,6 +1,6 @@
 # Surge 主配置 Smart 权重
 
-本文档对应当前活动入口 [profiles/surge/surge.conf](surge.conf)，当前版本为 `1.3.1`；权重来源是该入口 `[Proxy Group]` 中 `Smart`、`Smart-Unlimited` 和 `Smart-US` 的实际 `policy-priority`。版本历史见 [CHANGELOG.md](CHANGELOG.md)，节点命名约定见 [docs/operations/surge-smart-node-naming.md](../../docs/operations/surge-smart-node-naming.md)。
+本文档对应当前活动入口 [profiles/surge/surge.conf](surge.conf)，当前版本为 `1.3.2`；权重来源是该入口 `[Proxy Group]` 中 `Smart`、`Smart-Unlimited` 和 `Smart-US` 的实际 `policy-priority`。版本历史见 [CHANGELOG.md](CHANGELOG.md)，节点命名约定见 [docs/operations/surge-smart-node-naming.md](../../docs/operations/surge-smart-node-naming.md)。
 
 ## 首条匹配
 
@@ -47,4 +47,4 @@ Surge 的 `policy-priority` 按从左到右的首条匹配规则选择倍率，�
 所有业务出口均直接提供完整的一级节点组候选；`Proxy` 仍保留为节点组聚合页，`All Nodes`
 仅作为订阅入口和筛选组的内部来源，不直接作为业务出口选项。
 
-本文档以 `1.3.1` 活动入口和同版本快照为准；新增节点标签时，先确认它是否能被现有正则命中，再同时更新入口、快照、CHANGELOG 和本说明。不要修改既有 Smart 算法来“简化”文档中的权重；组合规则必须继续放在对应通用规则之前。
+本文档以 `1.3.2` 活动入口和同版本快照为准；新增节点标签时，先确认它是否能被现有正则命中，再同时更新入口、快照、CHANGELOG 和本说明。不要修改既有 Smart 算法来“简化”文档中的权重；组合规则必须继续放在对应通用规则之前。

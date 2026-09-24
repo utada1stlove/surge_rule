@@ -4,6 +4,11 @@
 快照在 `profiles/surge/version 1/<version>.conf`。设备订阅 URL 由 manifest 的 `output`
 决定，升级和回滚都不需要改设备端 URL。
 
+## 1.3.2 (2026-09-24)
+
+- 新增 Kagi 与 Orion Browser 域名规则及独立 `Kagi` 策略组，使用本地搜索图标。
+- 修正 Kagi Rule Set 条目语法和图标 URL，并将其置于通用 `proxy.list` 前，避免被通用代理规则提前匹配。
+
 ## 1.3.1 (2026-09-24)
 
 - 重排策略组为“服务分类 / 节点分类”两块，便于维护；策略组数量、名称、候选项和 Smart 权重保持不变。
