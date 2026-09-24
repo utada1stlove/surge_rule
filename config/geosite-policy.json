@@ -21,6 +21,7 @@
     "discord": {"policy": "Proxy", "runtime": ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Discord/Discord.list"]},
     "twitter": {"policy": "Proxy", "runtime": ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Twitter/Twitter.list"]},
     "reddit": {"policy": "Proxy", "runtime": ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Reddit/Reddit.list"]},
+    "pixiv": {"policy": "Pixiv", "runtime": []},
     "spotify": {"policy": "United States", "runtime": ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Spotify/Spotify.list"]},
     "paypal": {"policy": "United States", "runtime": ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/PayPal/PayPal.list"]},
     "apple": {"policy": "United States", "runtime": ["https://ruleset.skk.moe/List/non_ip/apple_services.conf"]},

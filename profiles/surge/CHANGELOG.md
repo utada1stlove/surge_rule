@@ -4,6 +4,11 @@
 快照在 `profiles/surge/version 1/<version>.conf`。设备订阅 URL 由 manifest 的 `output`
 决定，升级和回滚都不需要改设备端 URL。
 
+## 1.3.4 (2026-09-25)
+
+- 新增独立 `Pixiv` 策略组，默认选择 `Smart`，并保留各地区节点组供手动切换。
+- 采用本仓库 `sync-geosite` Action 从 Loyalsoldier `geosite:pixiv` 生成的 Rule Set，并置于 `Meta` 与通用 `proxy.list` 之前，避免 Pixiv 请求被后续规则提前处理。
+
 ## 1.3.3 (2026-09-24)
 
 - Kagi 策略组改用与本地 `search.svg` 配套的 144×144 PNG 图标，兼容 Surge 的 `icon-url` 图标加载。
