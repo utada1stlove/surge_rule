@@ -26,6 +26,14 @@ cp deploy/systemd/surge-profile-render.service deploy/systemd/surge-profile-rend
 cp deploy/config/config.json.example deploy/config/secrets.json.example "$staging/"
 cp deploy/nginx/surge-profile-location.conf.example "$staging/"
 cp deploy/install-private-profile-service.sh "$staging/"
+if [ ! -r private-mitm/mitm.conf ]; then
+  echo "ERROR: private-mitm/mitm.conf is required for private deployment" >&2
+  exit 1
+fi
+cp private-mitm/mitm.conf "$staging/mitm.conf"
+# The repository may be checked out with Windows line endings. Normalize the
+# staged deployment bundle so remote shell shebangs and systemd files execute.
+find "$staging" -type f -exec sed -i 's/\r$//' {} +
 
 local_renderer_sha=$(sha256sum "$staging/render-private-profiles.py" | awk '{print $1}')
 

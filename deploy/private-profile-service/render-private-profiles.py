@@ -33,6 +33,7 @@ WG_PLACEHOLDERS = {
     "__WG_ALLOWED_IPS__": "allowed_ips",
     "__WG_KEEPALIVE__": "keepalive",
 }
+PRIVATE_MITM_PATH = Path("/etc/surge-profile/private-mitm/mitm.conf")
 
 
 class RenderError(RuntimeError):
@@ -162,6 +163,26 @@ def validate_substore(text: str) -> None:
         raise RenderError("Sub-Store source is not Surge output")
 
 
+def merge_private_mitm(text: str, profile_id: str) -> str:
+    if profile_id != "surge":
+        return text
+    if "[MITM]" in text:
+        raise RenderError("surge: public template must not contain a [MITM] section")
+    try:
+        private_text = PRIVATE_MITM_PATH.read_text(encoding="utf-8")
+    except OSError as exc:
+        raise RenderError(f"surge: private MITM file is unavailable: {PRIVATE_MITM_PATH}") from exc
+    headers = [line.strip() for line in private_text.splitlines() if line.strip().startswith("[") and line.strip().endswith("]")]
+    if headers != ["[MITM]"]:
+        raise RenderError("surge: private MITM file must contain exactly one [MITM] section")
+    if "\x00" in private_text or PLACEHOLDER_RE.search(private_text):
+        raise RenderError("surge: private MITM file contains unsafe content")
+    marker = "\n[Rule]\n"
+    if marker not in text:
+        raise RenderError("surge: [Rule] section is missing")
+    return text.replace(marker, "\n" + private_text.rstrip("\r\n") + "\n" + marker, 1)
+
+
 def source_ref(entry: dict) -> str:
     """Repository-relative path of the template, used for provenance comments."""
     declared = entry.get("source")
@@ -251,6 +272,7 @@ def stage(config: dict, secrets: dict, manifest: dict) -> tuple[Path, list[str]]
                 values = wireguard_values(secrets, profile_id)
                 for token, key in WG_PLACEHOLDERS.items():
                     rendered = rendered.replace(token, values[key])
+            rendered = merge_private_mitm(rendered, profile_id)
             validate_profile(rendered, profile_id, managed_url)
             # Provenance lands after validation so the checks still describe the template
             # contract, and a rejected template never ships a stamped file.

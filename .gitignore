@@ -11,6 +11,8 @@ __pycache__/
 # Local-only credentials and generated private connection data.
 # Keep Snell PSKs, passwords, ports, and private endpoints outside GitHub.
 private/
+private-mitm/*
+!private-mitm/README.local.md
 *.local.json
 *.local.conf
 *-credentials.json

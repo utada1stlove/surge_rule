@@ -4,6 +4,10 @@
 
 GitHub 只保存带占位符的公开模板。VPS 本地保存真实 Sub-Store 链接，并将模板渲染为只能通过随机 HTTPS 路径访问的托管 Profile。真实订阅 URL 不进入 GitHub、systemd unit 或 Nginx 配置。
 
+如果本地存在 `private-mitm/mitm.conf`，同步脚本会将它以 `0600` 权限部署到
+`/etc/surge-profile/private-mitm/mitm.conf`，渲染器只把它合并到 `surge` Profile；
+该文件不会进入 GitHub，也不会合并到 `simple` 或 `home-wg` Profile。
+
 仓库中的 `deploy/install-private-profile-service.sh` 用于安装或更新 VPS 服务。它保留已经生成的随机路径和秘密文件，并在修改 Nginx 前保存可恢复副本。
 
 `deploy/sync-private-profile-service.sh` 用于从仓库一次性同步渲染器、控制命令、

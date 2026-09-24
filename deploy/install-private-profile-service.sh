@@ -7,11 +7,13 @@ nginx_backup=/etc/nginx/sites-available/eb-latexme.before-surge-profile
 
 install -d -m 0755 /usr/local/libexec/surge-profile
 install -d -m 0700 /etc/surge-profile
+install -d -m 0700 /etc/surge-profile/private-mitm
 install -d -m 0755 /var/lib/surge-profile
 install -m 0755 "$staging_dir/render-private-profiles.py" /usr/local/libexec/surge-profile/render-private-profiles.py
 install -m 0755 "$staging_dir/surge-profilectl.py" /usr/local/sbin/surge-profilectl
 install -m 0644 "$staging_dir/surge-profile-render.service" /etc/systemd/system/surge-profile-render.service
 install -m 0644 "$staging_dir/surge-profile-render.timer" /etc/systemd/system/surge-profile-render.timer
+install -m 0600 "$staging_dir/mitm.conf" /etc/surge-profile/private-mitm/mitm.conf
 
 if [ ! -e /etc/surge-profile/config.json ]; then
     private_path=$(openssl rand -hex 32)

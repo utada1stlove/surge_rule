@@ -4,6 +4,11 @@
 快照在 `profiles/surge/version 1/<version>.conf`。设备订阅 URL 由 manifest 的 `output`
 决定，升级和回滚都不需要改设备端 URL。
 
+## 1.3.1 (2026-09-24)
+
+- 重排策略组为“服务分类 / 节点分类”两块，便于维护；策略组数量、名称、候选项和 Smart 权重保持不变。
+- 修正 UnlimitedTurbo 注释，使其与当前 anytls 节点池定义一致。
+
 ## 1.2.3 (2026-09-21)
 
 - 所有业务出口直接补齐 `Smart`、`Smart-Unlimited`、`Smart-US`、`HomeProxy`、`TX`、
