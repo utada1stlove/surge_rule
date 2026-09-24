@@ -1,0 +1,30 @@
+name: Sync vendored external Rule Sets
+on:
+  schedule:
+    - cron: "15 22 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Sync external Rule Sets into rules/vendor
+        run: node tools/sync-external.mjs --manifest config/external-manifest.json --output rules/vendor
+      - name: Dedup audit
+        run: |
+          node tools/dedup.mjs .
+          cat reports/dedup.json
+      - name: Validate
+        run: |
+          python3 tools/lint_surge_profiles.py .
+          python3 tools/check-profile-versions.py .
+          git diff --check
+      - name: Commit vendored changes
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add rules/vendor reports/dedup.json
+          git diff --cached --quiet || git commit -m "chore: sync vendored external rules"
+          git push

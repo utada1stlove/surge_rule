@@ -1,0 +1,3256 @@
+{
+  "generated_at": "2026-09-24T18:01:55.393Z",
+  "priority": [
+    "diy (rules/*.list)",
+    "generated (rules/generated/*.list)",
+    "vendor (rules/vendor/*.list)"
+  ],
+  "counts": {
+    "diy": 239,
+    "generated": 313740,
+    "vendor": 2077,
+    "shadowed_generated": 147,
+    "shadowed_vendor": 1259,
+    "total_shadowed": 1406
+  },
+  "shadowed_generated": [
+    {
+      "rule": "DOMAIN-SUFFIX,115.com",
+      "shadowed_by": "rules/direct.list",
+      "file": "rules/generated/115.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,bilibili.com",
+      "shadowed_by": "rules/direct.list",
+      "file": "rules/generated/bilibili.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,adnxs.com",
+      "shadowed_by": "rules/reject.list",
+      "file": "rules/generated/category-ads-all.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,adservice.google.com",
+      "shadowed_by": "rules/reject.list",
+      "file": "rules/generated/category-ads-all.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,adsrvr.org",
+      "shadowed_by": "rules/reject.list",
+      "file": "rules/generated/category-ads-all.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,app-measurement.com",
+      "shadowed_by": "rules/reject.list",
+      "file": "rules/generated/category-ads-all.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,doubleclick.net",
+      "shadowed_by": "rules/reject.list",
+      "file": "rules/generated/category-ads-all.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,googleadservices.com",
+      "shadowed_by": "rules/reject.list",
+      "file": "rules/generated/category-ads-all.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,googlesyndication.com",
+      "shadowed_by": "rules/reject.list",
+      "file": "rules/generated/category-ads-all.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,scorecardresearch.com",
+      "shadowed_by": "rules/reject.list",
+      "file": "rules/generated/category-ads-all.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,aistudio.google.com",
+      "shadowed_by": "rules/google-ai.list",
+      "file": "rules/generated/category-ai-!cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,anthropic.com",
+      "shadowed_by": "rules/ai-other.list",
+      "file": "rules/generated/category-ai-!cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,chatgpt.com",
+      "shadowed_by": "rules/ai-other.list",
+      "file": "rules/generated/category-ai-!cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,claude.ai",
+      "shadowed_by": "rules/ai-other.list",
+      "file": "rules/generated/category-ai-!cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,gemini.google.com",
+      "shadowed_by": "rules/google-ai.list",
+      "file": "rules/generated/category-ai-!cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,generativelanguage.googleapis.com",
+      "shadowed_by": "rules/google-ai.list",
+      "file": "rules/generated/category-ai-!cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,oaistatic.com",
+      "shadowed_by": "rules/ai-other.list",
+      "file": "rules/generated/category-ai-!cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,openai.com",
+      "shadowed_by": "rules/ai-other.list",
+      "file": "rules/generated/category-ai-!cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,perplexity.ai",
+      "shadowed_by": "rules/ai-other.list",
+      "file": "rules/generated/category-ai-!cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,futu5.com",
+      "shadowed_by": "rules/finance.list",
+      "file": "rules/generated/category-finance.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,futuhk.com",
+      "shadowed_by": "rules/finance.list",
+      "file": "rules/generated/category-finance.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,futunn.com",
+      "shadowed_by": "rules/finance.list",
+      "file": "rules/generated/category-finance.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,futusg.com",
+      "shadowed_by": "rules/finance.list",
+      "file": "rules/generated/category-finance.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,ibkr.com",
+      "shadowed_by": "rules/finance.list",
+      "file": "rules/generated/category-finance.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,ibkr.com.hk",
+      "shadowed_by": "rules/finance.list",
+      "file": "rules/generated/category-finance.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,ibkr.com.sg",
+      "shadowed_by": "rules/finance.list",
+      "file": "rules/generated/category-finance.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,moomoo.com",
+      "shadowed_by": "rules/finance.list",
+      "file": "rules/generated/category-finance.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,cdnlab.live",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/category-porn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,e-hentai.org",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/category-porn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,ehgt.org",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/category-porn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,ehtracker.org",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/category-porn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,ehwiki.org",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/category-porn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,exhentai.org",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/category-porn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,hath.network",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/category-porn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,hentaiathome.net",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/category-porn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,hentaiverse.org",
+      "shadowed_by": "rules/finance.list",
+      "file": "rules/generated/category-porn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,jable.tv",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/category-porn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,jav.app",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/category-porn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,javdb.com",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/category-porn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,jdbimgs.com",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/category-porn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,jdbstatic.com",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/category-porn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,maomiav.one",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/category-porn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,missav.ai",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/category-porn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,missav.com",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/category-porn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,missav.live",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/category-porn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,missav.uno",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/category-porn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,missav.vip",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/category-porn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,missav.ws",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/category-porn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,missav123.com",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/category-porn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,mushroomtrack.com",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/category-porn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fast.com",
+      "shadowed_by": "rules/proxy.list",
+      "file": "rules/generated/category-speedtest.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,speedtest.net",
+      "shadowed_by": "rules/proxy.list",
+      "file": "rules/generated/category-speedtest.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,alipay.com",
+      "shadowed_by": "rules/domestic-main.list",
+      "file": "rules/generated/cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,aliyun.com",
+      "shadowed_by": "rules/direct.list",
+      "file": "rules/generated/cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,aliyuncs.com",
+      "shadowed_by": "rules/direct.list",
+      "file": "rules/generated/cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,baidu.com",
+      "shadowed_by": "rules/domestic-main.list",
+      "file": "rules/generated/cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,dianping.com",
+      "shadowed_by": "rules/domestic-main.list",
+      "file": "rules/generated/cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,douyin.com",
+      "shadowed_by": "rules/domestic-main.list",
+      "file": "rules/generated/cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,douyu.com",
+      "shadowed_by": "rules/direct.list",
+      "file": "rules/generated/cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,eudic.net",
+      "shadowed_by": "rules/direct.list",
+      "file": "rules/generated/cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,huawei.com",
+      "shadowed_by": "rules/domestic-main.list",
+      "file": "rules/generated/cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,huaweicloud.com",
+      "shadowed_by": "rules/direct.list",
+      "file": "rules/generated/cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,huya.com",
+      "shadowed_by": "rules/direct.list",
+      "file": "rules/generated/cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,iesdouyin.com",
+      "shadowed_by": "rules/domestic-main.list",
+      "file": "rules/generated/cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,jd.com",
+      "shadowed_by": "rules/domestic-main.list",
+      "file": "rules/generated/cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,jdcdn.com",
+      "shadowed_by": "rules/domestic-main.list",
+      "file": "rules/generated/cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,meituan.com",
+      "shadowed_by": "rules/domestic-main.list",
+      "file": "rules/generated/cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,pikpak.me",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,pikpakdrive.com",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,pinduoduo.com",
+      "shadowed_by": "rules/domestic-main.list",
+      "file": "rules/generated/cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,qq.com",
+      "shadowed_by": "rules/domestic-main.list",
+      "file": "rules/generated/cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,taobao.com",
+      "shadowed_by": "rules/domestic-main.list",
+      "file": "rules/generated/cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,taobaocdn.com",
+      "shadowed_by": "rules/domestic-main.list",
+      "file": "rules/generated/cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,tencent.com",
+      "shadowed_by": "rules/direct.list",
+      "file": "rules/generated/cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,tmall.com",
+      "shadowed_by": "rules/domestic-main.list",
+      "file": "rules/generated/cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,weixin.com",
+      "shadowed_by": "rules/domestic-main.list",
+      "file": "rules/generated/cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,xiaohongshu.com",
+      "shadowed_by": "rules/domestic-main.list",
+      "file": "rules/generated/cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,xiaomi.com",
+      "shadowed_by": "rules/domestic-main.list",
+      "file": "rules/generated/cn.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,discord.com",
+      "shadowed_by": "rules/proxy.list",
+      "file": "rules/generated/discord.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,discordapp.com",
+      "shadowed_by": "rules/proxy.list",
+      "file": "rules/generated/discord.list"
+    },
+    {
+      "rule": "DOMAIN,paper-attachments.s3.amazonaws.com",
+      "shadowed_by": "rules/us-services.list",
+      "file": "rules/generated/dropbox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,db.tt",
+      "shadowed_by": "rules/us-services.list",
+      "file": "rules/generated/dropbox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,dropbox-dns.com",
+      "shadowed_by": "rules/us-services.list",
+      "file": "rules/generated/dropbox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,dropbox.com",
+      "shadowed_by": "rules/us-services.list",
+      "file": "rules/generated/dropbox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,dropbox.tech",
+      "shadowed_by": "rules/us-services.list",
+      "file": "rules/generated/dropbox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,dropboxapi.com",
+      "shadowed_by": "rules/us-services.list",
+      "file": "rules/generated/dropbox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,dropboxbusiness.com",
+      "shadowed_by": "rules/us-services.list",
+      "file": "rules/generated/dropbox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,dropboxcaptcha.com",
+      "shadowed_by": "rules/us-services.list",
+      "file": "rules/generated/dropbox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,dropboxforum.com",
+      "shadowed_by": "rules/us-services.list",
+      "file": "rules/generated/dropbox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,dropboxforums.com",
+      "shadowed_by": "rules/us-services.list",
+      "file": "rules/generated/dropbox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,dropboxinsiders.com",
+      "shadowed_by": "rules/us-services.list",
+      "file": "rules/generated/dropbox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,dropboxmail.com",
+      "shadowed_by": "rules/us-services.list",
+      "file": "rules/generated/dropbox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,dropboxpartners.com",
+      "shadowed_by": "rules/us-services.list",
+      "file": "rules/generated/dropbox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,dropboxstatic.com",
+      "shadowed_by": "rules/us-services.list",
+      "file": "rules/generated/dropbox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,dropboxusercontent.com",
+      "shadowed_by": "rules/us-services.list",
+      "file": "rules/generated/dropbox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,getdropbox.com",
+      "shadowed_by": "rules/us-services.list",
+      "file": "rules/generated/dropbox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,economist.com",
+      "shadowed_by": "rules/finance.list",
+      "file": "rules/generated/economist.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,github.com",
+      "shadowed_by": "rules/proxy.list",
+      "file": "rules/generated/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,githubassets.com",
+      "shadowed_by": "rules/proxy.list",
+      "file": "rules/generated/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,githubusercontent.com",
+      "shadowed_by": "rules/proxy.list",
+      "file": "rules/generated/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,npmjs.com",
+      "shadowed_by": "rules/proxy.list",
+      "file": "rules/generated/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,npmjs.org",
+      "shadowed_by": "rules/proxy.list",
+      "file": "rules/generated/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,cloudfunctions.net",
+      "shadowed_by": "rules/proxy.list",
+      "file": "rules/generated/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,google.com",
+      "shadowed_by": "rules/proxy.list",
+      "file": "rules/generated/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,googleapis.com",
+      "shadowed_by": "rules/proxy.list",
+      "file": "rules/generated/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,googledrive.com",
+      "shadowed_by": "rules/cloud-storage.list",
+      "file": "rules/generated/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,googlevideo.com",
+      "shadowed_by": "rules/youtube.list",
+      "file": "rules/generated/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,gstatic.com",
+      "shadowed_by": "rules/proxy.list",
+      "file": "rules/generated/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,youtu.be",
+      "shadowed_by": "rules/youtube.list",
+      "file": "rules/generated/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,youtube.com",
+      "shadowed_by": "rules/youtube.list",
+      "file": "rules/generated/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,ytimg.com",
+      "shadowed_by": "rules/youtube.list",
+      "file": "rules/generated/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1drv.com",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/onedrive.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1drv.ms",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/onedrive.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,livefilestore.com",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/onedrive.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,onedrive.co",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/onedrive.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,onedrive.co.uk",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/onedrive.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,onedrive.com",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/onedrive.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,onedrive.eu",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/onedrive.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,onedrive.live.com",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/onedrive.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,onedrive.net",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/onedrive.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,onedrive.org",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/onedrive.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,storage.live.com",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/onedrive.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,mypikpak.com",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/pikpak.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,mypikpak.net",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/pikpak.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,pickpackapp.com",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/pikpak.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,pikpak.io",
+      "shadowed_by": "rules/nsfw.list",
+      "file": "rules/generated/pikpak.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,redd.it",
+      "shadowed_by": "rules/social-sg.list",
+      "file": "rules/generated/reddit.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,reddit.com",
+      "shadowed_by": "rules/social-sg.list",
+      "file": "rules/generated/reddit.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,cdn-telegram.org",
+      "shadowed_by": "rules/telegram.list",
+      "file": "rules/generated/telegram.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,comments.app",
+      "shadowed_by": "rules/telegram.list",
+      "file": "rules/generated/telegram.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,graph.org",
+      "shadowed_by": "rules/telegram.list",
+      "file": "rules/generated/telegram.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,t.me",
+      "shadowed_by": "rules/telegram.list",
+      "file": "rules/generated/telegram.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,tdesktop.com",
+      "shadowed_by": "rules/telegram.list",
+      "file": "rules/generated/telegram.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,telegra.ph",
+      "shadowed_by": "rules/telegram.list",
+      "file": "rules/generated/telegram.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,telegram-cdn.org",
+      "shadowed_by": "rules/telegram.list",
+      "file": "rules/generated/telegram.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,telegram.dog",
+      "shadowed_by": "rules/telegram.list",
+      "file": "rules/generated/telegram.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,telegram.me",
+      "shadowed_by": "rules/telegram.list",
+      "file": "rules/generated/telegram.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,telegram.org",
+      "shadowed_by": "rules/telegram.list",
+      "file": "rules/generated/telegram.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,telesco.pe",
+      "shadowed_by": "rules/telegram.list",
+      "file": "rules/generated/telegram.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,ton.org",
+      "shadowed_by": "rules/telegram.list",
+      "file": "rules/generated/telegram.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,tx.me",
+      "shadowed_by": "rules/telegram.list",
+      "file": "rules/generated/telegram.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,twitch.tv",
+      "shadowed_by": "rules/proxy.list",
+      "file": "rules/generated/twitch.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,twitchcdn.net",
+      "shadowed_by": "rules/proxy.list",
+      "file": "rules/generated/twitch.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,twimg.com",
+      "shadowed_by": "rules/social-sg.list",
+      "file": "rules/generated/twitter.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,twitter.com",
+      "shadowed_by": "rules/social-sg.list",
+      "file": "rules/generated/twitter.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,x.com",
+      "shadowed_by": "rules/social-sg.list",
+      "file": "rules/generated/twitter.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,wsj.com",
+      "shadowed_by": "rules/finance.list",
+      "file": "rules/generated/wsj.list"
+    }
+  ],
+  "shadowed_vendor": [
+    {
+      "rule": "DOMAIN,servd-anthropic-website.b-cdn.net",
+      "shadowed_by": "rules/generated/category-ai-!cn.list",
+      "file": "rules/vendor/anthropic.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,anthropic.com",
+      "shadowed_by": "rules/generated/category-ai-!cn.list",
+      "file": "rules/vendor/anthropic.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,claude.ai",
+      "shadowed_by": "rules/generated/category-ai-!cn.list",
+      "file": "rules/vendor/anthropic.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,airhorn.solutions",
+      "shadowed_by": "rules/generated/discord.list",
+      "file": "rules/vendor/discord.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,airhornbot.com",
+      "shadowed_by": "rules/generated/discord.list",
+      "file": "rules/vendor/discord.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,bigbeans.solutions",
+      "shadowed_by": "rules/generated/discord.list",
+      "file": "rules/vendor/discord.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,dis.gd",
+      "shadowed_by": "rules/generated/discord.list",
+      "file": "rules/vendor/discord.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,discord-activities.com",
+      "shadowed_by": "rules/generated/discord.list",
+      "file": "rules/vendor/discord.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,discord.co",
+      "shadowed_by": "rules/generated/discord.list",
+      "file": "rules/vendor/discord.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,discord.com",
+      "shadowed_by": "rules/generated/discord.list",
+      "file": "rules/vendor/discord.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,discord.design",
+      "shadowed_by": "rules/generated/discord.list",
+      "file": "rules/vendor/discord.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,discord.dev",
+      "shadowed_by": "rules/generated/discord.list",
+      "file": "rules/vendor/discord.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,discord.gg",
+      "shadowed_by": "rules/generated/discord.list",
+      "file": "rules/vendor/discord.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,discord.gift",
+      "shadowed_by": "rules/generated/discord.list",
+      "file": "rules/vendor/discord.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,discord.gifts",
+      "shadowed_by": "rules/generated/discord.list",
+      "file": "rules/vendor/discord.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,discord.media",
+      "shadowed_by": "rules/generated/discord.list",
+      "file": "rules/vendor/discord.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,discord.new",
+      "shadowed_by": "rules/generated/discord.list",
+      "file": "rules/vendor/discord.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,discord.store",
+      "shadowed_by": "rules/generated/discord.list",
+      "file": "rules/vendor/discord.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,discord.tools",
+      "shadowed_by": "rules/generated/discord.list",
+      "file": "rules/vendor/discord.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,discordactivities.com",
+      "shadowed_by": "rules/generated/discord.list",
+      "file": "rules/vendor/discord.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,discordapp.com",
+      "shadowed_by": "rules/generated/discord.list",
+      "file": "rules/vendor/discord.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,discordapp.io",
+      "shadowed_by": "rules/generated/discord.list",
+      "file": "rules/vendor/discord.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,discordapp.net",
+      "shadowed_by": "rules/generated/discord.list",
+      "file": "rules/vendor/discord.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,discordcdn.com",
+      "shadowed_by": "rules/generated/discord.list",
+      "file": "rules/vendor/discord.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,discordmerch.com",
+      "shadowed_by": "rules/generated/discord.list",
+      "file": "rules/vendor/discord.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,discordpartygames.com",
+      "shadowed_by": "rules/generated/discord.list",
+      "file": "rules/vendor/discord.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,discordsays.com",
+      "shadowed_by": "rules/generated/discord.list",
+      "file": "rules/vendor/discord.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,discordstatus.com",
+      "shadowed_by": "rules/generated/discord.list",
+      "file": "rules/vendor/discord.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,watchanimeattheoffice.com",
+      "shadowed_by": "rules/generated/discord.list",
+      "file": "rules/vendor/discord.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,click-url.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/facebook.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,facebookads.com",
+      "shadowed_by": "rules/generated/category-ads.list",
+      "file": "rules/vendor/facebook.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fbthirdpartypixel.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/facebook.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,liverail.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/facebook.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,afewmomentswith.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,anidom.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,bentobox.tv",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,casoneexchange.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,coronavirusnow.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox-corporation.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox-news.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox.tv",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox10.tv",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox10news.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox10phoenix.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox11.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox13memphis.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox13news.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox23.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox23maine.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox247.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox247.tv",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox26.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox26houston.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox28media.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox29.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox2detroit.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox2news.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox32.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox32chicago.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox35orlando.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox38corpuschristi.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox42kptm.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox46.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox46charlotte.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox47.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox49.tv",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox4news.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox51tns.net",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox5atlanta.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox5dc.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox5ny.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox5storm.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox6now.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox7.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox7austin.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fox9.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxacrossamerica.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxaffiliateportal.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxandfriends.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxbet.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxbusiness.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxbusiness.tv",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxbusinessgo.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxcanvasroom.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxcareers.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxcharlotte.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxcincy.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxcincy.jobs",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxcincy.net",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxcollegesports.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxcorporation.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxcreativeuniversity.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxcredit.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxcredit.org",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxd.tv",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxdcg.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxdeportes.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxdeportes.net",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxdeportes.tv",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxdigitalmovies.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxdoua.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxentertainment.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxest.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxfaq.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxfdm.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxfiles.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxinc.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxkansas.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxla.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxla.tv",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxlexington.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxmediacloud.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxnation.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxnebraska.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxneo.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxneodigital.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxnetworks.info",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxnetworksinfo.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxnews.cc",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxnews.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxnews.net",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxnews.org",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxnews.tv",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxnewsaffiliates.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxnewsaroundtheworld.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxnewsb2b.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxnewschannel.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxnewsgo.net",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxnewsgo.org",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxnewsgo.tv",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxnewshealth.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxnewslatino.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxnewsmagazine.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxnewsnetwork.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxnewsopinion.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxnewspodcasts.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxnewspolitics.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxnewsradio.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxnewsrundown.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxnewssunday.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxon.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxphiladelphia.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxplus.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxpoker.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxrad.io",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxredeem.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxrelease.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxrichmond.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxrobots.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsmallbusinesscenter.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsmallbusinesscenter.net",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsmallbusinesscenter.org",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsoccer.net",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsoccer.tv",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsoccermatchpass.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsoccerplus.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsoccerplus.net",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsoccerplus.tv",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsoccershop.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsports-chicago.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsports-newyork.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsports-world.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsports.cl",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsports.co",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsports.co.ve",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsports.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsports.com.ar",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsports.com.bo",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsports.com.br",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsports.com.co",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsports.com.ec",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsports.com.gt",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsports.com.mx",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsports.com.pe",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsports.com.py",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsports.com.uy",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsports.com.ve",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsports.gt",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsports.info",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsports.net",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsports.net.br",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsports.pe",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsports.sv",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsports.uy",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsports2.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsportsflorida.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsportsgo.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsportsla.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsportsnetmilwaukee.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsportsneworleans.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsportsracing.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsportssupports.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsportsuniversity.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsportsworld.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxstudiolot.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxsuper6.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxtel.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxtel.com.au",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxtelevisionstations.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxtv.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxtvdvd.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxuv.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foxweatherwatch.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fse.tv",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fssta.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fxn.ws",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,geraldoatlarge.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,gooddaychicago.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,joeswall.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,kicu.tv",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,kilmeadeandfriends.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,ktvu.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,maskedsingerfox.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,my13la.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,my20dc.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,my20houston.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,my29tv.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,my45.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,my9nj.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,myfoxatlanta.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,myfoxaustin.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,myfoxboston.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,myfoxcharlotte.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,myfoxchicago.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,myfoxdc.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,myfoxdetroit.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,myfoxdfw.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,myfoxhouston.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,myfoxhurricane.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,myfoxla.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,myfoxlosangeles.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,myfoxlubbock.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,myfoxmaine.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,myfoxny.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,myfoxorlando.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,myfoxphilly.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,myfoxphoenix.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,myfoxsanfran.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,myfoxtampa.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,myfoxtampabay.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,myfoxtwincities.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,myfoxzone.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,myq2.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,newsnowfox.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,orlandohurricane.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,paradisehotelquizfox.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,q13.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,q13fox.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,realamericanstories.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,realamericanstories.info",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,realamericanstories.net",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,realamericanstories.org",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,realamericanstories.tv",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,realmilwaukeenow.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,rprimelab.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,shopspeedtv.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,soccermatchpass.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,speeddreamride.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,speedfantasybid.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,speedracegear.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,speedxtra.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,teenchoice.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,testonfox.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,theclasshroom.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,thefoxnation.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,thegeorgiascene.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,whatthefox.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,whosthehost.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,wofl.tv",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,woflthenewsstation.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,wogx.com",
+      "shadowed_by": "rules/generated/fox.list",
+      "file": "rules/vendor/fox.list"
+    },
+    {
+      "rule": "DOMAIN,ai.google.dev",
+      "shadowed_by": "rules/generated/category-ai-!cn.list",
+      "file": "rules/vendor/gemini.list"
+    },
+    {
+      "rule": "DOMAIN,alkalimakersuite-pa.clients6.google.com",
+      "shadowed_by": "rules/generated/category-ai-!cn.list",
+      "file": "rules/vendor/gemini.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,bard.google.com",
+      "shadowed_by": "rules/generated/category-ai-!cn.list",
+      "file": "rules/vendor/gemini.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,deepmind.com",
+      "shadowed_by": "rules/generated/category-ai-!cn.list",
+      "file": "rules/vendor/gemini.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,deepmind.google",
+      "shadowed_by": "rules/generated/category-ai-!cn.list",
+      "file": "rules/vendor/gemini.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,gemini.google.com",
+      "shadowed_by": "rules/generated/category-ai-!cn.list",
+      "file": "rules/vendor/gemini.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,generativeai.google",
+      "shadowed_by": "rules/generated/category-ai-!cn.list",
+      "file": "rules/vendor/gemini.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com",
+      "shadowed_by": "rules/generated/category-ai-!cn.list",
+      "file": "rules/vendor/gemini.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,atom.io",
+      "shadowed_by": "rules/generated/github.list",
+      "file": "rules/vendor/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,dependabot.com",
+      "shadowed_by": "rules/generated/github.list",
+      "file": "rules/vendor/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,ghcr.io",
+      "shadowed_by": "rules/generated/github.list",
+      "file": "rules/vendor/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,git.io",
+      "shadowed_by": "rules/generated/github.list",
+      "file": "rules/vendor/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,github.blog",
+      "shadowed_by": "rules/generated/github.list",
+      "file": "rules/vendor/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,github.com",
+      "shadowed_by": "rules/generated/github.list",
+      "file": "rules/vendor/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,github.community",
+      "shadowed_by": "rules/generated/github.list",
+      "file": "rules/vendor/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,github.dev",
+      "shadowed_by": "rules/generated/github.list",
+      "file": "rules/vendor/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,github.io",
+      "shadowed_by": "rules/generated/github.list",
+      "file": "rules/vendor/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,githubapp.com",
+      "shadowed_by": "rules/generated/github.list",
+      "file": "rules/vendor/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,githubassets.com",
+      "shadowed_by": "rules/generated/github.list",
+      "file": "rules/vendor/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,githubcopilot.com",
+      "shadowed_by": "rules/generated/category-ai-!cn.list",
+      "file": "rules/vendor/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,githubhackathon.com",
+      "shadowed_by": "rules/generated/github.list",
+      "file": "rules/vendor/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,githubnext.com",
+      "shadowed_by": "rules/generated/github.list",
+      "file": "rules/vendor/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,githubpreview.dev",
+      "shadowed_by": "rules/generated/github.list",
+      "file": "rules/vendor/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,githubstatus.com",
+      "shadowed_by": "rules/generated/github.list",
+      "file": "rules/vendor/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,githubuniverse.com",
+      "shadowed_by": "rules/generated/github.list",
+      "file": "rules/vendor/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,githubusercontent.com",
+      "shadowed_by": "rules/generated/github.list",
+      "file": "rules/vendor/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,myoctocat.com",
+      "shadowed_by": "rules/generated/github.list",
+      "file": "rules/vendor/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,npm.community",
+      "shadowed_by": "rules/generated/github.list",
+      "file": "rules/vendor/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,npmjs.com",
+      "shadowed_by": "rules/generated/github.list",
+      "file": "rules/vendor/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,npmjs.org",
+      "shadowed_by": "rules/generated/github.list",
+      "file": "rules/vendor/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,opensource.guide",
+      "shadowed_by": "rules/generated/github.list",
+      "file": "rules/vendor/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,repo.new",
+      "shadowed_by": "rules/generated/github.list",
+      "file": "rules/vendor/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,thegithubshop.com",
+      "shadowed_by": "rules/generated/github.list",
+      "file": "rules/vendor/github.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0emm.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1e100.net",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1ucrs.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,265.com",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,2mdn-cn.net",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,2mdn.net",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,466453.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,adgoogle.net",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,admeld.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,admob-cn.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,admob.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,adsense.com",
+      "shadowed_by": "rules/generated/category-ads.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,adsensecustomsearchads.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,adsenseformobileapps.com",
+      "shadowed_by": "rules/generated/category-ads.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,advertisercommunity.com",
+      "shadowed_by": "rules/generated/category-ads.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,advertiserscommunity.com",
+      "shadowed_by": "rules/generated/category-ads.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,adwords-community.com",
+      "shadowed_by": "rules/generated/category-ads.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,adwords.com",
+      "shadowed_by": "rules/generated/category-ads.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,adwordsexpress.com",
+      "shadowed_by": "rules/generated/category-ads.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,android.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,androidify.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,angulardart.org",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,api.ai",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,apigee.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,app-analytics-services.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,app-measurement-cn.com",
+      "shadowed_by": "rules/generated/category-ads.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,app-measurement.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,appbridge.ca",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,appbridge.io",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,appbridge.it",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,apps5.oingo.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,appspot.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,apture.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,area120.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,asp-cc.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,autodraw.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,bandpage.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,baselinestudy.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,baselinestudy.org",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,bazel.build",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,bdn.dev",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,beatthatquote.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blink.org",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogblog.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogger.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.ae",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.al",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.am",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.ba",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.be",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.bg",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.bj",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.ca",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.cf",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.ch",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.cl",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.co.at",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.co.id",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.co.il",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.co.ke",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.co.nz",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.co.uk",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.co.za",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.com.ar",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.com.au",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.com.br",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.com.by",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.com.co",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.com.cy",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.com.ee",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.com.eg",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.com.es",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.com.mt",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.com.ng",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.com.tr",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.com.uy",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.cv",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.cz",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.de",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.dk",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.fi",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.fr",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.gr",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.hk",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.hr",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.hu",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.ie",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.in",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.is",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.it",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.jp",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.kr",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.li",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.lt",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.lu",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.md",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.mk",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.mx",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.my",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.nl",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.no",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.pe",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.pt",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.qa",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.re",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.ro",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.rs",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.ru",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.se",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.sg",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.si",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.sk",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.sn",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.td",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.tw",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.ug",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,blogspot.vn",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,brocaproject.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,brotli.org",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,bumpshare.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,bumptop.ca",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,bumptop.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,bumptop.net",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,bumptop.org",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,bumptunes.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,campuslondon.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,certificate-transparency.org",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,charlestonroadregistry.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,chrome.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,chromebook.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,chromecast.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,chromeos.dev",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,chromestatus.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,chromium.org",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,chronicle.security",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,chroniclesec.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,cloudburstresearch.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,cloudfunctions.net",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,cloudproxy.app",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,cloudrobotics.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,cobrasearch.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,codespot.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,conscrypt.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,conscrypt.org",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,cookiechoices.org",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,coova.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,coova.net",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,coova.org",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,crashlytics.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,crossmediapanel.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,crr.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,cs4hs.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,dart.dev",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,dartlang.org",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,dartpad.dev",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,dartsearch.net",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,dataliberation.org",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,debug.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,debugproject.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,deps.dev",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,deps.info",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,devsitetest.how",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,dialogflow.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,digitalassetlinks.org",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,doubleclick-cn.net",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,doubleclick.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,doubleclick.net",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,episodic.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fastlane.ci",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fastlane.tools",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,feedburner.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fflick.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,financeleadsonline.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,firebaseapp.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,firebaseio.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,flutter.dev",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,flutterapp.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,foofle.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,froogle.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,fuchsia.dev",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,g-tun.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,g.cn",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,g.co",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,g.dev",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,g.page",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,gateway.dev",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,gcr.io",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,gerritcodereview.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,get.app",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,get.dev",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,get.how",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,get.page",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,getbumptop.com",
+      "shadowed_by": "rules/generated/google.list",
+      "file": "rules/vendor/google.list"
+    }
+  ],
+  "note": "Truncated to 200/500 entries; full counts in counts field. Shadowed means lower-priority file contains a rule already present in higher-priority layer; it will never match due to first-match semantics."
+}
