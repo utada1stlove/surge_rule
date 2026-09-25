@@ -73,6 +73,10 @@ class RendererTests(unittest.TestCase):
     def setUp(self) -> None:
         self.temporary = tempfile.TemporaryDirectory()
         self.output_root = Path(self.temporary.name) / "output"
+        self.private_mitm = Path(self.temporary.name) / "mitm.conf"
+        self.private_mitm.write_text("[MITM]\n", encoding="utf-8")
+        self.original_private_mitm = renderer.PRIVATE_MITM_PATH
+        renderer.PRIVATE_MITM_PATH = self.private_mitm
         self.config = {
             "output_root": str(self.output_root),
             "public_base_url": "https://profiles.example/private",
@@ -92,6 +96,7 @@ class RendererTests(unittest.TestCase):
         }
 
     def tearDown(self) -> None:
+        renderer.PRIVATE_MITM_PATH = self.original_private_mitm
         self.temporary.cleanup()
 
     def write_config(self) -> tuple[Path, Path]:
