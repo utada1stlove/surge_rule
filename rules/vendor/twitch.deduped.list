@@ -1,8 +1,8 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Twitch/Twitch.list
 # name: twitch
-# fetched-at: 2026-09-24T18:01:36.621Z
+# fetched-at: 2026-09-25T00:32:55.798Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-09-24T18:42:56.771Z
+# deduped-at: 2026-09-25T00:32:56.683Z
 # deduped-against: diy+generated (313832 rules)
 
 DOMAIN-KEYWORD,ttvnw

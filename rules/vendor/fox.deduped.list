@@ -1,8 +1,8 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Fox/Fox.list
 # name: fox
-# fetched-at: 2026-09-24T18:01:38.975Z
+# fetched-at: 2026-09-25T00:32:56.071Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-09-24T18:42:56.764Z
+# deduped-at: 2026-09-25T00:32:56.679Z
 # deduped-against: diy+generated (313832 rules)
 
 DOMAIN-SUFFIX,cdn-fox-networks-group-green.akamaized.net
