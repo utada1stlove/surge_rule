@@ -1,0 +1,15 @@
+﻿# Vendored from https://ruleset.skk.moe/List/non_ip/apple_cn.conf
+# name: apple-cn
+# fetched-at: 2026-09-25T20:03:39.1607788Z
+# Do not edit manually; regenerate with tools/sync-external.mjs.
+
+DOMAIN,7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
+DOMAIN,api.smoot.apple.cn
+DOMAIN,appleintelligencefeedback.care.apple.com
+DOMAIN,gs-loc-cn.apple.com
+DOMAIN-SUFFIX,apple.com.cn
+DOMAIN-SUFFIX,cn.apple.com
+DOMAIN-SUFFIX,cn.ls.apple.com
+DOMAIN-SUFFIX,cn-ssl.ls.apple.com
+DOMAIN-SUFFIX,gspe19-cn-ssl.ls.apple.com
+DOMAIN-SUFFIX,icloud.com.cn

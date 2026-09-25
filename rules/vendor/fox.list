@@ -1,6 +1,6 @@
-# Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Fox/Fox.list
+﻿# Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Fox/Fox.list
 # name: fox
-# fetched-at: 2026-09-25T00:32:56.071Z
+# fetched-at: 2026-09-25T20:02:54.6265988Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN-SUFFIX,afewmomentswith.com
@@ -12,8 +12,6 @@ DOMAIN-SUFFIX,coronavirusnow.com
 DOMAIN-SUFFIX,d3cv4a9a9wh0bt.cloudfront.net
 DOMAIN-SUFFIX,dashasiafox.akamaized.net
 DOMAIN-SUFFIX,fox
-DOMAIN-SUFFIX,fox-corporation.com
-DOMAIN-SUFFIX,fox-news.com
 DOMAIN-SUFFIX,fox.com
 DOMAIN-SUFFIX,fox.tv
 DOMAIN-SUFFIX,fox10.tv
@@ -67,6 +65,7 @@ DOMAIN-SUFFIX,foxcincy.jobs
 DOMAIN-SUFFIX,foxcincy.net
 DOMAIN-SUFFIX,foxcollegesports.com
 DOMAIN-SUFFIX,foxcorporation.com
+DOMAIN-SUFFIX,fox-corporation.com
 DOMAIN-SUFFIX,foxcreativeuniversity.com
 DOMAIN-SUFFIX,foxcredit.com
 DOMAIN-SUFFIX,foxcredit.org
@@ -96,6 +95,7 @@ DOMAIN-SUFFIX,foxnetworks.info
 DOMAIN-SUFFIX,foxnetworksinfo.com
 DOMAIN-SUFFIX,foxnews.cc
 DOMAIN-SUFFIX,foxnews.com
+DOMAIN-SUFFIX,fox-news.com
 DOMAIN-SUFFIX,foxnews.net
 DOMAIN-SUFFIX,foxnews.org
 DOMAIN-SUFFIX,foxnews.tv
@@ -138,9 +138,6 @@ DOMAIN-SUFFIX,foxsoccerplus.com
 DOMAIN-SUFFIX,foxsoccerplus.net
 DOMAIN-SUFFIX,foxsoccerplus.tv
 DOMAIN-SUFFIX,foxsoccershop.com
-DOMAIN-SUFFIX,foxsports-chicago.com
-DOMAIN-SUFFIX,foxsports-newyork.com
-DOMAIN-SUFFIX,foxsports-world.com
 DOMAIN-SUFFIX,foxsports.cl
 DOMAIN-SUFFIX,foxsports.co
 DOMAIN-SUFFIX,foxsports.co.ve
@@ -167,15 +164,18 @@ DOMAIN-SUFFIX,foxsports01-i.akamaihd.net
 DOMAIN-SUFFIX,foxsports02-i.akamaihd.net
 DOMAIN-SUFFIX,foxsports03-i.akamaihd.net
 DOMAIN-SUFFIX,foxsports2.com
+DOMAIN-SUFFIX,foxsports-chicago.com
 DOMAIN-SUFFIX,foxsportsflorida.com
 DOMAIN-SUFFIX,foxsportsgo.com
 DOMAIN-SUFFIX,foxsportsla.com
 DOMAIN-SUFFIX,foxsportsnetmilwaukee.com
 DOMAIN-SUFFIX,foxsportsneworleans.com
+DOMAIN-SUFFIX,foxsports-newyork.com
 DOMAIN-SUFFIX,foxsportsracing.com
 DOMAIN-SUFFIX,foxsportssupports.com
 DOMAIN-SUFFIX,foxsportsuniversity.com
 DOMAIN-SUFFIX,foxsportsworld.com
+DOMAIN-SUFFIX,foxsports-world.com
 DOMAIN-SUFFIX,foxstudiolot.com
 DOMAIN-SUFFIX,foxsuper6.com
 DOMAIN-SUFFIX,foxtel.com

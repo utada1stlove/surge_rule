@@ -1,6 +1,6 @@
-# Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Whatsapp/Whatsapp.list
+﻿# Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Whatsapp/Whatsapp.list
 # name: whatsapp
-# fetched-at: 2026-09-25T00:32:55.618Z
+# fetched-at: 2026-09-25T20:02:49.7914643Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN,graph.facebook.com

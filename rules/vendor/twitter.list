@@ -1,6 +1,6 @@
-# Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Twitter/Twitter.list
+﻿# Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Twitter/Twitter.list
 # name: twitter
-# fetched-at: 2026-09-25T00:32:55.829Z
+# fetched-at: 2026-09-25T20:02:52.2008630Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN-KEYWORD,twitter

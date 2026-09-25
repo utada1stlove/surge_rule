@@ -1,0 +1,12 @@
+﻿# Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/PikPak/PikPak.list
+# name: pikpak
+# fetched-at: 2026-09-25T20:03:42.6758782Z
+# Do not edit manually; regenerate with tools/sync-external.mjs.
+
+DOMAIN-KEYWORD,mypikpak
+DOMAIN-SUFFIX,dlandroid.rcv.sandai.net
+DOMAIN-SUFFIX,hub5idx.v6.shub.sandai.net
+DOMAIN-SUFFIX,hub5pn.wap.sandai.net
+DOMAIN-SUFFIX,hub5pnc.sandai.net
+DOMAIN-SUFFIX,hub5pr.v6.phub.sandai.net
+DOMAIN-SUFFIX,hubciddata.sandai.net

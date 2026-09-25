@@ -1,9 +1,8 @@
-# Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GitHub/GitHub.list
 # name: github
-# fetched-at: 2026-09-25T00:32:55.699Z
+# fetched-at: 2026-09-25T20:02:50.6549646Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-09-25T00:32:56.679Z
-# deduped-against: diy+generated (313832 rules)
+# deduped-at: 2026-09-25T20:13:10.246Z
+# deduped-against: diy+generated (312602 rules)
 
 DOMAIN-KEYWORD,github
 DOMAIN-SUFFIX,github-atom-io-herokuapp-com.freetls.fastly.net

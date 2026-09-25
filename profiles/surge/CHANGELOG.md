@@ -4,6 +4,11 @@
 快照在 `profiles/surge/version 1/<version>.conf`。设备订阅 URL 由 manifest 的 `output`
 决定，升级和回滚都不需要改设备端 URL。
 
+## 1.3.8 (2026-09-26)
+
+- 将 Apple 中国区与海外服务规则本地化，分别交给可手动选择的 `Apple` 与 `Foreign-Apple` 策略组。
+- 保留美区账号的可选方案：可将 `Foreign-Apple` 选择为 `United States`，但不在规则中硬编码出口。
+
 ## 1.3.7 (2026-09-25)
 
 - `Pixiv` 组图标由 `policy/global.png` 改为 `services/pixiv.png`（用户提供的 `pixiv.png` 已入库 `assets/icons/services/pixiv.png`）

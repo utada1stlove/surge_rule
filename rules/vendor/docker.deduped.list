@@ -1,0 +1,11 @@
+# name: docker
+# fetched-at: 2026-09-25T20:03:43.2154017Z
+# Do not edit manually; regenerate with tools/sync-external.mjs.
+# deduped-at: 2026-09-25T20:13:10.243Z
+# deduped-against: diy+generated (312602 rules)
+
+DOMAIN,d1q6f0aelx0por.cloudfront.net
+DOMAIN,d2wy8f7a9ursnm.cloudfront.net
+DOMAIN,d36jcksde1wxzq.cloudfront.net
+DOMAIN-SUFFIX,compose-spec.io
+DOMAIN-SUFFIX,dockerhub.com

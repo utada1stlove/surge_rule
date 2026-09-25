@@ -18,6 +18,23 @@
     {"name": "claude", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Claude/Claude.list"},
     {"name": "paypal", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/PayPal/PayPal.list"},
     {"name": "fox", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Fox/Fox.list"},
-    {"name": "tiktok", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/TikTok/TikTok.list"}
+    {"name": "tiktok", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/TikTok/TikTok.list"},
+    {"name": "skk-reject", "url": "https://ruleset.skk.moe/List/non_ip/reject.conf"},
+    {"name": "advertising-all-no-resolve", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All_No_Resolve.list"},
+    {"name": "skk-domestic", "url": "https://ruleset.skk.moe/List/non_ip/domestic.conf"},
+    {"name": "skk-china-ip", "url": "https://ruleset.skk.moe/List/ip/china_ip.conf"},
+    {"name": "apple-cn", "url": "https://ruleset.skk.moe/List/non_ip/apple_cn.conf"},
+    {"name": "apple-services", "url": "https://ruleset.skk.moe/List/non_ip/apple_services.conf"},
+    {"name": "apple-tv", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/AppleTV/AppleTV.list"},
+    {"name": "bloomberg", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Bloomberg/Bloomberg.list"},
+    {"name": "thomson-reuters", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ThomsonReuters/ThomsonReuters.list"},
+    {"name": "cryptocurrency", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Cryptocurrency/Cryptocurrency.list"},
+    {"name": "onedrive", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OneDrive/OneDrive.list"},
+    {"name": "dropbox", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Dropbox/Dropbox.list"},
+    {"name": "googledrive", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GoogleDrive/GoogleDrive.list"},
+    {"name": "mega", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/MEGA/MEGA.list"},
+    {"name": "pikpak", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/PikPak/PikPak.list"},
+    {"name": "docker", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Docker/Docker.list"},
+    {"name": "google-cn", "url": "https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/google-cn.txt", "format": "domain-list"}
   ]
 }

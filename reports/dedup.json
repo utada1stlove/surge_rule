@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T00:32:56.684Z",
+  "generated_at": "2026-09-25T20:13:10.264Z",
   "priority": [
     "diy (rules/*.list)",
     "generated (rules/generated/*.list)",
@@ -7,26 +7,66 @@
   ],
   "counts": {
     "diy": 239,
-    "generated": 313740,
-    "vendor": 2077,
+    "generated": 312510,
+    "vendor": 292856,
     "shadowed_generated": 147,
-    "shadowed_vendor": 1259,
-    "total_shadowed": 1406,
+    "shadowed_vendor": 184139,
+    "total_shadowed": 184286,
     "deduped_vendor": {
+      "advertising-all-no-resolve.list": {
+        "before": 285607,
+        "after": 103427,
+        "removed": 182180
+      },
       "anthropic.list": {
         "before": 3,
         "after": 0,
         "removed": 3
+      },
+      "apple-cn.list": {
+        "before": 10,
+        "after": 10,
+        "removed": 0
+      },
+      "apple-services.list": {
+        "before": 26,
+        "after": 26,
+        "removed": 0
+      },
+      "apple-tv.list": {
+        "before": 10,
+        "after": 10,
+        "removed": 0
+      },
+      "bloomberg.list": {
+        "before": 22,
+        "after": 0,
+        "removed": 22
       },
       "claude.list": {
         "before": 3,
         "after": 1,
         "removed": 2
       },
+      "cryptocurrency.list": {
+        "before": 43,
+        "after": 42,
+        "removed": 1
+      },
       "discord.list": {
         "before": 29,
         "after": 3,
         "removed": 26
+      },
+      "docker.list": {
+        "before": 7,
+        "after": 5,
+        "removed": 2
+      },
+      "dropbox.list": {
+        "before": 17,
+        "after": 2,
+        "removed": 15
       },
       "facebook.list": {
         "before": 570,
@@ -48,15 +88,35 @@
         "after": 6,
         "removed": 25
       },
+      "google-cn.list": {
+        "before": 112,
+        "after": 75,
+        "removed": 37
+      },
       "google.list": {
         "before": 703,
         "after": 88,
         "removed": 615
       },
+      "googledrive.list": {
+        "before": 9,
+        "after": 5,
+        "removed": 4
+      },
       "instagram.list": {
         "before": 4,
         "after": 4,
         "removed": 0
+      },
+      "mega.list": {
+        "before": 14,
+        "after": 11,
+        "removed": 3
+      },
+      "onedrive.list": {
+        "before": 18,
+        "after": 13,
+        "removed": 5
       },
       "openai.list": {
         "before": 35,
@@ -68,10 +128,30 @@
         "after": 4,
         "removed": 244
       },
+      "pikpak.list": {
+        "before": 7,
+        "after": 7,
+        "removed": 0
+      },
       "reddit.list": {
         "before": 8,
         "after": 3,
         "removed": 5
+      },
+      "skk-china-ip.list": {
+        "before": 3905,
+        "after": 3905,
+        "removed": 0
+      },
+      "skk-domestic.list": {
+        "before": 871,
+        "after": 180,
+        "removed": 691
+      },
+      "skk-reject.list": {
+        "before": 370,
+        "after": 351,
+        "removed": 19
       },
       "spotify.list": {
         "before": 31,
@@ -82,6 +162,11 @@
         "before": 46,
         "after": 28,
         "removed": 18
+      },
+      "thomson-reuters.list": {
+        "before": 31,
+        "after": 28,
+        "removed": 3
       },
       "tiktok.list": {
         "before": 33,
@@ -844,2504 +929,2504 @@
   ],
   "shadowed_vendor": [
     {
-      "rule": "DOMAIN,servd-anthropic-website.b-cdn.net",
-      "shadowed_by": "rules/generated/category-ai-!cn.list",
-      "file": "rules/vendor/anthropic.list"
+      "rule": "DOMAIN,clickserve.dartsearch.net",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,anthropic.com",
-      "shadowed_by": "rules/generated/category-ai-!cn.list",
-      "file": "rules/vendor/anthropic.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,claude.ai",
-      "shadowed_by": "rules/generated/category-ai-!cn.list",
-      "file": "rules/vendor/anthropic.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,airhorn.solutions",
-      "shadowed_by": "rules/generated/discord.list",
-      "file": "rules/vendor/discord.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,airhornbot.com",
-      "shadowed_by": "rules/generated/discord.list",
-      "file": "rules/vendor/discord.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,bigbeans.solutions",
-      "shadowed_by": "rules/generated/discord.list",
-      "file": "rules/vendor/discord.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,dis.gd",
-      "shadowed_by": "rules/generated/discord.list",
-      "file": "rules/vendor/discord.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,discord-activities.com",
-      "shadowed_by": "rules/generated/discord.list",
-      "file": "rules/vendor/discord.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,discord.co",
-      "shadowed_by": "rules/generated/discord.list",
-      "file": "rules/vendor/discord.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,discord.com",
-      "shadowed_by": "rules/generated/discord.list",
-      "file": "rules/vendor/discord.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,discord.design",
-      "shadowed_by": "rules/generated/discord.list",
-      "file": "rules/vendor/discord.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,discord.dev",
-      "shadowed_by": "rules/generated/discord.list",
-      "file": "rules/vendor/discord.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,discord.gg",
-      "shadowed_by": "rules/generated/discord.list",
-      "file": "rules/vendor/discord.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,discord.gift",
-      "shadowed_by": "rules/generated/discord.list",
-      "file": "rules/vendor/discord.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,discord.gifts",
-      "shadowed_by": "rules/generated/discord.list",
-      "file": "rules/vendor/discord.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,discord.media",
-      "shadowed_by": "rules/generated/discord.list",
-      "file": "rules/vendor/discord.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,discord.new",
-      "shadowed_by": "rules/generated/discord.list",
-      "file": "rules/vendor/discord.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,discord.store",
-      "shadowed_by": "rules/generated/discord.list",
-      "file": "rules/vendor/discord.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,discord.tools",
-      "shadowed_by": "rules/generated/discord.list",
-      "file": "rules/vendor/discord.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,discordactivities.com",
-      "shadowed_by": "rules/generated/discord.list",
-      "file": "rules/vendor/discord.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,discordapp.com",
-      "shadowed_by": "rules/generated/discord.list",
-      "file": "rules/vendor/discord.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,discordapp.io",
-      "shadowed_by": "rules/generated/discord.list",
-      "file": "rules/vendor/discord.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,discordapp.net",
-      "shadowed_by": "rules/generated/discord.list",
-      "file": "rules/vendor/discord.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,discordcdn.com",
-      "shadowed_by": "rules/generated/discord.list",
-      "file": "rules/vendor/discord.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,discordmerch.com",
-      "shadowed_by": "rules/generated/discord.list",
-      "file": "rules/vendor/discord.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,discordpartygames.com",
-      "shadowed_by": "rules/generated/discord.list",
-      "file": "rules/vendor/discord.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,discordsays.com",
-      "shadowed_by": "rules/generated/discord.list",
-      "file": "rules/vendor/discord.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,discordstatus.com",
-      "shadowed_by": "rules/generated/discord.list",
-      "file": "rules/vendor/discord.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,watchanimeattheoffice.com",
-      "shadowed_by": "rules/generated/discord.list",
-      "file": "rules/vendor/discord.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,click-url.com",
+      "rule": "DOMAIN-SUFFIX,0.avmarket.rs",
       "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/facebook.list"
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,facebookads.com",
-      "shadowed_by": "rules/generated/category-ads.list",
-      "file": "rules/vendor/facebook.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,fbthirdpartypixel.com",
+      "rule": "DOMAIN-SUFFIX,0.myikas.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/facebook.list"
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,liverail.com",
+      "rule": "DOMAIN-SUFFIX,0.net.easyjet.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/facebook.list"
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,afewmomentswith.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0.nextyourcontent.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,anidom.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,00000.uno",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,bentobox.tv",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,000491b06a.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,casoneexchange.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,000c34b44b.1c3139f0ca.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,coronavirusnow.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,000dn.com",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0017c6c37c.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox-corporation.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0019x.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox-news.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,002777.xyz",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,002lzj.com",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox.tv",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,003store.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox10.tv",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,00427011ae.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox10news.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,006.freecounters.co.uk",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox10phoenix.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,00609c257b.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox11.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0088shop.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox13memphis.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,009855.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox13news.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,009f45b51c.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox23.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,00a39e6dfd.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox23maine.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,00a4722597.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox247.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,00c6c88efd.e5ad8b54ee.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox247.tv",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,00e2120672.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox26.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,00ef400e98.3a1ebd5d26.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox26houston.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,00k456wyh.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox28media.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0101011.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox29.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,010172.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox2detroit.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,01168nl.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox2news.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,011qt7cln.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox32.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,014092798f.3d721db5a7.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox32chicago.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,01466b626e.b173280abe.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox35orlando.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,015ea24446.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox38corpuschristi.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0171pjx5q.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox42kptm.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0186141170.apps.iocnt.de",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox46.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,01a3500ed0.3bfff8a34d.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox46charlotte.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,01anf08rf.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox47.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,01counter.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox49.tv",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0213499675.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox4news.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,02228640b9.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox51tns.net",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,023hysj.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox5atlanta.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0246cba9d4.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox5dc.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,024e3caef2.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox5ny.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0256d2ea99.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox5storm.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,027dir.com",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox6now.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0282ecdaf0.5b4c971817.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox7.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,029519cbdc.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox7austin.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,02e4a0ea60.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fox9.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,02e8b93f0e.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxacrossamerica.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,02exl1ql2l.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxaffiliateportal.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,02ip.ru",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxandfriends.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,02kdid.com",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxbet.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,030363cc95.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxbusiness.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,033.com",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxbusiness.tv",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,033586410b.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxbusinessgo.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0339586393.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxcanvasroom.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0359d12a54.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxcareers.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,03850de51d.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxcharlotte.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,039858f297.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxcincy.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,03h6fpes.xyz",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxcincy.jobs",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,03in08p3r1.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxcincy.net",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,03mhpavj25.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxcollegesports.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,03mnj87wir.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxcorporation.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0427d7.se",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxcreativeuniversity.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,048f3c0516.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxcredit.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,049bv1hdzn.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxcredit.org",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,050393f4ec.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxd.tv",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,05086715f4.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxdcg.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0517fd5e92.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxdeportes.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,054ii.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxdeportes.net",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,055479b29b.9a57160d5c.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxdeportes.tv",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,05867500b2.7a28c1843f.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxdigitalmovies.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,058d79990c.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxdoua.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0592.mobi",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxentertainment.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,059f25bd5b.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxest.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,05b9daf35c.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxfaq.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,05e76a16b8.5e3d5f480f.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxfdm.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,05tz2e9.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxfiles.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0628ba07b4.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxinc.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,06362.com",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxkansas.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,063rpyn37z.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxla.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,064kk.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxla.tv",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,066b0fa5eb.64980aaffd.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxlexington.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,066b7e895c.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxmediacloud.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,06789.xyz",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxnation.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,067oij53m.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxnebraska.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,06aa7d6d80.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxneo.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,06b36b4508.5813e74b18.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxneodigital.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,06cp8ypn8j.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxnetworks.info",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,06e6611fca.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxnetworksinfo.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,06evyxnibl.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxnews.cc",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,06f864e06a.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxnews.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,06hkgn0jl3.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxnews.net",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,07.go.thermofisher.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxnews.org",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0704a6c22b.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxnews.tv",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,070880.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxnewsaffiliates.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,071kk.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxnewsaroundtheworld.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0755rc.com",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxnewsb2b.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,077ef2133b.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxnewschannel.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,078pwrxpbg.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxnewsgo.net",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,079301eaff0975107716716fd1cb0dcd.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxnewsgo.org",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,07b5ec4fa6.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxnewsgo.tv",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,07bfd39c76.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxnewshealth.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0816bvh.ru",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxnewslatino.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0832fddfc8.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxnewsmagazine.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,086123.xyz",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxnewsnetwork.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,08675bd78b.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxnewsopinion.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,087f389ba8.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxnewspodcasts.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0880559526.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxnewspolitics.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,08d59ed715.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxnewsradio.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,08e4efb6b8.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxnewsrundown.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,08pkgxft0u.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxnewssunday.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,08ro35delw.ru",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxon.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,08su45co5x.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxphiladelphia.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0916video.ru",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxplus.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,09241190c8.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxpoker.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0924201a0b.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxrad.io",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0937562748.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxredeem.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0941.org",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxrelease.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,094kk.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxrichmond.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0980b6e8fe.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxrobots.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,098d7a8fec.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsmallbusinesscenter.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,09e07385f6.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsmallbusinesscenter.net",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0a186254d0.cf25ba90cc.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsmallbusinesscenter.org",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0a66kw9r8.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsoccer.net",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0a8de3ea12.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsoccer.tv",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0af2a962b0102942d9a7df351b20be55.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsoccermatchpass.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0aior18v.xyz",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsoccerplus.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0aokpbwui.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsoccerplus.net",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0b00553438.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsoccerplus.tv",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0b14ec78e5.4a1dcfa305.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsoccershop.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0b6rvr210q.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsports-chicago.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0b74655a28.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsports-newyork.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0b8b518f70.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsports-world.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0b8c767b16.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsports.cl",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0bb8jytek.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsports.co",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0bd18cc899.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsports.co.ve",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0bfba78cbf.95625cabb9.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsports.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0biwj.musedearplugs.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsports.com.ar",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0c2bddd1f6.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsports.com.bo",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0c43ec936e.d1e223a9f2.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsports.com.br",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0c484j022z.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsports.com.co",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0c6bdc3ecc.cfabf1ef11.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsports.com.ec",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0ca389b6d3.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsports.com.gt",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0ca5b8dbfd.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsports.com.mx",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0cf.io",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsports.com.pe",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0d1oo8jp69.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsports.com.py",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0d25b79bea.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsports.com.uy",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0d4svwc7.xyz",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsports.com.ve",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0d9063412c.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsports.gt",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0d9539106a.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsports.info",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0db65504c2.012dadaa06.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsports.net",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0de7e3b709.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsports.net.br",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0dy3evz6x.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsports.pe",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0e024d23f9.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsports.sv",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0e091251b2.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsports.uy",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0e176a58eb.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsports2.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0e1y8x7ft.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsportsflorida.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0e7mnbmbb.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsportsgo.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0e9knynfb.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsportsla.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0eab70c429.a567dda4c2.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsportsnetmilwaukee.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
+      "rule": "DOMAIN-SUFFIX,0edd2cf0d3.4514559af9.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foxsportsneworleans.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,foxsportsracing.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,foxsportssupports.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,foxsportsuniversity.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,foxsportsworld.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,foxstudiolot.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,foxsuper6.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,foxtel.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,foxtel.com.au",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,foxtelevisionstations.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,foxtv.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,foxtvdvd.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,foxuv.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,foxweatherwatch.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,fse.tv",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,fssta.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,fxn.ws",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,geraldoatlarge.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,gooddaychicago.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,joeswall.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,kicu.tv",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,kilmeadeandfriends.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,ktvu.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,maskedsingerfox.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,my13la.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,my20dc.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,my20houston.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,my29tv.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,my45.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,my9nj.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,myfoxatlanta.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,myfoxaustin.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,myfoxboston.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,myfoxcharlotte.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,myfoxchicago.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,myfoxdc.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,myfoxdetroit.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,myfoxdfw.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,myfoxhouston.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,myfoxhurricane.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,myfoxla.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,myfoxlosangeles.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,myfoxlubbock.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,myfoxmaine.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,myfoxny.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,myfoxorlando.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,myfoxphilly.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,myfoxphoenix.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,myfoxsanfran.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,myfoxtampa.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,myfoxtampabay.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,myfoxtwincities.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,myfoxzone.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,myq2.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,newsnowfox.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,orlandohurricane.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,paradisehotelquizfox.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,q13.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,q13fox.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,realamericanstories.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,realamericanstories.info",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,realamericanstories.net",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,realamericanstories.org",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,realamericanstories.tv",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,realmilwaukeenow.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,rprimelab.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,shopspeedtv.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,soccermatchpass.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,speeddreamride.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,speedfantasybid.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,speedracegear.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,speedxtra.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,teenchoice.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,testonfox.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,theclasshroom.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,thefoxnation.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,thegeorgiascene.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,whatthefox.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,whosthehost.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,wofl.tv",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,woflthenewsstation.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,wogx.com",
-      "shadowed_by": "rules/generated/fox.list",
-      "file": "rules/vendor/fox.list"
-    },
-    {
-      "rule": "DOMAIN,ai.google.dev",
-      "shadowed_by": "rules/generated/category-ai-!cn.list",
-      "file": "rules/vendor/gemini.list"
-    },
-    {
-      "rule": "DOMAIN,alkalimakersuite-pa.clients6.google.com",
-      "shadowed_by": "rules/generated/category-ai-!cn.list",
-      "file": "rules/vendor/gemini.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,bard.google.com",
-      "shadowed_by": "rules/generated/category-ai-!cn.list",
-      "file": "rules/vendor/gemini.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,deepmind.com",
-      "shadowed_by": "rules/generated/category-ai-!cn.list",
-      "file": "rules/vendor/gemini.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,deepmind.google",
-      "shadowed_by": "rules/generated/category-ai-!cn.list",
-      "file": "rules/vendor/gemini.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,gemini.google.com",
-      "shadowed_by": "rules/generated/category-ai-!cn.list",
-      "file": "rules/vendor/gemini.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,generativeai.google",
-      "shadowed_by": "rules/generated/category-ai-!cn.list",
-      "file": "rules/vendor/gemini.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com",
-      "shadowed_by": "rules/generated/category-ai-!cn.list",
-      "file": "rules/vendor/gemini.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,atom.io",
-      "shadowed_by": "rules/generated/github.list",
-      "file": "rules/vendor/github.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,dependabot.com",
-      "shadowed_by": "rules/generated/github.list",
-      "file": "rules/vendor/github.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,ghcr.io",
-      "shadowed_by": "rules/generated/github.list",
-      "file": "rules/vendor/github.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,git.io",
-      "shadowed_by": "rules/generated/github.list",
-      "file": "rules/vendor/github.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,github.blog",
-      "shadowed_by": "rules/generated/github.list",
-      "file": "rules/vendor/github.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,github.com",
-      "shadowed_by": "rules/generated/github.list",
-      "file": "rules/vendor/github.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,github.community",
-      "shadowed_by": "rules/generated/github.list",
-      "file": "rules/vendor/github.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,github.dev",
-      "shadowed_by": "rules/generated/github.list",
-      "file": "rules/vendor/github.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,github.io",
-      "shadowed_by": "rules/generated/github.list",
-      "file": "rules/vendor/github.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,githubapp.com",
-      "shadowed_by": "rules/generated/github.list",
-      "file": "rules/vendor/github.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,githubassets.com",
-      "shadowed_by": "rules/generated/github.list",
-      "file": "rules/vendor/github.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,githubcopilot.com",
-      "shadowed_by": "rules/generated/category-ai-!cn.list",
-      "file": "rules/vendor/github.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,githubhackathon.com",
-      "shadowed_by": "rules/generated/github.list",
-      "file": "rules/vendor/github.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,githubnext.com",
-      "shadowed_by": "rules/generated/github.list",
-      "file": "rules/vendor/github.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,githubpreview.dev",
-      "shadowed_by": "rules/generated/github.list",
-      "file": "rules/vendor/github.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,githubstatus.com",
-      "shadowed_by": "rules/generated/github.list",
-      "file": "rules/vendor/github.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,githubuniverse.com",
-      "shadowed_by": "rules/generated/github.list",
-      "file": "rules/vendor/github.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,githubusercontent.com",
-      "shadowed_by": "rules/generated/github.list",
-      "file": "rules/vendor/github.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,myoctocat.com",
-      "shadowed_by": "rules/generated/github.list",
-      "file": "rules/vendor/github.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,npm.community",
-      "shadowed_by": "rules/generated/github.list",
-      "file": "rules/vendor/github.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,npmjs.com",
-      "shadowed_by": "rules/generated/github.list",
-      "file": "rules/vendor/github.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,npmjs.org",
-      "shadowed_by": "rules/generated/github.list",
-      "file": "rules/vendor/github.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,opensource.guide",
-      "shadowed_by": "rules/generated/github.list",
-      "file": "rules/vendor/github.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,repo.new",
-      "shadowed_by": "rules/generated/github.list",
-      "file": "rules/vendor/github.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,thegithubshop.com",
-      "shadowed_by": "rules/generated/github.list",
-      "file": "rules/vendor/github.list"
+      "rule": "DOMAIN-SUFFIX,0elq99i0w.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
       "rule": "DOMAIN-SUFFIX,0emm.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/google.list"
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,1e100.net",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
+      "rule": "DOMAIN-SUFFIX,0emn.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,1ucrs.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
+      "rule": "DOMAIN-SUFFIX,0etmx4b4o.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,265.com",
+      "rule": "DOMAIN-SUFFIX,0f857e584a.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0f85bcb09c.97f477047f.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0fa43ea1de.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0fa6d5f434.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0fb.co",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0fb.info",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0fb.ltd",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0ff34e8ab8.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0fmm.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0fs6pe6w0j.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0gw7e6s3wrao9y3q.pro",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0h9yewgei.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0hagal2csg.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0hagz9mdc.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0hasprzzu.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0hqq3dnjf.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0hr4wyjfv3.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0i.sh-cdn.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0i0i0i0.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0iem8mw1lx.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0ihw4ipvm5.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0jghm60qg.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0kl9n3q2b.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0kplffrs42.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0l34c7sqy.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0l7t5qhb4.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0lai5bvkg.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0m9mjmrd.top",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0mkeb9vth.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0nyzdw2maq.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0oi1ej7mo.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0oo9j37xp.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0otmh22aj2.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0ouq6.climaxchange.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0pn.ru",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0qizz.super-promo.hoxo.info",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0qxfxqif0.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0s1wclct6.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0s5qb3rfz.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0sbm.consobaby.co.uk",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0sg1gx04is.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0sntp7dnrr.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0srhzn032t.kempfkuechen.de",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0stats.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0sywjs4r1x.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0tc1bdbgsm.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0tkwnl1cw.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0u9w05cxo.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0v0qj9fnwf.top",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0wk6gdkg8r.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0wpfe0duo.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0x01n2ptpuz3.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,0x5.me",
       "shadowed_by": "rules/generated/cn.list",
-      "file": "rules/vendor/google.list"
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,2mdn-cn.net",
+      "rule": "DOMAIN-SUFFIX,0x79jjyph7.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/google.list"
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,2mdn.net",
+      "rule": "DOMAIN-SUFFIX,0xclicks.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/google.list"
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,466453.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,adgoogle.net",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,admeld.com",
+      "rule": "DOMAIN-SUFFIX,0xr7ii3df.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/google.list"
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,admob-cn.com",
+      "rule": "DOMAIN-SUFFIX,0xzxwnkqdu.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/google.list"
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,admob.com",
+      "rule": "DOMAIN-SUFFIX,0yfqg4qm0.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/google.list"
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,adsense.com",
-      "shadowed_by": "rules/generated/category-ads.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,adsensecustomsearchads.com",
+      "rule": "DOMAIN-SUFFIX,0yjeii25x4.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/google.list"
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,adsenseformobileapps.com",
-      "shadowed_by": "rules/generated/category-ads.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,advertisercommunity.com",
-      "shadowed_by": "rules/generated/category-ads.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,advertiserscommunity.com",
-      "shadowed_by": "rules/generated/category-ads.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,adwords-community.com",
-      "shadowed_by": "rules/generated/category-ads.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,adwords.com",
-      "shadowed_by": "rules/generated/category-ads.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,adwordsexpress.com",
-      "shadowed_by": "rules/generated/category-ads.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,android.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,androidify.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,angulardart.org",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,api.ai",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,apigee.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,app-analytics-services.com",
+      "rule": "DOMAIN-SUFFIX,0yu3bxtqv.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/google.list"
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,app-measurement-cn.com",
-      "shadowed_by": "rules/generated/category-ads.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,app-measurement.com",
+      "rule": "DOMAIN-SUFFIX,0zo9nqijr.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/google.list"
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,appbridge.ca",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,appbridge.io",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,appbridge.it",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,apps5.oingo.com",
+      "rule": "DOMAIN-SUFFIX,1.07swz.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/google.list"
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,appspot.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,apture.com",
+      "rule": "DOMAIN-SUFFIX,1.1010pic.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/google.list"
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,area120.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,asp-cc.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,autodraw.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,bandpage.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,baselinestudy.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,baselinestudy.org",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,bazel.build",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,bdn.dev",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,beatthatquote.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blink.org",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogblog.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogger.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.ae",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.al",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.am",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.ba",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.be",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.bg",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.bj",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.ca",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.cf",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.ch",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.cl",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.co.at",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.co.id",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.co.il",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.co.ke",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.co.nz",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.co.uk",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.co.za",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.com.ar",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.com.au",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.com.br",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.com.by",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.com.co",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.com.cy",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.com.ee",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.com.eg",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.com.es",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.com.mt",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.com.ng",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.com.tr",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.com.uy",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.cv",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.cz",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.de",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.dk",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.fi",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.fr",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.gr",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.hk",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.hr",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.hu",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.ie",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.in",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.is",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.it",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.jp",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.kr",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.li",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.lt",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.lu",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.md",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.mk",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.mx",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.my",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.nl",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.no",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.pe",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.pt",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.qa",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.re",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.ro",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.rs",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.ru",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.se",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.sg",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.si",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.sk",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.sn",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.td",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.tw",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.ug",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,blogspot.vn",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,brocaproject.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,brotli.org",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,bumpshare.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,bumptop.ca",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,bumptop.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,bumptop.net",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,bumptop.org",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,bumptunes.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,campuslondon.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,certificate-transparency.org",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,charlestonroadregistry.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,chrome.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,chromebook.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,chromecast.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,chromeos.dev",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,chromestatus.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,chromium.org",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,chronicle.security",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,chroniclesec.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,cloudburstresearch.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,cloudfunctions.net",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,cloudproxy.app",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,cloudrobotics.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,cobrasearch.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,codespot.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,conscrypt.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,conscrypt.org",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,cookiechoices.org",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,coova.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,coova.net",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,coova.org",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,crashlytics.com",
+      "rule": "DOMAIN-SUFFIX,1.11130.com.cn",
       "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/google.list"
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,crossmediapanel.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,crr.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,cs4hs.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,dart.dev",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,dartlang.org",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,dartpad.dev",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,dartsearch.net",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,dataliberation.org",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,debug.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,debugproject.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,deps.dev",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,deps.info",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,devsitetest.how",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,dialogflow.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,digitalassetlinks.org",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,doubleclick-cn.net",
+      "rule": "DOMAIN-SUFFIX,1.11467.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/google.list"
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,doubleclick.com",
+      "rule": "DOMAIN-SUFFIX,1.15lu.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/google.list"
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,doubleclick.net",
+      "rule": "DOMAIN-SUFFIX,1.201980.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/google.list"
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,episodic.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
+      "rule": "DOMAIN-SUFFIX,1.32xp.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fastlane.ci",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
+      "rule": "DOMAIN-SUFFIX,1.5000yan.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fastlane.tools",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
+      "rule": "DOMAIN-SUFFIX,1.51dongshi.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,feedburner.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
+      "rule": "DOMAIN-SUFFIX,1.51sxue.cn",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fflick.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
+      "rule": "DOMAIN-SUFFIX,1.66law.cn",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,financeleadsonline.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
+      "rule": "DOMAIN-SUFFIX,1.78500.cn",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,firebaseapp.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
+      "rule": "DOMAIN-SUFFIX,1.95ye.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,firebaseio.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
+      "rule": "DOMAIN-SUFFIX,1.ajiyuming.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,flutter.dev",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
+      "rule": "DOMAIN-SUFFIX,1.arpun.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,flutterapp.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
+      "rule": "DOMAIN-SUFFIX,1.bh5.com.cn",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,foofle.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
+      "rule": "DOMAIN-SUFFIX,1.ccm-trk.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,froogle.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
+      "rule": "DOMAIN-SUFFIX,1.ccriff5fggzexg95.cyou",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,fuchsia.dev",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
+      "rule": "DOMAIN-SUFFIX,1.codesdq.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,g-tun.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
+      "rule": "DOMAIN-SUFFIX,1.codezh.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,g.cn",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
+      "rule": "DOMAIN-SUFFIX,1.doudouditu.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,g.co",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
+      "rule": "DOMAIN-SUFFIX,1.feihua.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,g.dev",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
+      "rule": "DOMAIN-SUFFIX,1.feihua.net.cn",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,g.page",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
+      "rule": "DOMAIN-SUFFIX,1.glook.cn",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,gateway.dev",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
+      "rule": "DOMAIN-SUFFIX,1.gunsuo.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,gcr.io",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
+      "rule": "DOMAIN-SUFFIX,1.hao123.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,gerritcodereview.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
+      "rule": "DOMAIN-SUFFIX,1.hnyouneng.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,get.app",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
+      "rule": "DOMAIN-SUFFIX,1.i999d.cn",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,get.dev",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
+      "rule": "DOMAIN-SUFFIX,1.isanxia.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,get.how",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
+      "rule": "DOMAIN-SUFFIX,1.jeasyui.net",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,get.page",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
+      "rule": "DOMAIN-SUFFIX,1.jiangzheba.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,getbumptop.com",
-      "shadowed_by": "rules/generated/google.list",
-      "file": "rules/vendor/google.list"
+      "rule": "DOMAIN-SUFFIX,1.jiqie.cn",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1.jushtong.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1.kuaidiwo.cn",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1.lvshi567.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1.lx8boenb9n95ncvgjq.cyou",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1.mgff.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1.pncdn.cn",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1.qjhm.net",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1.shopit.cn",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1.sj33.net",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1.tecbbs.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1.tracktrack.org",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1.ttxs123.net",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1.uc129.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1.v-x.com.cn",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1.w41fttvhkpti2e42mtvv.cyou",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1.weiheshidai.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1.xilu.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1.xuexi.la",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1.yac8.net",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1.yuexw.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1.yxzw.com.cn",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1.zhev.com.cn",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1.zhuangxiu567.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1.zou114.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1.zuowenjun.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1.zw3e.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,10.im.cz",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,100.pncdn.cn",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1000su.com",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1001paixnidia.fr",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,100669.com",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1008691.com",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,100te.com",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,100tone.com",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,100widgets.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1017.cn",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,101com.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,101m3.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1024mzs.pw",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1025default.cadriamarketing.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,103092804.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,103bees.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,104231.dtiblog.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,104i5bbzs.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,104processors.net",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,105915624.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,106dddcb7e.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1080872514.rsc.cdn77.org",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1090pjopm.de",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1097834592.rsc.cdn77.org",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,10dc04504e.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,10desires.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,10eni3ogoo.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,10f08b9ab4.d033093f1f.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,10f55ab5ed.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,10f8fc8a55.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,10fbb07a4b0.se",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,10-letter-words.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,10q6e9ne5.de",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,10sn95to9.de",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,10stepswp.advancedtech.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,10tide.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,10x.yecstore.be",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,11.96131.com.cn",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,11.golang8.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,11.yiqig.cn",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,11.yiqig.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,11004potential.net",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1100ad.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1102transfer.net",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1106ca2ad4.e230ae5c2b.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,110outambitious.net",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,11112door.net",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,111nru7.khmyiz1v6pwj6h3.cyou",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1125bgg.teknikad.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1133.cc",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,113-bca.online",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1187531871.rsc.cdn77.org",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1188.com",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1193d6426d.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,119dbc9238.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,11b5e84fb9.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,11b6n4ty2x3.taxliencode.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,11df2f7d8d.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,11fkkw8h3i.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,11g1ip22h.de",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,11h5.com",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,11policy.net",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,11rhol0ni.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,11ssq.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,11tiki.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,11vmzjiup.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,12.cookcai.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1200555.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1208344341.rsc.cdn77.org",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,12090cd892.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,12112336.pix-cdn.org",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,12114200.pix-cdn.org",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,121media.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,121synapse.net",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,121xpp689.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,121yscfk5e.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,12291.com",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123.rudestbrand.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123.spainfreetours.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,12322app.com",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1233130091.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123456.asia",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123compteur.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123count.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123-counter.de",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123counter.mycomputer.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123date.me",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123fvd.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123greetings.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123hala.com",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123hmdhjg2.dyndns.org",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123juzi.net",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123lm.com",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123plays.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123server.mr-fuss.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123-stream.org",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123-vay.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123vay.top",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,12454f109f.69b22afb80.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,124d138eac.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,124technologies.net",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,125.net.jumia.co.ke",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,125700.shop",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,127e2202ec.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,129esrd5q5.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,12b500858d.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,12ezo5v60.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,12jwe4flx3eu73vp8.cfd",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,12signup.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,12xlwin4m.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,12ypksztq.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,12yr3wkwi5.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,130gelh8q.de",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,132delta.net",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,13372product.net",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1337visualize.net",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,133ab18de3.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,134f65414c.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1355768492.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,136ckqmwc.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,13728c1810.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1377.com",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,137kfj65k.de",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,138124e964.eda4dc1ffe.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,13874bb1da.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,138d525093.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,138d93d65a.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,13afemc28.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,13fbbc0ff4.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,13jhmpv.3yr8vql5go73y864.cyou",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,13juk6f4qujcon697yuxhwy9tbi9pckz7rb.cfd",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,13o54zz4o18m3giptm4f9rn8.cfd",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,13p76nnir.de",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,14.net.easyjet.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1414.hexa.su",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1437953666.rsc.cdn77.org",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,144.net.easyjet.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,144a54939d.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1461ff57a0.3f38ffbdb5.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1463.info",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,147c1e0584.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,148a0hqnen.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,149b5a6b84.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,14cpoff22.de",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,14d6b84a5f.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,14ef16fec4.47757e9455.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,14f768ef60.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,14fefmsjd.de",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,14i8trbbx4.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,14k4.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,14k6z61kqkmtcb3u1.cfd",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1503.net",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1516shop.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,151xrobgqz.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1529462937.rsc.cdn77.org",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,152media.cloud",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,152media.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,153c349024.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,153ee57fd4.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1541651566.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1548164934.rsc.cdn77.org",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1582020.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1583030.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,158e65a1db.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,15f3ecdff9.21c69b70bc.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,15mxfnk6sw.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,15oil.net",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,15qqrbprohihpyznwmuy2387whfq8n4gnr1.cfd",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,15routine.net",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,15tianqi.com",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,16425bafe4.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1643.5imr6oz792gi1jh9ml8m.cyou",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,16513i3bqq8uuuuy4k.cfd",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,165tchuang.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1668420cbb.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1675450967.rsc.cdn77.org",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,168ad.cc",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,169v9l59i.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,16ao.mathon.fr",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,16c1717207.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,16ca8cd3e5.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,16i6nuuc2ej.koelewijn.nl",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,16iis7i2p.de",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,16mzw9gff.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,16pr72tb5.de",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,16xxq8lb4g.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,17.huanqiu.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,170yy.com",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,172769f118.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,17324723.cfd",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,17324756.cfd",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1766rr196ez3gypww949cnwyb1gh2yl83.cfd",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,177o.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,17ce57fe70.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,17co2k5a.de",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,17cqk6rk75blkb2xu7eugmppn99xm.cfd",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,17do048qm.de",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,17gouwuba.com",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,17loio.net",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,17mjq.gci4htc7y58on2btb1i.cyou",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,17ryi4j3qb.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,17voueek1zhzbe.cfd",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1800cnt.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,180hits.de",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,180searchassistant.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1816460cba.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,181m2fscr.de",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,184c4i95p.de",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,18532.org",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1857db6b77.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,186494d0e1.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,18651885bc.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,18723bnj.keyfy.fr",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,188api.com",
+      "shadowed_by": "rules/generated/cn.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,18aa7dae85.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
     }
   ],
   "note": "Shadowed means lower-priority file contains a rule already present in higher-priority layer; deduped vendor files are written as *.deduped.list"

@@ -22,11 +22,16 @@ for (const f of await readdir(outputDir).catch(() => [])) {
   if (f.endsWith(".list") && !expected.has(f)) await rm(join(outputDir, f));
 }
 
-function normalize(text) {
+function normalize(text, format = "surge") {
   const lines = new Set();
   for (const raw of text.split(/\r?\n/)) {
     const line = raw.trim();
     if (!line || line.startsWith("#") || line.startsWith(";") || line.startsWith("//")) continue;
+    if (format === "domain-list") {
+      const domain = line.replace(/^full:/i, "").replace(/^\|\|/, "").replace(/^https?:\/\//, "").replace(/\^.*$/, "").replace(/\/$/, "");
+      if (/^[A-Za-z0-9][A-Za-z0-9.-]*\.[A-Za-z]{2,}$/.test(domain)) lines.add(`DOMAIN-SUFFIX,${domain}`);
+      continue;
+    }
     // Keep Surge rule line as-is, but normalize whitespace around commas
     const parts = line.split(",").map((p) => p.trim());
     if (parts.length === 0) continue;
@@ -40,11 +45,11 @@ function normalize(text) {
 }
 
 let fetched = [];
-for (const { name, url } of sources) {
+for (const { name, url, format } of sources) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`fetch failed ${url}: ${res.status} ${res.statusText}`);
   const text = await res.text();
-  const lines = normalize(text);
+  const lines = normalize(text, format);
   const header = [
     `# Vendored from ${url}`,
     `# name: ${name}`,

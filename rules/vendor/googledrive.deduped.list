@@ -1,0 +1,11 @@
+# name: googledrive
+# fetched-at: 2026-09-25T20:03:41.8720242Z
+# Do not edit manually; regenerate with tools/sync-external.mjs.
+# deduped-at: 2026-09-25T20:13:10.249Z
+# deduped-against: diy+generated (312602 rules)
+
+DOMAIN,www.googleapis.com
+PROCESS-NAME,BackupandSync
+USER-AGENT,%E4%BA%91%E7%AB%AF%E7%A1%AC%E7%9B%98*
+USER-AGENT,*com.google.Drive*
+USER-AGENT,Google.Drive*

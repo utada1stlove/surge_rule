@@ -1,0 +1,16 @@
+# name: apple-tv
+# fetched-at: 2026-09-25T20:03:39.5552666Z
+# Do not edit manually; regenerate with tools/sync-external.mjs.
+# deduped-at: 2026-09-25T20:13:10.240Z
+# deduped-against: diy+generated (312602 rules)
+
+DOMAIN,hls-amt.itunes.apple.com
+DOMAIN,hls.itunes.apple.com
+DOMAIN,np-edge.itunes.apple.com
+DOMAIN,play-edge.itunes.apple.com
+DOMAIN,tv.applemusic.com
+DOMAIN,uts-api.itunes.apple.com
+DOMAIN-SUFFIX,tv.apple.com
+PROCESS-NAME,TV
+USER-AGENT,AppleTV*
+USER-AGENT,com.apple.tv*

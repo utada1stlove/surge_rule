@@ -43,6 +43,14 @@ const diy = await loadDir(diyDir, "rules");
 const generated = await loadDir(generatedDir, "rules/generated");
 const vendor = await loadDir(vendorDir, "rules/vendor");
 
+// These generated Apple inventories are retained as source material but are
+// not referenced by any active Profile. They must not shadow the separately
+// classified Apple vendor feeds, or the Apple/Foreign-Apple split would lose
+// matching rules merely because both inventories contain the same hostname.
+for (const [line, info] of generated) {
+  if (/rules\/generated\/apple(?:-cn)?\.list$/.test(info.file)) generated.delete(line);
+}
+
 // Priority: diy > generated > vendor  (diy+geosite 为权威)
 const higherThanGenerated = diy;
 const higherThanVendor = new Map([...diy, ...generated]);
