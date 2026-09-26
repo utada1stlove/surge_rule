@@ -1,0 +1,637 @@
+# Clash Verge / Mihomo template derived from profiles/surge/surge.conf
+# Source date: 2026-09-26; source profile version: 1.3.8.
+# Replace __PROXY_SUBSCRIPTION_URL__ before importing.
+# The Surge source and its private LAN DNS server are intentionally not copied.
+# Smart groups are manual selections because Surge policy-priority is not available in Mihomo.
+mixed-port: 7890
+mode: rule
+ipv6: true
+proxies: []
+
+proxy-providers:
+  subscription:
+    type: http
+    url: "__PROXY_SUBSCRIPTION_URL__"
+    path: ./proxy_providers/subscription.yaml
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+
+proxy-groups:
+  - name: "All Nodes"
+    type: select
+    use: [subscription]
+    proxies: [DIRECT]
+  - name: "HongKong"
+    type: select
+    use: [subscription]
+    filter: '(?i)(hongkong|hong-kong|香港|hkbn|hkt|pccw|netvigator|wtt|icable|i-cable|smartone|hgc|cmhk|(^|[-_ =\[\]])hk($|[-_ =\[\]]))'
+  - name: "Singapore"
+    type: select
+    use: [subscription]
+    filter: '(?i)(singapore|新加坡|singtel|starhub|myrepublic|viewqwest|(^|[-_ =\[\]])m1($|[-_ =\[\]])|sg)'
+  - name: "Japan"
+    type: select
+    use: [subscription]
+    filter: '(?i)(softbank|docomo|(^|[-_ =\[\]])(ntt|nuro|iij|biglobe|plala|rakuten|ocn|japan|jp|日本)($|[-_ =\[\]]))'
+  - name: "United States"
+    type: select
+    use: [subscription]
+    filter: '(?i)(at&t|verizon|comcast|xfinity|spectrum|charter|cox|frontier|centurylink|quantum fiber|optimum|t-mobile|tmobile|(^|[-_ =\[\]])(att|us|usa|lax|los angeles|united states|美国)($|[-_ =\[\]]))'
+  - name: "TaiWan Nodes"
+    type: select
+    use: [subscription]
+    filter: '(?i)(taiwan|tai-wan|台湾|台灣|hinet|chunghwa|seednet|fetnet|fareastone|taiwan mobile|twmbroadband|(^|[-_ =\[\]])(cht|tw)($|[-_ =\[\]]))'
+  - name: "CTM"
+    type: select
+    use: [subscription]
+    filter: '(?i)(^|[-_ =\[\]])ctm($|[-_ =\[\]])'
+  - name: "Smart"
+    type: select
+    use: [subscription]
+  - name: "Smart-Unlimited"
+    type: select
+    use: [subscription]
+    filter: '[Tt][Xx]|[Aa][Ww][Ss]|[Cc][Ff][Tt]|[Jj][Pp].*[Hh][Yy]2'
+  - name: "Smart-US"
+    type: select
+    use: [subscription]
+    filter: '[Ll][Aa][Xx]'
+  - name: "HomeProxy"
+    type: select
+    use: [subscription]
+    proxies: [Smart, Smart-Unlimited, Smart-US]
+    filter: '(?i)(homeproxy|hkbn|hkt|pccw|netvigator|wtt|icable|i-cable|smartone|hgc|cmhk|hinet|chunghwa|seednet|fetnet|fareastone|taiwan mobile|twmbroadband|softbank|docomo|nuro|iij|biglobe|plala|rakuten|ocn|singtel|starhub|myrepublic|viewqwest|at&t|verizon|comcast|xfinity|spectrum|charter|cox|frontier|centurylink|quantum fiber|optimum|t-mobile|tmobile|(^|[-_ =\[\]])(cht|m1|att|ntt)($|[-_ =\[\]]))'
+  - name: "TX"
+    type: select
+    use: [subscription]
+    proxies: [Smart, Smart-Unlimited, Smart-US, REJECT, DIRECT]
+    filter: '(?i)(^|[-_ =\[\]])tx($|[-_ =\[\]])'
+  - name: "UnlimitedTurbo"
+    type: select
+    use: [subscription]
+    proxies: [Smart, Smart-Unlimited, Smart-US, United States, TX]
+    filter: '(?i)(boom|hy2|aws|cft)'
+  - name: "TaiWan"
+    type: select
+    proxies: [TaiWan Nodes, Smart, Smart-Unlimited, Smart-US, HomeProxy, TX, UnlimitedTurbo, HongKong, CTM, Singapore, Japan, United States, DIRECT]
+  - name: "Proxy"
+    type: select
+    proxies: ["Smart", "Smart-Unlimited", "Smart-US", "HomeProxy", "TX", "UnlimitedTurbo", "HongKong", "CTM", "TaiWan", "Singapore", "Japan", "United States", "DIRECT"]
+  - name: "Domestic"
+    type: select
+    proxies: ["Smart", "Smart-Unlimited", "Smart-US", "HomeProxy", "TX", "UnlimitedTurbo", "HongKong", "CTM", "TaiWan", "Singapore", "Japan", "United States", "DIRECT", "Proxy"]
+  - name: "Apple"
+    type: select
+    proxies: ["Smart", "Smart-Unlimited", "Smart-US", "HomeProxy", "TX", "UnlimitedTurbo", "HongKong", "CTM", "TaiWan", "Singapore", "Japan", "United States", "DIRECT", "Proxy"]
+  - name: "Foreign-Apple"
+    type: select
+    proxies: ["Smart", "Smart-Unlimited", "Smart-US", "HomeProxy", "TX", "UnlimitedTurbo", "HongKong", "CTM", "TaiWan", "Singapore", "Japan", "United States", "Proxy", "DIRECT", "REJECT"]
+  - name: "Google"
+    type: select
+    proxies: ["Smart", "Smart-Unlimited", "Smart-US", "HomeProxy", "TX", "UnlimitedTurbo", "HongKong", "CTM", "TaiWan", "Singapore", "Japan", "United States", "Proxy", "DIRECT", "REJECT"]
+  - name: "YouTube"
+    type: select
+    proxies: ["Smart", "Smart-Unlimited", "Smart-US", "HomeProxy", "TX", "UnlimitedTurbo", "HongKong", "CTM", "TaiWan", "Singapore", "Japan", "United States", "Proxy", "DIRECT", "REJECT"]
+  - name: "Cloud Box"
+    type: select
+    proxies: ["Smart", "Smart-Unlimited", "Smart-US", "HomeProxy", "TX", "UnlimitedTurbo", "HongKong", "CTM", "TaiWan", "Singapore", "Japan", "United States", "Proxy", "DIRECT", "REJECT"]
+  - name: "Telegram"
+    type: select
+    proxies: ["Smart", "Smart-Unlimited", "Smart-US", "HomeProxy", "TX", "UnlimitedTurbo", "HongKong", "CTM", "TaiWan", "Singapore", "Japan", "United States", "Proxy", "DIRECT", "REJECT"]
+  - name: "Twitch"
+    type: select
+    proxies: ["Smart", "Smart-Unlimited", "Smart-US", "HomeProxy", "TX", "UnlimitedTurbo", "HongKong", "CTM", "TaiWan", "Singapore", "Japan", "United States", "Proxy", "DIRECT", "REJECT"]
+  - name: "Spotify"
+    type: select
+    proxies: ["Smart", "Smart-Unlimited", "Smart-US", "HomeProxy", "TX", "UnlimitedTurbo", "HongKong", "CTM", "TaiWan", "Singapore", "Japan", "United States", "Proxy", "DIRECT", "REJECT"]
+  - name: "PayPal"
+    type: select
+    proxies: ["Smart", "Smart-Unlimited", "Smart-US", "HomeProxy", "TX", "UnlimitedTurbo", "HongKong", "CTM", "TaiWan", "Singapore", "Japan", "United States", "Proxy", "DIRECT", "REJECT"]
+  - name: "Finance"
+    type: select
+    proxies: ["Smart", "Smart-Unlimited", "Smart-US", "HomeProxy", "TX", "UnlimitedTurbo", "HongKong", "CTM", "TaiWan", "Singapore", "Japan", "United States", "Proxy", "DIRECT", "REJECT"]
+  - name: "Meta"
+    type: select
+    proxies: ["Smart", "Smart-Unlimited", "Smart-US", "HomeProxy", "TX", "UnlimitedTurbo", "HongKong", "CTM", "TaiWan", "Singapore", "Japan", "United States", "Proxy", "DIRECT", "REJECT"]
+  - name: "Pixiv"
+    type: select
+    proxies: ["Smart", "Smart-Unlimited", "Smart-US", "HomeProxy", "TX", "UnlimitedTurbo", "HongKong", "CTM", "TaiWan", "Singapore", "Japan", "United States", "Proxy", "DIRECT", "REJECT"]
+  - name: "Bilibili"
+    type: select
+    proxies: ["Smart", "Smart-Unlimited", "Smart-US", "HomeProxy", "TX", "UnlimitedTurbo", "HongKong", "CTM", "TaiWan", "Singapore", "Japan", "United States", "Proxy", "DIRECT", "REJECT"]
+  - name: "AsiaPacific"
+    type: select
+    proxies: ["Smart", "Smart-Unlimited", "Smart-US", "HomeProxy", "TX", "UnlimitedTurbo", "HongKong", "CTM", "TaiWan", "Singapore", "Japan", "United States", "Proxy", "DIRECT", "REJECT"]
+  - name: "TikTok"
+    type: select
+    proxies: ["Smart", "Smart-Unlimited", "Smart-US", "HomeProxy", "TX", "UnlimitedTurbo", "HongKong", "CTM", "TaiWan", "Singapore", "Japan", "United States", "Proxy", "DIRECT"]
+  - name: "AI Suite"
+    type: select
+    proxies: ["Smart", "Smart-Unlimited", "Smart-US", "HomeProxy", "TX", "UnlimitedTurbo", "HongKong", "CTM", "TaiWan", "Singapore", "Japan", "United States", "Proxy"]
+  - name: "NSFW"
+    type: select
+    proxies: ["Smart-US", "Smart", "Smart-Unlimited", "HomeProxy", "TX", "UnlimitedTurbo", "HongKong", "CTM", "TaiWan", "Singapore", "Japan", "United States", "Proxy", "DIRECT", "REJECT"]
+  - name: "Kagi"
+    type: select
+    proxies: ["HomeProxy", "Smart", "Smart-Unlimited", "Smart-US", "TX", "UnlimitedTurbo", "Singapore", "HongKong", "CTM", "TaiWan", "Japan", "United States", "Proxy", "DIRECT", "REJECT"]
+  - name: "Twitter"
+    type: select
+    proxies: ["HomeProxy", "Smart", "Smart-Unlimited", "Smart-US", "TX", "UnlimitedTurbo", "Singapore", "HongKong", "CTM", "TaiWan", "Japan", "United States", "Proxy", "DIRECT", "REJECT"]
+  - name: "Reddit"
+    type: select
+    proxies: ["HomeProxy", "Smart", "Smart-Unlimited", "Smart-US", "TX", "UnlimitedTurbo", "Singapore", "HongKong", "CTM", "TaiWan", "Japan", "United States", "Proxy", "DIRECT", "REJECT"]
+  - name: "Others"
+    type: select
+    proxies: ["Smart", "Smart-Unlimited", "Smart-US", "HomeProxy", "TX", "UnlimitedTurbo", "HongKong", "CTM", "TaiWan", "Singapore", "Japan", "United States", "Proxy", "DIRECT"]
+
+rule-providers:
+  r01:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/rules/reject.list"
+    path: ./rule_providers/r01.yaml
+    interval: 86400
+  r02:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://ruleset.skk.moe/List/non_ip/reject.conf"
+    path: ./rule_providers/r02.yaml
+    interval: 86400
+  r03:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All_No_Resolve.list"
+    path: ./rule_providers/r03.yaml
+    interval: 86400
+  r04:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/rules/local.list"
+    path: ./rule_providers/r04.yaml
+    interval: 86400
+  r05:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/rules/domestic-main.list"
+    path: ./rule_providers/r05.yaml
+    interval: 86400
+  r06:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/rules/generated/bilibili.list"
+    path: ./rule_providers/r06.yaml
+    interval: 86400
+  r07:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/rules/generated/cn.list"
+    path: ./rule_providers/r07.yaml
+    interval: 86400
+  r08:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://ruleset.skk.moe/List/non_ip/domestic.conf"
+    path: ./rule_providers/r08.yaml
+    interval: 86400
+  r09:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://ruleset.skk.moe/List/ip/china_ip.conf"
+    path: ./rule_providers/r09.yaml
+    interval: 86400
+  r10:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/rules/vendor/apple-cn.deduped.list"
+    path: ./rule_providers/r10.yaml
+    interval: 86400
+  r11:
+    type: http
+    behavior: domain
+    format: text
+    url: "https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/google-cn.txt"
+    path: ./rule_providers/r11.yaml
+    interval: 86400
+  r12:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/AppleTV/AppleTV.list"
+    path: ./rule_providers/r12.yaml
+    interval: 86400
+  r13:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/rules/vendor/apple-services.deduped.list"
+    path: ./rule_providers/r13.yaml
+    interval: 86400
+  r14:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/rules/generated/youtube.list"
+    path: ./rule_providers/r14.yaml
+    interval: 86400
+  r15:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/rules/generated/onedrive.list"
+    path: ./rule_providers/r15.yaml
+    interval: 86400
+  r16:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/rules/generated/pikpak.list"
+    path: ./rule_providers/r16.yaml
+    interval: 86400
+  r17:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/rules/generated/dropbox.list"
+    path: ./rule_providers/r17.yaml
+    interval: 86400
+  r18:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/rules/cloud-storage.list"
+    path: ./rule_providers/r18.yaml
+    interval: 86400
+  r19:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/rules/nsfw.list"
+    path: ./rule_providers/r19.yaml
+    interval: 86400
+  r20:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Telegram/Telegram.list"
+    path: ./rule_providers/r20.yaml
+    interval: 86400
+  r21:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Gemini/Gemini.list"
+    path: ./rule_providers/r21.yaml
+    interval: 86400
+  r22:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OpenAI/OpenAI.list"
+    path: ./rule_providers/r22.yaml
+    interval: 86400
+  r23:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Anthropic/Anthropic.list"
+    path: ./rule_providers/r23.yaml
+    interval: 86400
+  r24:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Claude/Claude.list"
+    path: ./rule_providers/r24.yaml
+    interval: 86400
+  r25:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Google/Google.list"
+    path: ./rule_providers/r25.yaml
+    interval: 86400
+  r26:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/rules/google-ai.list"
+    path: ./rule_providers/r26.yaml
+    interval: 86400
+  r27:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/rules/ai-other.list"
+    path: ./rule_providers/r27.yaml
+    interval: 86400
+  r28:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/rules/generated/category-finance.list"
+    path: ./rule_providers/r28.yaml
+    interval: 86400
+  r29:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/rules/generated/wsj.list"
+    path: ./rule_providers/r29.yaml
+    interval: 86400
+  r30:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/rules/generated/economist.list"
+    path: ./rule_providers/r30.yaml
+    interval: 86400
+  r31:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/rules/generated/reuters.list"
+    path: ./rule_providers/r31.yaml
+    interval: 86400
+  r32:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/rules/generated/bloomberg.list"
+    path: ./rule_providers/r32.yaml
+    interval: 86400
+  r33:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/rules/finance.list"
+    path: ./rule_providers/r33.yaml
+    interval: 86400
+  r34:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/rules/generated/category-porn.list"
+    path: ./rule_providers/r34.yaml
+    interval: 86400
+  r35:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Fox/Fox.list"
+    path: ./rule_providers/r35.yaml
+    interval: 86400
+  r36:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/TikTok/TikTok.list"
+    path: ./rule_providers/r36.yaml
+    interval: 86400
+  r37:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Bloomberg/Bloomberg.list"
+    path: ./rule_providers/r37.yaml
+    interval: 86400
+  r38:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ThomsonReuters/ThomsonReuters.list"
+    path: ./rule_providers/r38.yaml
+    interval: 86400
+  r39:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/PayPal/PayPal.list"
+    path: ./rule_providers/r39.yaml
+    interval: 86400
+  r40:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Cryptocurrency/Cryptocurrency.list"
+    path: ./rule_providers/r40.yaml
+    interval: 86400
+  r41:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/rules/us-services.list"
+    path: ./rule_providers/r41.yaml
+    interval: 86400
+  r42:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Twitter/Twitter.list"
+    path: ./rule_providers/r42.yaml
+    interval: 86400
+  r43:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Reddit/Reddit.list"
+    path: ./rule_providers/r43.yaml
+    interval: 86400
+  r44:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/rules/generated/pixiv.list"
+    path: ./rule_providers/r44.yaml
+    interval: 86400
+  r45:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Facebook/Facebook.list"
+    path: ./rule_providers/r45.yaml
+    interval: 86400
+  r46:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Instagram/Instagram.list"
+    path: ./rule_providers/r46.yaml
+    interval: 86400
+  r47:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Whatsapp/Whatsapp.list"
+    path: ./rule_providers/r47.yaml
+    interval: 86400
+  r48:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Spotify/Spotify.list"
+    path: ./rule_providers/r48.yaml
+    interval: 86400
+  r49:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GitHub/GitHub.list"
+    path: ./rule_providers/r49.yaml
+    interval: 86400
+  r50:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OneDrive/OneDrive.list"
+    path: ./rule_providers/r50.yaml
+    interval: 86400
+  r51:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Dropbox/Dropbox.list"
+    path: ./rule_providers/r51.yaml
+    interval: 86400
+  r52:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GoogleDrive/GoogleDrive.list"
+    path: ./rule_providers/r52.yaml
+    interval: 86400
+  r53:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/MEGA/MEGA.list"
+    path: ./rule_providers/r53.yaml
+    interval: 86400
+  r54:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/PikPak/PikPak.list"
+    path: ./rule_providers/r54.yaml
+    interval: 86400
+  r55:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Twitch/Twitch.list"
+    path: ./rule_providers/r55.yaml
+    interval: 86400
+  r56:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Discord/Discord.list"
+    path: ./rule_providers/r56.yaml
+    interval: 86400
+  r57:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Docker/Docker.list"
+    path: ./rule_providers/r57.yaml
+    interval: 86400
+  r58:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/rules/line.list"
+    path: ./rule_providers/r58.yaml
+    interval: 86400
+  r59:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/refs/heads/main/rules/kagi.list"
+    path: ./rule_providers/r59.yaml
+    interval: 86400
+  r60:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/rules/proxy.list"
+    path: ./rule_providers/r60.yaml
+    interval: 86400
+
+rules:
+  - RULE-SET,r01,REJECT
+  - RULE-SET,r02,REJECT
+  - RULE-SET,r03,REJECT
+  - RULE-SET,r04,DIRECT
+  - RULE-SET,r05,DIRECT
+  - RULE-SET,r06,Bilibili
+  - RULE-SET,r07,DIRECT
+  - RULE-SET,r08,DIRECT
+  - RULE-SET,r09,DIRECT
+  - RULE-SET,r10,Apple
+  - RULE-SET,r11,DIRECT
+  - RULE-SET,r12,UnlimitedTurbo
+  - RULE-SET,r13,Foreign-Apple
+  - DOMAIN-SUFFIX,youtubei.googleapis.com,YouTube
+  - RULE-SET,r14,YouTube
+  - RULE-SET,r15,Cloud Box
+  - RULE-SET,r16,Cloud Box
+  - RULE-SET,r17,Cloud Box
+  - RULE-SET,r18,Cloud Box
+  - RULE-SET,r19,NSFW
+  - RULE-SET,r20,Telegram
+  - RULE-SET,r21,Google
+  - RULE-SET,r22,AI Suite
+  - RULE-SET,r23,AI Suite
+  - RULE-SET,r24,AI Suite
+  - RULE-SET,r25,Google
+  - RULE-SET,r26,Google
+  - RULE-SET,r27,AI Suite
+  - DOMAIN-SUFFIX,economist.com,Finance
+  - DOMAIN-SUFFIX,wsj.com,Finance
+  - DOMAIN-SUFFIX,tradingview.com,Finance
+  - RULE-SET,r28,Finance
+  - RULE-SET,r29,Finance
+  - RULE-SET,r30,Finance
+  - RULE-SET,r31,Finance
+  - RULE-SET,r32,Finance
+  - RULE-SET,r33,Finance
+  - RULE-SET,r34,NSFW
+  - RULE-SET,r35,Proxy
+  - RULE-SET,r36,TikTok
+  - RULE-SET,r37,Finance
+  - RULE-SET,r38,Finance
+  - RULE-SET,r39,PayPal
+  - RULE-SET,r40,Finance
+  - RULE-SET,r41,United States
+  - RULE-SET,r42,Twitter
+  - RULE-SET,r43,Reddit
+  - RULE-SET,r44,Pixiv
+  - RULE-SET,r45,Meta
+  - RULE-SET,r46,Meta
+  - RULE-SET,r47,Meta
+  - RULE-SET,r48,Spotify
+  - RULE-SET,r49,Proxy
+  - RULE-SET,r50,Cloud Box
+  - RULE-SET,r51,Cloud Box
+  - RULE-SET,r52,Cloud Box
+  - RULE-SET,r53,Cloud Box
+  - RULE-SET,r54,Cloud Box
+  - RULE-SET,r55,Twitch
+  - RULE-SET,r56,Proxy
+  - RULE-SET,r57,Proxy
+  - RULE-SET,r58,Japan
+  - RULE-SET,r59,Kagi
+  - RULE-SET,r60,Proxy
+  - MATCH,Proxy
