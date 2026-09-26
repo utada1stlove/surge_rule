@@ -20,6 +20,9 @@ if (!input) {
 const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
 const wanted = new Set(manifest.geosites);
 const excluded = new Set(manifest.exclude ?? []);
+const ruleExclusions = new Map(
+  Object.entries(manifest.rule_exclusions ?? {}).map(([name, sources]) => [name, new Set(sources)])
+);
 const bytes = await readFile(resolve(input));
 
 function varint(buffer, offset) {
@@ -105,6 +108,16 @@ const typePrefix = new Map([
   [2, "DOMAIN-SUFFIX"],
   [3, "DOMAIN"]
 ]);
+function siteRules(name) {
+  const site = sites.get(name.toLowerCase());
+  if (!site) throw new Error(`geosite not found in upstream file: ${name}`);
+  const lines = new Set();
+  for (const domain of site.domains) {
+    const prefix = typePrefix.get(domain.type);
+    if (prefix && domain.value) lines.add(`${prefix},${domain.value}`);
+  }
+  return lines;
+}
 await mkdir(outputDir, { recursive: true });
 const expectedOutputs = new Set([...wanted].map((name) => `${name}.list`));
 for (const filename of await readdir(outputDir)) {
@@ -115,23 +128,24 @@ for (const filename of await readdir(outputDir)) {
 const generated = [];
 for (const name of manifest.geosites) {
   if (excluded.has(name)) continue;
-  const site = sites.get(name.toLowerCase());
-  if (!site) throw new Error(`geosite not found in upstream file: ${name}`);
-  const lines = new Set();
-  for (const domain of site.domains) {
-    const prefix = typePrefix.get(domain.type);
-    if (!prefix || !domain.value) continue;
-    lines.add(`${prefix},${domain.value}`);
+  const lines = siteRules(name);
+  const exclusionSources = ruleExclusions.get(name) ?? new Set();
+  let exclusionCount = 0;
+  for (const source of exclusionSources) {
+    for (const rule of siteRules(source)) {
+      if (lines.delete(rule)) exclusionCount += 1;
+    }
   }
   const output = join(outputDir, `${name}.list`);
   const header = [
     `# Generated from ${manifest.source.url}`,
     `# geosite: ${name}`,
+    ...(exclusionSources.size ? [`# Excludes rules also in: ${[...exclusionSources].sort().join(", ")}`] : []),
     "# Do not edit manually; regenerate with tools/generate-geosite.mjs.",
     ""
   ];
   await writeFile(output, `${header.concat([...lines].sort()).join("\n")}\n`, "utf8");
-  generated.push({ name, count: lines.size, output });
+  generated.push({ name, count: lines.size, excluded: exclusionCount, output });
 }
 
 console.log(JSON.stringify({ generated: generated.map(({ name, count }) => ({ name, count })) }, null, 2));

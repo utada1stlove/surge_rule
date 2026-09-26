@@ -10,6 +10,14 @@ const profile = await readFile(join(root, policy.profile), "utf8");
 const files = new Set((await readdir(join(root, "rules/generated"))).filter((name) => name.endsWith(".list")));
 const errors = [];
 const warnings = [];
+async function effectiveRules(name) {
+  return new Set(
+    (await readFile(join(root, "rules/generated", `${name}.list`), "utf8"))
+      .split(/\r?\n/)
+      .map((line) => line.trim())
+      .filter((line) => line && !line.startsWith("#") && !line.startsWith(";"))
+  );
+}
 
 for (const name of manifest.geosites) {
   if (manifest.exclude?.includes(name)) {
@@ -35,6 +43,21 @@ for (const name of Object.keys(policy.mappings)) {
 }
 for (const excluded of manifest.exclude ?? []) {
   if (files.has(`${excluded}.list`)) errors.push(`excluded geosite has generated file: ${excluded}.list`);
+}
+for (const [target, sources] of Object.entries(manifest.rule_exclusions ?? {})) {
+  if (!files.has(`${target}.list`)) {
+    errors.push(`rule-exclusion target is not generated: ${target}.list`);
+    continue;
+  }
+  const targetRules = await effectiveRules(target);
+  for (const source of sources) {
+    if (!files.has(`${source}.list`)) {
+      errors.push(`rule-exclusion source is not generated: ${source}.list`);
+      continue;
+    }
+    const overlaps = [...await effectiveRules(source)].filter((rule) => targetRules.has(rule));
+    if (overlaps.length) errors.push(`rule exclusion failed: ${target} still overlaps ${source} (${overlaps.length} rule(s))`);
+  }
 }
 if (profile.split("\n").filter((line) => /^FINAL,/.test(line)).length !== 1) errors.push("profile must contain exactly one FINAL rule");
 if (!/^FINAL,/.test(profile.trim().split("\n").at(-1))) errors.push("FINAL must be the last profile rule");

@@ -12,6 +12,8 @@ DOMAIN-SUFFIX,usmartsecurities.com
 DOMAIN-SUFFIX,usmartglobal.com
 DOMAIN-SUFFIX,usmart.com.hk
 DOMAIN-SUFFIX,moomoo.com
+# BlackMatrix7 广告清单曾将该应用子域分类为广告；本规则令去重流程保留金融分流。
+DOMAIN-SUFFIX,m.moomoo.com
 DOMAIN-SUFFIX,moomoo.com.sg
 DOMAIN-SUFFIX,moomoo.com.hk
 DOMAIN-SUFFIX,futunn.com

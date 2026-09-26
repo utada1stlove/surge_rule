@@ -2,6 +2,10 @@
 
 渲染入口：`profiles/surge-loc/surge-loc.conf`，VPS 只渲染这一份，路径不随版本变化。已发布版本的快照在 `profiles/surge-loc/version 1/<version>.conf`。设备订阅 URL 由 manifest 的 `output` 决定，升级和回滚都不需要改设备端 URL。
 
+## 1.0.5 (2026-09-26)
+
+- `cn.list` 在生成时排除与 `category-finance` 重叠的域名；金融规则恢复到广告规则之后，避免由前置国内直连清单误分类。
+
 ## 1.0.4 (2026-09-26)
 
 - 金融 Rule Set 前移至广告和国内直连规则之前；`geosite:cn` 同时包含 moomoo 与富途域名，原顺序会使其先命中 `DIRECT`，无法进入 `Finance`。

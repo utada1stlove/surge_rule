@@ -19,5 +19,9 @@ Apple 的普通服务使用 Sukka 的 `apple_services.conf`，active
 Workflow 每日下载 Loyalsoldier 的 `geosite.dat`，解析 domain/full/keyword/regexp 类型，转换为
 Surge 的 `DOMAIN-SUFFIX`、`DOMAIN`、`DOMAIN-KEYWORD`、`DOMAIN-REGEX`，并对每个文件去重和排序。
 
+`rule_exclusions` 可声明生成集合之间的策略排除关系。目前 `cn` 排除所有同时属于
+`category-finance` 的规则：这些金融服务不得由国内直连清单捕获，而应由 Profile 中的金融规则处理。
+该排除在生成时执行，不能直接编辑 `rules/generated/cn.list`。
+
 不生成 `gfw`、`category-games@cn`，也不迁移 DAE 的 MAC、SIP、进程、网卡、端口、节点 IP
 等私有或内核级规则。上游项目使用 GPL-3.0，本仓库保留来源链接，不修改上游内容。

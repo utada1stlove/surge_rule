@@ -4,6 +4,10 @@
 快照在 `profiles/simple/version 1/<version>.conf`。设备订阅 URL 由 manifest 的 `output`
 （`surge-simple.conf`）决定，升级和回滚都不需要改设备端 URL。
 
+## 1.0.3 (2026-09-26)
+
+- `cn.list` 在生成时排除与 `category-finance` 重叠的域名，且改用去重后的本地 Sukka 国内及广告清单；金融流量继续直接绑定既有 `Proxy`，不新增策略组。
+
 ## 1.0.2 (2026-09-26)
 
 - 金融规则置于 `cn.list` 之前，并直接绑定既有 `Proxy`；不新增策略组。moomoo 与富途域名同时存在于 `geosite:cn`，原顺序会使其先命中 `DIRECT`。

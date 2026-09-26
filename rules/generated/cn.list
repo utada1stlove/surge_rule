@@ -1,5 +1,6 @@
 # Generated from https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat
 # geosite: cn
+# Excludes rules also in: category-finance
 # Do not edit manually; regenerate with tools/generate-geosite.mjs.
 
 DOMAIN,2mdn-cn.net
@@ -36258,21 +36259,12 @@ DOMAIN-SUFFIX,futaike.net
 DOMAIN-SUFFIX,futang.org
 DOMAIN-SUFFIX,fute.com
 DOMAIN-SUFFIX,futongquartz.com
-DOMAIN-SUFFIX,futu5.com
-DOMAIN-SUFFIX,futuau.com
-DOMAIN-SUFFIX,futuesop.com
-DOMAIN-SUFFIX,futufin.com
-DOMAIN-SUFFIX,futuhn.com
-DOMAIN-SUFFIX,futuniuniu.com
-DOMAIN-SUFFIX,futunn.com
 DOMAIN-SUFFIX,future-sh.com
 DOMAIN-SUFFIX,futureengineer.org
 DOMAIN-SUFFIX,futurejuzhen.vip
 DOMAIN-SUFFIX,futurenetlab.com
 DOMAIN-SUFFIX,futureprize.org
 DOMAIN-SUFFIX,futurescontest.com
-DOMAIN-SUFFIX,futustatic.com
-DOMAIN-SUFFIX,fututrade.com
 DOMAIN-SUFFIX,fututrustee.com
 DOMAIN-SUFFIX,fuwa.org
 DOMAIN-SUFFIX,fuwahgroup.com
@@ -52074,9 +52066,6 @@ DOMAIN-SUFFIX,ithuangw.com
 DOMAIN-SUFFIX,itiankong.com
 DOMAIN-SUFFIX,itiankong.net
 DOMAIN-SUFFIX,itiexue.net
-DOMAIN-SUFFIX,itigergrowth.com
-DOMAIN-SUFFIX,itigergrowtha.com
-DOMAIN-SUFFIX,itigerup.com
 DOMAIN-SUFFIX,itilxf.com
 DOMAIN-SUFFIX,itilzj.com
 DOMAIN-SUFFIX,itimotor.com
@@ -59795,7 +59784,6 @@ DOMAIN-SUFFIX,laogongshuo.com
 DOMAIN-SUFFIX,laogu.com
 DOMAIN-SUFFIX,laohaoren.com
 DOMAIN-SUFFIX,laohu.com
-DOMAIN-SUFFIX,laohu8.com
 DOMAIN-SUFFIX,laohuabao.com
 DOMAIN-SUFFIX,laohuangli.net
 DOMAIN-SUFFIX,laohucaijing.com
@@ -59980,7 +59968,6 @@ DOMAIN-SUFFIX,lbbb.cc
 DOMAIN-SUFFIX,lbbee.com
 DOMAIN-SUFFIX,lbbniu.com
 DOMAIN-SUFFIX,lbctjt.com
-DOMAIN-SUFFIX,lbctrl.com
 DOMAIN-SUFFIX,lbd-group.com
 DOMAIN-SUFFIX,lbd99.com
 DOMAIN-SUFFIX,lbddd.com
@@ -59999,7 +59986,6 @@ DOMAIN-SUFFIX,lbjn.cc
 DOMAIN-SUFFIX,lbjsfz.com
 DOMAIN-SUFFIX,lbjtjt.com
 DOMAIN-SUFFIX,lbkaiguan.com
-DOMAIN-SUFFIX,lbkrs.com
 DOMAIN-SUFFIX,lbmobi.com
 DOMAIN-SUFFIX,lbrencai.com
 DOMAIN-SUFFIX,lbsdermyy.com
@@ -62218,8 +62204,6 @@ DOMAIN-SUFFIX,long7.com
 DOMAIN-SUFFIX,longanlaw.com
 DOMAIN-SUFFIX,longau.com
 DOMAIN-SUFFIX,longbenren.com
-DOMAIN-SUFFIX,longbridgeapp.com
-DOMAIN-SUFFIX,longbridgehk.com
 DOMAIN-SUFFIX,longcai.com
 DOMAIN-SUFFIX,longcai027.com
 DOMAIN-SUFFIX,longcat.chat
@@ -66514,9 +66498,6 @@ DOMAIN-SUFFIX,mooho.cloud
 DOMAIN-SUFFIX,moojing.com
 DOMAIN-SUFFIX,moojnn.com
 DOMAIN-SUFFIX,moolsun.com
-DOMAIN-SUFFIX,moomoo.com
-DOMAIN-SUFFIX,moomooequity.com
-DOMAIN-SUFFIX,moomootrustee.com
 DOMAIN-SUFFIX,moomv.com
 DOMAIN-SUFFIX,moon-insight.com
 DOMAIN-SUFFIX,moonbasa.com
@@ -88766,7 +88747,6 @@ DOMAIN-SUFFIX,tiger-code.com
 DOMAIN-SUFFIX,tiger-info.com
 DOMAIN-SUFFIX,tiger-motion.com
 DOMAIN-SUFFIX,tiger2doudou.com
-DOMAIN-SUFFIX,tigerbbs.com
 DOMAIN-SUFFIX,tigerbrokers.com
 DOMAIN-SUFFIX,tigerbrokers.net
 DOMAIN-SUFFIX,tigerdns.com
@@ -93989,7 +93969,6 @@ DOMAIN-SUFFIX,wbo529.com
 DOMAIN-SUFFIX,wboll.com
 DOMAIN-SUFFIX,wbolt.com
 DOMAIN-SUFFIX,wbpvc.com
-DOMAIN-SUFFIX,wbrks.com
 DOMAIN-SUFFIX,wbsdz.com
 DOMAIN-SUFFIX,wbstar.com
 DOMAIN-SUFFIX,wbsz.com
@@ -98544,7 +98523,6 @@ DOMAIN-SUFFIX,xiaohongshu.com
 DOMAIN-SUFFIX,xiaohongshu.net
 DOMAIN-SUFFIX,xiaohouyisheng.com
 DOMAIN-SUFFIX,xiaohouyunyin.com
-DOMAIN-SUFFIX,xiaohu8.com
 DOMAIN-SUFFIX,xiaohua8.com
 DOMAIN-SUFFIX,xiaohuabaichu.com
 DOMAIN-SUFFIX,xiaohuabuluo.com

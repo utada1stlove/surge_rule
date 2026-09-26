@@ -7,6 +7,9 @@
     "gfw",
     "category-games@cn"
   ],
+  "rule_exclusions": {
+    "cn": ["category-finance"]
+  },
   "geosites": [
     "cn",
     "apple-cn",

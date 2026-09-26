@@ -166,7 +166,7 @@ rule-providers:
     type: http
     behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All_No_Resolve.list"
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/rules/vendor/advertising-all-no-resolve.deduped.list"
     path: ./rule_providers/r03.yaml
     interval: 86400
   r04:
@@ -201,7 +201,7 @@ rule-providers:
     type: http
     behavior: classical
     format: text
-    url: "https://ruleset.skk.moe/List/non_ip/domestic.conf"
+    url: "https://raw.githubusercontent.com/utada1stlove/surge_rule/main/rules/vendor/skk-domestic.deduped.list"
     path: ./rule_providers/r08.yaml
     interval: 86400
   r09:
@@ -570,6 +570,10 @@ rule-providers:
     interval: 86400
 
 rules:
+  - RULE-SET,r01,REJECT
+  - RULE-SET,r02,REJECT
+  - RULE-SET,r03,REJECT
+  - RULE-SET,r04,DIRECT
   - DOMAIN-SUFFIX,economist.com,Finance
   - DOMAIN-SUFFIX,wsj.com,Finance
   - DOMAIN-SUFFIX,tradingview.com,Finance
@@ -579,10 +583,6 @@ rules:
   - RULE-SET,r31,Finance
   - RULE-SET,r32,Finance
   - RULE-SET,r33,Finance
-  - RULE-SET,r01,REJECT
-  - RULE-SET,r02,REJECT
-  - RULE-SET,r03,REJECT
-  - RULE-SET,r04,DIRECT
   - RULE-SET,r05,DIRECT
   - RULE-SET,r06,Bilibili
   - RULE-SET,r07,DIRECT
