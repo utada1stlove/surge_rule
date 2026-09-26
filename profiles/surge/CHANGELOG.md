@@ -4,6 +4,10 @@
 快照在 `profiles/surge/version 1/<version>.conf`。设备订阅 URL 由 manifest 的 `output`
 决定，升级和回滚都不需要改设备端 URL。
 
+## 1.3.9 (2026-09-26)
+
+- 金融 Rule Set 前移至广告和国内直连规则之前；`geosite:cn` 同时包含 moomoo 与富途域名，原顺序会使其先命中 `DIRECT`，无法进入 `Finance`。
+
 ## 1.3.8 (2026-09-26)
 
 - 将 Apple 中国区与海外服务规则本地化，分别交给可手动选择的 `Apple` 与 `Foreign-Apple` 策略组。

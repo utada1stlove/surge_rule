@@ -4,6 +4,10 @@
 快照在 `profiles/simple/version 1/<version>.conf`。设备订阅 URL 由 manifest 的 `output`
 （`surge-simple.conf`）决定，升级和回滚都不需要改设备端 URL。
 
+## 1.0.2 (2026-09-26)
+
+- 金融规则置于 `cn.list` 之前，并直接绑定既有 `Proxy`；不新增策略组。moomoo 与富途域名同时存在于 `geosite:cn`，原顺序会使其先命中 `DIRECT`。
+
 ## 1.0.1 (2026-09-21)
 
 - 将 `Smart` 从 `url-test` 改为 `smart`，按节点类型和区域组合标签进行优先级排列。

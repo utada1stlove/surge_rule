@@ -570,6 +570,15 @@ rule-providers:
     interval: 86400
 
 rules:
+  - DOMAIN-SUFFIX,economist.com,Finance
+  - DOMAIN-SUFFIX,wsj.com,Finance
+  - DOMAIN-SUFFIX,tradingview.com,Finance
+  - RULE-SET,r28,Finance
+  - RULE-SET,r29,Finance
+  - RULE-SET,r30,Finance
+  - RULE-SET,r31,Finance
+  - RULE-SET,r32,Finance
+  - RULE-SET,r33,Finance
   - RULE-SET,r01,REJECT
   - RULE-SET,r02,REJECT
   - RULE-SET,r03,REJECT
@@ -598,15 +607,6 @@ rules:
   - RULE-SET,r25,Google
   - RULE-SET,r26,Google
   - RULE-SET,r27,AI Suite
-  - DOMAIN-SUFFIX,economist.com,Finance
-  - DOMAIN-SUFFIX,wsj.com,Finance
-  - DOMAIN-SUFFIX,tradingview.com,Finance
-  - RULE-SET,r28,Finance
-  - RULE-SET,r29,Finance
-  - RULE-SET,r30,Finance
-  - RULE-SET,r31,Finance
-  - RULE-SET,r32,Finance
-  - RULE-SET,r33,Finance
   - RULE-SET,r34,NSFW
   - RULE-SET,r35,Proxy
   - RULE-SET,r36,TikTok
