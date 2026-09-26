@@ -1,6 +1,6 @@
-﻿# Vendored from https://ruleset.skk.moe/List/non_ip/domestic.conf
+# Vendored from https://ruleset.skk.moe/List/non_ip/domestic.conf
 # name: skk-domestic
-# fetched-at: 2026-09-25T20:03:37.9920591Z
+# fetched-at: 2026-09-26T00:37:28.537Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN,7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
@@ -116,10 +116,10 @@ DOMAIN-SUFFIX,air-matters.io
 DOMAIN-SUFFIX,aixifan.com
 DOMAIN-SUFFIX,ali213.net
 DOMAIN-SUFFIX,aliapp.org
+DOMAIN-SUFFIX,alibaba-inc.com
 DOMAIN-SUFFIX,alibaba.com
 DOMAIN-SUFFIX,alibabachengdun.com
 DOMAIN-SUFFIX,alibabadns.com
-DOMAIN-SUFFIX,alibaba-inc.com
 DOMAIN-SUFFIX,alibabausercontent.com
 DOMAIN-SUFFIX,alibtrip.com
 DOMAIN-SUFFIX,alicdn.com
@@ -195,15 +195,17 @@ DOMAIN-SUFFIX,bulicdn2.com
 DOMAIN-SUFFIX,byteacctimg.com
 DOMAIN-SUFFIX,bytecdn.cn
 DOMAIN-SUFFIX,bytecdntp.com
+DOMAIN-SUFFIX,byted-static.com
 DOMAIN-SUFFIX,bytedance.com
 DOMAIN-SUFFIX,bytednsdoc.com
-DOMAIN-SUFFIX,byted-static.com
 DOMAIN-SUFFIX,byteeffecttos.com
 DOMAIN-SUFFIX,bytegoofy.com
 DOMAIN-SUFFIX,byteimg.com
 DOMAIN-SUFFIX,bytescm.com
 DOMAIN-SUFFIX,bytetcc.com
 DOMAIN-SUFFIX,bytetos.com
+DOMAIN-SUFFIX,c-ctrip.com
+DOMAIN-SUFFIX,c-t.work
 DOMAIN-SUFFIX,cailianpress.com
 DOMAIN-SUFFIX,cainiao.com
 DOMAIN-SUFFIX,cainiaoyizhan.com
@@ -215,7 +217,6 @@ DOMAIN-SUFFIX,ccb.com
 DOMAIN-SUFFIX,ccgslb.com
 DOMAIN-SUFFIX,ccgslb.net
 DOMAIN-SUFFIX,ccrgt.com
-DOMAIN-SUFFIX,c-ctrip.com
 DOMAIN-SUFFIX,cctv.cn
 DOMAIN-SUFFIX,cctv.com
 DOMAIN-SUFFIX,cctvpic.com
@@ -270,10 +271,10 @@ DOMAIN-SUFFIX,cqcbank.com
 DOMAIN-SUFFIX,csdn.com
 DOMAIN-SUFFIX,csdn.net
 DOMAIN-SUFFIX,csdnimg.cn
-DOMAIN-SUFFIX,c-t.work
 DOMAIN-SUFFIX,ctfile.com
 DOMAIN-SUFFIX,ctrip.com
 DOMAIN-SUFFIX,cz88.net
+DOMAIN-SUFFIX,d-ctrip.com
 DOMAIN-SUFFIX,dancf.com
 DOMAIN-SUFFIX,dangdang.com
 DOMAIN-SUFFIX,daocloud.io
@@ -287,7 +288,6 @@ DOMAIN-SUFFIX,dcarlive.com
 DOMAIN-SUFFIX,dcarstatic.com
 DOMAIN-SUFFIX,dcarvod.com
 DOMAIN-SUFFIX,dcloud.io
-DOMAIN-SUFFIX,d-ctrip.com
 DOMAIN-SUFFIX,dewu.com
 DOMAIN-SUFFIX,dfcfw.com
 DOMAIN-SUFFIX,dianping.com
@@ -486,8 +486,8 @@ DOMAIN-SUFFIX,kingsoft-office-service.com
 DOMAIN-SUFFIX,kkmh.com
 DOMAIN-SUFFIX,klook.com
 DOMAIN-SUFFIX,koubei.com
-DOMAIN-SUFFIX,ksapisrv.com
 DOMAIN-SUFFIX,ks-cdn.com
+DOMAIN-SUFFIX,ksapisrv.com
 DOMAIN-SUFFIX,ksmobile.com
 DOMAIN-SUFFIX,ksord.com
 DOMAIN-SUFFIX,ksosoft.com
@@ -505,8 +505,8 @@ DOMAIN-SUFFIX,lancdn.com
 DOMAIN-SUFFIX,landian.vip
 DOMAIN-SUFFIX,landiannews.com
 DOMAIN-SUFFIX,le.com
-DOMAIN-SUFFIX,leetcode.cn
 DOMAIN-SUFFIX,leetcode-cn.com
+DOMAIN-SUFFIX,leetcode.cn
 DOMAIN-SUFFIX,leiniao.com
 DOMAIN-SUFFIX,leleketang.com
 DOMAIN-SUFFIX,lenovomm.com
@@ -538,16 +538,16 @@ DOMAIN-SUFFIX,meixincdn.com
 DOMAIN-SUFFIX,meizu.cn
 DOMAIN-SUFFIX,meizu.com
 DOMAIN-SUFFIX,mgtv.com
-DOMAIN-SUFFIX,mi.com
 DOMAIN-SUFFIX,mi-fds.com
+DOMAIN-SUFFIX,mi-idc.com
+DOMAIN-SUFFIX,mi-img.com
+DOMAIN-SUFFIX,mi.com
 DOMAIN-SUFFIX,mifile.cn
 DOMAIN-SUFFIX,migu.cn
 DOMAIN-SUFFIX,migucloud.com
 DOMAIN-SUFFIX,miguvideo.com
 DOMAIN-SUFFIX,mihayo.com
 DOMAIN-SUFFIX,mihoyo.com
-DOMAIN-SUFFIX,mi-idc.com
-DOMAIN-SUFFIX,mi-img.com
 DOMAIN-SUFFIX,mijia.tech
 DOMAIN-SUFFIX,miot-spec.org
 DOMAIN-SUFFIX,mipay.com
@@ -678,6 +678,7 @@ DOMAIN-SUFFIX,rsproxy.cn
 DOMAIN-SUFFIX,ruanmei.com
 DOMAIN-SUFFIX,ruguoapp.com
 DOMAIN-SUFFIX,ruiwen.com
+DOMAIN-SUFFIX,s-reader.com
 DOMAIN-SUFFIX,samsungcloudcn.com
 DOMAIN-SUFFIX,sandai.net
 DOMAIN-SUFFIX,sankuai.com
@@ -704,16 +705,15 @@ DOMAIN-SUFFIX,so.com
 DOMAIN-SUFFIX,sogo.com
 DOMAIN-SUFFIX,sogou.com
 DOMAIN-SUFFIX,sogoucdn.com
+DOMAIN-SUFFIX,sohu-inc.com
 DOMAIN-SUFFIX,sohu.com
 DOMAIN-SUFFIX,sohucs.com
-DOMAIN-SUFFIX,sohu-inc.com
 DOMAIN-SUFFIX,soku.com
 DOMAIN-SUFFIX,solidot.org
 DOMAIN-SUFFIX,soso.com
 DOMAIN-SUFFIX,soufunimg.com
 DOMAIN-SUFFIX,soulapp.cn
 DOMAIN-SUFFIX,speedtest.cn
-DOMAIN-SUFFIX,s-reader.com
 DOMAIN-SUFFIX,sspai.com
 DOMAIN-SUFFIX,staticdn.net
 DOMAIN-SUFFIX,steam.clngaa.com
@@ -738,10 +738,10 @@ DOMAIN-SUFFIX,tb.cn
 DOMAIN-SUFFIX,tbcache.com
 DOMAIN-SUFFIX,tbcdn.cn
 DOMAIN-SUFFIX,tcdnlive.com
-DOMAIN-SUFFIX,tencent.com
 DOMAIN-SUFFIX,tencent-cloud.cn
 DOMAIN-SUFFIX,tencent-cloud.com
 DOMAIN-SUFFIX,tencent-cloud.net
+DOMAIN-SUFFIX,tencent.com
 DOMAIN-SUFFIX,tencentcs.cn
 DOMAIN-SUFFIX,tencentmusic.com
 DOMAIN-SUFFIX,tianyancha.com

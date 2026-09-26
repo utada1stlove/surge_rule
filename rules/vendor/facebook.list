@@ -1,6 +1,6 @@
-﻿# Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Facebook/Facebook.list
+# Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Facebook/Facebook.list
 # name: facebook
-# fetched-at: 2026-09-25T20:02:48.8425640Z
+# fetched-at: 2026-09-26T00:37:25.662Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN-KEYWORD,facebook
@@ -11,9 +11,9 @@ DOMAIN-SUFFIX,accountkit.com
 DOMAIN-SUFFIX,acebooik.com
 DOMAIN-SUFFIX,acebook.com
 DOMAIN-SUFFIX,achat-followers-instagram.com
+DOMAIN-SUFFIX,acheter-followers-instagram.com
 DOMAIN-SUFFIX,acheterdesfollowersinstagram.com
 DOMAIN-SUFFIX,acheterfollowersinstagram.com
-DOMAIN-SUFFIX,acheter-followers-instagram.com
 DOMAIN-SUFFIX,advancediddetection.com
 DOMAIN-SUFFIX,askfacebook.net
 DOMAIN-SUFFIX,askfacebook.org
@@ -58,6 +58,7 @@ DOMAIN-SUFFIX,faccebook.com
 DOMAIN-SUFFIX,faccebookk.com
 DOMAIN-SUFFIX,facdbook.com
 DOMAIN-SUFFIX,facdebook.com
+DOMAIN-SUFFIX,face-book.com
 DOMAIN-SUFFIX,faceabook.com
 DOMAIN-SUFFIX,facebboc.com
 DOMAIN-SUFFIX,facebbook.com
@@ -67,6 +68,7 @@ DOMAIN-SUFFIX,facebdok.com
 DOMAIN-SUFFIX,facebgook.com
 DOMAIN-SUFFIX,facebhook.com
 DOMAIN-SUFFIX,facebkkk.com
+DOMAIN-SUFFIX,facebo-ok.com
 DOMAIN-SUFFIX,faceboak.com
 DOMAIN-SUFFIX,facebock.com
 DOMAIN-SUFFIX,facebocke.com
@@ -94,12 +96,28 @@ DOMAIN-SUFFIX,facebooi.com
 DOMAIN-SUFFIX,facebooik.com
 DOMAIN-SUFFIX,facebooik.org
 DOMAIN-SUFFIX,facebooj.com
+DOMAIN-SUFFIX,facebook-corp.com
+DOMAIN-SUFFIX,facebook-covid-19.com
+DOMAIN-SUFFIX,facebook-ebook.com
+DOMAIN-SUFFIX,facebook-forum.com
+DOMAIN-SUFFIX,facebook-hardware.com
+DOMAIN-SUFFIX,facebook-inc.com
+DOMAIN-SUFFIX,facebook-login.com
+DOMAIN-SUFFIX,facebook-newsroom.com
+DOMAIN-SUFFIX,facebook-newsroom.org
+DOMAIN-SUFFIX,facebook-pmdcenter.com
+DOMAIN-SUFFIX,facebook-pmdcenter.net
+DOMAIN-SUFFIX,facebook-pmdcenter.org
+DOMAIN-SUFFIX,facebook-privacy.com
+DOMAIN-SUFFIX,facebook-program.com
+DOMAIN-SUFFIX,facebook-studio.com
+DOMAIN-SUFFIX,facebook-support.org
+DOMAIN-SUFFIX,facebook-texas-holdem.com
+DOMAIN-SUFFIX,facebook-texas-holdem.net
 DOMAIN-SUFFIX,facebook.br
 DOMAIN-SUFFIX,facebook.ca
 DOMAIN-SUFFIX,facebook.cc
 DOMAIN-SUFFIX,facebook.com
-DOMAIN-SUFFIX,facebo-ok.com
-DOMAIN-SUFFIX,face-book.com
 DOMAIN-SUFFIX,facebook.design
 DOMAIN-SUFFIX,facebook.hu
 DOMAIN-SUFFIX,facebook.in
@@ -135,40 +153,33 @@ DOMAIN-SUFFIX,facebookcom.com
 DOMAIN-SUFFIX,facebookconnect.com
 DOMAIN-SUFFIX,facebookconsultant.org
 DOMAIN-SUFFIX,facebookcoronavirus.com
-DOMAIN-SUFFIX,facebook-corp.com
 DOMAIN-SUFFIX,facebookcovers.org
-DOMAIN-SUFFIX,facebook-covid-19.com
 DOMAIN-SUFFIX,facebookcredits.info
 DOMAIN-SUFFIX,facebookdating.net
 DOMAIN-SUFFIX,facebookdevelopergarage.com
 DOMAIN-SUFFIX,facebookdusexe.org
-DOMAIN-SUFFIX,facebook-ebook.com
 DOMAIN-SUFFIX,facebookemail.com
 DOMAIN-SUFFIX,facebookenespanol.com
 DOMAIN-SUFFIX,facebookexchange.com
 DOMAIN-SUFFIX,facebookexchange.net
 DOMAIN-SUFFIX,facebookfacebook.com
 DOMAIN-SUFFIX,facebookflow.com
-DOMAIN-SUFFIX,facebook-forum.com
 DOMAIN-SUFFIX,facebookgames.com
 DOMAIN-SUFFIX,facebookgraphsearch.com
 DOMAIN-SUFFIX,facebookgraphsearch.info
 DOMAIN-SUFFIX,facebookgroups.com
-DOMAIN-SUFFIX,facebook-hardware.com
 DOMAIN-SUFFIX,facebookhome.cc
 DOMAIN-SUFFIX,facebookhome.com
 DOMAIN-SUFFIX,facebookhome.info
 DOMAIN-SUFFIX,facebookhub.com
 DOMAIN-SUFFIX,facebooki.com
 DOMAIN-SUFFIX,facebookinc.com
-DOMAIN-SUFFIX,facebook-inc.com
 DOMAIN-SUFFIX,facebookland.com
 DOMAIN-SUFFIX,facebooklikeexchange.com
 DOMAIN-SUFFIX,facebooklive.com
 DOMAIN-SUFFIX,facebooklivestaging.net
 DOMAIN-SUFFIX,facebooklivestaging.org
 DOMAIN-SUFFIX,facebooklogin.com
-DOMAIN-SUFFIX,facebook-login.com
 DOMAIN-SUFFIX,facebooklogin.info
 DOMAIN-SUFFIX,facebookloginhelp.net
 DOMAIN-SUFFIX,facebooklogs.com
@@ -181,8 +192,6 @@ DOMAIN-SUFFIX,facebookmarketingpartners.com
 DOMAIN-SUFFIX,facebookmobile.com
 DOMAIN-SUFFIX,facebookmsn.com
 DOMAIN-SUFFIX,facebooknews.com
-DOMAIN-SUFFIX,facebook-newsroom.com
-DOMAIN-SUFFIX,facebook-newsroom.org
 DOMAIN-SUFFIX,facebooknfl.com
 DOMAIN-SUFFIX,facebooknude.com
 DOMAIN-SUFFIX,facebookofsex.com
@@ -193,9 +202,6 @@ DOMAIN-SUFFIX,facebookphonenumber.net
 DOMAIN-SUFFIX,facebookphoto.com
 DOMAIN-SUFFIX,facebookphotos.com
 DOMAIN-SUFFIX,facebookpmdcenter.com
-DOMAIN-SUFFIX,facebook-pmdcenter.com
-DOMAIN-SUFFIX,facebook-pmdcenter.net
-DOMAIN-SUFFIX,facebook-pmdcenter.org
 DOMAIN-SUFFIX,facebookpoke.net
 DOMAIN-SUFFIX,facebookpoke.org
 DOMAIN-SUFFIX,facebookpoker.info
@@ -204,8 +210,6 @@ DOMAIN-SUFFIX,facebookporn.net
 DOMAIN-SUFFIX,facebookporn.org
 DOMAIN-SUFFIX,facebookporno.net
 DOMAIN-SUFFIX,facebookportal.com
-DOMAIN-SUFFIX,facebook-privacy.com
-DOMAIN-SUFFIX,facebook-program.com
 DOMAIN-SUFFIX,facebookquotes4u.com
 DOMAIN-SUFFIX,facebooks.com
 DOMAIN-SUFFIX,facebooksafety.com
@@ -214,17 +218,13 @@ DOMAIN-SUFFIX,facebookshop.com
 DOMAIN-SUFFIX,facebooksignup.net
 DOMAIN-SUFFIX,facebooksite.net
 DOMAIN-SUFFIX,facebookstories.com
-DOMAIN-SUFFIX,facebook-studio.com
 DOMAIN-SUFFIX,facebookstudios.net
 DOMAIN-SUFFIX,facebookstudios.org
 DOMAIN-SUFFIX,facebooksupplier.com
 DOMAIN-SUFFIX,facebooksuppliers.com
-DOMAIN-SUFFIX,facebook-support.org
 DOMAIN-SUFFIX,facebookswagemea.com
 DOMAIN-SUFFIX,facebookswagstore.com
 DOMAIN-SUFFIX,facebooksz.com
-DOMAIN-SUFFIX,facebook-texas-holdem.com
-DOMAIN-SUFFIX,facebook-texas-holdem.net
 DOMAIN-SUFFIX,facebookthreads.net
 DOMAIN-SUFFIX,facebooktv.net
 DOMAIN-SUFFIX,facebooktv.org
@@ -304,9 +304,9 @@ DOMAIN-SUFFIX,fbacebook.com
 DOMAIN-SUFFIX,fbaddins.com
 DOMAIN-SUFFIX,fbbmarket.com
 DOMAIN-SUFFIX,fbboostyourbusiness.com
+DOMAIN-SUFFIX,fbcdn-a.akamaihd.net
 DOMAIN-SUFFIX,fbcdn.com
 DOMAIN-SUFFIX,fbcdn.net
-DOMAIN-SUFFIX,fbcdn-a.akamaihd.net
 DOMAIN-SUFFIX,fbf8.com
 DOMAIN-SUFFIX,fbfeedback.com
 DOMAIN-SUFFIX,fbhome.com
@@ -374,10 +374,10 @@ DOMAIN-SUFFIX,freindfeed.com
 DOMAIN-SUFFIX,frescolib.org
 DOMAIN-SUFFIX,friendbook.info
 DOMAIN-SUFFIX,friendfed.com
-DOMAIN-SUFFIX,friendfeed.com
 DOMAIN-SUFFIX,friendfeed-api.com
-DOMAIN-SUFFIX,friendfeedmedia.com
 DOMAIN-SUFFIX,friendfeed-media.com
+DOMAIN-SUFFIX,friendfeed.com
+DOMAIN-SUFFIX,friendfeedmedia.com
 DOMAIN-SUFFIX,fsacebok.com
 DOMAIN-SUFFIX,fscebook.com
 DOMAIN-SUFFIX,fundraisingwithfacebook.com
@@ -415,14 +415,16 @@ DOMAIN-SUFFIX,instagify.com
 DOMAIN-SUFFIX,instagmania.com
 DOMAIN-SUFFIX,instagor.com
 DOMAIN-SUFFIX,instagr.am
-DOMAIN-SUFFIX,instagram.com
 DOMAIN-SUFFIX,instagram-brand.com
+DOMAIN-SUFFIX,instagram-engineering.com
+DOMAIN-SUFFIX,instagram-help.com
+DOMAIN-SUFFIX,instagram-press.com
+DOMAIN-SUFFIX,instagram-press.net
+DOMAIN-SUFFIX,instagram.com
 DOMAIN-SUFFIX,instagramci.com
 DOMAIN-SUFFIX,instagramcn.com
 DOMAIN-SUFFIX,instagramdi.com
-DOMAIN-SUFFIX,instagram-engineering.com
 DOMAIN-SUFFIX,instagramhashtags.net
-DOMAIN-SUFFIX,instagram-help.com
 DOMAIN-SUFFIX,instagramhilecim.com
 DOMAIN-SUFFIX,instagramhilesi.org
 DOMAIN-SUFFIX,instagramium.com
@@ -433,8 +435,6 @@ DOMAIN-SUFFIX,instagramm.com
 DOMAIN-SUFFIX,instagramn.com
 DOMAIN-SUFFIX,instagrampartners.com
 DOMAIN-SUFFIX,instagramphoto.com
-DOMAIN-SUFFIX,instagram-press.com
-DOMAIN-SUFFIX,instagram-press.net
 DOMAIN-SUFFIX,instagramq.com
 DOMAIN-SUFFIX,instagramsepeti.com
 DOMAIN-SUFFIX,instagramtakipcisatinal.net
@@ -480,6 +480,7 @@ DOMAIN-SUFFIX,nbabot.net
 DOMAIN-SUFFIX,newsfeed.com
 DOMAIN-SUFFIX,nextstop.com
 DOMAIN-SUFFIX,ocul.us
+DOMAIN-SUFFIX,oculus-china.com
 DOMAIN-SUFFIX,oculus.com
 DOMAIN-SUFFIX,oculus2014.com
 DOMAIN-SUFFIX,oculus3d.com
@@ -487,7 +488,6 @@ DOMAIN-SUFFIX,oculusblog.com
 DOMAIN-SUFFIX,oculusbrand.com
 DOMAIN-SUFFIX,oculuscasino.net
 DOMAIN-SUFFIX,oculuscdn.com
-DOMAIN-SUFFIX,oculus-china.com
 DOMAIN-SUFFIX,oculusconnect.com
 DOMAIN-SUFFIX,oculusdiving.com
 DOMAIN-SUFFIX,oculusforbusiness.com
@@ -496,8 +496,8 @@ DOMAIN-SUFFIX,oculusvr.com
 DOMAIN-SUFFIX,ogp.me
 DOMAIN-SUFFIX,oninstagram.com
 DOMAIN-SUFFIX,online-deals.net
-DOMAIN-SUFFIX,onlineinstagram.com
 DOMAIN-SUFFIX,online-instagram.com
+DOMAIN-SUFFIX,onlineinstagram.com
 DOMAIN-SUFFIX,opencreate.org
 DOMAIN-SUFFIX,opengraphprotocol.com
 DOMAIN-SUFFIX,opengraphprotocol.org
@@ -526,6 +526,9 @@ DOMAIN-SUFFIX,toplayerserver.com
 DOMAIN-SUFFIX,viewpointsfromfacebook.com
 DOMAIN-SUFFIX,wa.me
 DOMAIN-SUFFIX,web-instagram.net
+DOMAIN-SUFFIX,whatsapp-plus.info
+DOMAIN-SUFFIX,whatsapp-plus.me
+DOMAIN-SUFFIX,whatsapp-plus.net
 DOMAIN-SUFFIX,whatsapp.biz
 DOMAIN-SUFFIX,whatsapp.cc
 DOMAIN-SUFFIX,whatsapp.com
@@ -534,16 +537,13 @@ DOMAIN-SUFFIX,whatsapp.net
 DOMAIN-SUFFIX,whatsapp.org
 DOMAIN-SUFFIX,whatsapp.tv
 DOMAIN-SUFFIX,whatsappbrand.com
-DOMAIN-SUFFIX,whatsapp-plus.info
-DOMAIN-SUFFIX,whatsapp-plus.me
-DOMAIN-SUFFIX,whatsapp-plus.net
 DOMAIN-SUFFIX,whyfacebook.com
 DOMAIN-SUFFIX,workplace.com
 DOMAIN-SUFFIX,workplaceusecases.com
 DOMAIN-SUFFIX,worldhack.com
+DOMAIN-SUFFIX,www-facebook.com
 DOMAIN-SUFFIX,wwwfacebok.com
 DOMAIN-SUFFIX,wwwfacebook.com
-DOMAIN-SUFFIX,www-facebook.com
 DOMAIN-SUFFIX,wwwinstagram.com
 DOMAIN-SUFFIX,wwwmfacebook.com
 DOMAIN-SUFFIX,yogalayout.com

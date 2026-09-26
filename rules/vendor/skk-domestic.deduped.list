@@ -1,7 +1,8 @@
+# Vendored from https://ruleset.skk.moe/List/non_ip/domestic.conf
 # name: skk-domestic
-# fetched-at: 2026-09-25T20:03:37.9920591Z
+# fetched-at: 2026-09-26T00:37:28.537Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-09-25T20:13:10.259Z
+# deduped-at: 2026-09-26T00:37:30.593Z
 # deduped-against: diy+generated (312602 rules)
 
 DOMAIN,7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe

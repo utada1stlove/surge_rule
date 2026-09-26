@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T20:13:10.264Z",
+  "generated_at": "2026-09-26T00:37:30.595Z",
   "priority": [
     "diy (rules/*.list)",
     "generated (rules/generated/*.list)",
@@ -8,15 +8,15 @@
   "counts": {
     "diy": 239,
     "generated": 312510,
-    "vendor": 292856,
+    "vendor": 293500,
     "shadowed_generated": 147,
-    "shadowed_vendor": 184139,
-    "total_shadowed": 184286,
+    "shadowed_vendor": 184786,
+    "total_shadowed": 184933,
     "deduped_vendor": {
       "advertising-all-no-resolve.list": {
-        "before": 285607,
-        "after": 103427,
-        "removed": 182180
+        "before": 286252,
+        "after": 103425,
+        "removed": 182827
       },
       "anthropic.list": {
         "before": 3,
@@ -139,8 +139,8 @@
         "removed": 5
       },
       "skk-china-ip.list": {
-        "before": 3905,
-        "after": 3905,
+        "before": 3904,
+        "after": 3904,
         "removed": 0
       },
       "skk-domestic.list": {
@@ -1434,6 +1434,11 @@
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
+      "rule": "DOMAIN-SUFFIX,079355fe4b.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
       "rule": "DOMAIN-SUFFIX,07b5ec4fa6.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
@@ -2064,6 +2069,21 @@
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
+      "rule": "DOMAIN-SUFFIX,1-bmo-client-login.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1-cl0ud.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1-directshipmtdhlsexpress-order.help",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
       "rule": "DOMAIN-SUFFIX,1.07swz.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
@@ -2354,6 +2374,11 @@
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
+      "rule": "DOMAIN-SUFFIX,10-letter-words.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
       "rule": "DOMAIN-SUFFIX,10.im.cz",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
@@ -2509,11 +2534,6 @@
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,10-letter-words.com",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
       "rule": "DOMAIN-SUFFIX,10q6e9ne5.de",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
@@ -2599,12 +2619,17 @@
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
+      "rule": "DOMAIN-SUFFIX,113-bca.online",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
       "rule": "DOMAIN-SUFFIX,1133.cc",
       "shadowed_by": "rules/generated/cn.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,113-bca.online",
+      "rule": "DOMAIN-SUFFIX,1154036d79.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
@@ -2739,6 +2764,21 @@
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
+      "rule": "DOMAIN-SUFFIX,123-counter.de",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123-stream.org",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123-vay.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
       "rule": "DOMAIN-SUFFIX,123.rudestbrand.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
@@ -2770,11 +2810,6 @@
     },
     {
       "rule": "DOMAIN-SUFFIX,123count.com",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,123-counter.de",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
@@ -2825,16 +2860,6 @@
     },
     {
       "rule": "DOMAIN-SUFFIX,123server.mr-fuss.com",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,123-stream.org",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,123-vay.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
@@ -3400,31 +3425,6 @@
     },
     {
       "rule": "DOMAIN-SUFFIX,1857db6b77.com",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,186494d0e1.com",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,18651885bc.com",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,18723bnj.keyfy.fr",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,188api.com",
-      "shadowed_by": "rules/generated/cn.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,18aa7dae85.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
     }
