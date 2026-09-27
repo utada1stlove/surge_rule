@@ -1,9 +1,9 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/PikPak/PikPak.list
 # name: pikpak
-# fetched-at: 2026-09-26T00:37:29.375Z
+# fetched-at: 2026-09-27T00:35:45.462Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-09-26T00:37:30.589Z
-# deduped-against: diy+generated (312602 rules)
+# deduped-at: 2026-09-27T00:35:46.920Z
+# deduped-against: diy+generated (312930 rules)
 
 DOMAIN-KEYWORD,mypikpak
 DOMAIN-SUFFIX,dlandroid.rcv.sandai.net
