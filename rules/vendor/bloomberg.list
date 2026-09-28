@@ -1,6 +1,6 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Bloomberg/Bloomberg.list
 # name: bloomberg
-# fetched-at: 2026-09-27T00:35:44.756Z
+# fetched-at: 2026-09-28T00:45:26.581Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN-SUFFIX,bloomberg.co.kr

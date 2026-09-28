@@ -1,9 +1,9 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All_No_Resolve.list
 # name: advertising-all-no-resolve
-# fetched-at: 2026-09-27T00:35:42.847Z
+# fetched-at: 2026-09-28T00:45:26.142Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-09-27T00:35:46.843Z
-# deduped-against: diy+generated (312930 rules)
+# deduped-at: 2026-09-28T00:45:28.095Z
+# deduped-against: diy+generated (313185 rules)
 
 AND,((USER-AGENT,Frodo*),(DOMAIN,119.29.29.29))
 DOMAIN,0.code.cotsta.ru
@@ -19154,6 +19154,7 @@ DOMAIN-SUFFIX,7719094ddf.com
 DOMAIN-SUFFIX,772773a.com
 DOMAIN-SUFFIX,77417.cn
 DOMAIN-SUFFIX,77455.com
+DOMAIN-SUFFIX,7759.com
 DOMAIN-SUFFIX,777-888.ru
 DOMAIN-SUFFIX,777.000123456789.space
 DOMAIN-SUFFIX,777aa999aa.com
@@ -21762,7 +21763,6 @@ DOMAIN-SUFFIX,ads.aplusapi.pptv.com
 DOMAIN-SUFFIX,ads.cdn.tvb.com
 DOMAIN-SUFFIX,ads.csdn.net
 DOMAIN-SUFFIX,ads.daydaycook.com.cn
-DOMAIN-SUFFIX,ads.epltalk.com
 DOMAIN-SUFFIX,ads.feedly.com
 DOMAIN-SUFFIX,ads.gionee.com
 DOMAIN-SUFFIX,ads.google.com
@@ -30071,7 +30071,6 @@ DOMAIN-SUFFIX,bu2.duba.com
 DOMAIN-SUFFIX,bu3le2lp4t45e6i.com
 DOMAIN-SUFFIX,buawop.cloud
 DOMAIN-SUFFIX,bubalesriffler.rest
-DOMAIN-SUFFIX,buballmighty.com
 DOMAIN-SUFFIX,bubblebedroom.com
 DOMAIN-SUFFIX,bubblekraken.com
 DOMAIN-SUFFIX,bubblelout.cyou
@@ -69143,6 +69142,7 @@ DOMAIN-SUFFIX,nug08010lu.com
 DOMAIN-SUFFIX,nug08020lu.com
 DOMAIN-SUFFIX,nug08021lu.com
 DOMAIN-SUFFIX,nug08030lu.com
+DOMAIN-SUFFIX,nug08031lu.com
 DOMAIN-SUFFIX,nugeeksothomu.net
 DOMAIN-SUFFIX,nuggad.net
 DOMAIN-SUFFIX,nuggetnurses.click
@@ -78866,7 +78866,6 @@ DOMAIN-SUFFIX,recloseclouty.com
 DOMAIN-SUFFIX,recmd.html5.qq.com
 DOMAIN-SUFFIX,recmeeshebsougn.net
 DOMAIN-SUFFIX,reco.hardsextube.com
-DOMAIN-SUFFIX,recoco.it
 DOMAIN-SUFFIX,recoctunquod.cfd
 DOMAIN-SUFFIX,recogerconsentimiento.com
 DOMAIN-SUFFIX,recoiltravellingbreach.com
@@ -99288,6 +99287,7 @@ DOMAIN-SUFFIX,xefqptxw.com
 DOMAIN-SUFFIX,xeghes.fun
 DOMAIN-SUFFIX,xegluwate.com
 DOMAIN-SUFFIX,xegmsox.com
+DOMAIN-SUFFIX,xegnfwkju.com
 DOMAIN-SUFFIX,xehyjx.icu
 DOMAIN-SUFFIX,xeiatmf.cn
 DOMAIN-SUFFIX,xeihjicekoxgs.space
