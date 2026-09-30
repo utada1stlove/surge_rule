@@ -1,6 +1,6 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Google/Google.list
 # name: google
-# fetched-at: 2026-09-29T01:56:34.859Z
+# fetched-at: 2026-09-30T01:17:35.084Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN,voice.telephony.goog

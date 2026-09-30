@@ -1,6 +1,6 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Cryptocurrency/Cryptocurrency.list
 # name: cryptocurrency
-# fetched-at: 2026-09-29T01:56:37.970Z
+# fetched-at: 2026-09-30T01:17:37.082Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN-SUFFIX,aex.com

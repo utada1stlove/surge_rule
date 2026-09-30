@@ -1,9 +1,9 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Spotify/Spotify.list
 # name: spotify
-# fetched-at: 2026-09-29T01:56:34.357Z
+# fetched-at: 2026-09-30T01:17:34.703Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-09-29T01:56:39.766Z
-# deduped-against: diy+generated (313504 rules)
+# deduped-at: 2026-09-30T01:17:38.371Z
+# deduped-against: diy+generated (306277 rules)
 
 DOMAIN-KEYWORD,spotify
 DOMAIN-SUFFIX,audio-ak-spotify-com.akamaized.net

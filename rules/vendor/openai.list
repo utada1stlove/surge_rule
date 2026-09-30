@@ -1,6 +1,6 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OpenAI/OpenAI.list
 # name: openai
-# fetched-at: 2026-09-29T01:56:34.996Z
+# fetched-at: 2026-09-30T01:17:35.184Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN,browser-intake-datadoghq.com
