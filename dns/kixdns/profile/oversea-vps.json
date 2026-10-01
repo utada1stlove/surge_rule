@@ -1,0 +1,194 @@
+{
+  "version": "1.0",
+  "settings": {
+    "bind_udp": "[::]:8844",
+    "bind_tcp": "[::]:8844",
+    "bind_doh": "[::]:8443",
+    "doh_tls_cert": "/etc/kixdns/certs/doh-fullchain.pem",
+    "doh_tls_key": "/etc/kixdns/certs/doh-private.key",
+    "default_upstream": "8.8.8.8:53",
+    "min_ttl": 30,
+    "upstream_timeout_ms": 3000,
+    "request_timeout_ms": 9000,
+    "response_jump_limit": 6,
+    "enable_tcp_fallback": true,
+    "udp_pool_size": 64,
+    "tcp_pool_size": 64,
+    "doh_pool_size": 16,
+    "dot_pool_size": 16,
+    "doq_pool_size": 8,
+    "tcp_health_check_error_threshold": 3,
+    "tcp_connection_max_age_seconds": 300,
+    "tcp_connection_idle_timeout_seconds": 60,
+    "doq_connection_idle_timeout_seconds": 60,
+    "doq_keepalive_interval_ms": 15000,
+    "doq_enable_0rtt": false,
+    "cache_capacity": 65536,
+    "cache_max_ttl": 86400,
+    "dashmap_shards": 0,
+    "cache_background_refresh": true,
+    "cache_refresh_threshold_percent": 15,
+    "cache_refresh_min_ttl": 6,
+    "serve_stale": true,
+    "serve_stale_ttl": 30,
+    "serve_stale_expire_ttl": 86400,
+    "serve_stale_ttl_reset": true,
+    "serve_stale_client_timeout_ms": 0,
+    "flow_control_enabled": false,
+    "flow_control_initial_permits": 500,
+    "flow_control_min_permits": 100,
+    "flow_control_max_permits": 800,
+    "flow_control_latency_threshold_ms": 100,
+    "flow_control_adjustment_interval_secs": 5,
+    "geosite_data_paths": [
+      "/etc/kixdns/geosite.dat"
+    ]
+  },
+  "pipeline_select": [
+    {
+      "pipeline": "main_inbound",
+      "matchers": [
+        {
+          "type": "any",
+          "operator": "and"
+        }
+      ],
+      "matcher_operator": "and"
+    }
+  ],
+  "pipelines": [
+    {
+      "id": "main_inbound",
+      "rules": [
+        {
+          "name": "global-primary",
+          "matchers": [
+            {
+              "type": "any",
+              "operator": "and"
+            }
+          ],
+          "actions": [
+            {
+              "type": "log",
+              "level": "debug"
+            },
+            {
+              "type": "forward",
+              "upstream": [
+                "8.8.8.8:53",
+                "1.1.1.1:53",
+                "9.9.9.9:53",
+                "https://dns.google/dns-query",
+                "https://cloudflare-dns.com/dns-query",
+                "https://dns.quad9.net/dns-query",
+                "dot://1.1.1.1:853",
+                "dot://8.8.8.8:853",
+                "dot://dns.quad9.net:853"
+              ]
+            }
+          ],
+          "response_matchers": [
+            {
+              "type": "response_qclass",
+              "value": "IN",
+              "operator": "and"
+            },
+            {
+              "type": "response_rcode",
+              "value": "NOERROR",
+              "operator": "and"
+            },
+            {
+              "type": "response_rcode",
+              "operator": "or",
+              "value": "NXDOMAIN"
+            },
+            {
+              "type": "response_answer_ip_geoip_private",
+              "operator": "and_not",
+              "expect": true
+            },
+            {
+              "type": "response_answer_ip",
+              "operator": "and_not",
+              "cidr": "0.0.0.0/8,100.64.0.0/10,255.255.255.255/32"
+            }
+          ],
+          "response_actions_on_match": [],
+          "response_actions_on_miss": [
+            {
+              "type": "log",
+              "level": "warn"
+            },
+            {
+              "type": "continue"
+            }
+          ],
+          "matcher_operator": "and",
+          "response_matcher_operator": "and"
+        },
+        {
+          "name": "global-fallback",
+          "matchers": [
+            {
+              "type": "any",
+              "operator": "and"
+            }
+          ],
+          "actions": [
+            {
+              "type": "log",
+              "level": "info"
+            },
+            {
+              "type": "forward",
+              "upstream": [
+                "https://dns.google/dns-query",
+                "https://cloudflare-dns.com/dns-query",
+                "dot://1.1.1.1:853",
+                "dot://8.8.8.8:853"
+              ]
+            }
+          ],
+          "response_matchers": [
+            {
+              "type": "response_qclass",
+              "value": "IN",
+              "operator": "and"
+            },
+            {
+              "type": "response_rcode",
+              "value": "NOERROR",
+              "operator": "and"
+            },
+            {
+              "type": "response_rcode",
+              "operator": "or",
+              "value": "NXDOMAIN"
+            },
+            {
+              "type": "response_answer_ip_geoip_private",
+              "operator": "and_not",
+              "expect": true
+            },
+            {
+              "type": "response_answer_ip",
+              "operator": "and_not",
+              "cidr": "0.0.0.0/8,100.64.0.0/10,255.255.255.255/32"
+            }
+          ],
+          "response_actions_on_match": [],
+          "response_actions_on_miss": [
+            {
+              "type": "log",
+              "level": "warn"
+            }
+          ],
+          "matcher_operator": "and",
+          "response_matcher_operator": "and"
+        }
+      ]
+    }
+  ]
+}

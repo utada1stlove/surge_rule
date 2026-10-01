@@ -1,0 +1,351 @@
+{
+	"pipeline_select": [
+		{
+			"matcher_operator": "and",
+			"matchers": [
+				{
+					"operator": "and",
+					"type": "geo_site",
+					"value": "CATEGORY-ADS-ALL"
+				}
+			],
+			"pipeline": "blocked"
+		},
+		{
+			"matcher_operator": "and",
+			"matchers": [
+				{
+					"operator": "and",
+					"type": "geo_site",
+					"value": "CHINA-LIST"
+				}
+			],
+			"pipeline": "default"
+		},
+		{
+			"matcher_operator": "and",
+			"matchers": [
+				{
+					"operator": "and",
+					"type": "any"
+				}
+			],
+			"pipeline": "foreign"
+		}
+	],
+	"pipelines": [
+		{
+			"id": "blocked",
+			"rules": [
+				{
+					"actions": [
+						{
+							"level": "warn",
+							"type": "log"
+						},
+						{
+							"rcode": "NXDOMAIN",
+							"type": "static_response"
+						}
+					],
+					"matcher_operator": "and",
+					"matchers": [
+						{
+							"operator": "and",
+							"type": "any"
+						}
+					],
+					"name": "block-ads",
+					"response_actions_on_match": [],
+					"response_actions_on_miss": [],
+					"response_matcher_operator": "and",
+					"response_matchers": []
+				}
+			]
+		},
+		{
+			"id": "default",
+			"rules": [
+				{
+					"actions": [
+						{
+							"transport": "udp",
+							"type": "forward",
+							"upstream": [
+								"116.116.116.116:53",
+								"221.5.88.88:53"
+							]
+						}
+					],
+					"matcher_operator": "and",
+					"matchers": [
+						{
+							"operator": "and",
+							"type": "any"
+						}
+					],
+					"name": "isp-dns",
+					"response_actions_on_match": [
+						{
+							"type": "allow"
+						}
+					],
+					"response_actions_on_miss": [
+						{
+							"type": "continue"
+						}
+					],
+					"response_matcher_operator": "and",
+					"response_matchers": [
+						{
+							"operator": "and",
+							"type": "response_rcode",
+							"value": "NOERROR"
+						},
+						{
+							"operator": "or",
+							"type": "response_rcode",
+							"value": "NXDOMAIN"
+						}
+					]
+				},
+				{
+					"actions": [
+						{
+							"transport": "udp",
+							"type": "forward",
+							"upstream": [
+								"223.5.5.5:53",
+								"119.29.29.29:53",
+								"114.114.114.114:53"
+							]
+						}
+					],
+					"matcher_operator": "and",
+					"matchers": [
+						{
+							"operator": "and",
+							"type": "any"
+						}
+					],
+					"name": "114dns",
+					"response_actions_on_match": [
+						{
+							"type": "allow"
+						}
+					],
+					"response_actions_on_miss": [
+						{
+							"type": "continue"
+						}
+					],
+					"response_matcher_operator": "and",
+					"response_matchers": [
+						{
+							"operator": "and",
+							"type": "response_rcode",
+							"value": "NOERROR"
+						},
+						{
+							"operator": "or",
+							"type": "response_rcode",
+							"value": "NXDOMAIN"
+						}
+					]
+				},
+				{
+					"actions": [
+						{
+							"level": "debug",
+							"type": "log"
+						},
+						{
+							"type": "forward",
+							"upstream": [
+								"https://dns.alidns.com/dns-query",
+								"https://doh.pub/dns-query",
+								"dot://dns.alidns.com:853",
+								"dot://dot.pub:853",
+								"https://dns.tuna.tsinghua.edu.cn/dns-query"
+							]
+						}
+					],
+					"matcher_operator": "and",
+					"matchers": [
+						{
+							"operator": "and",
+							"type": "any"
+						}
+					],
+					"name": "race-doh-dot",
+					"response_actions_on_match": [
+						{
+							"type": "allow"
+						}
+					],
+					"response_actions_on_miss": [
+						{
+							"rcode": "SERVFAIL",
+							"type": "static_response"
+						}
+					],
+					"response_matcher_operator": "and",
+					"response_matchers": [
+						{
+							"operator": "and",
+							"type": "response_rcode",
+							"value": "NOERROR"
+						},
+						{
+							"operator": "or",
+							"type": "response_rcode",
+							"value": "NXDOMAIN"
+						},
+						{
+							"cidr": "0.0.0.0/8,127.0.0.0/8,169.254.0.0/16",
+							"operator": "not",
+							"type": "response_answer_ip"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "foreign",
+			"rules": [
+				{
+					"actions": [
+						{
+							"transport": "udp",
+							"type": "forward",
+							"upstream": [
+								"8.8.8.8:53",
+								"1.1.1.1:53",
+								"8.8.4.4:53",
+								"1.0.0.1:53"
+							]
+						}
+					],
+					"matcher_operator": "and",
+					"matchers": [
+						{
+							"operator": "and",
+							"type": "any"
+						}
+					],
+					"name": "cf+goog",
+					"response_actions_on_match": [
+						{
+							"type": "allow"
+						}
+					],
+					"response_actions_on_miss": [
+						{
+							"type": "continue"
+						}
+					],
+					"response_matcher_operator": "and",
+					"response_matchers": [
+						{
+							"operator": "and",
+							"type": "response_rcode",
+							"value": "NOERROR"
+						},
+						{
+							"operator": "or",
+							"type": "response_rcode",
+							"value": "NXDOMAIN"
+						}
+					]
+				},
+				{
+					"actions": [
+						{
+							"level": "debug",
+							"type": "log"
+						},
+						{
+							"type": "forward",
+							"upstream": [
+								"https://1.1.1.1/dns-query",
+								"https://8.8.8.8/dns-query"
+							]
+						}
+					],
+					"matcher_operator": "and",
+					"matchers": [
+						{
+							"operator": "and",
+							"type": "any"
+						}
+					],
+					"name": "cg-doh",
+					"response_actions_on_match": [
+						{
+							"type": "allow"
+						}
+					],
+					"response_actions_on_miss": [
+						{
+							"rcode": "SERVFAIL",
+							"type": "static_response"
+						}
+					],
+					"response_matcher_operator": "and",
+					"response_matchers": [
+						{
+							"operator": "and",
+							"type": "response_rcode",
+							"value": "NOERROR"
+						},
+						{
+							"operator": "or",
+							"type": "response_rcode",
+							"value": "NXDOMAIN"
+						},
+						{
+							"cidr": "0.0.0.0/8,127.0.0.0/8,169.254.0.0/16",
+							"operator": "not",
+							"type": "response_answer_ip"
+						}
+					]
+				}
+			]
+		}
+	],
+	"settings": {
+		"bind_tcp": "0.0.0.0:8844",
+		"bind_udp": "0.0.0.0:8844",
+		"cache_background_refresh": true,
+		"cache_capacity": 50000,
+		"cache_max_ttl": 86400,
+		"cache_refresh_min_ttl": 10,
+		"cache_refresh_threshold_percent": 15,
+		"default_upstream": "114.114.114.114:53",
+		"doh_pool_size": 16,
+		"doq_enable_0rtt": true,
+		"doq_pool_size": 16,
+		"dot_pool_size": 32,
+		"enable_tcp_fallback": true,
+		"flow_control_enabled": false,
+		"flow_control_initial_permits": 500,
+		"flow_control_latency_threshold_ms": 150,
+		"flow_control_max_permits": 1200,
+		"flow_control_min_permits": 100,
+		"geosite_data_paths": [
+			"/etc/kixdns/geosite.dat"
+		],
+		"geoip_dat_path": "/etc/kixdns/geoip.dat",
+		"min_ttl": 30,
+		"request_timeout_ms": 7500,
+		"response_jump_limit": 10,
+		"serve_stale": true,
+		"serve_stale_expire_ttl": 172800,
+		"serve_stale_ttl": 30,
+		"serve_stale_ttl_reset": true,
+		"tcp_pool_size": 64,
+		"udp_pool_size": 128,
+		"upstream_timeout_ms": 3000
+	},
+	"version": "1.0"
+}
