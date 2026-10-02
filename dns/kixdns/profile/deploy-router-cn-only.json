@@ -1,0 +1,134 @@
+{
+  "version": "1.0",
+  "settings": {
+    "bind_udp": "0.0.0.0:53",
+    "bind_tcp": "0.0.0.0:53",
+    "default_upstream": "114.114.114.114:53",
+    "upstream_timeout_ms": 2000,
+    "request_timeout_ms": 5000,
+    "min_ttl": 30,
+    "cache_capacity": 3000,
+    "cache_max_ttl": 86400,
+    "cache_background_refresh": false,
+    "serve_stale": true,
+    "serve_stale_ttl": 30,
+    "serve_stale_expire_ttl": 86400,
+    "serve_stale_ttl_reset": true,
+    "geosite_data_paths": ["/etc/kixdns/geosite.dat"],
+    "udp_pool_size": 32,
+    "tcp_pool_size": 16,
+    "doh_pool_size": 4,
+    "enable_tcp_fallback": true,
+    "response_jump_limit": 10
+  },
+  "pipeline_select": [
+    {
+      "pipeline": "blocked",
+      "matcher_operator": "and",
+      "matchers": [{ "operator": "and", "type": "geo_site", "value": "CATEGORY-ADS-ALL" }]
+    },
+    {
+      "pipeline": "domestic",
+      "matcher_operator": "and",
+      "matchers": [{ "operator": "and", "type": "geo_site", "value": "CN" }]
+    },
+    {
+      "pipeline": "sinkhole",
+      "matcher_operator": "and",
+      "matchers": [{ "operator": "and", "type": "any" }]
+    }
+  ],
+  "pipelines": [
+    {
+      "id": "blocked",
+      "rules": [
+        {
+          "name": "block-ads",
+          "matcher_operator": "and",
+          "matchers": [{ "operator": "and", "type": "any" }],
+          "actions": [
+            { "level": "warn", "type": "log" },
+            { "rcode": "NXDOMAIN", "type": "static_response" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sinkhole",
+      "rules": [
+        {
+          "name": "non-cn-sink",
+          "matcher_operator": "and",
+          "matchers": [{ "operator": "and", "type": "any" }],
+          "actions": [
+            { "level": "warn", "type": "log" },
+            { "rcode": "NXDOMAIN", "type": "static_response" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "domestic",
+      "rules": [
+        {
+          "name": "layer1-isp",
+          "matcher_operator": "and",
+          "matchers": [{ "operator": "and", "type": "any" }],
+          "actions": [
+            {
+              "transport": "udp",
+              "type": "forward",
+              "upstream": ["116.116.116.116:53", "221.5.88.88:53"]
+            }
+          ],
+          "response_matcher_operator": "and",
+          "response_matchers": [
+            { "operator": "and", "type": "response_rcode", "value": "NOERROR" },
+            { "operator": "or", "type": "response_rcode", "value": "NXDOMAIN" },
+            { "cidr": "0.0.0.0/8,127.0.0.0/8,169.254.0.0/16", "operator": "and_not", "type": "response_answer_ip" }
+          ],
+          "response_actions_on_match": [{ "type": "allow" }],
+          "response_actions_on_miss": [{ "type": "continue" }]
+        },
+        {
+          "name": "layer2-public-udp",
+          "matcher_operator": "and",
+          "matchers": [{ "operator": "and", "type": "any" }],
+          "actions": [
+            {
+              "transport": "udp",
+              "type": "forward",
+              "upstream": ["114.114.114.114:53", "223.5.5.5:53", "119.29.29.29:53", "180.76.76.76:53"]
+            }
+          ],
+          "response_matcher_operator": "and",
+          "response_matchers": [
+            { "operator": "and", "type": "response_rcode", "value": "NOERROR" },
+            { "operator": "or", "type": "response_rcode", "value": "NXDOMAIN" },
+            { "cidr": "0.0.0.0/8,127.0.0.0/8,169.254.0.0/16", "operator": "and_not", "type": "response_answer_ip" }
+          ],
+          "response_actions_on_match": [{ "type": "allow" }],
+          "response_actions_on_miss": [{ "type": "continue" }]
+        },
+        {
+          "name": "layer3-doh-race",
+          "matcher_operator": "and",
+          "matchers": [{ "operator": "and", "type": "any" }],
+          "actions": [
+            {
+              "type": "forward",
+              "upstream": ["https://dns.alidns.com/dns-query", "https://doh.pub/dns-query", "https://dns.tuna.tsinghua.edu.cn/dns-query"]
+            }
+          ],
+          "response_matcher_operator": "and",
+          "response_matchers": [
+            { "operator": "and", "type": "response_rcode", "value": "NOERROR" },
+            { "operator": "or", "type": "response_rcode", "value": "NXDOMAIN" }
+          ],
+          "response_actions_on_match": [{ "type": "allow" }],
+          "response_actions_on_miss": [{ "rcode": "SERVFAIL", "type": "static_response" }]
+        }
+      ]
+    }
+  ]
+}

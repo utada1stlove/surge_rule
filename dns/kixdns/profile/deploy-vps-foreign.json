@@ -1,0 +1,96 @@
+{
+  "version": "1.0",
+  "settings": {
+    "bind_udp": "0.0.0.0:53",
+    "bind_tcp": "0.0.0.0:53",
+    "default_upstream": "8.8.8.8:53",
+    "upstream_timeout_ms": 3000,
+    "request_timeout_ms": 7500,
+    "min_ttl": 30,
+    "cache_capacity": 30000,
+    "cache_max_ttl": 86400,
+    "cache_background_refresh": true,
+    "cache_refresh_threshold_percent": 15,
+    "cache_refresh_min_ttl": 10,
+    "serve_stale": true,
+    "serve_stale_ttl": 30,
+    "serve_stale_expire_ttl": 172800,
+    "serve_stale_ttl_reset": true,
+    "geosite_data_paths": ["/etc/kixdns/geosite.dat"],
+    "udp_pool_size": 128,
+    "tcp_pool_size": 64,
+    "doh_pool_size": 16,
+    "enable_tcp_fallback": true,
+    "response_jump_limit": 10
+  },
+  "pipeline_select": [
+    {
+      "pipeline": "blocked",
+      "matcher_operator": "and",
+      "matchers": [{ "operator": "and", "type": "geo_site", "value": "CATEGORY-ADS-ALL" }]
+    },
+    {
+      "pipeline": "direct",
+      "matcher_operator": "and",
+      "matchers": [{ "operator": "and", "type": "any" }]
+    }
+  ],
+  "pipelines": [
+    {
+      "id": "blocked",
+      "rules": [
+        {
+          "name": "block-ads",
+          "matcher_operator": "and",
+          "matchers": [{ "operator": "and", "type": "any" }],
+          "actions": [
+            { "level": "warn", "type": "log" },
+            { "rcode": "NXDOMAIN", "type": "static_response" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "direct",
+      "rules": [
+        {
+          "name": "udp-race",
+          "matcher_operator": "and",
+          "matchers": [{ "operator": "and", "type": "any" }],
+          "actions": [
+            {
+              "transport": "udp",
+              "type": "forward",
+              "upstream": ["8.8.8.8:53", "1.1.1.1:53", "9.9.9.9:53"]
+            }
+          ],
+          "response_matcher_operator": "and",
+          "response_matchers": [
+            { "operator": "and", "type": "response_rcode", "value": "NOERROR" },
+            { "operator": "or", "type": "response_rcode", "value": "NXDOMAIN" }
+          ],
+          "response_actions_on_match": [{ "type": "allow" }],
+          "response_actions_on_miss": [{ "type": "continue" }]
+        },
+        {
+          "name": "doh-backup",
+          "matcher_operator": "and",
+          "matchers": [{ "operator": "and", "type": "any" }],
+          "actions": [
+            {
+              "type": "forward",
+              "upstream": ["https://8.8.8.8/dns-query", "https://1.1.1.1/dns-query"]
+            }
+          ],
+          "response_matcher_operator": "and",
+          "response_matchers": [
+            { "operator": "and", "type": "response_rcode", "value": "NOERROR" },
+            { "operator": "or", "type": "response_rcode", "value": "NXDOMAIN" }
+          ],
+          "response_actions_on_match": [{ "type": "allow" }],
+          "response_actions_on_miss": [{ "rcode": "SERVFAIL", "type": "static_response" }]
+        }
+      ]
+    }
+  ]
+}
