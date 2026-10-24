@@ -68,7 +68,7 @@ tools/                    # 仓库自身的生成、校验、部署工具
 当前私有 Profile 服务部署在 SSH 主机 `eb`。忘记链接或需要维护时使用：
 
 ```bash
-# 查看应添加到 Surge 的三条私有 Profile URL
+# 查看应添加到 Surge 的四条私有 Profile URL
 ssh eb surge-profilectl urls
 
 # 查看当前 release、订阅设置和输出文件
@@ -84,12 +84,14 @@ ssh -t eb surge-profilectl set-default
 ssh -t eb surge-profilectl set surge
 ssh -t eb surge-profilectl set simple
 ssh -t eb surge-profilectl set home-wg
+ssh -t eb surge-profilectl set surge-loc
 ssh eb surge-profilectl clear surge
 ssh eb surge-profilectl clear simple
 ssh eb surge-profilectl clear home-wg
+ssh eb surge-profilectl clear surge-loc
 ```
 
-当前进入版本线的是三个家族：`profiles/surge/`（多策略组主配置）、`profiles/simple/`（只有 `DIRECT / Proxy / REJECT` 三种最终结果）和 `profiles/home-wg/`（WireGuard 回家）。三条私有 URL 都含随机路径，不要公开、截图或提交到 GitHub；`legacy/` 已冻结，不再输出。详细运行和恢复说明见 [VPS 私有 Profile 服务](docs/operations/private-profile-service.md) 与 [Profile 版本化](docs/operations/profile-versioning.md)。
+当前进入版本线的是四个家族：`profiles/surge/`（多策略组主配置）、`profiles/simple/`（只有 `DIRECT / Proxy / REJECT` 三种最终结果）、`profiles/home-wg/`（WireGuard 回家）和 `profiles/surge-loc/`（把第三方 Rule Set 本地化到 `rules/vendor/` 的平行版本）。四条私有 URL 都含随机路径，不要公开、截图或提交到 GitHub；`legacy/` 已冻结，不再输出。详细运行和恢复说明见 [VPS 私有 Profile 服务](docs/operations/private-profile-service.md) 与 [Profile 版本化](docs/operations/profile-versioning.md)。
 
 ## 在 Surge 中使用规则
 

@@ -4,13 +4,14 @@
 文件首部 `# @version:`；入口文件的路径由 manifest 的 `output` 决定，发布新版本时不变，
 所以设备端和 VPS 都不需要跟着版本号改路径。
 
-## 三条主线
+## 四条主线
 
 | 家族 | 用途 | 目录 | manifest output |
 | --- | --- | --- | --- |
 | `surge` | 多策略组主配置 | `profiles/surge/` | `surge.conf` |
 | `simple` | DIRECT / Proxy / REJECT 简洁配置 | `profiles/simple/` | `surge-simple.conf` |
 | `home-wg` | WireGuard 回家 | `profiles/home-wg/` | `surge-home-wg.conf` |
+| `surge-loc` | 第三方 Rule Set 本地化到 `rules/vendor/` 的平行版本 | `profiles/surge-loc/` | `surge-loc.conf` |
 
 `legacy/` 已冻结，不再进入 manifest、不再由私有服务输出；`archive/` 只保存旧版本
 快照与历史文件，也不得进入 manifest。
@@ -19,8 +20,8 @@
 
 每个家族只有一个渲染入口，直接放在家族目录下，文件名与 manifest `output` 一致
 （`profiles/surge/surge.conf`、`profiles/simple/surge-simple.conf`、
-`profiles/home-wg/surge-home-wg.conf`），因此改版本号不会改渲染路径。版本快照放在
-`profiles/<family>/version <major>/<semver>.conf`，三个家族都已按这个布局摆放。
+`profiles/home-wg/surge-home-wg.conf`、`profiles/surge-loc/surge-loc.conf`），因此改版本号
+不会改渲染路径。版本快照放在 `profiles/<family>/version <major>/<semver>.conf`，四个家族都已按这个布局摆放。
 两类文件头都必须写：
 
 ```ini
@@ -69,7 +70,7 @@ manifest 的 `id` / `source` 切到新目录。
 `output`）与 `source` 全程不变，VPS 下一次渲染即生效。
 
 代价是回滚也占一个版本号：家族已经占满 3 个版本号时，先按「更旧的移入 `archive/`」腾位置。
-surge 家族已归档 1.0.0 / 1.0.1 / 1.0.2 / 1.1.1 / 1.1.2 / 1.1.3 / 1.1.4 / 1.1.5 / 1.1.6 / 1.1.7 / 1.1.8，当前保留 1.1.9 / 1.1.10 / 1.2.1，下一次发布前必须先归档 1.1.9。
+surge 家族已归档 1.0.0–1.0.2、1.1.1–1.1.10、1.2.1–1.2.3、1.3.1–1.3.7（共 23 个），当前保留 1.3.8 / 1.3.9 / 1.3.10；simple 已归档 1.0.0，保留 1.0.1 / 1.0.2 / 1.0.3；surge-loc 已归档 1.0.0–1.0.2，保留 1.0.3 / 1.0.4 / 1.0.5；home-wg 只有 1.0.0，尚无归档。下一次发布前，先把该家族最低的保留版本移入 `archive/`（当前即 surge 的 1.3.8）。这份清单随发布变化，以 `profiles/<family>/version <major>/` 与 `archive/profiles/<family>/version <major>/` 的实际内容为准。
 
 ## Manifest 字段
 

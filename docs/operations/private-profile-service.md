@@ -56,6 +56,7 @@ surge-profilectl set-default
 surge-profilectl set surge
 surge-profilectl set simple
 surge-profilectl set home-wg
+surge-profilectl set surge-loc
 ```
 
 删除单独设置、恢复使用默认链接：
@@ -64,6 +65,7 @@ surge-profilectl set home-wg
 surge-profilectl clear surge
 surge-profilectl clear simple
 surge-profilectl clear home-wg
+surge-profilectl clear surge-loc
 ```
 
 命令使用隐藏输入，不把 URL 回显到终端。真实链接存放在 `/etc/surge-profile/secrets.json`，权限必须是 `0600`。
@@ -92,9 +94,11 @@ ssh -t eb surge-profilectl set-default
 ssh -t eb surge-profilectl set surge
 ssh -t eb surge-profilectl set simple
 ssh -t eb surge-profilectl set home-wg
+ssh -t eb surge-profilectl set surge-loc
 ssh eb surge-profilectl clear surge
 ssh eb surge-profilectl clear simple
 ssh eb surge-profilectl clear home-wg
+ssh eb surge-profilectl clear surge-loc
 
 # 检查 timer 和最近一次服务日志
 ssh eb systemctl list-timers surge-profile-render.timer --no-pager
@@ -109,7 +113,9 @@ ssh eb journalctl -u surge-profile-render.service -n 20 --no-pager
   最终结果，提供 `Domestic`（默认直连）、`Apple`（默认直连）和 `Others`（默认代理）
   三个可手动切换的策略组；
 - `surge-home-wg.conf`（`profiles/home-wg/`）：WireGuard 回家，除拒绝和直连外全部
-  交给家中 DAE 分流。
+  交给家中 DAE 分流；
+- `surge-loc.conf`（`profiles/surge-loc/`）：`surge` 的平行版本，第三方 Rule Set 同步到
+  `rules/vendor/` 并经仓库内去重后由本地文件引用；策略组结构与 `surge` 一致。
 
 `legacy/`（`surge-main.conf`、`surgeion.conf`、`profile.example.conf`）已冻结，
 不再由本服务输出，也不会出现在 `surge-profilectl urls`。
@@ -118,7 +124,7 @@ ssh eb journalctl -u surge-profile-render.service -n 20 --no-pager
 
 ## 版本化与回滚
 
-三条主线分别维护在 `profiles/surge/`、`profiles/simple/`、`profiles/home-wg/`。
+四条主线分别维护在 `profiles/surge/`、`profiles/simple/`、`profiles/home-wg/` 和 `profiles/surge-loc/`。
 每个家族只有一个渲染入口（文件名与 manifest `output` 一致，路径不随版本变化），历史版本
 快照放在 `version <major>/` 里。设备订阅 URL 由 manifest `output` 固定，`source` 和
 `template_url` 始终指向那个入口文件，所以升级和回滚都不用再改 manifest：改的是入口文件的
