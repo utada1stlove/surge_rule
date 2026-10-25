@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T01:17:38.373Z",
+  "generated_at": "2026-10-25T00:20:02.673Z",
   "priority": [
     "diy (rules/*.list)",
     "generated (rules/generated/*.list)",
@@ -7,16 +7,16 @@
   ],
   "counts": {
     "diy": 240,
-    "generated": 306184,
-    "vendor": 288448,
+    "generated": 306455,
+    "vendor": 303451,
     "shadowed_generated": 147,
-    "shadowed_vendor": 178512,
-    "total_shadowed": 178659,
+    "shadowed_vendor": 175228,
+    "total_shadowed": 175375,
     "deduped_vendor": {
       "advertising-all-no-resolve.list": {
-        "before": 281199,
-        "after": 104646,
-        "removed": 176553
+        "before": 296206,
+        "after": 122940,
+        "removed": 173266
       },
       "anthropic.list": {
         "before": 3,
@@ -139,18 +139,18 @@
         "removed": 5
       },
       "skk-china-ip.list": {
-        "before": 3905,
-        "after": 3905,
+        "before": 3891,
+        "after": 3891,
         "removed": 0
       },
       "skk-domestic.list": {
-        "before": 871,
+        "before": 873,
         "after": 180,
-        "removed": 691
+        "removed": 693
       },
       "skk-reject.list": {
-        "before": 370,
-        "after": 351,
+        "before": 374,
+        "after": 355,
         "removed": 19
       },
       "spotify.list": {
@@ -169,8 +169,8 @@
         "removed": 3
       },
       "tiktok.list": {
-        "before": 33,
-        "after": 28,
+        "before": 36,
+        "after": 31,
         "removed": 5
       },
       "twitch.list": {
@@ -1754,11 +1754,6 @@
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,0edd2cf0d3.4514559af9.com",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
       "rule": "DOMAIN-SUFFIX,0elq99i0w.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
@@ -2724,11 +2719,6 @@
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,11ux.95ziegv587wohx9rzj.cfd",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
       "rule": "DOMAIN-SUFFIX,11vmzjiup.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
@@ -2905,11 +2895,6 @@
     },
     {
       "rule": "DOMAIN-SUFFIX,124technologies.net",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,125.net.jumia.co.ke",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
@@ -3425,6 +3410,21 @@
     },
     {
       "rule": "DOMAIN-SUFFIX,181m2fscr.de",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,184c4i95p.de",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,18532.org",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,1857db6b77.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
     }
