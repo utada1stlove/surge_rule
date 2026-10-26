@@ -1,6 +1,6 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/TikTok/TikTok.list
 # name: tiktok
-# fetched-at: 2026-10-25T00:19:59.004Z
+# fetched-at: 2026-10-26T00:22:28.671Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN,lf16-effectcdn.byteeffecttos-g.com

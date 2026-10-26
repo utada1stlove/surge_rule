@@ -1,9 +1,9 @@
 # Vendored from https://ruleset.skk.moe/List/ip/china_ip.conf
 # name: skk-china-ip
-# fetched-at: 2026-10-25T00:20:00.846Z
+# fetched-at: 2026-10-26T00:22:30.256Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-10-25T00:20:02.671Z
-# deduped-against: diy+generated (306548 rules)
+# deduped-at: 2026-10-26T00:22:32.415Z
+# deduped-against: diy+generated (320603 rules)
 
 DOMAIN,7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
 IP-CIDR,1.1.8.0/24
@@ -2072,7 +2072,6 @@ IP-CIDR,163.142.0.0/16
 IP-CIDR,163.177.0.0/16
 IP-CIDR,163.179.0.0/16
 IP-CIDR,163.204.0.0/16
-IP-CIDR,163.223.72.0/23
 IP-CIDR,163.227.40.0/23
 IP-CIDR,163.228.0.0/16
 IP-CIDR,163.244.246.0/24
@@ -2891,10 +2890,7 @@ IP-CIDR,211.162.0.0/21
 IP-CIDR,211.162.119.0/24
 IP-CIDR,211.162.120.0/21
 IP-CIDR,211.162.200.0/22
-IP-CIDR,211.162.64.0/23
-IP-CIDR,211.162.66.0/24
-IP-CIDR,211.162.68.0/22
-IP-CIDR,211.162.72.0/21
+IP-CIDR,211.162.64.0/20
 IP-CIDR,211.165.0.0/16
 IP-CIDR,211.166.0.0/16
 IP-CIDR,211.167.128.0/19
