@@ -1,8 +1,8 @@
 # Vendored from https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/google-cn.txt
 # name: google-cn
-# fetched-at: 2026-10-26T00:22:31.668Z
+# fetched-at: 2026-10-27T01:28:29.795Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-10-26T00:22:32.411Z
+# deduped-at: 2026-10-27T01:28:30.874Z
 # deduped-against: diy+generated (320603 rules)
 
 DOMAIN-SUFFIX,avail.googleflights.net

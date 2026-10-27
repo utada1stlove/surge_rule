@@ -1,7 +1,7 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Bloomberg/Bloomberg.list
 # name: bloomberg
-# fetched-at: 2026-10-26T00:22:30.531Z
+# fetched-at: 2026-10-27T01:28:28.991Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-10-26T00:22:32.409Z
+# deduped-at: 2026-10-27T01:28:30.870Z
 # deduped-against: diy+generated (320603 rules)
 

@@ -1,6 +1,6 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Facebook/Facebook.list
 # name: facebook
-# fetched-at: 2026-10-26T00:22:26.853Z
+# fetched-at: 2026-10-27T01:28:25.274Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN-KEYWORD,facebook
