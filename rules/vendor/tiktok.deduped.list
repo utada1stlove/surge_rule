@@ -1,9 +1,9 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/TikTok/TikTok.list
 # name: tiktok
-# fetched-at: 2026-10-27T01:28:26.473Z
+# fetched-at: 2026-10-28T01:20:24.309Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-10-27T01:28:30.885Z
-# deduped-against: diy+generated (320603 rules)
+# deduped-at: 2026-10-28T01:20:28.222Z
+# deduped-against: diy+generated (313283 rules)
 
 DOMAIN,lf16-effectcdn.byteeffecttos-g.com
 DOMAIN,lf16-pkgcdn.pitaya-clientai.com
