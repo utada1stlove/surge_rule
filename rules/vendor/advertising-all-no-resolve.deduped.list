@@ -1,9 +1,9 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All_No_Resolve.list
 # name: advertising-all-no-resolve
-# fetched-at: 2026-10-28T01:20:25.846Z
+# fetched-at: 2026-10-29T01:47:24.914Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-10-28T01:20:28.132Z
-# deduped-against: diy+generated (313283 rules)
+# deduped-at: 2026-10-29T01:47:27.438Z
+# deduped-against: diy+generated (313665 rules)
 
 AND,((USER-AGENT,Frodo*),(DOMAIN,119.29.29.29))
 DOMAIN,0.code.cotsta.ru
@@ -16736,6 +16736,7 @@ DOMAIN-SUFFIX,00857731.xyz
 DOMAIN-SUFFIX,0086555.com
 DOMAIN-SUFFIX,00880808.com
 DOMAIN-SUFFIX,008844.cc
+DOMAIN-SUFFIX,00a154c916.48dd51f81a.com
 DOMAIN-SUFFIX,00d3ed994e.com
 DOMAIN-SUFFIX,00d84987c0.com
 DOMAIN-SUFFIX,00e2120672.com
@@ -19112,6 +19113,7 @@ DOMAIN-SUFFIX,6zhewang.com
 DOMAIN-SUFFIX,6zmcb1x9fn.top
 DOMAIN-SUFFIX,7-companycompany.com
 DOMAIN-SUFFIX,7-itrndsbrands.com
+DOMAIN-SUFFIX,7.lueb6cprrr2q5v.cfd
 DOMAIN-SUFFIX,7003128946.com
 DOMAIN-SUFFIX,700900.com
 DOMAIN-SUFFIX,700f312054.com
@@ -35229,6 +35231,7 @@ DOMAIN-SUFFIX,cp.greenxf.cn
 DOMAIN-SUFFIX,cp.jz5u.net
 DOMAIN-SUFFIX,cp.phiilu.com
 DOMAIN-SUFFIX,cp.rootielearning.com
+DOMAIN-SUFFIX,cp.txuiz8ko6y7h1nynkc2km81b.cfd
 DOMAIN-SUFFIX,cpa-optimizer.online
 DOMAIN-SUFFIX,cpa.hh.ru
 DOMAIN-SUFFIX,cpa1.ru
@@ -47105,6 +47108,7 @@ DOMAIN-SUFFIX,g792337340.co
 DOMAIN-SUFFIX,g792337342.co
 DOMAIN-SUFFIX,g792337343.co
 DOMAIN-SUFFIX,g8715710740.co
+DOMAIN-SUFFIX,g889couw.rhhr8j29prowl23k2xv4.cfd
 DOMAIN-SUFFIX,g8913795075.co
 DOMAIN-SUFFIX,g8hi6r3odr.com
 DOMAIN-SUFFIX,g8ld.fun
@@ -58323,6 +58327,7 @@ DOMAIN-SUFFIX,jsretra.com
 DOMAIN-SUFFIX,jsrlfg.com
 DOMAIN-SUFFIX,jss.tvzhe.com
 DOMAIN-SUFFIX,jssd.uumeitu.com
+DOMAIN-SUFFIX,jssdk.modusygunaciro.com
 DOMAIN-SUFFIX,jssiiamvbuqqkb.com
 DOMAIN-SUFFIX,jssumei.cn
 DOMAIN-SUFFIX,jstatic.org
@@ -66849,6 +66854,7 @@ DOMAIN-SUFFIX,mglhbqvqmjqcq.space
 DOMAIN-SUFFIX,mglvqian.com
 DOMAIN-SUFFIX,mgmaringpoli.org
 DOMAIN-SUFFIX,mgowec.xyz
+DOMAIN-SUFFIX,mgp.jiroxkqcnymkrgm.cfd
 DOMAIN-SUFFIX,mgptijzevfuxj.space
 DOMAIN-SUFFIX,mgrattedropenrigh.xyz
 DOMAIN-SUFFIX,mgrwaui4.top
@@ -72629,6 +72635,7 @@ DOMAIN-SUFFIX,oleinoutdone.help
 DOMAIN-SUFFIX,olenation.org
 DOMAIN-SUFFIX,olep.xyz
 DOMAIN-SUFFIX,olfactsailed.digital
+DOMAIN-SUFFIX,olg8ykv79ez.yir788l7myrcivlyipj3glgr.cfd
 DOMAIN-SUFFIX,olgknseruf.com
 DOMAIN-SUFFIX,olgrae.com
 DOMAIN-SUFFIX,olgtex.com
@@ -102604,6 +102611,7 @@ DOMAIN-SUFFIX,x6z6.com
 DOMAIN-SUFFIX,x800.top
 DOMAIN-SUFFIX,x88s.pandasuite.io
 DOMAIN-SUFFIX,x8ad.com
+DOMAIN-SUFFIX,x8wu2u1fk88t.cbw1m4lir4761t.cfd
 DOMAIN-SUFFIX,x9377a.com
 DOMAIN-SUFFIX,x9425yhqyzqfrpnp8my1rb2xw4.cfd
 DOMAIN-SUFFIX,x95general.com

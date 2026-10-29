@@ -1,9 +1,9 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Spotify/Spotify.list
 # name: spotify
-# fetched-at: 2026-10-28T01:20:23.519Z
+# fetched-at: 2026-10-29T01:47:22.412Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-10-28T01:20:28.219Z
-# deduped-against: diy+generated (313283 rules)
+# deduped-at: 2026-10-29T01:47:27.487Z
+# deduped-against: diy+generated (313665 rules)
 
 DOMAIN,spotify.com.edgesuite.net
 DOMAIN-KEYWORD,spotify

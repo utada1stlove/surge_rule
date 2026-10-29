@@ -1,9 +1,9 @@
 # Vendored from https://ruleset.skk.moe/List/non_ip/apple_services.conf
 # name: apple-services
-# fetched-at: 2026-10-28T01:20:26.149Z
+# fetched-at: 2026-10-29T01:47:25.380Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-10-28T01:20:28.176Z
-# deduped-against: diy+generated (313283 rules)
+# deduped-at: 2026-10-29T01:47:27.473Z
+# deduped-against: diy+generated (313665 rules)
 
 DOMAIN,7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
 DOMAIN-SUFFIX,aaplimg.com
