@@ -1,6 +1,6 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ThomsonReuters/ThomsonReuters.list
 # name: thomson-reuters
-# fetched-at: 2026-10-29T01:47:25.680Z
+# fetched-at: 2026-10-30T01:57:13.200Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN-SUFFIX,aranzadi.es

@@ -1,9 +1,9 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All_No_Resolve.list
 # name: advertising-all-no-resolve
-# fetched-at: 2026-10-29T01:47:24.914Z
+# fetched-at: 2026-10-30T01:57:12.122Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-10-29T01:47:27.438Z
-# deduped-against: diy+generated (313665 rules)
+# deduped-at: 2026-10-30T01:57:14.746Z
+# deduped-against: diy+generated (314319 rules)
 
 AND,((USER-AGENT,Frodo*),(DOMAIN,119.29.29.29))
 DOMAIN,0.code.cotsta.ru
@@ -31908,6 +31908,7 @@ DOMAIN-SUFFIX,cc.piao.jianzhigg.com
 DOMAIN-SUFFIX,cc.yac8.com
 DOMAIN-SUFFIX,cc.zeit.de
 DOMAIN-SUFFIX,cc1ej6d0e.com
+DOMAIN-SUFFIX,cc362b1376.70ad2eae1e.com
 DOMAIN-SUFFIX,cc58.oss-cn-beijing.aliyuncs.com
 DOMAIN-SUFFIX,cc599.com
 DOMAIN-SUFFIX,cc5dce551d.com
@@ -83665,7 +83666,6 @@ DOMAIN-SUFFIX,ru.net
 DOMAIN-SUFFIX,ru6sapasgs8tror.com
 DOMAIN-SUFFIX,ruad.net
 DOMAIN-SUFFIX,ruakcrebfio.com
-DOMAIN-SUFFIX,ruamupr.com
 DOMAIN-SUFFIX,ruan.cn
 DOMAIN-SUFFIX,ruan88.com
 DOMAIN-SUFFIX,ruancq.xyz
