@@ -1,9 +1,9 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Reddit/Reddit.list
 # name: reddit
-# fetched-at: 2026-10-30T01:57:09.547Z
+# fetched-at: 2026-10-31T01:35:21.193Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-10-30T01:57:14.829Z
-# deduped-against: diy+generated (314319 rules)
+# deduped-at: 2026-10-31T01:35:25.431Z
+# deduped-against: diy+generated (314685 rules)
 
 DOMAIN-SUFFIX,reddituploads.com
 DOMAIN-SUFFIX,reddituploads.com.cdn-cf.behance.net

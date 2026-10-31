@@ -1,6 +1,6 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Dropbox/Dropbox.list
 # name: dropbox
-# fetched-at: 2026-10-30T01:57:13.524Z
+# fetched-at: 2026-10-31T01:35:24.112Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN-SUFFIX,db.tt
