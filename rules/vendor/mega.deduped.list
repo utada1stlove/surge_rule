@@ -1,9 +1,9 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/MEGA/MEGA.list
 # name: mega
-# fetched-at: 2026-10-31T01:35:24.302Z
+# fetched-at: 2026-11-01T01:08:38.578Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-10-31T01:35:25.427Z
-# deduped-against: diy+generated (314685 rules)
+# deduped-at: 2026-11-01T01:08:40.015Z
+# deduped-against: diy+generated (314690 rules)
 
 IP-CIDR,185.206.24.0/22,no-resolve
 IP-CIDR,66.203.126.0/23,no-resolve

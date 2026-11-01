@@ -1,9 +1,9 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All_No_Resolve.list
 # name: advertising-all-no-resolve
-# fetched-at: 2026-10-31T01:35:23.262Z
+# fetched-at: 2026-11-01T01:08:37.781Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-10-31T01:35:25.379Z
-# deduped-against: diy+generated (314685 rules)
+# deduped-at: 2026-11-01T01:08:39.870Z
+# deduped-against: diy+generated (314690 rules)
 
 AND,((USER-AGENT,Frodo*),(DOMAIN,119.29.29.29))
 DOMAIN,0.code.cotsta.ru
@@ -18171,6 +18171,7 @@ DOMAIN-SUFFIX,3vn52l.cn
 DOMAIN-SUFFIX,3vnofjidlv.com
 DOMAIN-SUFFIX,3vp.icu
 DOMAIN-SUFFIX,3wdf4.xyz
+DOMAIN-SUFFIX,3wtuan.com
 DOMAIN-SUFFIX,3wuy8xqr68gm3jc218r.rest
 DOMAIN-SUFFIX,3wz6z.bchuangpi.cn
 DOMAIN-SUFFIX,3x5h6x434.com
@@ -21552,6 +21553,7 @@ DOMAIN-SUFFIX,adcl.pchome.com.tw
 DOMAIN-SUFFIX,adcl1ckspr0f1t.com
 DOMAIN-SUFFIX,adclick.g.doublecklick.net
 DOMAIN-SUFFIX,adclickstats.net
+DOMAIN-SUFFIX,adclixx.net
 DOMAIN-SUFFIX,adclock.zdworks.com
 DOMAIN-SUFFIX,adcloud.jp
 DOMAIN-SUFFIX,adcome.cn
@@ -21986,6 +21988,7 @@ DOMAIN-SUFFIX,adsexo.com
 DOMAIN-SUFFIX,adsfactor.net
 DOMAIN-SUFFIX,adsfan.net
 DOMAIN-SUFFIX,adsfcdn.com
+DOMAIN-SUFFIX,adsflowprime.top
 DOMAIN-SUFFIX,adsforcomputercity.com
 DOMAIN-SUFFIX,adsforindians.com
 DOMAIN-SUFFIX,adsfundi.com
@@ -27232,6 +27235,7 @@ DOMAIN-SUFFIX,banners.expressindia.com
 DOMAIN-SUFFIX,banners.itweb.co.za
 DOMAIN-SUFFIX,banners.playocio.com
 DOMAIN-SUFFIX,bannersmania.com
+DOMAIN-SUFFIX,bannertrack.net
 DOMAIN-SUFFIX,bannoillt.com
 DOMAIN-SUFFIX,banomago.com
 DOMAIN-SUFFIX,banquetsemina.com
@@ -33525,6 +33529,7 @@ DOMAIN-SUFFIX,clickconversion.net
 DOMAIN-SUFFIX,clickcount.cnool.net
 DOMAIN-SUFFIX,clickcount.pw
 DOMAIN-SUFFIX,clicked.ebates.com
+DOMAIN-SUFFIX,clickedyclick.com
 DOMAIN-SUFFIX,clickercollections.com
 DOMAIN-SUFFIX,clickeye.cn
 DOMAIN-SUFFIX,clickferret.com
@@ -38028,6 +38033,7 @@ DOMAIN-SUFFIX,dfhglecdsmvxi.site
 DOMAIN-SUFFIX,dfhthh.icu
 DOMAIN-SUFFIX,dfi09171kq.com
 DOMAIN-SUFFIX,dfi09180kq.com
+DOMAIN-SUFFIX,dfi09181kq.com
 DOMAIN-SUFFIX,dfi09190kq.com
 DOMAIN-SUFFIX,dfi09191kq.com
 DOMAIN-SUFFIX,dfi09200kq.com
@@ -65021,6 +65027,7 @@ DOMAIN-SUFFIX,magetrigla.com
 DOMAIN-SUFFIX,maggieeatstheangel.com
 DOMAIN-SUFFIX,maggotpolity.com
 DOMAIN-SUFFIX,magic.freetrade.io
+DOMAIN-SUFFIX,magicadz.co
 DOMAIN-SUFFIX,magicalbending.com
 DOMAIN-SUFFIX,magicalbifoil.shop
 DOMAIN-SUFFIX,magicallyitalian.com
@@ -67143,6 +67150,7 @@ DOMAIN-SUFFIX,minglesborana.click
 DOMAIN-SUFFIX,mingxianshanghang.cn
 DOMAIN-SUFFIX,mingysh.com
 DOMAIN-SUFFIX,mingysticker.guru
+DOMAIN-SUFFIX,mingyueqingfengshe.com
 DOMAIN-SUFFIX,minhagmuscot.cyou
 DOMAIN-SUFFIX,mini-site.larksuite-marketing.com
 DOMAIN-SUFFIX,mini.eastday.com
@@ -69915,6 +69923,7 @@ DOMAIN-SUFFIX,newadflown.com
 DOMAIN-SUFFIX,newadflows.com
 DOMAIN-SUFFIX,newadsfit.com
 DOMAIN-SUFFIX,newales.ru
+DOMAIN-SUFFIX,newapi.com
 DOMAIN-SUFFIX,newaprads.com
 DOMAIN-SUFFIX,newbornleasetypes.com
 DOMAIN-SUFFIX,newcliam.com
@@ -79682,6 +79691,7 @@ DOMAIN-SUFFIX,qibxejrjfqvzs.online
 DOMAIN-SUFFIX,qichacha.ink
 DOMAIN-SUFFIX,qichetiemo.info
 DOMAIN-SUFFIX,qickazzmoaxv.com
+DOMAIN-SUFFIX,qidou.com
 DOMAIN-SUFFIX,qids.xyz
 DOMAIN-SUFFIX,qidtvppexvwqf.online
 DOMAIN-SUFFIX,qidw.cn
@@ -102968,6 +102978,7 @@ DOMAIN-SUFFIX,xi.liuxiaoer.com
 DOMAIN-SUFFIX,xi0021.com
 DOMAIN-SUFFIX,xi666.com
 DOMAIN-SUFFIX,xi9p.com
+DOMAIN-SUFFIX,xiacai.com
 DOMAIN-SUFFIX,xiacaidd.com
 DOMAIN-SUFFIX,xiadaxiong.com
 DOMAIN-SUFFIX,xiakelea.com
