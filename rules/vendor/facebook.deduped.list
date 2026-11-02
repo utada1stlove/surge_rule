@@ -1,9 +1,9 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Facebook/Facebook.list
 # name: facebook
-# fetched-at: 2026-11-01T01:08:35.028Z
+# fetched-at: 2026-11-02T01:29:58.888Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-11-01T01:08:39.937Z
-# deduped-against: diy+generated (314690 rules)
+# deduped-at: 2026-11-02T01:30:03.255Z
+# deduped-against: diy+generated (315070 rules)
 
 DOMAIN-KEYWORD,facebook
 DOMAIN-KEYWORD,fbcdn

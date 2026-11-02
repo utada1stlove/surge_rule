@@ -1,9 +1,9 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Instagram/Instagram.list
 # name: instagram
-# fetched-at: 2026-11-01T01:08:35.156Z
+# fetched-at: 2026-11-02T01:29:58.991Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-11-01T01:08:40.014Z
-# deduped-against: diy+generated (314690 rules)
+# deduped-at: 2026-11-02T01:30:03.258Z
+# deduped-against: diy+generated (315070 rules)
 
 DOMAIN-KEYWORD,instagram
 DOMAIN-SUFFIX,cdninstagram.com

@@ -1,6 +1,6 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Gemini/Gemini.list
 # name: gemini
-# fetched-at: 2026-11-01T01:08:35.768Z
+# fetched-at: 2026-11-02T01:29:59.506Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN,ai.google.dev
