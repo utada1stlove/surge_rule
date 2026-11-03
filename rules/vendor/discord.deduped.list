@@ -1,9 +1,9 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Discord/Discord.list
 # name: discord
-# fetched-at: 2026-11-02T01:29:59.261Z
+# fetched-at: 2026-11-03T03:27:51.306Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-11-02T01:30:03.254Z
-# deduped-against: diy+generated (315070 rules)
+# deduped-at: 2026-11-03T03:27:56.244Z
+# deduped-against: diy+generated (315439 rules)
 
 DOMAIN-SUFFIX,discord-attachments-uploads-prd.storage.googleapis.com
 DOMAIN-SUFFIX,discordapp.page.link

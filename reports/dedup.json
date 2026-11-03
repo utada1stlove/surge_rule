@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T01:30:03.268Z",
+  "generated_at": "2026-11-03T03:27:56.253Z",
   "priority": [
     "diy (rules/*.list)",
     "generated (rules/generated/*.list)",
@@ -7,8 +7,8 @@
   ],
   "counts": {
     "diy": 247,
-    "generated": 314970,
-    "vendor": 298420,
+    "generated": 315339,
+    "vendor": 298421,
     "shadowed_generated": 147,
     "shadowed_vendor": 185918,
     "total_shadowed": 186065,
@@ -139,8 +139,8 @@
         "removed": 5
       },
       "skk-china-ip.list": {
-        "before": 3892,
-        "after": 3892,
+        "before": 3893,
+        "after": 3893,
         "removed": 0
       },
       "skk-domestic.list": {
