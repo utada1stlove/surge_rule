@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T03:27:56.253Z",
+  "generated_at": "2026-11-04T02:19:35.686Z",
   "priority": [
     "diy (rules/*.list)",
     "generated (rules/generated/*.list)",
@@ -7,16 +7,16 @@
   ],
   "counts": {
     "diy": 247,
-    "generated": 315339,
-    "vendor": 298421,
+    "generated": 316928,
+    "vendor": 298418,
     "shadowed_generated": 147,
-    "shadowed_vendor": 185918,
-    "total_shadowed": 186065,
+    "shadowed_vendor": 185138,
+    "total_shadowed": 185285,
     "deduped_vendor": {
       "advertising-all-no-resolve.list": {
         "before": 291174,
-        "after": 107215,
-        "removed": 183959
+        "after": 107995,
+        "removed": 183179
       },
       "anthropic.list": {
         "before": 3,
@@ -139,8 +139,8 @@
         "removed": 5
       },
       "skk-china-ip.list": {
-        "before": 3893,
-        "after": 3893,
+        "before": 3890,
+        "after": 3890,
         "removed": 0
       },
       "skk-domestic.list": {
@@ -1325,11 +1325,6 @@
     },
     {
       "rule": "DOMAIN-SUFFIX,05b9daf35c.com",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,05e76a16b8.5e3d5f480f.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
@@ -3425,6 +3420,11 @@
     },
     {
       "rule": "DOMAIN-SUFFIX,123p.gmenhq.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123p.gojoebruin.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
     }

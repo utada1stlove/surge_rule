@@ -1,6 +1,6 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Anthropic/Anthropic.list
 # name: anthropic
-# fetched-at: 2026-11-03T03:27:51.920Z
+# fetched-at: 2026-11-04T02:19:30.993Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN,servd-anthropic-website.b-cdn.net
