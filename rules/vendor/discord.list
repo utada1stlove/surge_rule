@@ -1,6 +1,6 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Discord/Discord.list
 # name: discord
-# fetched-at: 2026-11-04T02:19:30.312Z
+# fetched-at: 2026-11-05T02:27:15.812Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN-SUFFIX,airhorn.solutions

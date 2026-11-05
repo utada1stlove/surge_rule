@@ -1,6 +1,6 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Fox/Fox.list
 # name: fox
-# fetched-at: 2026-11-04T02:19:31.405Z
+# fetched-at: 2026-11-05T02:27:16.191Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN-SUFFIX,afewmomentswith.com

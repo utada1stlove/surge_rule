@@ -1,9 +1,9 @@
 # Vendored from https://ruleset.skk.moe/List/non_ip/domestic.conf
 # name: skk-domestic
-# fetched-at: 2026-11-04T02:19:33.193Z
+# fetched-at: 2026-11-05T02:27:18.063Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-11-04T02:19:35.683Z
-# deduped-against: diy+generated (317028 rules)
+# deduped-at: 2026-11-05T02:27:20.432Z
+# deduped-against: diy+generated (317283 rules)
 
 DOMAIN,7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
 DOMAIN,acg.tv

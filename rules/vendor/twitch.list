@@ -1,6 +1,6 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Twitch/Twitch.list
 # name: twitch
-# fetched-at: 2026-11-04T02:19:30.202Z
+# fetched-at: 2026-11-05T02:27:15.764Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN-KEYWORD,ttvnw

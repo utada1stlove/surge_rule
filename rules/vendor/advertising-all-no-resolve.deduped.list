@@ -1,9 +1,9 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All_No_Resolve.list
 # name: advertising-all-no-resolve
-# fetched-at: 2026-11-04T02:19:33.096Z
+# fetched-at: 2026-11-05T02:27:17.940Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-11-04T02:19:35.633Z
-# deduped-against: diy+generated (317028 rules)
+# deduped-at: 2026-11-05T02:27:20.253Z
+# deduped-against: diy+generated (317283 rules)
 
 AND,((USER-AGENT,Frodo*),(DOMAIN,119.29.29.29))
 DOMAIN,0.code.cotsta.ru
@@ -34299,7 +34299,6 @@ DOMAIN-SUFFIX,collector.spankbang.party
 DOMAIN-SUFFIX,collector.viki.io
 DOMAIN-SUFFIX,collector.wallapop.com
 DOMAIN-SUFFIX,collector.wasu.cn
-DOMAIN-SUFFIX,collector.wawlabs.com
 DOMAIN-SUFFIX,collector.xhamster.desi
 DOMAIN-SUFFIX,collector.xhamster2.com
 DOMAIN-SUFFIX,collector.xhamster3.com
