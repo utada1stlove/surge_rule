@@ -1,6 +1,6 @@
 # Vendored from https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/google-cn.txt
 # name: google-cn
-# fetched-at: 2026-11-05T02:27:18.848Z
+# fetched-at: 2026-11-06T02:24:44.177Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN-SUFFIX,265.com

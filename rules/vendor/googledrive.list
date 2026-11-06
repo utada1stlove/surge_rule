@@ -1,6 +1,6 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GoogleDrive/GoogleDrive.list
 # name: googledrive
-# fetched-at: 2026-11-05T02:27:18.623Z
+# fetched-at: 2026-11-06T02:24:43.840Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN,www.googleapis.com

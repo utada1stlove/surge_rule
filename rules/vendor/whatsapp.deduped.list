@@ -1,9 +1,9 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Whatsapp/Whatsapp.list
 # name: whatsapp
-# fetched-at: 2026-11-05T02:27:15.554Z
+# fetched-at: 2026-11-06T02:24:40.641Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-11-05T02:27:20.435Z
-# deduped-against: diy+generated (317283 rules)
+# deduped-at: 2026-11-06T02:24:45.379Z
+# deduped-against: diy+generated (317529 rules)
 
 DOMAIN,graph.facebook.com
 DOMAIN-KEYWORD,whatsapp
