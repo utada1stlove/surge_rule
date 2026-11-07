@@ -1,8 +1,8 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Claude/Claude.list
 # name: claude
-# fetched-at: 2026-11-06T02:24:41.615Z
+# fetched-at: 2026-11-07T01:54:56.956Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-11-06T02:24:45.362Z
-# deduped-against: diy+generated (317529 rules)
+# deduped-at: 2026-11-07T01:55:01.738Z
+# deduped-against: diy+generated (318852 rules)
 
 DOMAIN,cdn.usefathom.com
