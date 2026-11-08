@@ -1,9 +1,9 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All_No_Resolve.list
 # name: advertising-all-no-resolve
-# fetched-at: 2026-11-07T01:54:59.246Z
+# fetched-at: 2026-11-08T01:26:19.816Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-11-07T01:55:01.699Z
-# deduped-against: diy+generated (318852 rules)
+# deduped-at: 2026-11-08T01:26:22.168Z
+# deduped-against: diy+generated (319181 rules)
 
 AND,((USER-AGENT,Frodo*),(DOMAIN,119.29.29.29))
 DOMAIN,0.code.cotsta.ru
@@ -21960,6 +21960,7 @@ DOMAIN-SUFFIX,ads.mojicdn.com
 DOMAIN-SUFFIX,ads.newtentionassets.net
 DOMAIN-SUFFIX,ads.prd.ie.internal.unity3d.com
 DOMAIN-SUFFIX,ads.superad.cc
+DOMAIN-SUFFIX,ads.themovienation.com
 DOMAIN-SUFFIX,ads.tikpage.com
 DOMAIN-SUFFIX,ads.videosz.com
 DOMAIN-SUFFIX,ads.wasu.tv
@@ -33524,6 +33525,7 @@ DOMAIN-SUFFIX,clgserv.pro
 DOMAIN-SUFFIX,clhko.top
 DOMAIN-SUFFIX,clhxzrqdatxqm.store
 DOMAIN-SUFFIX,clichedreinter.digital
+DOMAIN-SUFFIX,click-1.pl
 DOMAIN-SUFFIX,click-da-click.com
 DOMAIN-SUFFIX,click-staging.food.mercato.com
 DOMAIN-SUFFIX,click-staging.getdreams.co
@@ -37758,6 +37760,7 @@ DOMAIN-SUFFIX,delivery-dev.thebloggernetwork.com
 DOMAIN-SUFFIX,delivery-pc.wasu.cn
 DOMAIN-SUFFIX,delivery.dmkt-sp.jp
 DOMAIN-SUFFIX,delivery.marketing.boutiqaat.com
+DOMAIN-SUFFIX,delivery.playallvideos.com
 DOMAIN-SUFFIX,delivery.smashing.services
 DOMAIN-SUFFIX,delivery.thebloggernetwork.com
 DOMAIN-SUFFIX,delivery45.com
@@ -61496,6 +61499,7 @@ DOMAIN-SUFFIX,laxativepermissiblesensation.com
 DOMAIN-SUFFIX,laxeekroth.net
 DOMAIN-SUFFIX,laycosmicstill.com
 DOMAIN-SUFFIX,laydcilck.com
+DOMAIN-SUFFIX,layer-ad.de
 DOMAIN-SUFFIX,layeranydwould.com
 DOMAIN-SUFFIX,layerloop.com
 DOMAIN-SUFFIX,layerpearls.com
@@ -61677,6 +61681,7 @@ DOMAIN-SUFFIX,leadc4.icu
 DOMAIN-SUFFIX,leadc6.icu
 DOMAIN-SUFFIX,leadc7.icu
 DOMAIN-SUFFIX,leadchampion.com
+DOMAIN-SUFFIX,leadclick.com
 DOMAIN-SUFFIX,leadcola.com
 DOMAIN-SUFFIX,leaddyno.com
 DOMAIN-SUFFIX,leadelephant.com
@@ -63048,6 +63053,7 @@ DOMAIN-SUFFIX,links-dev.letzbig.com
 DOMAIN-SUFFIX,links-dev.sandboxx.us
 DOMAIN-SUFFIX,links-dev.seed.co
 DOMAIN-SUFFIX,links-na.afterpay.com
+DOMAIN-SUFFIX,links-ranking.de
 DOMAIN-SUFFIX,links-uk.clearpay.co.uk
 DOMAIN-SUFFIX,links-wm.ru
 DOMAIN-SUFFIX,links.ab.soul-cycle.email
@@ -65946,6 +65952,7 @@ DOMAIN-SUFFIX,mamtofterteft.net
 DOMAIN-SUFFIX,mamypos.com
 DOMAIN-SUFFIX,man2ch5836dester.com
 DOMAIN-SUFFIX,man7777.com
+DOMAIN-SUFFIX,manageadv.cblogs.eu
 DOMAIN-SUFFIX,manageoriginalmostinfo-product.info
 DOMAIN-SUFFIX,manageshalfmoonaccess.com
 DOMAIN-SUFFIX,managetroubles.com
@@ -68724,6 +68731,7 @@ DOMAIN-SUFFIX,moonsade.com
 DOMAIN-SUFFIX,moonveto.com
 DOMAIN-SUFFIX,moonvids.online
 DOMAIN-SUFFIX,moonvids.space
+DOMAIN-SUFFIX,moonwager.com
 DOMAIN-SUFFIX,moonwaytimbery.rest
 DOMAIN-SUFFIX,moonwish.com.cn
 DOMAIN-SUFFIX,moopseechuke.net
@@ -72925,6 +72933,7 @@ DOMAIN-SUFFIX,offergate-apps-pubrel.com
 DOMAIN-SUFFIX,offeringsurvey.com
 DOMAIN-SUFFIX,offerjuice.me
 DOMAIN-SUFFIX,offerpoint.net
+DOMAIN-SUFFIX,offers.ltsc-has.com
 DOMAIN-SUFFIX,offersapp.in
 DOMAIN-SUFFIX,offersbid.com
 DOMAIN-SUFFIX,offersbid.net
@@ -98182,7 +98191,6 @@ DOMAIN-SUFFIX,upsbalers.qpon
 DOMAIN-SUFFIX,upscri.be
 DOMAIN-SUFFIX,upseelee.xyz
 DOMAIN-SUFFIX,upseepsi.xyz
-DOMAIN-SUFFIX,upsell.alphwidget.com
 DOMAIN-SUFFIX,upshroomishtor.com
 DOMAIN-SUFFIX,upsidecopiedcraft.com
 DOMAIN-SUFFIX,upsidesheminee.com
