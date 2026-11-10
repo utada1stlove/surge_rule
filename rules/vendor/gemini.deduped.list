@@ -1,9 +1,9 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Gemini/Gemini.list
 # name: gemini
-# fetched-at: 2026-11-09T01:43:49.143Z
+# fetched-at: 2026-11-10T04:06:07.212Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-11-09T01:43:53.222Z
-# deduped-against: diy+generated (319503 rules)
+# deduped-at: 2026-11-10T04:06:12.138Z
+# deduped-against: diy+generated (319896 rules)
 
 DOMAIN,makersuite.google.com
 DOMAIN-KEYWORD,colab

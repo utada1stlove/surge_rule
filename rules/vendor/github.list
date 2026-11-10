@@ -1,6 +1,6 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GitHub/GitHub.list
 # name: github
-# fetched-at: 2026-11-09T01:43:48.668Z
+# fetched-at: 2026-11-10T04:06:06.676Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN-KEYWORD,github
