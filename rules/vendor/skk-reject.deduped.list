@@ -1,9 +1,9 @@
 # Vendored from https://ruleset.skk.moe/List/non_ip/reject.conf
 # name: skk-reject
-# fetched-at: 2026-11-10T04:06:08.038Z
+# fetched-at: 2026-11-11T01:55:40.305Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-11-10T04:06:12.171Z
-# deduped-against: diy+generated (319896 rules)
+# deduped-at: 2026-11-11T01:55:44.911Z
+# deduped-against: diy+generated (317234 rules)
 
 DOMAIN,7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
 DOMAIN,aedns.weixin.qq.com

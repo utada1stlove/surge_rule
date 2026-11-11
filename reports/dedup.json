@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T04:06:12.196Z",
+  "generated_at": "2026-11-11T01:55:44.914Z",
   "priority": [
     "diy (rules/*.list)",
     "generated (rules/generated/*.list)",
@@ -7,16 +7,16 @@
   ],
   "counts": {
     "diy": 247,
-    "generated": 319796,
-    "vendor": 298418,
+    "generated": 317134,
+    "vendor": 298414,
     "shadowed_generated": 147,
-    "shadowed_vendor": 184709,
-    "total_shadowed": 184856,
+    "shadowed_vendor": 182750,
+    "total_shadowed": 182897,
     "deduped_vendor": {
       "advertising-all-no-resolve.list": {
         "before": 291174,
-        "after": 108425,
-        "removed": 182749
+        "after": 110384,
+        "removed": 180790
       },
       "anthropic.list": {
         "before": 3,
@@ -139,8 +139,8 @@
         "removed": 5
       },
       "skk-china-ip.list": {
-        "before": 3889,
-        "after": 3889,
+        "before": 3885,
+        "after": 3885,
         "removed": 0
       },
       "skk-domestic.list": {
@@ -1009,11 +1009,6 @@
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,00609c257b.com",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
       "rule": "DOMAIN-SUFFIX,0088shop.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
@@ -1085,11 +1080,6 @@
     },
     {
       "rule": "DOMAIN-SUFFIX,01466b626e.b173280abe.com",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,015ea24446.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
@@ -1419,11 +1409,6 @@
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,070880.com",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
       "rule": "DOMAIN-SUFFIX,071kk.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
@@ -1480,16 +1465,6 @@
     },
     {
       "rule": "DOMAIN-SUFFIX,086123.xyz",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,08675bd78b.com",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,0880559526.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
@@ -3425,6 +3400,31 @@
     },
     {
       "rule": "DOMAIN-SUFFIX,123p.goldengatesports.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123p.gonepuckwild.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123p.gradingonthecurve.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123p.greengoldandbold.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123p.greenstreethammers.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123p.guiltyeats.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
     }
