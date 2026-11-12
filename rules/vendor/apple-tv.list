@@ -1,6 +1,6 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/AppleTV/AppleTV.list
 # name: apple-tv
-# fetched-at: 2026-11-11T01:55:42.689Z
+# fetched-at: 2026-11-12T02:57:52.741Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN,hls-amt.itunes.apple.com
