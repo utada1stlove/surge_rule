@@ -1,9 +1,9 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/PayPal/PayPal.list
 # name: paypal
-# fetched-at: 2026-11-12T02:57:50.326Z
+# fetched-at: 2026-11-13T02:37:32.728Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-11-12T02:57:55.371Z
-# deduped-against: diy+generated (317650 rules)
+# deduped-at: 2026-11-13T02:37:36.781Z
+# deduped-against: diy+generated (319582 rules)
 
 DOMAIN-KEYWORD,paypal
 DOMAIN-SUFFIX,paypal-mktg.com

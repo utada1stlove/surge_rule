@@ -1,6 +1,6 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Instagram/Instagram.list
 # name: instagram
-# fetched-at: 2026-11-12T02:57:49.569Z
+# fetched-at: 2026-11-13T02:37:31.687Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN-KEYWORD,instagram

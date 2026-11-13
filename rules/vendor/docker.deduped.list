@@ -1,9 +1,9 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Docker/Docker.list
 # name: docker
-# fetched-at: 2026-11-12T02:57:54.139Z
+# fetched-at: 2026-11-13T02:37:35.540Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-11-12T02:57:55.367Z
-# deduped-against: diy+generated (317650 rules)
+# deduped-at: 2026-11-13T02:37:36.777Z
+# deduped-against: diy+generated (319582 rules)
 
 DOMAIN,d1q6f0aelx0por.cloudfront.net
 DOMAIN,d2wy8f7a9ursnm.cloudfront.net
