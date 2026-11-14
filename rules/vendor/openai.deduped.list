@@ -1,9 +1,9 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OpenAI/OpenAI.list
 # name: openai
-# fetched-at: 2026-11-13T02:37:32.505Z
+# fetched-at: 2026-11-14T02:25:39.808Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-11-13T02:37:36.781Z
-# deduped-against: diy+generated (319582 rules)
+# deduped-at: 2026-11-14T02:25:42.739Z
+# deduped-against: diy+generated (319981 rules)
 
 DOMAIN,chat.openai.com.cdn.cloudflare.net
 DOMAIN,openai-api.arkoselabs.com

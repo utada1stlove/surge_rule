@@ -1,17 +1,19 @@
 # Vendored from https://ruleset.skk.moe/List/non_ip/domestic.conf
 # name: skk-domestic
-# fetched-at: 2026-11-13T02:37:34.376Z
+# fetched-at: 2026-11-14T02:25:41.042Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-11-13T02:37:36.786Z
-# deduped-against: diy+generated (319582 rules)
+# deduped-at: 2026-11-14T02:25:42.743Z
+# deduped-against: diy+generated (319981 rules)
 
 DOMAIN,7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
 DOMAIN,acg.tv
+DOMAIN,app.jianguoyun.com
 DOMAIN,app.viayoo.com
 DOMAIN,assets1.xboxlive.cn
 DOMAIN,assets2.xboxlive.cn
 DOMAIN,b23.tv
 DOMAIN,cdnstatic.tencentcs.com
+DOMAIN,comet.jianguoyun.com
 DOMAIN,config.ubnt.com
 DOMAIN,dl.ubnt.com
 DOMAIN,dns.pub
