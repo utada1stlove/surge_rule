@@ -1,9 +1,9 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All_No_Resolve.list
 # name: advertising-all-no-resolve
-# fetched-at: 2026-11-16T02:05:33.096Z
+# fetched-at: 2026-11-17T04:28:34.517Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-11-16T02:05:35.242Z
-# deduped-against: diy+generated (320809 rules)
+# deduped-at: 2026-11-17T04:28:36.711Z
+# deduped-against: diy+generated (321203 rules)
 
 AND,((USER-AGENT,Frodo*),(DOMAIN,119.29.29.29))
 DOMAIN,0.code.cotsta.ru
@@ -21088,6 +21088,7 @@ DOMAIN-SUFFIX,access-analyze.org
 DOMAIN-SUFFIX,access-mc.com
 DOMAIN-SUFFIX,access.ipro.net
 DOMAIN-SUFFIX,access.iprolive.com
+DOMAIN-SUFFIX,access.kaiko.cam
 DOMAIN-SUFFIX,access.njherald.com
 DOMAIN-SUFFIX,access.sunpower.com
 DOMAIN-SUFFIX,access2.ipro.net
@@ -28243,6 +28244,7 @@ DOMAIN-SUFFIX,believesvacuum.com
 DOMAIN-SUFFIX,belikeelean.life
 DOMAIN-SUFFIX,belindanbd.com
 DOMAIN-SUFFIX,belittlepads.com
+DOMAIN-SUFFIX,bellaads.com
 DOMAIN-SUFFIX,bellhopergots.help
 DOMAIN-SUFFIX,bellpressinginspector.com
 DOMAIN-SUFFIX,bellyinternsulphur.com
@@ -46149,6 +46151,7 @@ DOMAIN-SUFFIX,fleuretleaved.help
 DOMAIN-SUFFIX,flewke.com
 DOMAIN-SUFFIX,flexibilitukydtea.com
 DOMAIN-SUFFIX,flexlinkspro.com
+DOMAIN-SUFFIX,flexterkita.com
 DOMAIN-SUFFIX,flfahkpekwzfb.site
 DOMAIN-SUFFIX,flfevzewxynrf.website
 DOMAIN-SUFFIX,flgacawxvxozr.space
@@ -59919,7 +59922,6 @@ DOMAIN-SUFFIX,jzntxs.com
 DOMAIN-SUFFIX,jzokkejmqrbyj.top
 DOMAIN-SUFFIX,jzoxch.menswearhouse.com
 DOMAIN-SUFFIX,jzpuhqbyixcsh.site
-DOMAIN-SUFFIX,jzq915.playmobil.com
 DOMAIN-SUFFIX,jzqbyykbrrzvq.top
 DOMAIN-SUFFIX,jzqce.com
 DOMAIN-SUFFIX,jzqgyccwefd.com
@@ -68074,6 +68076,7 @@ DOMAIN-SUFFIX,member-app.rightwayhealthcare.com
 DOMAIN-SUFFIX,members.atomcomplete.com
 DOMAIN-SUFFIX,membershipimmunitysport.com
 DOMAIN-SUFFIX,memberships.clubcorp.com
+DOMAIN-SUFFIX,memcyco.com
 DOMAIN-SUFFIX,memia.xyz
 DOMAIN-SUFFIX,memney.com
 DOMAIN-SUFFIX,memo.co
@@ -89677,6 +89680,7 @@ DOMAIN-SUFFIX,slight-difficulty.pro
 DOMAIN-SUFFIX,slightdrink.pro
 DOMAIN-SUFFIX,slightlyinfalliblestring.com
 DOMAIN-SUFFIX,slightlyparentingaugust.com
+DOMAIN-SUFFIX,slike.indiatimes.com
 DOMAIN-SUFFIX,slikslik.com
 DOMAIN-SUFFIX,slim2disc.com
 DOMAIN-SUFFIX,slimelump.com

@@ -1,6 +1,6 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/MEGA/MEGA.list
 # name: mega
-# fetched-at: 2026-11-16T02:05:34.109Z
+# fetched-at: 2026-11-17T04:28:35.610Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN-SUFFIX,mega.co.nz

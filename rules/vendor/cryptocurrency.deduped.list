@@ -1,9 +1,9 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Cryptocurrency/Cryptocurrency.list
 # name: cryptocurrency
-# fetched-at: 2026-11-16T02:05:33.741Z
+# fetched-at: 2026-11-17T04:28:35.237Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-11-16T02:05:35.286Z
-# deduped-against: diy+generated (320809 rules)
+# deduped-at: 2026-11-17T04:28:36.741Z
+# deduped-against: diy+generated (321203 rules)
 
 DOMAIN-SUFFIX,aex.com
 DOMAIN-SUFFIX,aicoin.com

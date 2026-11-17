@@ -1,6 +1,6 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Telegram/Telegram.list
 # name: telegram
-# fetched-at: 2026-11-16T02:05:30.352Z
+# fetched-at: 2026-11-17T04:28:32.016Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN,api.imem.app
