@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T04:28:36.752Z",
+  "generated_at": "2026-11-18T03:42:22.263Z",
   "priority": [
     "diy (rules/*.list)",
     "generated (rules/generated/*.list)",
@@ -7,16 +7,16 @@
   ],
   "counts": {
     "diy": 247,
-    "generated": 321103,
+    "generated": 319593,
     "vendor": 298433,
     "shadowed_generated": 147,
-    "shadowed_vendor": 182741,
-    "total_shadowed": 182888,
+    "shadowed_vendor": 181721,
+    "total_shadowed": 181868,
     "deduped_vendor": {
       "advertising-all-no-resolve.list": {
         "before": 291174,
-        "after": 110393,
-        "removed": 180781
+        "after": 111413,
+        "removed": 179761
       },
       "anthropic.list": {
         "before": 3,
@@ -1114,11 +1114,6 @@
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,0213499675.com",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
       "rule": "DOMAIN-SUFFIX,02228640b9.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
@@ -1300,11 +1295,6 @@
     },
     {
       "rule": "DOMAIN-SUFFIX,05867500b2.7a28c1843f.com",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,058d79990c.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
@@ -1755,11 +1745,6 @@
     },
     {
       "rule": "DOMAIN-SUFFIX,0etmx4b4o.com",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,0f857e584a.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
@@ -2494,11 +2479,6 @@
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,104processors.net",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
       "rule": "DOMAIN-SUFFIX,105915624.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
@@ -2525,11 +2505,6 @@
     },
     {
       "rule": "DOMAIN-SUFFIX,10dc04504e.com",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,10desires.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
@@ -2599,32 +2574,12 @@
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,11004potential.net",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
       "rule": "DOMAIN-SUFFIX,1100ad.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,1102transfer.net",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
       "rule": "DOMAIN-SUFFIX,1106ca2ad4.e230ae5c2b.com",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,110outambitious.net",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,11112door.net",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
@@ -2709,11 +2664,6 @@
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,11policy.net",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
       "rule": "DOMAIN-SUFFIX,11rhol0ni.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
@@ -2765,11 +2715,6 @@
     },
     {
       "rule": "DOMAIN-SUFFIX,121media.com",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,121synapse.net",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
@@ -3425,6 +3370,61 @@
     },
     {
       "rule": "DOMAIN-SUFFIX,123p.guiltyeats.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123p.hailfloridahail.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123p.hailwv.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123p.halohangout.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123p.hardwoodhoudini.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123p.highposthoops.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123p.hookemheadlines.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123p.hoopshabit.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123p.hoosierstateofmind.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123p.horseshoeheroes.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123p.hotspurhq.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123p.houseofhouston.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
     }
