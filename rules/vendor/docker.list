@@ -1,6 +1,6 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Docker/Docker.list
 # name: docker
-# fetched-at: 2026-11-18T03:42:21.078Z
+# fetched-at: 2026-11-19T03:25:19.691Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN,d1q6f0aelx0por.cloudfront.net

@@ -1,6 +1,6 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All_No_Resolve.list
 # name: advertising-all-no-resolve
-# fetched-at: 2026-11-18T03:42:19.798Z
+# fetched-at: 2026-11-19T03:25:18.870Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 AND,((USER-AGENT,Frodo*),(DOMAIN,119.29.29.29))
