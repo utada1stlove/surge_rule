@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T03:12:22.080Z",
+  "generated_at": "2026-11-22T02:13:39.949Z",
   "priority": [
     "diy (rules/*.list)",
     "generated (rules/generated/*.list)",
@@ -7,16 +7,16 @@
   ],
   "counts": {
     "diy": 247,
-    "generated": 320756,
-    "vendor": 298442,
+    "generated": 321119,
+    "vendor": 298441,
     "shadowed_generated": 147,
-    "shadowed_vendor": 181723,
-    "total_shadowed": 181870,
+    "shadowed_vendor": 181719,
+    "total_shadowed": 181866,
     "deduped_vendor": {
       "advertising-all-no-resolve.list": {
         "before": 291174,
-        "after": 111411,
-        "removed": 179763
+        "after": 111415,
+        "removed": 179759
       },
       "anthropic.list": {
         "before": 3,
@@ -139,8 +139,8 @@
         "removed": 5
       },
       "skk-china-ip.list": {
-        "before": 3911,
-        "after": 3911,
+        "before": 3910,
+        "after": 3910,
         "removed": 0
       },
       "skk-domestic.list": {

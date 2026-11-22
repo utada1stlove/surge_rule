@@ -1,9 +1,9 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All_No_Resolve.list
 # name: advertising-all-no-resolve
-# fetched-at: 2026-11-21T03:12:19.770Z
+# fetched-at: 2026-11-22T02:13:37.818Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-11-21T03:12:22.046Z
-# deduped-against: diy+generated (320856 rules)
+# deduped-at: 2026-11-22T02:13:39.908Z
+# deduped-against: diy+generated (321219 rules)
 
 AND,((USER-AGENT,Frodo*),(DOMAIN,119.29.29.29))
 DOMAIN,0.code.cotsta.ru
@@ -53539,6 +53539,7 @@ DOMAIN-SUFFIX,hits.sys.lv
 DOMAIN-SUFFIX,hits.zdnet.co.kr
 DOMAIN-SUFFIX,hitslog.com
 DOMAIN-SUFFIX,hitsteps.com
+DOMAIN-SUFFIX,hittail.com
 DOMAIN-SUFFIX,hitubt.xyz
 DOMAIN-SUFFIX,hiug862dj0.com
 DOMAIN-SUFFIX,hiuplq.diretta.it
@@ -55134,6 +55135,7 @@ DOMAIN-SUFFIX,iad0ssl.pconline.com.cn
 DOMAIN-SUFFIX,iadc.qwapi.com
 DOMAIN-SUFFIX,iadctest.qwapi.com
 DOMAIN-SUFFIX,iadmatvideo.nosdn.127.net
+DOMAIN-SUFFIX,iadnet.com
 DOMAIN-SUFFIX,iadnsamqheemb.space
 DOMAIN-SUFFIX,iadoremakingpics.com
 DOMAIN-SUFFIX,iadpush.com
@@ -64562,7 +64564,6 @@ DOMAIN-SUFFIX,links.pinart.io
 DOMAIN-SUFFIX,links.pkrewards.com
 DOMAIN-SUFFIX,links.plated.com
 DOMAIN-SUFFIX,links.playon.tv
-DOMAIN-SUFFIX,links.prosservice.fr
 DOMAIN-SUFFIX,links.quatreepingles.fr
 DOMAIN-SUFFIX,links.qumu.com
 DOMAIN-SUFFIX,links.rally.app
@@ -94010,6 +94011,7 @@ DOMAIN-SUFFIX,sxyunyou.cn
 DOMAIN-SUFFIX,sxz67.com
 DOMAIN-SUFFIX,sxzmj.cn
 DOMAIN-SUFFIX,sxzzhj.com
+DOMAIN-SUFFIX,sy.ameba.jp
 DOMAIN-SUFFIX,sy.amebame.com
 DOMAIN-SUFFIX,sy.ameblo.jp
 DOMAIN-SUFFIX,sy.tubeprnlist.online
@@ -95450,6 +95452,7 @@ DOMAIN-SUFFIX,texsk.com
 DOMAIN-SUFFIX,texsxhprkkljb.rocks
 DOMAIN-SUFFIX,text-ali.ru
 DOMAIN-SUFFIX,text6film.com
+DOMAIN-SUFFIX,textads.biz
 DOMAIN-SUFFIX,textbookenvious.com
 DOMAIN-SUFFIX,textbookfilamentguidance.com
 DOMAIN-SUFFIX,textbookmudbutterfly.com
@@ -95636,6 +95639,7 @@ DOMAIN-SUFFIX,theatresintotales.com
 DOMAIN-SUFFIX,theavesuppage.shop
 DOMAIN-SUFFIX,thebaicidylls.com
 DOMAIN-SUFFIX,theblackdeath.ru
+DOMAIN-SUFFIX,thebugs.ws
 DOMAIN-SUFFIX,thechargenews.com
 DOMAIN-SUFFIX,thechleads.pro
 DOMAIN-SUFFIX,thechronicles2.xyz

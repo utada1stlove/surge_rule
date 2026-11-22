@@ -1,9 +1,9 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Twitter/Twitter.list
 # name: twitter
-# fetched-at: 2026-11-21T03:12:17.683Z
+# fetched-at: 2026-11-22T02:13:35.468Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-11-21T03:12:22.080Z
-# deduped-against: diy+generated (320856 rules)
+# deduped-at: 2026-11-22T02:13:39.949Z
+# deduped-against: diy+generated (321219 rules)
 
 DOMAIN-KEYWORD,twitter
 DOMAIN-SUFFIX,twimg.co
