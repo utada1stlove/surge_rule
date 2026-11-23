@@ -1,9 +1,9 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Google/Google.list
 # name: google
-# fetched-at: 2026-11-22T02:13:35.624Z
+# fetched-at: 2026-11-23T02:44:10.484Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-11-22T02:13:39.939Z
-# deduped-against: diy+generated (321219 rules)
+# deduped-at: 2026-11-23T02:44:13.615Z
+# deduped-against: diy+generated (321281 rules)
 
 DOMAIN,voice.telephony.goog
 DOMAIN-KEYWORD,appspot
