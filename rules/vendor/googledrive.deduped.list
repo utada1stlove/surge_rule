@@ -1,9 +1,9 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GoogleDrive/GoogleDrive.list
 # name: googledrive
-# fetched-at: 2026-11-23T02:44:12.397Z
+# fetched-at: 2026-11-24T06:00:18.449Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-11-23T02:44:13.615Z
-# deduped-against: diy+generated (321281 rules)
+# deduped-at: 2026-11-24T06:00:20.599Z
+# deduped-against: diy+generated (321677 rules)
 
 DOMAIN,www.googleapis.com
 PROCESS-NAME,BackupandSync

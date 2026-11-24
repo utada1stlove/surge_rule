@@ -1,6 +1,6 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/PayPal/PayPal.list
 # name: paypal
-# fetched-at: 2026-11-23T02:44:10.563Z
+# fetched-at: 2026-11-24T06:00:13.797Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN-KEYWORD,paypal
