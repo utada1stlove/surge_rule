@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T06:00:20.611Z",
+  "generated_at": "2026-11-25T04:53:29.003Z",
   "priority": [
     "diy (rules/*.list)",
     "generated (rules/generated/*.list)",
@@ -7,16 +7,16 @@
   ],
   "counts": {
     "diy": 247,
-    "generated": 321577,
-    "vendor": 298425,
+    "generated": 323255,
+    "vendor": 298422,
     "shadowed_generated": 147,
-    "shadowed_vendor": 181416,
-    "total_shadowed": 181563,
+    "shadowed_vendor": 179311,
+    "total_shadowed": 179458,
     "deduped_vendor": {
       "advertising-all-no-resolve.list": {
         "before": 291174,
-        "after": 111718,
-        "removed": 179456
+        "after": 113823,
+        "removed": 177351
       },
       "anthropic.list": {
         "before": 3,
@@ -139,8 +139,8 @@
         "removed": 5
       },
       "skk-china-ip.list": {
-        "before": 3894,
-        "after": 3894,
+        "before": 3891,
+        "after": 3891,
         "removed": 0
       },
       "skk-domestic.list": {
@@ -1684,11 +1684,6 @@
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
     {
-      "rule": "DOMAIN-SUFFIX,0e024d23f9.com",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
       "rule": "DOMAIN-SUFFIX,0e091251b2.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
@@ -2550,11 +2545,6 @@
     },
     {
       "rule": "DOMAIN-SUFFIX,1100ad.com",
-      "shadowed_by": "rules/generated/category-ads-all.list",
-      "file": "rules/vendor/advertising-all-no-resolve.list"
-    },
-    {
-      "rule": "DOMAIN-SUFFIX,1106ca2ad4.e230ae5c2b.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
     },
@@ -3425,6 +3415,16 @@
     },
     {
       "rule": "DOMAIN-SUFFIX,123p.inkonindy.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123p.insideibrox.com",
+      "shadowed_by": "rules/generated/category-ads-all.list",
+      "file": "rules/vendor/advertising-all-no-resolve.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,123p.insidetheiggles.com",
       "shadowed_by": "rules/generated/category-ads-all.list",
       "file": "rules/vendor/advertising-all-no-resolve.list"
     }

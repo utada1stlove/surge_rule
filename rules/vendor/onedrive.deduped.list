@@ -1,9 +1,9 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OneDrive/OneDrive.list
 # name: onedrive
-# fetched-at: 2026-11-24T06:00:17.918Z
+# fetched-at: 2026-11-25T04:53:27.726Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-11-24T06:00:20.600Z
-# deduped-against: diy+generated (321677 rules)
+# deduped-at: 2026-11-25T04:53:28.997Z
+# deduped-against: diy+generated (323355 rules)
 
 DOMAIN-KEYWORD,1drv
 DOMAIN-KEYWORD,onedrive
