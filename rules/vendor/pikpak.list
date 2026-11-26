@@ -1,6 +1,6 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/PikPak/PikPak.list
 # name: pikpak
-# fetched-at: 2026-11-25T04:53:28.119Z
+# fetched-at: 2026-11-26T04:08:48.350Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN-KEYWORD,mypikpak
