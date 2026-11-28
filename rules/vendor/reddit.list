@@ -1,6 +1,6 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Reddit/Reddit.list
 # name: reddit
-# fetched-at: 2026-11-27T04:14:09.852Z
+# fetched-at: 2026-11-28T03:53:52.284Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
 
 DOMAIN-SUFFIX,redd.it

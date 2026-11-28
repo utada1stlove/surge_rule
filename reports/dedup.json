@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T04:14:14.300Z",
+  "generated_at": "2026-11-28T03:53:55.275Z",
   "priority": [
     "diy (rules/*.list)",
     "generated (rules/generated/*.list)",
@@ -7,16 +7,16 @@
   ],
   "counts": {
     "diy": 247,
-    "generated": 324020,
+    "generated": 324410,
     "vendor": 298420,
     "shadowed_generated": 147,
-    "shadowed_vendor": 179309,
-    "total_shadowed": 179456,
+    "shadowed_vendor": 179310,
+    "total_shadowed": 179457,
     "deduped_vendor": {
       "advertising-all-no-resolve.list": {
         "before": 291174,
-        "after": 113825,
-        "removed": 177349
+        "after": 113824,
+        "removed": 177350
       },
       "anthropic.list": {
         "before": 3,

@@ -1,9 +1,9 @@
 # Vendored from https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All_No_Resolve.list
 # name: advertising-all-no-resolve
-# fetched-at: 2026-11-27T04:14:12.167Z
+# fetched-at: 2026-11-28T03:53:53.553Z
 # Do not edit manually; regenerate with tools/sync-external.mjs.
-# deduped-at: 2026-11-27T04:14:14.271Z
-# deduped-against: diy+generated (324120 rules)
+# deduped-at: 2026-11-28T03:53:55.236Z
+# deduped-against: diy+generated (324510 rules)
 
 AND,((USER-AGENT,Frodo*),(DOMAIN,119.29.29.29))
 DOMAIN,0.code.cotsta.ru
@@ -21814,7 +21814,6 @@ DOMAIN-SUFFIX,adbuyer.com
 DOMAIN-SUFFIX,adbuyer3.lycos.com
 DOMAIN-SUFFIX,adc.api.nine.com.au
 DOMAIN-SUFFIX,adcains.com
-DOMAIN-SUFFIX,adcanvas.com
 DOMAIN-SUFFIX,adcarousel.pl
 DOMAIN-SUFFIX,adcast.fblife.com
 DOMAIN-SUFFIX,adcast.ru
@@ -24388,7 +24387,6 @@ DOMAIN-SUFFIX,anonymestupes.website
 DOMAIN-SUFFIX,anonymouswrangle.com
 DOMAIN-SUFFIX,anoocauzad.net
 DOMAIN-SUFFIX,anopportunitytost.com
-DOMAIN-SUFFIX,anopportunitytost.info
 DOMAIN-SUFFIX,anorrecenturybr.com
 DOMAIN-SUFFIX,anosiascegger.help
 DOMAIN-SUFFIX,another-surprise.pro
@@ -85367,6 +85365,7 @@ DOMAIN-SUFFIX,rapesensual.com
 DOMAIN-SUFFIX,rapgasyogin.com
 DOMAIN-SUFFIX,raphanysteers.com
 DOMAIN-SUFFIX,raphewed.shop
+DOMAIN-SUFFIX,rapid-cdn.yottaa.com
 DOMAIN-SUFFIX,rapid-marketing.pro
 DOMAIN-SUFFIX,rapidkittens.com
 DOMAIN-SUFFIX,rapidlybeaver.com
